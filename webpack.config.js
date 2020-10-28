@@ -1,7 +1,10 @@
 const path = require('path')
+const ASSET_PATH = process.env.ASSET_PATH || '';
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -12,7 +15,8 @@ module.exports = {
   },
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: ASSET_PATH
   },
   resolve: {
     extensions: ['.js', '.json', '.png'],
@@ -40,14 +44,21 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/favicon.ico'),
           to: path.resolve(__dirname, 'dist')
-        }
-    ]})
+        },
+        {
+          from: path.resolve(__dirname, 'src/favicon.ico'),
+          to: path.resolve(__dirname, 'dist')
+        },
+    ]}),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
+    })
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader','css-loader']
+        use: [MiniCssExtractPlugin.loader,'css-loader']
       },
       {
         test: /\.(png|jpg|svg|gif)$/,

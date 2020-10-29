@@ -1,7 +1,8 @@
 import * as $ from 'jquery'
 import Post from '@models/post'
 import logo from '@/assets/pngtd'
-import '@/styles/styles.css'
+//import '@/styles/styles.css'
+import '@/styles/styles.sass'
 
 const post = new Post('webpack post title', logo)
 

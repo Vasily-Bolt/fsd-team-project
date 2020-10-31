@@ -1,12 +1,4 @@
-import * as $ from 'jquery'
-import Post from '@models/post'
-import logo from '@/assets/pngtd'
-//import '@/styles/styles.css'
+//import * as $ from 'jquery'
 import '@/styles/styles.sass'
-import '@/babel'
 
-const post = new Post('webpack post title', logo)
-
-$('pre').html(post.toString())
-
-console.log('Post to String:', post.toString())
+//$('pre').html(post.toString())

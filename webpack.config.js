@@ -51,8 +51,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    main: ['@babel/polyfill','./index.js'],
-    analytics: './analytics.js'
+    main: './index.js',
   },
   output: {
     filename: filename('js'),
@@ -70,7 +69,7 @@ module.exports = {
   devServer: {
     port: 4200,
     open: true,
-    hot: isDev
+    hot: isDev,
   },
   plugins: [
     new HTMLWebpackPlugin( {
@@ -82,10 +81,6 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
-        {
-          from: path.resolve(__dirname, 'src/favicon.ico'),
-          to: path.resolve(__dirname, 'dist')
-        },
         {
           from: path.resolve(__dirname, 'src/favicon.ico'),
           to: path.resolve(__dirname, 'dist')
@@ -113,21 +108,6 @@ module.exports = {
         test: /\.(ttf|woff|woff2|eot)$/,
         use: ['file-loader']
       },
-      {
-        test: /\.js$/,
-        exclude: /node-modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env'
-            ],
-            plugins: [
-              '@babel/plugin-proposal-class-properties'
-            ]
-          }
-        }
-      }
     ]
   }
 }

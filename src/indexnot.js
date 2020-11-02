@@ -1,4 +1,4 @@
 //import * as $ from 'jquery'
-import '@/styles/stylesnot.sass'
+import '@/styles/2/stylesnot.sass'
 
 //$('pre').html(post.toString())

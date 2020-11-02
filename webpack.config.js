@@ -74,7 +74,7 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin( {
-      template: './index.pug',
+      template: './pages/1/index.pug',
       filename: 'index.html',
       inject: true,
       chunks: ['main'],
@@ -83,7 +83,7 @@ module.exports = {
       }
     }),
     new HTMLWebpackPlugin( {
-      template: './indexnot.pug',
+      template: './pages/2/indexnot.pug',
       filename: 'indexnot.html',
       inject: true,
       chunks: ['just'],

@@ -51,8 +51,8 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    main: './index.js',
-    just: './indexnot.js'
+    // main: './index.js',
+    // just: './indexnot.js'
   },
   output: {
     filename: filename('js'),
@@ -62,7 +62,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.json', '.png'],
     alias: {
-      '@models': path.resolve(__dirname, 'src/models'),
+      // '@models': path.resolve(__dirname, 'src/models'),
       '@': path.resolve(__dirname, 'src'),
     }
   },
@@ -73,30 +73,30 @@ module.exports = {
     hot: isDev,
   },
   plugins: [
-    new HTMLWebpackPlugin( {
-      template: './pages/1/index.pug',
-      filename: 'index.html',
-      inject: true,
-      chunks: ['main'],
-      minify: {
-        collapseWhitespace: isProd 
-      }
-    }),
-    new HTMLWebpackPlugin( {
-      template: './pages/2/indexnot.pug',
-      filename: 'indexnot.html',
-      inject: true,
-      chunks: ['just'],
-      minify: {
-        collapseWhitespace: isProd 
-      }
-    }),
+    // new HTMLWebpackPlugin( {
+    //   template: './pages/1/index.pug',
+    //   filename: 'index.html',
+    //   inject: true,
+    //   chunks: ['main'],
+    //   minify: {
+    //     collapseWhitespace: isProd 
+    //   }
+    // }),
+    // new HTMLWebpackPlugin( {
+    //   template: './pages/2/indexnot.pug',
+    //   filename: 'indexnot.html',
+    //   inject: true,
+    //   chunks: ['just'],
+    //   minify: {
+    //     collapseWhitespace: isProd 
+    //   }
+    // }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/favicon.ico'),
-          to: path.resolve(__dirname, 'dist')
+          // from: path.resolve(__dirname, 'src/favicon.ico'),
+          // to: path.resolve(__dirname, 'dist')
         },
     ]}),
     new MiniCssExtractPlugin({

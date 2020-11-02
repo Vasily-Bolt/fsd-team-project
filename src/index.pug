@@ -1,0 +1,112 @@
+//- page.pug
+extends layout.pug
+
+block variables
+  -var header1 = 'This is HEADER1'
+  -var paragraph1 = 'This is paragraph ONE'
+  -var paragraph2 = 'This is paragraph TWO'
+  -var interpolated = 'interpolated variable'
+
+
+block prepend content
+  p This is prepended paragraph
+block append content
+  p This is appended paragraph
+  ul
+  each val in [1, 2, 3, 4, 5]
+    li= val
+
+  ul
+  each val, index in ['zero', 'one', 'two']
+    li= index + ': ' + val
+
+  ul
+  each val, key in {1: 'one', 2: 'two', 3: 'three'}
+    li= key + ': ' + val
+
+  - var values = ['s','s','c','z'];
+  ul
+  each val in values.length ? values : ['There are no values']
+    li= val
+
+  - var values = {1: 's', 2: 'c'};
+  ul
+  each val in values
+    li= val
+  else
+    li There are no values
+
+  - var n = 0;
+  ul
+  while n < 4
+    li= n++
+
+  //- Declaration
+  mixin list
+    ul
+      li foo
+      li bar
+      li baz
+  //- Use
+  +list
+  +list
+
+  mixin pet(name)
+    li.pet= name
+  ul
+    +pet('cat')
+    +pet('dog')
+    +pet('pig')
+
+  mixin article(title)
+    .article
+      .article-wrapper
+        h1= title
+        if block
+          p This is content:
+          block
+          p end of provided content
+        else
+          p No content provided
+
+  +article('Hello world')
+
+  +article('Hello world')
+    p This is my Amazing article
+
+  p Mixin implicit attr
+  mixin link(href, name)
+    //- attributes == {class: "btn"}
+    a(class!=attributes.class href=href)= name
+  +link('/foo', 'foo')(class="btn")
+  p
+  mixin link(href, name)
+    a(href=href)&attributes(attributes)= name
+  +link('/foo', 'foo')(class="btn btn--red")
+
+  //- Declaration
+  mixin article(title='Default Title')
+    .article
+      .article-wrapper
+        p= title
+
+  //- Use
+  +article()
+
+  +article('Hello world')
+
+  mixin list(id, ...items)
+    p= id
+    ul
+      each item in items
+        li= item
+
+  +list('my-list', 1, 2, 3, 4, 'five', 'six')  
+
+  p This is plain old <em>text</em> content.
+  p.
+    this is just text
+    and nothing
+    else. But it goes one string
+
+  p.razdvatri: span asd

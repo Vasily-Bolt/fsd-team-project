@@ -52,6 +52,7 @@ module.exports = {
   mode: 'development',
   entry: {
     main: './index.js',
+    just: './indexnot.js'
   },
   output: {
     filename: filename('js'),
@@ -73,7 +74,19 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin( {
-      template: './index.html',
+      template: './index.pug',
+      filename: 'index.html',
+      inject: true,
+      chunks: ['main'],
+      minify: {
+        collapseWhitespace: isProd 
+      }
+    }),
+    new HTMLWebpackPlugin( {
+      template: './indexnot.pug',
+      filename: 'indexnot.html',
+      inject: true,
+      chunks: ['just'],
       minify: {
         collapseWhitespace: isProd 
       }
@@ -108,6 +121,10 @@ module.exports = {
         test: /\.(ttf|woff|woff2|eot)$/,
         use: ['file-loader']
       },
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader'
+      }
     ]
   }
 }

@@ -1,3 +1,3 @@
 //import * as $ from 'jquery'
-import '@/styles/styles.sass'
+import '@/pages/uikit/styles.sass'
 //$('pre').html(post.toString())

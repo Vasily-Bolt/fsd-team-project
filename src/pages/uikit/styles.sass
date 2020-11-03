@@ -1,0 +1,23 @@
+@import '@/styles/styles.sass'
+@import '@/assets/blocks/uikit-shade-color/uikit-shade-color.sass'
+
+body
+	width: 1440px
+	height: 900px
+	margin: 0 auto
+	display: grid
+	grid-template-columns: 9.375rem 1fr 11.9375rem //151px и 191px
+	grid-template-rows: 9.0625rem 1fr 9.0625rem //145px
+	color: $all-document-text-color
+
+.wrapper
+	grid-column: 2/3
+	grid-row: 2/3
+	display: grid
+	grid-template: 1fr / repeat(2, 1fr)
+
+//Блок слева
+.TCAS-cont
+	width: 100%
+	height: 100%
+

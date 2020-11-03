@@ -1,0 +1,59 @@
+//Блок с информацией о цвете/заголовках
+.TCAS-block
+	display: flex
+	height: 4.375rem
+	width: 27.8125rem //445px //27.125rem //434px
+
+//Левая часть
+.TCAS-block__left
+	flex: 0 0 4.375rem
+	// width: 4.375rem
+	// height: 4.375rem
+
+//Квадрат в левой части
+.TCAS-block__left--square
+	background-color: $all-document-text-color
+	border-radius: 6px
+
+//Текст в левой части
+.TCAS-block__left--text
+	color: $all-document-text-color
+	text-align: right
+
+//Применяем корректировки шрифта и прозрачности для названий заголовков
+.TCAS-block__left--shadowed-header-text
+	font-family: Montserrat
+	font-weight: normal
+	opacity: $dark-shade-quater
+	
+//Правая часть
+.TCAS-block__right
+	flex: 1 1 auto
+	
+//Правая часть с описанием цвета
+.TCAS-block__right--color
+	padding-left: 2.5rem
+	padding-top: .625rem
+	
+//Правая часть с показом текста заголовка
+.TCAS-block__right--headers
+	padding-left: 30px
+
+//Правая часть с корректировкой для кода цвета
+.color-text
+	@include header-two
+	font-weight: normal
+	line-height: 2.0625rem //33px
+	letter-spacing: -1px
+
+.body-head1
+	@include header-one
+
+.body-head2
+	@include header-two
+
+.body-head3
+	@include header-three
+
+.body-standart
+	@include body-text

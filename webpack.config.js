@@ -51,7 +51,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    UIkit: './index.js',
+    UIkit: './uikit.js',
     // just: './indexnot.js'
   },
   output: {
@@ -74,7 +74,7 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin( {
-      template: './index.pug',
+      template: './pages/uikit/index.pug',
       filename: 'index.html',
       inject: true,
       chunks: ['UIkit'],

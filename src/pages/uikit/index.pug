@@ -76,14 +76,8 @@ html(lang="en")
   body
     .wrapper
       .TCAS-cont
-        //- +TCAS-colors-block('dark-shade-quater',['Dark Shade 25%','#1F2041'])
-        +TCAS-headers-block('body-head1',['H1','This one is the sub-section or widget title'])
-        +TCAS-headers-block('body-head2',['H2','Next one is the item title inside widgets'])
-        +TCAS-headers-block('body-head3',['H3','This is a label or CTA text'])
-        +TCAS-headers-block('body-standart',['Body','This is the body text which is used for most <br> of the design, like paragraphs, lists, etc.'])
-
-      //-   each val, key in ColorsAndShades
-      //-     +TCAS-colors-block(key, val)
+        each val, key in ColorsAndShades
+          +TCAS-colors-block(key, val)
           
       //- div(class='TCAS-cont TCAS-cont--right')
       //-   each val, key in Headers

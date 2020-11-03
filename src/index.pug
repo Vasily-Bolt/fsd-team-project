@@ -1,0 +1,70 @@
+//-Объект с массивом данных по вариациям прозрачности, цветов и размеров текста
+- 
+  var ColorsAndShades2 = {
+    'dark-shade-total' : ['Dark Shade 100%','#1F2041'],
+    'dark-shade-almost-total' : ['Dark Shade 75%','#1F2041'],
+    'dark-shade-half' : ['Dark Shade 50%','#1F2041'],
+    'dark-shade-quater' : ['Dark Shade 25%','#1F2041'],
+    'dark-shade-light' : ['Dark Shade 5%','#1F2041'],
+    'purple' : ['Purple','#BC9CFF'],
+    'green' : ['Green','#6FCF97'],
+    'body-head1' : ['H1','This one is the sub-section or widget title'],
+    'body-head2' : ['H2','Next one is the item title inside widgets'],
+    'body-head3' : ['H3','This is a label or CTA text'],
+    'body' : ['Body','This is the body text which is used for most of the design, like paragraphs, lists, etc.']
+    }
+
+- var DraMeSquare = false
+- var Container = ''
+
+mixin colorCont(modificator, values)
+  - if (modificator.includes('body'))
+    - DrawMeSquare = false  
+  - else
+    - DrawMeSquare = true
+
+  - if (DrawMeSquare)
+    - Container ='TCAS-cont'
+  - else
+    - Container = 'TCAS-cont TCAS-cont--to-the-right'
+
+  div(class=Container)
+    //-левый контейнер (квадрат или заголовки)
+    div(class='TCAS-cont__left') 
+      //-Если это показатель цвета/тени
+      - if (DrawMeSquare)
+        //-квадрат с цветом
+        div(class='TCAS-cont__left__square ' + modificator)
+      - else
+        //-Блок с текстом H_,BODY
+        div(class='TCAS-cont__left__text-block ' + modificator)= values[0]
+    
+    //-правый контейнер для текста
+    div(class='TCAS-cont__right')
+      //-Если это показатель цвета/тени
+      - if (DrawMeSquare)
+        //-Показываем заголовок
+        div(class='header-two TCAS-cont__right__title')= values[0]
+        //-текст (цвет или надпись текстом)
+        div(class='header-two TCAS-cont__right__text')= values[1]
+      - else
+        //-текст (цвет или надпись текстом)
+        div(class='TCAS-cont__right__text ' + modificator)= values[1]
+
+<!DOCTYPE html>
+
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="normalize.css")
+    link(rel="stylesheet", href="style.css")
+    title 134
+  body
+    .wrapper
+      each val, key in ColorsAndShades2
+        |
+        |
+        |
+        //-контейнер с информацией по цветам/шрифтам The Colors And Sizes
+        +colorCont(key, val)

@@ -51,7 +51,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    // main: './index.js',
+    UIkit: './index.js',
     // just: './indexnot.js'
   },
   output: {
@@ -73,15 +73,15 @@ module.exports = {
     hot: isDev,
   },
   plugins: [
-    // new HTMLWebpackPlugin( {
-    //   template: './pages/1/index.pug',
-    //   filename: 'index.html',
-    //   inject: true,
-    //   chunks: ['main'],
-    //   minify: {
-    //     collapseWhitespace: isProd 
-    //   }
-    // }),
+    new HTMLWebpackPlugin( {
+      template: './index.pug',
+      filename: 'index.html',
+      inject: true,
+      chunks: ['UIkit'],
+      minify: {
+        collapseWhitespace: isProd 
+      }
+    }),
     // new HTMLWebpackPlugin( {
     //   template: './pages/2/indexnot.pug',
     //   filename: 'indexnot.html',
@@ -92,13 +92,13 @@ module.exports = {
     //   }
     // }),
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          // from: path.resolve(__dirname, 'src/favicon.ico'),
-          // to: path.resolve(__dirname, 'dist')
-        },
-    ]}),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //       from: path.resolve(__dirname, 'src/favicon.ico'),
+    //       to: path.resolve(__dirname, 'dist')
+    //     },
+    // ]}),
     new MiniCssExtractPlugin({
       filename: filename('css')
     })

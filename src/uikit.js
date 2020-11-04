@@ -1,3 +1,3 @@
 //import * as $ from 'jquery'
-import '@/pages/uikit/styles.sass'
+import '@/pages/uikit/color-block/styles.sass'
 //$('pre').html(post.toString())

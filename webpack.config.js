@@ -74,7 +74,7 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin( {
-      template: './pages/uikit/index.pug',
+      template: './pages/uikit/color-block/index.pug',
       filename: 'index.html',
       inject: true,
       chunks: ['UIkit'],

@@ -1,0 +1,36 @@
+//-Объект с массивом данных по вариациям прозрачности, цветов и размеров текста
+- 
+  var ColorsAndShades = {
+    'dark-shade-total' : ['Dark Shade 100%','#1F2041'],
+    'dark-shade-almost-total' : ['Dark Shade 75%','#1F2041'],
+    'dark-shade-half' : ['Dark Shade 50%','#1F2041'],
+    'dark-shade-quater' : ['Dark Shade 25%','#1F2041'],
+    'dark-shade-light' : ['Dark Shade 5%','#1F2041'],
+    'purple' : ['Purple','#BC9CFF'],
+    'green' : ['Green','#6FCF97']
+    }
+  
+  var Headers = {
+    'body-head1' : ['H1','This one is the sub-section or widget title'],
+    'body-head2' : ['H2','Next one is the item title inside widgets'],
+    'body-head3' : ['H3','This is a label or CTA text'],
+    'body-standart' : ['Body','This is the body text which is used for most<br> of the design, like paragraphs, lists, etc.']
+    }
+
+include ../../../assets/blocks/uikit-shade-color/uikit-shade-color.pug
+
+<!DOCTYPE html>
+
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title 138
+  body
+    .wrapper
+      .TCAS-cont
+        each val, key in ColorsAndShades
+          +TCAS-colors-block(key, val)
+      div(class='TCAS-cont TCAS-cont--right')
+        each val, key in Headers
+          +TCAS-headers-block(key, val)

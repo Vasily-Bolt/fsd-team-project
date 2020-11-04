@@ -52,7 +52,6 @@ module.exports = {
   mode: 'development',
   entry: {
     UIkit: './uikit.js',
-    // just: './indexnot.js'
   },
   output: {
     filename: filename('js'),
@@ -74,7 +73,7 @@ module.exports = {
   },
   plugins: [
     new HTMLWebpackPlugin( {
-      template: './pages/uikit/color-block/index.pug',
+      template: './pages/uikit/index.pug',
       filename: 'index.html',
       inject: true,
       chunks: ['UIkit'],
@@ -83,10 +82,10 @@ module.exports = {
       }
     }),
     // new HTMLWebpackPlugin( {
-    //   template: './pages/2/indexnot.pug',
-    //   filename: 'indexnot.html',
+    //   template: './pages/uikit/form-elements/index.pug',
+    //   filename: 'index.html',
     //   inject: true,
-    //   chunks: ['just'],
+    //   chunks: ['formelems'],
     //   minify: {
     //     collapseWhitespace: isProd 
     //   }

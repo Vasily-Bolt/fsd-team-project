@@ -1,15 +1,3 @@
-*, *:before, *:after 
-	-webkit-box-sizing: border-box
-	-moz-box-sizing: border-box
-	box-sizing: border-box
-
-html
-	font-size: 16px
-	
-h1, h2, h3, p
-	margin: 0
-	padding: 0
-
 @mixin header-one
 	font-family: Quicksand
 	font-size: 1.5rem //24px
@@ -35,6 +23,23 @@ h1, h2, h3, p
 	font-family: Montserrat
 	font-size: 0.875rem //14px
 	line-height: 1.5rem //24px
+
+*, *:before, *:after 
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+html
+	font-size: 16px
+
+body
+	@include body-text
+	margin: 0
+	padding: 0
+	
+h1, h2, h3, p
+	margin: 0
+	padding: 0
 
 h1
 	@include header-one

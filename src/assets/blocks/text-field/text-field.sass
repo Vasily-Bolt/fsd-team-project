@@ -1,13 +1,12 @@
 $txt-field-height: 44px
 
-@mixin text-field
+@mixin text-field-template
 	width: 20rem //320px
 	height: $txt-field-height
 	border: 1px solid $all-document-text-color
 	border-radius: 4px
 	color: rgba($all-document-text-color, $dark-shade-almost-total)
 	padding-left: 0.8125rem //13px
-	opacity: $dark-shade-quater
 
 @mixin text-field--hover-focus
 	opacity: $dark-shade-total
@@ -16,20 +15,21 @@ $txt-field-height: 44px
 	border: 1px solid rgba($all-document-text-color, $dark-shade-half)
 
 .text-field
-	@include text-field
+	@include text-field-template
+	opacity: $dark-shade-quater
 
 .text-field:hover, .text-field:focus
 	@include text-field--hover-focus
 
-
 //Текстовый блок в виде дропдауна
-.text-field__dropdown
+.dropdown-field
+	@include text-field-template
 	position: relative
-	opacity: $dark-shade-total
 	border: 1px solid rgba($all-document-text-color, $dark-shade-quater)
 	line-height: $txt-field-height - 3px
 
-.text-field__dropdown::after
+//Стрелка вниз после дропдауна
+.dropdown-field::after
 	position: absolute
 	right: 0
 	top: 0
@@ -39,4 +39,3 @@ $txt-field-height: 44px
 	min-width: 15px
 	min-height: 8px
 	background: url('@/assets/blocks/text-field/expand_more.svg') center no-repeat
-	opacity: $dark-shade-half

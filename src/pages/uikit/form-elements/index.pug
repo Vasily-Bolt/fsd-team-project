@@ -4,10 +4,13 @@ div(class='wrapper wrapper--elements')
 	.gull-emblem-container
 		.gull-emblem
 	.wrapper__form-elements-content
-		label
-			input(type='text' id='text-field' name='text-field' placeholder='Email' class='text-field')
-		label
-			input(type='text' id='text-field-hover' name='text-field-hover' value='This is pretty awesome' class='text-field text-field--hover-focus')
-		div(class='text-field text-field__dropdown')
+		+text-field('text-field', 'Email')
+		p _
+		input(type='text' id='text-field-hover' name='text-field-hover' value='This is pretty awesome' class='text-field text-field--hover-focus')
+		label(for='text-field-hover')
+		p 1
+		div(class='dropdown-field')
 			p Сколько гостей
-		
+		p 1
+		input(type='text' id='text-field-masked' name='text-field' pattern='[1-3][0-9]/[0-1][0-9]/[1-2][0,9][0-9][0-9]' placeholder='ДД/ММ/ГГГГ' class='text-field')
+		label(for='text-field-masked')

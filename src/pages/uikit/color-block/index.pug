@@ -19,8 +19,10 @@ include ../../../assets/blocks/uikit-shade-color/uikit-shade-color.pug
 		'body-standart' : ['Body','This is the body text which is used for most<br> of the design, like paragraphs, lists, etc.']
 		}
 
-.wrapper-TCAS
-	.wrapper-TCAS__content
+div(class='wrapper wrapper--TCAS')
+	.gull-emblem-container
+		.gull-emblem
+	.wrapper__TCAS-content
 		.TCAS-cont
 			each val, key in ColorsAndShades
 				+TCAS-colors-block(key, val)

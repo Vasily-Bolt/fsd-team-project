@@ -1,15 +1,15 @@
 @import '@/assets/blocks/text-field/text-field.sass'
-@import '@/assets/blocks/gull-emblem/gull.sass'
 
-.wrapper-elements
-	width: 1440px
+.wrapper--elements
 	height: 1853px
-	margin: 0 auto
-	padding-top: 50px
-	padding-left: 10px
+	grid-template-columns: 8.75rem 1fr 8.8125rem //140px	141px
+	grid-template-rows: 8.75rem 1fr 8.1875rem //140px	131px
 
-.wrapper-elements > p
-	margin-bottom: 20px
+.wrapper__form-elements-content
+	grid-column: 2/3
+	grid-row: 2/3
+	display: flex
+	flex-direction: column
 
 //Стиль для UIKit - отображает вид текстового поля при наведении
 .text-field--hover-focus

@@ -1,12 +1,13 @@
 include ../../../assets/blocks/text-field/text-field.pug
 
-.wrapper-elements
-	p
+div(class='wrapper wrapper--elements')
+	.gull-emblem-container
+		.gull-emblem
+	.wrapper__form-elements-content
 		label
-			input(type='text' id='drink' name='drink' value='Email' class='text-field')
-	p
+			input(type='text' id='text-field' name='text-field' value='Email' class='text-field')
 		label
-			input(type='text' id='drink' name='drink' value='This is pretty awesome' class='text-field text-field--hover-focus')
-	.dropdown 
-		p Сколько гостей
-	.gull-emblem-cont
+			input(type='text' id='text-field-hover' name='text-field-hover' value='This is pretty awesome' class='text-field text-field--hover-focus')
+		.dropdown 
+			p Сколько гостей
+		

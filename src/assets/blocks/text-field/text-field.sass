@@ -9,6 +9,13 @@
 
 $txt-field-height: 44px
 
+//Сброс стилей для focus
+@mixin text-field--hover-focus
+	outline: 0
+	outline-offset: 0
+
+//Миксин - рамка почти прозрачная
+
 //Стоковое состояние блока
 .field-template
 	width: 20rem //320px
@@ -21,10 +28,8 @@ $txt-field-height: 44px
 	position: relative
 	color: rgba($all-document-text-color, $dark-shade-almost-total)
 
-//Миксин - рамка почти прозрачная
-	
 //Рамка поля наполовину прозрачная
-.field-template--border-half-darkened
+.field-template--border-half-darkened, .field-template:hover, .field-template:focus
 	border-color: rgba($all-document-text-color, $dark-shade-half)
 	
 //Рамка поля почти прозрачная
@@ -39,16 +44,25 @@ $txt-field-height: 44px
 .field-template--small
 	width: 9.375rem//150px
 
-//Сброс стилей для focus
-@mixin text-field--hover-focus
-	outline: 0
-	outline-offset: 0
-
 //Текстовое поле hovered или focused
 .field-template:hover, .field-template:focus
 	@include text-field--hover-focus
-	border-color: rgba($all-document-text-color, $dark-shade-half)
 
+//Правый элемент блока для размещения стрелок
+.field-template__icon-field
+	position: absolute
+	right: 0
+	top: 0
+	width: $txt-field-height - 1px
+	height: $txt-field-height - 1px
+	min-width: 15px
+	min-height: 8px
+	
+//Стрелка вниз
+.field-template__icon-field--arrow-down
+	background: url('@/assets/blocks/text-field/expand_more.svg') center no-repeat
+
+	// line-height: $txt-field-height - 3px
 
 //Текстовый блок в виде дропдауна
 // .dropdown-field

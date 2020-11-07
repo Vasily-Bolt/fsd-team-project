@@ -1,3 +1,7 @@
+//-Миксин для отображения простого текстового поля. Получает обьект с ключами pattern, name и value.
+  name - имя и id поля input
+  value - передается в поле placeholder
+  pattern - при наличии создает masked text field
 mixin text-field(obj)
   if obj.pattern
     input(type='text' id=obj.name name=obj.name placeholder=obj.value pattern=obj.pattern class='text-field')

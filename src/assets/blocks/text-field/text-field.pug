@@ -1,3 +1,6 @@
-mixin text-field(name,value,pattern)
-  input(type='text' id=name name=name placeholder=value class='text-field')
+mixin text-field(obj)
+  if obj.pattern
+    input(type='text' id=obj.name name=obj.name placeholder=obj.value pattern=obj.pattern class='text-field')
+  else
+    input(type='text' id=obj.name name=obj.name placeholder=obj.value class='text-field')
   label(for=name)

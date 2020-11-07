@@ -9,38 +9,46 @@
 
 $txt-field-height: 44px
 
-@mixin field-template
+//Стоковое состояние блока
+.field-template
 	width: 20rem //320px
 	height: $txt-field-height
 	border: 1px solid transparent
 	border-radius: 4px
 	padding-left: 0.8125rem //13px
 	line-height: $txt-field-height
+	letter-spacing: -.15px
 	position: relative
 	color: rgba($all-document-text-color, $dark-shade-almost-total)
 
+//Миксин - рамка почти прозрачная
+	
+//Рамка поля наполовину прозрачная
+.field-template--border-half-darkened
+	border-color: rgba($all-document-text-color, $dark-shade-half)
+	
+//Рамка поля почти прозрачная
+.field-template--border-almost-transparent
+	border-color: rgba($all-document-text-color, $dark-shade-quater)
+	
+//Среднее поле
+.field-template--middle
+	width: 16.625rem//266px
+
+//Маленькое поле
+.field-template--small
+	width: 9.375rem//150px
+
+//Сброс стилей для focus
 @mixin text-field--hover-focus
 	outline: 0
 	outline-offset: 0
 
-@mixin text-field--border-half-darkened
+//Текстовое поле hovered или focused
+.field-template:hover, .field-template:focus
+	@include text-field--hover-focus
 	border-color: rgba($all-document-text-color, $dark-shade-half)
 
-.text-field
-	@include field-template
-	border-color: rgba($all-document-text-color, $dark-shade-quater)
-
-.text-field:hover, .text-field:focus
-	@include text-field--hover-focus
-	@include text-field--border-half-darkened
-
-//Маленькое поле
-.text-field--middle
-	width: 16.625rem//266px
-
-//Маленькое поле
-.text-field--small
-	width: 9.375rem//150px
 
 //Текстовый блок в виде дропдауна
 // .dropdown-field

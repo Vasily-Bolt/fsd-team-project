@@ -6,10 +6,10 @@ div(class='wrapper wrapper--elements')
 	.wrapper__form-elements-content
 		+text-field({name: 'text-field', value: 'Email'})
 		p _
-		input(type='text' id='text-field-hover' name='text-field-hover' value='This is pretty awesome' class='text-field text-field--hover-focus')
+		input(type='text' id='text-field-hover' name='text-field-hover' value='This is pretty awesome' class='field-template field-template--border-half-darkened')
 		p 1
 		div(class='dropdown-field')
 			p Сколько гостей
 		p 1
-		+text-field({name: 'text-field-masked', value: 'ДД/ММ/ГГГГ', pattern: '[1-3][0-9]/[0-1][0-9]/[1-2][0,9][0-9][0-9]'})
+		+text-field({name: 'text-field-masked', value: 'ДД.ММ.ГГГГ', pattern: '[1-3][0-9].[0-1][0-9].[1-2][0,9][0-9][0-9]'})
 		p 1

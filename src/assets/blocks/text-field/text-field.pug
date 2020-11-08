@@ -2,6 +2,7 @@
 	name - имя и id поля input
 	value - передается в поле placeholder
 	pattern - при наличии создает masked text field
+
 mixin text-field(obj)
 	if obj.pattern
 		input(type='text' id=obj.name name=obj.name placeholder=obj.value pattern=obj.pattern class='field-template field-template--border-not-hovered')
@@ -29,3 +30,9 @@ mixin dropdown-field(obj)
 						div(class='field-template__arrow-css field-template__arrow-css--to-bottom')
 					else
 						div(class='field-template__arrow-css field-template__arrow-css--to-top')
+
+	mixin subscription-field(obj)
+		div(class='field-template field-template--border-not-hovered')
+			input(type='text' id=obj.name name=obj.name placeholder=obj.value)
+			.field-template__icon-field
+				div(class='field-template__arrow-css field-template__arrow-css--to-top')

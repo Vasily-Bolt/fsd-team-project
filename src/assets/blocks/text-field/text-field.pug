@@ -5,9 +5,11 @@
 
 mixin text-field(obj)
 	if obj.pattern
-		input(type='text' id=obj.name name=obj.name placeholder=obj.value pattern=obj.pattern class='field-template field-template--border-not-hovered')
+		div(class='field-template field-template--border-not-hovered')
+			input(type='text' id=obj.name name=obj.name placeholder=obj.value pattern=obj.pattern class='field-template__input-field')
 	else
-		input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template field-template--border-not-hovered')
+		div(class='field-template field-template--border-not-hovered')
+			input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template__input-field')
 	label(for=name)
 
 //-Миксин для отображения начального Dropdown. Получает объект
@@ -33,6 +35,6 @@ mixin dropdown-field(obj)
 
 	mixin subscription-field(obj)
 		div(class='field-template field-template--border-not-hovered')
-			input(type='text' id=obj.name name=obj.name placeholder=obj.value)
+			input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template__input-field')
 			.field-template__icon-field
 				div(class='field-template__arrow-css field-template__arrow-css--to-top')

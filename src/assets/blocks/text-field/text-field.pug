@@ -9,12 +9,23 @@ mixin text-field(obj)
 		input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template field-template--border-not-hovered')
 	label(for=name)
 
-//-Миксин для отображения начального Dropdown. Получает строку с текстом и boolean; true - маркер для закрытого dropdown, false - маркер для открытого dropdown
-mixin dropdown-field(value, dropdown_hidden)
-	div(class='field-template field-template--letter-spacing-zero field-template--border-not-hovered')
-			p= value
+//-Миксин для отображения начального Dropdown. Получает объект
+	value - строка с текстом 
+	dropdown_hidden - true - маркер для закрытого dropdown, false - маркер для открытого dropdown
+	size - small, medium, full - размер поля
+	value - значение placeholder
+
+mixin dropdown-field(obj)
+	- var text_field_class = 'field-template field-template--letter-spacing-zero field-template--border-not-hovered '
+	if obj.size == 'small'
+		- text_field_class += ' field-template--small'
+	if obj.size == 'medium'
+		- text_field_class += ' field-template--middle'
+
+	div(class= text_field_class)
+			span= obj.value
 				.field-template__icon-field
-					if dropdown_hidden
+					if obj.dropdown_hidden
 						div(class='field-template__arrow-css field-template__arrow-css--to-bottom')
 					else
 						div(class='field-template__arrow-css field-template__arrow-css--to-top')

@@ -4,13 +4,17 @@
 	pattern - при наличии создает masked text field
 mixin text-field(obj)
 	if obj.pattern
-		input(type='text' id=obj.name name=obj.name placeholder=obj.value pattern=obj.pattern class='field-template field-template--border-almost-transparent')
+		input(type='text' id=obj.name name=obj.name placeholder=obj.value pattern=obj.pattern class='field-template field-template--border-not-hovered')
 	else
-		input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template field-template--border-almost-transparent')
+		input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template field-template--border-not-hovered')
 	label(for=name)
 
-//-Миксин для отображения начального Dropdown. Получает строку с текстом
-mixin dropdown-field(value)
-	div(class='field-template field-template--border-almost-transparent')
+//-Миксин для отображения начального Dropdown. Получает строку с текстом и boolean; true - маркер для закрытого dropdown, false - маркер для открытого dropdown
+mixin dropdown-field(value, dropdown_hidden)
+	div(class='field-template field-template--letter-spacing-zero field-template--border-not-hovered')
 			p= value
-			div(class='field-template__icon-field field-template__icon-field--arrow-down')
+				.field-template__icon-field
+					if dropdown_hidden
+						div(class='field-template__arrow-css field-template__arrow-css--to-bottom')
+					else
+						div(class='field-template__arrow-css field-template__arrow-css--to-top')

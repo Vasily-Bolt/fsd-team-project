@@ -1,4 +1,11 @@
+@import ./field-template
 @import ./_border-not-hovered/_border-not-hovered
+@import ./_border-hovered/_border-hovered
+@import ./_letter-spacing-zero/_letter-spacing-zero
+@import ./_size-middle/_size-middle
+@import ./_size-small/_size-small
+@import ./__icon-field/__icon-field
+@import ./__arrow-css/__arrow-css
 
 ::-webkit-input-placeholder 
 	color: rgba($all-document-text-color, $dark-shade-quater)
@@ -8,65 +15,3 @@
 	color: rgba($all-document-text-color, $dark-shade-quater)
 :-ms-input-placeholder      
 	color: rgba($all-document-text-color, $dark-shade-quater)
-
-$txt-field-height: 2.75rem //44px
-
-//Стоковое состояние блока
-.field-template
-	width: 20rem //320px
-	height: $txt-field-height
-	border-radius: 4px
-	padding-left: .875rem //14px
-	line-height: $txt-field-height - .1rem
-	letter-spacing: -.15px
-	position: relative
-	color: rgba($all-document-text-color, $dark-shade-almost-total)
-	overflow: hidden
-	display: inline-block
-.field-template__input-field
-		width: 85%
-		height: 100%
-		margin-left: -2px
-
-//Рамка поля наполовину прозрачная. Текстовое поле hovered или focused
-.field-template--border-hovered, .field-template:hover, .field-template:focus
-	border: 1px solid rgba($all-document-text-color, $dark-shade-half)
-	
-//Среднее поле
-.field-template--size-middle
-	width: 16.625rem//266px
-
-//Маленькое поле
-.field-template--size-small
-	width: 9.375rem//150px
-
-//сброс межбуквенного интервала для dropdown
-.field-template--letter-spacing-zero
-	letter-spacing: 0px
-
-//Правый элемент блока для размещения стрелок. Высота и ширина рассчитана исходя из толщины обводки соновного поля
-.field-template__icon-field
-	position: absolute
-	right: 0
-	top: 0
-	width: $txt-field-height - .125rem //2px 
-	height: $txt-field-height - .25rem //4px
-	display: flex
-	justify-content: center
-	align-items: center
-		
-//Стрелка из css для icon-field
-.field-template__arrow-css
-	width: .1875rem //3px
-	height: .1875rem //3px
-	border: solid
-	border-width: 0 2px 2px 0
-	padding: .1875rem //3px
-
-//Стрелка вниз
-.field-template__arrow-css--to-bottom
-	transform: rotate(45deg)
-
-//Стрелка вверх
-.field-template__arrow-css--to-top
-	transform: rotate(-135deg)

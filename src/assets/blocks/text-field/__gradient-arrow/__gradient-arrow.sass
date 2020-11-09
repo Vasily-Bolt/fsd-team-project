@@ -1,0 +1,25 @@
+//Градиентная стреллка направленная врпаво
+.field-template__gradient-arrow
+	position: relative
+	width: 100%
+	height: 2px
+	background-image: linear-gradient(0grad, $purple, $green)
+
+.field-template__gradient-arrow:before
+	position: absolute
+	top: -10px
+	content: ''
+	display: block
+	width: 100%
+	height: 2px
+	background-image: linear-gradient(0grad, $purple, $green)
+
+.field-template__gradient-arrow:after
+	position: absolute
+	top: 10px
+	content: ''
+	display: block
+	width: 100%
+	height: 2px
+	background-image: linear-gradient(0grad, $purple, $green)
+

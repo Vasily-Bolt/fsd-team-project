@@ -21,9 +21,9 @@ mixin text-field(obj)
 mixin dropdown-field(obj)
 	- var text_field_class = 'field-template field-template--letter-spacing-zero field-template--border-not-hovered '
 	if obj.size == 'small'
-		- text_field_class += ' field-template--small'
+		- text_field_class += ' field-template--size-small'
 	if obj.size == 'medium'
-		- text_field_class += ' field-template--middle'
+		- text_field_class += ' field-template--size-middle'
 
 	div(class= text_field_class)
 			span= obj.value
@@ -34,7 +34,7 @@ mixin dropdown-field(obj)
 						div(class='field-template__arrow-css field-template__arrow-css--to-top')
 
 	mixin subscription-field(obj)
-		div(class='field-template field-template--border-not-hovered')
+		div(class='field-template field-template--border-not-hovered field-template--size-middle')
 			input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template__input-field')
 			.field-template__icon-field
 				div(class='field-template__arrow-css field-template__arrow-css--to-top')

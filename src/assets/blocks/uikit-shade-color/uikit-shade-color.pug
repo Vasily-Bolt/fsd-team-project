@@ -1,13 +1,13 @@
 mixin TCAS-colors-block(modificator, values)
 	.TCAS-block
-		div(class='TCAS-block__left TCAS-block__left--square ' + modificator)
+		div(class='TCAS-block__left TCAS-block__left--squared ' + modificator)
 		div(class='TCAS-block__right TCAS-block__right--color')
 			h2= values[0]
 			p.color-text= values[1]
 
 mixin TCAS-headers-block(modificator, values)
 	.TCAS-block
-		div(class='TCAS-block__left TCAS-block__left--text ' + modificator)
+		div(class='TCAS-block__left ' + modificator)
 				p.TCAS-block__left--shadowed-header-text= values[0]
 		div(class='TCAS-block__right TCAS-block__right--headers')
 				p(class=modificator)!= values[1]

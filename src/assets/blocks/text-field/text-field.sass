@@ -1,3 +1,5 @@
+@import ./_border-not-hovered/_border-not-hovered
+
 ::-webkit-input-placeholder 
 	color: rgba($all-document-text-color, $dark-shade-quater)
 ::-moz-placeholder          
@@ -13,7 +15,6 @@ $txt-field-height: 2.75rem //44px
 .field-template
 	width: 20rem //320px
 	height: $txt-field-height
-	border: 1px solid transparent
 	border-radius: 4px
 	padding-left: .875rem //14px
 	line-height: $txt-field-height - .1rem
@@ -27,21 +28,16 @@ $txt-field-height: 2.75rem //44px
 		height: 100%
 		margin-left: -2px
 
-
 //Рамка поля наполовину прозрачная. Текстовое поле hovered или focused
 .field-template--border-hovered, .field-template:hover, .field-template:focus
-	border-color: rgba($all-document-text-color, $dark-shade-half)
-	
-//Рамка поля для невыделенного поля (почти прозрачная)
-.field-template--border-not-hovered
-	border-color: rgba($all-document-text-color, $dark-shade-quater)
+	border: 1px solid rgba($all-document-text-color, $dark-shade-half)
 	
 //Среднее поле
-.field-template--middle
+.field-template--size-middle
 	width: 16.625rem//266px
 
 //Маленькое поле
-.field-template--small
+.field-template--size-small
 	width: 9.375rem//150px
 
 //сброс межбуквенного интервала для dropdown

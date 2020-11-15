@@ -5,7 +5,6 @@
   height: 64.44px
   display: grid
   grid-template-columns: 1fr 1fr
-  grid-template-rows: 1fr 1fr
 
 .text-field-cont__title
   grid-column: 1
@@ -18,11 +17,14 @@
   text-align: right
   font-weight: 400
   color: rgba($all-document-text-color, $dark-shade-half)
-  // Ниже стили для смещенного текста описания состояния поля (конкретно в макете - default)
-  // @include padding-top
-  // letter-spacing: -.2px
   
 .text-field-cont__visualisation
   grid-column: span 2
   grid-row: 2
   @include padding-top
+
+//Mix to individualize
+//This is for the second (hover/focus) block in UIKit, that has right sign closer to the bottom of block
+.padding-top-add-a-bit
+  padding-top: 3px
+  letter-spacing: -.2px

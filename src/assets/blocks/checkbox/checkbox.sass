@@ -1,0 +1,23 @@
+.checkbox
+  position: absolute
+  z-index: -1
+  opacity: 0
+
+.checkbox+label
+  display: inline-flex
+  align-items: center
+  user-select: none
+  color: rgba($all-document-text-color, $dark-shade-quater)
+
+.checkbox+label::before
+  content: ''
+  display: inline-block
+  flex: 0 0 auto
+  width: 20px
+  height: 20px
+  border: 1px solid rgba($all-document-text-color, $dark-shade-quater)
+  border-radius: 4px
+  margin-right: 9.5px
+  // background-repeat: no-repeat
+  // background-position: center center
+  // background-size: 50% 50%

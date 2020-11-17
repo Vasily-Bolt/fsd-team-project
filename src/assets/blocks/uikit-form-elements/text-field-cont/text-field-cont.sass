@@ -1,27 +1,14 @@
 @mixin padding-top
   padding-top: 4px
-  
+
+@import ./__title/text-field-cont__title.sass
+@import ./__status/text-field-cont__status.sass
+@import ./__visualisation/text-field-cont__visualisation.sass
+
 .text-field-cont
   height: 4.0625rem//65px
   display: grid
-
-.text-field-cont__title
-  grid-column: 1
-  grid-row: 1
-  @include padding-top
-
-.text-field-cont__status
-  grid-column: 2
-  grid-row: 1
-  text-align: right
-  font-weight: 400
-  color: rgba($all-document-text-color, $dark-shade-half)
   
-.text-field-cont__visualisation
-  grid-column: span 2
-  grid-row: 2
-  @include padding-top
-
 //Mix to individualize
 //This is for the second (hover/focus) block in UIKit, that has right sign closer to the bottom of block
 .padding-top-add-a-bit

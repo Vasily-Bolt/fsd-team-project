@@ -22,7 +22,7 @@ div(class='wrapper wrapper__elements')
 						h3.text-field-cont__title dropdown
 						.text-field-cont__visualisation
 							+dropdown-field({value: 'Сколько гостей', dropdown_hidden: 'true'})
-					div(class='text-field-cont')
+					.text-field-cont
 						h3.text-field-cont__title masked text field
 						div(class='text-field-cont__visualisation')
 							+text-field({name: 'text-field-masked', value: 'ДД.ММ.ГГГГ', pattern: '[1-3][0-9].[0-1][0-9].[1-2][0,9][0-9][0-9]'})
@@ -51,4 +51,9 @@ div(class='wrapper wrapper__elements')
 					+checkbox({id:'animals', text:'Можно с питомцами', checked:'checked'})
 				.div(style='width:223px')
 					+checkbox({id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:'checked'})
+				.div
+					input(type='radio', id='male' name='gender' class='radio-button' checked='checked')
+					label(for='male') Мужчина
+					input(type='radio', id='female' name='gender' class='radio-button')
+					label(for='female') Женщина
 			.form-small-elements__column

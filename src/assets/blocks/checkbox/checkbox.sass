@@ -6,25 +6,26 @@
 	position: relative
 	display: inline-block
 	user-select: none
-	padding-left: 30px
-	line-height: 18px
+	padding-left: 1.875rem //30px
+	line-height: 1.125rem //18px
 	color: rgba($all-document-text-color, $dark-shade-half)
 
 .checkbox+label::before,
 .checkbox+label::after
 	position: absolute
-	top: -1px
+	top: -.0625rem //-1px //для соответствия макету
 	left: 0
 	content: ''
-	width: 20px
-	height: 20px
-	border: 1px solid rgba($all-document-text-color, $dark-shade-quater)
-	border-radius: 4px
-	margin-right: 9.5px
+	width: 1.25rem //20px
+	height: 1.25rem //20px
+	border: .0625rem solid rgba($all-document-text-color, $dark-shade-quater) //1px
+	border-radius: .25rem //4px
+	margin-right: .59375rem //9.5px
 
 .checkbox+label::after
 	background: url('@/assets/blocks/checkbox/checkbox.svg') center no-repeat
-	border: 1px solid rgba($purple, $dark-shade-total)
+	background-size: 50%
+	border: .0625rem solid rgba($purple, $dark-shade-total) //1px
 	opacity: 0
 
 .checkbox:checked+label::after

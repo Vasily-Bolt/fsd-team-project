@@ -2,7 +2,6 @@
 	name - имя и id поля input
 	value - передается в поле placeholder
 	pattern - при наличии создает masked text field
-
 mixin text-field(obj)
 	if obj.pattern
 		div(class='field-template field-template--border-not-hovered')
@@ -17,7 +16,6 @@ mixin text-field(obj)
 	dropdown_hidden - true - маркер для закрытого dropdown, false - маркер для открытого dropdown
 	size - small, medium, full - размер поля
 	value - значение placeholder
-
 mixin dropdown-field(obj)
 	- var text_field_class = 'field-template field-template--letter-spacing-zero field-template--border-not-hovered '
 	if obj.size == 'small'
@@ -33,8 +31,8 @@ mixin dropdown-field(obj)
 					else
 						div(class='field-template__arrow-css field-template__arrow-css--to-top')
 
-	//-Миксин для отображения поля подписки с градиентной стрелкой вправо
 
+	//-Миксин для отображения поля подписки с градиентной стрелкой вправо
 	mixin subscription-field(obj)
 		div(class='field-template field-template--border-not-hovered field-template--size-middle')
 			input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template__input-field')

@@ -1,5 +1,6 @@
 include ../../../assets/blocks/text-field/text-field.pug
 include ../../../assets/blocks/checkbox/checkbox.pug
+include ../../../assets/blocks/checkbox-radio/checkbox-radio.pug
 
 div(class='wrapper wrapper__elements')
 	.gull-emblem-container
@@ -46,14 +47,12 @@ div(class='wrapper wrapper__elements')
 							+subscription-field({name: 'Subscription', value: 'Email'})
 			.form-small-elements__column
 				.div
-					+checkbox({id:'smoke', text:'Можно курить'})
+					+checkbox-radio({type:'checkbox', id:'smoke', text:'Можно курить'})
 				.div
-					+checkbox({id:'animals', text:'Можно с питомцами', checked:'checked'})
-				.div(style='width:223px')
-					+checkbox({id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:'checked'})
+					+checkbox-radio({type:'checkbox', id:'animals', text:'Можно с животными', checked:true})
 				.div
-					input(type='radio', id='male' name='gender' class='radio-button' checked='checked')
-					label(for='male') Мужчина
-					input(type='radio', id='female' name='gender' class='radio-button')
-					label(for='female') Женщина
+					+checkbox-radio({type:'checkbox', id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:true})
+				.div
+					+checkbox-radio({type:'radio', id:'male', name:'gender', text:'Мужчина', checked:true})
+					+checkbox-radio({type:'radio', id:'female', name:'gender', text:'Женщина'})
 			.form-small-elements__column

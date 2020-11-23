@@ -1,12 +1,8 @@
-.checkbox
+.checkbox-radio
 	position: absolute
 	opacity: 0
 
-.radio-button
-	position: absolute
-	opacity: 0
-	
-.checkbox+label
+.checkbox-radio+label
 	position: relative
 	display: inline-block
 	user-select: none
@@ -14,16 +10,24 @@
 	line-height: 1.125rem //18px
 	color: rgba($all-document-text-color, $dark-shade-half)
 
-.radio-button+label
-	display: inline-block
-	position: relative
-	user-select: none
-	padding-left: 1.875rem //30px
-	line-height: 1.125rem //18px
-	color: rgba($all-document-text-color, $dark-shade-half)
+// .checkbox+label
+// 	position: relative
+// 	display: inline-block
+// 	user-select: none
+// 	padding-left: 1.875rem //30px
+// 	line-height: 1.125rem //18px
+// 	color: rgba($all-document-text-color, $dark-shade-half)
 
-.checkbox+label::before,
-.checkbox+label::after
+// .radio-button+label
+// 	display: inline-block
+// 	position: relative
+// 	user-select: none
+// 	padding-left: 1.875rem //30px
+// 	line-height: 1.125rem //18px
+// 	color: rgba($all-document-text-color, $dark-shade-half)
+
+.checkbox-radio+label::before,
+.checkbox-radio+label::after
 	position: absolute
 	top: -.0625rem //-1px //для соответствия макету
 	left: 0
@@ -34,24 +38,42 @@
 	border-radius: .25rem //4px
 	margin-right: .59375rem //9.5px
 
-.radio-button+label::before,
-.radio-button+label::after
-	position: absolute
-	top: -.0625rem //-1px //для соответствия макету-1px
-	left: 0
-	content: ''
-	width: 1.25rem //20px
-	height: 1.25rem //20px
-	border: .0625rem solid rgba($all-document-text-color, $dark-shade-quater)
+.radio-button+label::after,
+.radio-button+label::before
 	border-radius: 50%
-	margin-right: .59375rem //9.5px
 
+// .checkbox+label::before,
+// .checkbox+label::after
+// 	position: absolute
+// 	top: -.0625rem //-1px //для соответствия макету
+// 	left: 0
+// 	content: ''
+// 	width: 1.25rem //20px
+// 	height: 1.25rem //20px
+// 	border: .0625rem solid rgba($all-document-text-color, $dark-shade-quater) //1px
+// 	border-radius: .25rem //4px
+// 	margin-right: .59375rem //9.5px
 
+// .radio-button+label::before,
+// .radio-button+label::after
+// 	position: absolute
+// 	top: -.0625rem //-1px //для соответствия макету-1px
+// 	left: 0
+// 	content: ''
+// 	width: 1.25rem //20px
+// 	height: 1.25rem //20px
+// 	border: .0625rem solid rgba($all-document-text-color, $dark-shade-quater)
+// 	border-radius: 50%
+// 	margin-right: .59375rem //9.5px
+
+.checkbox-radio+label::after
+	opacity: 0
+	
 .checkbox+label::after
-	background: url('@/assets/blocks/checkbox/checkbox.svg') center no-repeat
+	background: url('@/assets/blocks/checkbox-radio/checkbox-radio.svg') center no-repeat
 	background-size: 50%
 	border: .0625rem solid rgba($purple, $dark-shade-total) //1px
-	opacity: 0
+	// opacity: 0
 
 .radio-button+label::after
 	width: .75rem //12px
@@ -59,13 +81,16 @@
 	top: calc((1.25rem - .75rem) / 2 - .0625rem)
 	left: calc((1.25rem - .75rem) / 2)
 	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-	opacity: 0
+	// opacity: 0
 
-.checkbox:checked+label::after
+.checkbox-radio:checked+label::after
 	opacity: 100
 
-.radio-button:checked+label::after
-	opacity: 100
+// .checkbox:checked+label::after
+// 	opacity: 100
+
+// .radio-button:checked+label::after
+// 	opacity: 100
 
 .radio-button:checked+label
 	color: rgba($all-document-text-color, $dark-shade-almost-total)

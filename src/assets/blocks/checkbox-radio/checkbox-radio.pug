@@ -7,9 +7,9 @@ mixin checkbox-radio(obj)
   - if (obj.checked) var option = 'checked'
   case obj.type
     when 'checkbox'
-      input(type='checkbox', name=obj.name, id=obj.id class='checkbox' checked=option)
+      input(type='checkbox', name=obj.name, id=obj.id class='checkbox-radio checkbox' checked=option)
     when 'radio'
-      input(type='radio', name=obj.name, id=obj.id class='radio-button' checked=option)
+      input(type='radio', name=obj.name, id=obj.id class='checkbox-radio radio-button' checked=option)
   label(for=obj.id)= obj.text
 
   

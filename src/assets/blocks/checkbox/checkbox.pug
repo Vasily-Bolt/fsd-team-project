@@ -1,9 +1,0 @@
-//-Миксин для создания поля checkbox. Получает объект с ключами:
-  name - имя поля
-  id - идентификатор поля
-  checked - одноименная строка, тогда отмеченный
-  text - строка у checkbox
-mixin checkbox(obj)
-  input(type='checkbox', name=obj.name, id=obj.id class='checkbox' checked=obj.checked)
-  label(for=obj.id)= obj.text
-  

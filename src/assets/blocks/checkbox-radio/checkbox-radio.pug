@@ -1,15 +1,15 @@
 //-Миксин для создания поля checkbox. Получает объект с ключами:
-  name - имя поля
-  id - идентификатор поля
-  checked - одноименная строка, тогда отмеченный
-  text - строка у checkbox
+	name - имя поля
+	id - идентификатор поля
+	checked - одноименная строка, тогда отмеченный
+	text - строка у checkbox
 mixin checkbox-radio(obj)
-  - if (obj.checked) var option = 'checked'
-  case obj.type
-    when 'checkbox'
-      input(type='checkbox', name=obj.name, id=obj.id class='checkbox-radio checkbox-radio--quadratic-with-tick' checked=option)
-    when 'radio'
-      input(type='radio', name=obj.name, id=obj.id class='checkbox-radio checkbox-radio--round-with-circle' checked=option)
-  label(for=obj.id)= obj.text
-
-  
+	- if (obj.checked) var option = 'checked'
+	case obj.type
+		when 'checkbox'
+			input(type='checkbox', name=obj.name, id=obj.id class='checkbox-radio checkbox-radio--quadratic-with-tick' checked=option)
+		when 'radio'
+			input(type='radio', name=obj.name, id=obj.id class='checkbox-radio checkbox-radio--round-with-circle' checked=option)
+		when 'toggle-switch'
+			input(type='checkbox', name=obj.name, id=obj.id class='checkbox-radio checkbox-radio--elongated-with-circle' checked=option)
+	label(for=obj.id)= obj.text

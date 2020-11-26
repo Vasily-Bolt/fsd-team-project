@@ -14,3 +14,21 @@
 
 @mixin round-with-circle-checked-outer-circle
 	border: .0625rem solid rgba($purple, $dark-shade-total) //1px
+
+.checkbox-radio--round-with-circle+label::after,
+.checkbox-radio--round-with-circle+label::before
+	border-radius: 50%
+
+.checkbox-radio--round-with-circle+label::after
+	width: .75rem //12px
+	height: .75rem //12px
+	top: calc((1.25rem - .75rem) / 2 - .0625rem)
+	left: calc((1.25rem - .75rem) / 2)
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+	border: none
+
+.checkbox-radio--round-with-circle:checked+label::before
+	border: .0625rem solid rgba($purple, $dark-shade-total) //1px
+
+.checkbox-radio--round-with-circle:checked+label
+	color: rgba($all-document-text-color, $dark-shade-almost-total)

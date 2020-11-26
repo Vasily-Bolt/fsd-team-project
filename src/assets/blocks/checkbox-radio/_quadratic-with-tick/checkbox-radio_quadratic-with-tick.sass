@@ -1,8 +1,8 @@
-@mixin quadratic-with-tick-border-raduis
+.checkbox-radio--quadratic-with-tick+label::before,
+.checkbox-radio--quadratic-with-tick+label::after
 	border-radius: .25rem //4px
 
-@mixin quadratic-with-tick-the-tick
-	background: url('@/assets/blocks/checkbox-radio/checkbox-radio.svg') center no-repeat
+.checkbox-radio--quadratic-with-tick+label::after
+	background: url('@/assets/blocks/checkbox-radio/_quadratic-with-tick/checkbox-radio_quadratic-with-tick.svg') center no-repeat
 	background-size: 50%
 	border: .0625rem solid rgba($purple, $dark-shade-total) //1px
-

@@ -1,3 +1,5 @@
-//import * as $ from 'jquery'
+// import * as $ from 'jquery'
 import '@/pages/uikit/styles.sass'
-//$('pre').html(post.toString())
+// $(()=> {
+//   $('.gull-emblem-container').addClass('wrapper--clear');
+// });

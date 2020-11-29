@@ -60,5 +60,8 @@ div(class='wrapper wrapper__elements')
 				.div
 					+checkbox-radio({type:'toggle-switch', id:'spec2', name:'special-offer', text:'Получать спецпредложения'})
 				.div
-					+like-button(2)
+					+like-button({number_of_likes: 2})
+					.div(style='display: inline-block; width: 10px')
+					+like-button({number_of_likes: 12, isChecked: true})
+					+like-button({number_of_likes: 122, isChecked: true})
 			.form-small-elements__column

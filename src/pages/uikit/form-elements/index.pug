@@ -1,5 +1,6 @@
 include ../../../assets/blocks/text-field/text-field.pug
 include ../../../assets/blocks/checkbox-radio/checkbox-radio.pug
+include ../../../assets/blocks/like-button/like-button.pug
 
 div(class='wrapper wrapper__elements')
 	.gull-emblem-container
@@ -58,4 +59,6 @@ div(class='wrapper wrapper__elements')
 					+checkbox-radio({type:'toggle-switch', id:'spec1', name:'special-offer', text:'Получать спецпредложения', checked:true})
 				.div
 					+checkbox-radio({type:'toggle-switch', id:'spec2', name:'special-offer', text:'Получать спецпредложения'})
+				.div
+					+like-button(2)
 			.form-small-elements__column

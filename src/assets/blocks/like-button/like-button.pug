@@ -1,4 +1,6 @@
 mixin like-button(obj)
-	.like-button
+	input(type='checkbox', name=obj.name, id=obj.id class='like-button-input' checked=obj.checked)
+	label(for=obj.id class='like-button')= obj.text
+		.like-button__background
 		.like-button__heart-icon
 		.like-button__content= obj.number_of_likes

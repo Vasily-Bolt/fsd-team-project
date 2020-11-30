@@ -1,25 +1,26 @@
+@import ./__background/like-button__background
+@import ./__heart-icon/like-button__heart-icon
+@import ./__content/like-button__content
+
+.like-button-input
+  position: absolute
+  opacity: 0
+
 .like-button
   display: inline-block
   position: relative
-  width: 2.5rem //40px
-  height: 1.25rem //20px
-  border: .0625rem solid rgba($all-document-text-color, $dark-shade-quater) //1px
+  width: 38px //2.5rem //40px
+  height: 18px //1.25rem //20px
+  background: #fff
   border-radius: 0.625rem //10px
 
-.like-button__heart-icon
-  position: absolute
-  top: -.0625rem //-1px
-  left: -.0625rem //-1px
-  width: 1.25rem //20px
-  height: 1.25rem //20px
-  background: url('@/assets/blocks/like-button/heart-empty.svg') center no-repeat
-  opacity: $dark-shade-quater
+// .like-button-input:checked+label .like-button__heart-icon
+//   background: url('@/assets/blocks/like-button/heart-filled.svg') center no-repeat
+//   opacity: $dark-shade-total
 
-.like-button__content
-  position: absolute
-  text-align: right
-  left: 1.25rem //20px
-  top: 0px
-  line-height: 1.0625rem //17px
-  font-size: 0.625rem //10px
-  color: rgba($all-document-text-color, $dark-shade-quater)
+// .like-button-input:checked+label .like-button__content
+//   color: rgba($purple, $dark-shade-total)
+
+// .like-button-input:checked+label .like-button__background
+//   background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%)
+

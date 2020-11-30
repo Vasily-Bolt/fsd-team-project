@@ -47,25 +47,29 @@ div(class='wrapper wrapper__elements')
 							+subscription-field({name: 'Subscription', value: 'Email'})
 			.form-small-elements__column
 				.form-small-elements__buttons-block
-					h3 checkbox buttons
-					.div
+					h3.title-not-for-fields checkbox buttons
+					.button-container
 						+checkbox-radio({type:'checkbox', id:'smoke', text:'Можно курить'})
-					.div
-						+checkbox-radio({type:'checkbox', id:'animals', text:'Можно с животными', checked:true})
-					.div
+					.button-container
+						+checkbox-radio({type:'checkbox', id:'animals', text:'Можно с питомцами', checked:true})
+					div(class='button-container button-container--small button-container--last')
 						+checkbox-radio({type:'checkbox', id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:true})
-					h3 radio buttons
-					.div
+				.form-small-elements__buttons-block
+					h3.title-not-for-fields radio buttons
+					div(class='button-container button-container--last button-container--small')
 						+checkbox-radio({type:'radio', id:'male', name:'gender', text:'Мужчина', checked:true})
 						+checkbox-radio({type:'radio', id:'female', name:'gender', text:'Женщина'})
-					h3 toggle
-					.div
+				.form-small-elements__buttons-block
+					h3.title-not-for-fields toggle
+					.button-container
 						+checkbox-radio({type:'toggle-switch', id:'spec1', name:'special-offer', text:'Получать спецпредложения', checked:true})
-					.div
+					div(class='button-container button-container--last button-container--toggle-switch-paddings')
 						+checkbox-radio({type:'toggle-switch', id:'spec2', name:'special-offer', text:'Получать спецпредложения'})
-					h3 like button
-					.div
+				.form-small-elements__buttons-block
+					h3.title-not-for-fields like button
+					div(class='button-container button-container--last button-container--toggle-switch-paddings')
 						+like-button({id:'likes', number_of_likes:'2'})
 						.div(style='display: inline-block; width: 12px')
 						+like-button({id:'likesnot', number_of_likes:'12', checked: true})
+				.form-small-elements__buttons-block
 			.form-small-elements__column

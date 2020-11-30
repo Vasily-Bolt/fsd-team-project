@@ -46,21 +46,26 @@ div(class='wrapper wrapper__elements')
 						.text-field-cont__visualisation
 							+subscription-field({name: 'Subscription', value: 'Email'})
 			.form-small-elements__column
-				.div
-					+checkbox-radio({type:'checkbox', id:'smoke', text:'Можно курить'})
-				.div
-					+checkbox-radio({type:'checkbox', id:'animals', text:'Можно с животными', checked:true})
-				.div
-					+checkbox-radio({type:'checkbox', id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:true})
-				.div
-					+checkbox-radio({type:'radio', id:'male', name:'gender', text:'Мужчина', checked:true})
-					+checkbox-radio({type:'radio', id:'female', name:'gender', text:'Женщина'})
-				.div
-					+checkbox-radio({type:'toggle-switch', id:'spec1', name:'special-offer', text:'Получать спецпредложения', checked:true})
-				.div
-					+checkbox-radio({type:'toggle-switch', id:'spec2', name:'special-offer', text:'Получать спецпредложения'})
-				.div
-					+like-button({id:'likes', number_of_likes:'2'})
-					.div(style='display: inline-block; width: 12px')
-					+like-button({id:'likesnot', number_of_likes:'12', checked: true})
+				.form-small-elements__buttons-block
+					h3 checkbox buttons
+					.div
+						+checkbox-radio({type:'checkbox', id:'smoke', text:'Можно курить'})
+					.div
+						+checkbox-radio({type:'checkbox', id:'animals', text:'Можно с животными', checked:true})
+					.div
+						+checkbox-radio({type:'checkbox', id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:true})
+					h3 radio buttons
+					.div
+						+checkbox-radio({type:'radio', id:'male', name:'gender', text:'Мужчина', checked:true})
+						+checkbox-radio({type:'radio', id:'female', name:'gender', text:'Женщина'})
+					h3 toggle
+					.div
+						+checkbox-radio({type:'toggle-switch', id:'spec1', name:'special-offer', text:'Получать спецпредложения', checked:true})
+					.div
+						+checkbox-radio({type:'toggle-switch', id:'spec2', name:'special-offer', text:'Получать спецпредложения'})
+					h3 like button
+					.div
+						+like-button({id:'likes', number_of_likes:'2'})
+						.div(style='display: inline-block; width: 12px')
+						+like-button({id:'likesnot', number_of_likes:'12', checked: true})
 			.form-small-elements__column

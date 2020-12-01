@@ -1,0 +1,33 @@
+.rating-area
+	display: flex
+	flex-direction: row-reverse
+	justify-content: flex-end
+	overflow: hidden
+	width: 120px
+
+.rating-area:not(:checked) > input 
+	display: none
+
+.rating-area:not(:checked) > label 
+	width: 24px
+	height: 24px
+	padding: 0
+	cursor: pointer
+	background: url('@/assets/blocks/rating-area/star_border.svg') center no-repeat
+
+.rating-area > input:checked ~ label 
+	background: url('@/assets/blocks/rating-area/star.svg') center no-repeat
+
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label 
+	background: url('@/assets/blocks/rating-area/star.svg') center no-repeat
+
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label 
+	background: url('@/assets/blocks/rating-area/star.svg') center no-repeat
+
+.rate-area > label:active 
+	position: relative

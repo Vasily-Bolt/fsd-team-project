@@ -1,17 +1,22 @@
-- var iteration_count = 0;
 mixin rating-area(obj)
+	- var iteration_count = 5;
+	- var checked = '';
 	div.rating-area
-		input(type='radio' id='star-5-'+obj.name name='rating-'+obj.name value='5')
-		label(for='star-5-'+obj.name title='Оценка «5»')
-		input(type='radio' id='star-4-'+obj.name name='rating-'+obj.name value='4' checked='checked')
-		label(for='star-4-'+obj.name title='Оценка «4»')
-		input(type='radio' id='star-3-'+obj.name name='rating-'+obj.name value='3')
-		label(for='star-3-'+obj.name title='Оценка «3»')
-		input(type='radio' id='star-2-'+obj.name name='rating-'+obj.name value='2')
-		label(for='star-2-'+obj.name title='Оценка «2»')
-		input(type='radio' id='star-1-'+obj.name name='rating-'+obj.name value='1')
-		label(for='star-1-'+obj.name title='Оценка «1»')
-		//- while iteration_count < 5
-		//- 	iteration_count++
-		//- 	input(type='radio' id='star-5-'+obj.name name='rating-'+obj.name value='5')
-		//- 	label(for='star-5-'+obj.name title='Оценка «5»')
+		//- input(type='radio' id='star-5-'+obj.name name='rating-'+obj.name value='5')
+		//- label(for='star-5-'+obj.name title='Оценка «5»')
+		//- input(type='radio' id='star-4-'+obj.name name='rating-'+obj.name value='4' checked='checked')
+		//- label(for='star-4-'+obj.name title='Оценка «4»')
+		//- input(type='radio' id='star-3-'+obj.name name='rating-'+obj.name value='3')
+		//- label(for='star-3-'+obj.name title='Оценка «3»')
+		//- input(type='radio' id='star-2-'+obj.name name='rating-'+obj.name value='2')
+		//- label(for='star-2-'+obj.name title='Оценка «2»')
+		//- input(type='radio' id='star-1-'+obj.name name='rating-'+obj.name value='1')
+		//- label(for='star-1-'+obj.name title='Оценка «1»')
+		while iteration_count > 0
+			- if(iteration_count == obj.rating)
+				input(type='radio' id='star-'+iteration_count+'-'+obj.name name='rating-'+obj.name value=iteration_count
+					 checked='checked') 
+			- else
+				input(type='radio' id='star-'+iteration_count+'-'+obj.name name='rating-'+obj.name value=iteration_count)
+			label(for='star-'+iteration_count+'-'+obj.name title='Оценка «'+iteration_count+'»')
+			- iteration_count--

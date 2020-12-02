@@ -95,7 +95,7 @@ module.exports = {
     //     collapseWhitespace: isProd 
     //   }
     // }),
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     // new CopyWebpackPlugin({
     //   patterns: [
     //     {

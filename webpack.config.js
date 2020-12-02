@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const ASSET_PATH = process.env.ASSET_PATH || '';
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
@@ -80,6 +81,10 @@ module.exports = {
       minify: {
         collapseWhitespace: isProd 
       }
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     }),
     // new HTMLWebpackPlugin( {
     //   template: './pages/uikit/form-elements/index.pug',

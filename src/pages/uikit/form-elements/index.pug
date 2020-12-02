@@ -66,25 +66,29 @@ div(class='wrapper wrapper__elements')
 				//- Радио кнопки
 				.form-small-elements__buttons-block
 					h3.title-not-for-fields radio buttons
-					div(class='button-container button-container--last button-container--small')
+					div(class='button-container')
 						+checkbox-radio({type:'radio', id:'male', name:'gender', text:'Мужчина', checked:true})
+					div(class='button-container button-container--last button-container--inline-paddings')
 						+checkbox-radio({type:'radio', id:'female', name:'gender', text:'Женщина'})
 				//- Чекбоксы в виде овала с круглым идентификатором
 				.form-small-elements__buttons-block
 					h3.title-not-for-fields toggle
 					.button-container
 						+checkbox-radio({type:'toggle-switch', id:'spec1', name:'special-offer', text:'Получать спецпредложения', checked:true})
-					div(class='button-container button-container--last button-container--toggle-switch-paddings')
+					div(class='button-container button-container--last-plus button-container--toggle-switch-paddings')
 						+checkbox-radio({type:'toggle-switch', id:'spec2', name:'special-offer', text:'Получать спецпредложения'})
 				//- Кнопки 'нравится'
 				.form-small-elements__buttons-block
 					h3.title-not-for-fields like button
-					div(class='button-container button-container--last button-container--toggle-switch-paddings')
+					div(class='button-container button-container--last-minus')
 						+like-button({id:'likes', number_of_likes:'2'})
-						.div(style='display: inline-block; width: 12px')
+					div(class='button-container button-container--likes-paddings button-container--last-minus')
 						+like-button({id:'likesnot', number_of_likes:'12', checked: true})
 				//- Рейтинг
 				.form-small-elements__buttons-block
-					+rating-area({name: 'one'})
-					+rating-area({name: 'two'})
+					h3.title-not-for-fields rate button
+					.button-container
+						+rating-area({name: 'one', rating: 5})
+					.div(class='button-container button-container--inline-paddings')
+						+rating-area({name: 'two', rating: 4})
 			.form-small-elements__column

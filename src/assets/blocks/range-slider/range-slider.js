@@ -18,5 +18,7 @@ $(()=> {
 		replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
 	$( "#amount" ).val( sliderFromSeperated +
 		"P - " + sliderToSeperated + "P");
-	// $('.slider-range').children('span').addClass('ui-state--myhandle');
+	$('.slider-range').removeClass('ui-widget').removeClass('ui-widget-content');
+	$('.ui-slider-range').addClass('ui-slider-range--my-range');
+	
 } );

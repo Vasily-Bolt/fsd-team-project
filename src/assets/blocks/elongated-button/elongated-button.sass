@@ -1,0 +1,46 @@
+.elongated-button
+  position: relative
+  width: 95px
+  height: 40px
+  border-radius: 22px
+  border: none
+  cursor: pointer
+
+.elongated-button,
+.elongated-button:active,
+.elongated-button:focus,
+.elongated-button:hover
+    outline: none
+
+.elongated-button--full-color
+  background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%)
+
+.elongated-button--empty-inside
+  background: #fff
+
+.elongated-button::before
+  position: absolute
+  top: -2px
+  left: -2px
+  z-index: -5
+  content: ''
+  border-radius: 22px
+  width: 99px
+  height: 44px
+  background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%)
+
+.elongated-button:disabled::before
+  opacity: $dark-shade-half
+
+.elongated-button:disabled
+  cursor:  default
+
+.elongated-button__text
+  letter-spacing: -.03em
+  margin-right: 2px
+
+.elongated-button__text--white
+  color: #fff
+
+.elongated-button__text--purple
+  color: $purple

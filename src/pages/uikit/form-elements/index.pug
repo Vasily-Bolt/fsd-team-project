@@ -3,6 +3,7 @@ include ../../../assets/blocks/checkbox-radio/checkbox-radio.pug
 include ../../../assets/blocks/like-button/like-button.pug
 include ../../../assets/blocks/rating-area/rating-area.pug
 include ../../../assets/blocks/range-slider/range-slider.pug
+include ../../../assets/blocks/elongated-button/elongated-button.pug
 
 div(class='wrapper wrapper__elements')
 	.gull-emblem-container
@@ -93,4 +94,5 @@ div(class='wrapper wrapper__elements')
 					.div(class='button-container button-container--inline-paddings')
 						+rating-area({name: 'two', rating: 5})
 			.form-small-elements__column
-				+range-slider
+					+range-slider
+					+elongated-button

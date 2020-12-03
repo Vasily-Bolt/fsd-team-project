@@ -1,17 +1,25 @@
-.ui-slider-handle--myhandle
-	border: 1px solid $all-document-text-color $dark-shade-quater
-	border-radius: 3px
-	width: 266px
-	height: 6px
+.ui-slider--my-slider
+	border: .0625rem solid rgba($all-document-text-color, $dark-shade-quater) 
+	border-radius: .1875rem //3px
+	width: 16.625rem //266px
+	height: .375rem //6px
 
-.ui-slider-range
+.ui-slider .ui-slider-range--my-range
+	top: -.0625rem
 	background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
 	box-sizing: content-box
-	border-bottom: 1px solid #66D2EA
-	border-top: 1px solid #6FCF97
-	
+	border-bottom: .0625rem solid #66D2EA
+	border-top: .0625rem solid #6FCF97
+
 .ui-slider-handle
-	margin-top: -1.5px
-	width: 12px
-	height: 12px
+	margin-top: -.09375rem //1.5px
+	width: .75rem //12px
+	height: .75rem //12px
 	border-radius: 50%
+
+.ui-state-default
+	border: .125rem solid #fff
+	background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+
+.ui-state-hover, .ui-state-focus
+	border: .0625rem solid $all-document-text-color

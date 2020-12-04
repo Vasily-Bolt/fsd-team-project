@@ -48,7 +48,9 @@
 	top: 0
 	height: 100%
 	width: 13.75% //44px
+	min-width: 2.75rem //44px
 	background: url('@/assets/blocks/elongated-button/arrow-forward.svg') center no-repeat
+	background-size: 40%
 
 .elongated-button
 	position: relative
@@ -60,4 +62,8 @@
 .elongated-button:active,
 .elongated-button:focus,
 .elongated-button:hover
-		outline: none
+	outline: none
+
+.elongated-button:not(:disabled):hover
+	background: linear-gradient(180deg, $green 0%, #66D2EA 100%)
+		

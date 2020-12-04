@@ -4,6 +4,7 @@ include ../../../assets/blocks/like-button/like-button.pug
 include ../../../assets/blocks/rating-area/rating-area.pug
 include ../../../assets/blocks/range-slider/range-slider.pug
 include ../../../assets/blocks/elongated-button/elongated-button.pug
+include ../../../assets/blocks/pagination/pagination.pug
 
 div(class='wrapper wrapper__elements')
 	.gull-emblem-container
@@ -95,4 +96,23 @@ div(class='wrapper wrapper__elements')
 						+rating-area({name: 'two', rating: 5})
 			.form-small-elements__column
 					+range-slider
-					+elongated-button
+					.div(style='margin-bottom:10px')
+						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled'})
+					.div(style='margin-bottom:10px')
+						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled', 
+							disabled: true})
+					.div(style='margin-bottom:10px')
+						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'empty'})
+					.div(style='margin-bottom:10px')
+						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'empty', 
+							disabled: true})
+					.div(style='margin-bottom:10px')
+						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'no-border'})
+					.div(style='margin-bottom:10px')
+						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'no-border', 
+							disabled: true})
+					.div(style='margin-bottom:10px')
+						+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате',
+							buttonType: 'with-arrow'})
+					.div(style='margin-bottom:10px')
+						+pagination

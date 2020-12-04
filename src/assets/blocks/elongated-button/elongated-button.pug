@@ -1,24 +1,26 @@
 mixin elongated-button(obj)
-	.div(style='height: 44px; width:99px; margin-bottom:10px')
-		button(class='elongated-button elongated-button--full-color') 
-			h3(class='elongated-button__text elongated-button__text--white') click me
-	.div(style='height: 44px; width:99px; margin-bottom:10px')
-		button(class='elongated-button elongated-button--full-color' disabled) 
-			h3(class='elongated-button__text elongated-button__text--white') click me
-	.div(style='height: 44px; width:99px; margin-bottom:10px')
-		button(class='elongated-button elongated-button--empty-inside') 
-			h3(class='elongated-button__text elongated-button__text--purple') click me
-	.div(style='height: 44px; width:99px; margin-bottom:10px')
-		button(class='elongated-button elongated-button--empty-inside' disabled) 
-			h3(class='elongated-button__text elongated-button__text--purple') click me
-
-	.div(style='height: 44px; width:99px; margin-bottom:10px')
-		button(class='elongated-button elongated-button--no-border' disabled) 
-			h3(class='elongated-button__text elongated-button__text--purple') click me
-	.div(style='height: 44px; width:99px; margin-bottom:10px')
-		button(class='elongated-button elongated-button--no-border' disabled) 
-			h3(class='elongated-button__text') click me
-	.div(style='height: 44px; width:320px; margin-bottom:10px')
-		button(class='elongated-button elongated-button--full-color') 
-				h3(class='elongated-button__text elongated-button__text--white') перейти к оплате
+	-
+		let buttonType = '';
+		let textColor = '';
+		let addArrow = false;
+		switch (obj.buttonType) {
+			case 'with-arrow' : addArrow = true;
+			case 'filled' : 
+				buttonType = 'elongated-button--full-color';
+				textColor = 'elongated-button__text--white';
+				break;
+			case 'empty' :
+				buttonType = 'elongated-button--empty-inside';
+				textColor = 'elongated-button__text--purple';
+				break;
+			case 'no-border' :
+				buttonType = 'elongated-button--no-border';
+				if (!obj.disabled) textColor = 'elongated-button__text--purple';
+				break;
+			default : break;
+		}
+	.div(style='height: ' + obj.sizeHeight + '; width: ' + obj.sizeWidth)
+		button(class='elongated-button ' + buttonType disabled=obj.disabled) 
+			h3(class='elongated-button__text ' + textColor)= obj.text
+			if addArrow
 				.arrow-forward

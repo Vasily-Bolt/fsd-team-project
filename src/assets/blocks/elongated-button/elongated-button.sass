@@ -1,46 +1,63 @@
+.elongated-button--full-color
+	// width: 6.1875rem //99px
+	// height: 2.75rem //44px
+	width: 100%
+	height: 100%
+	background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%)
+
+.elongated-button--empty-inside
+	// width: 5.9375rem //95px
+	// height: 2.5rem //40px
+	width: calc(100% - .25rem)
+	height: calc(100% - .25rem)
+	background: #fff
+
+.elongated-button--empty-inside:before
+	position: absolute
+	top: -.125rem //-2px
+	left: -.125rem //-2px
+	z-index: -5
+	content: ''
+	border-radius: 1.375rem //22px
+	width: calc(100% + .25rem)//104.21% //99px
+	height: calc(100% + .25rem) //110% //44px
+	background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%)
+
+.elongated-button:disabled:before,
+.elongated-button--full-color:disabled
+	opacity: $dark-shade-half
+
+.elongated-button:disabled
+	cursor:  default
+
+.elongated-button__text
+	margin-right: .125rem //2px
+
+.elongated-button__text--white
+	color: #fff
+
+.elongated-button__text--purple
+	color: $purple
+
+.elongated-button--no-border
+	background: none
+	
+.arrow-forward
+	position: absolute
+	right: 0
+	top: 0
+	height: 100%
+	width: 13.75% //44px
+	background: url('@/assets/blocks/elongated-button/arrow-forward.svg') center no-repeat
+
 .elongated-button
-  position: relative
-  width: 95px
-  height: 40px
-  border-radius: 22px
-  border: none
-  cursor: pointer
+	position: relative
+	border-radius: 1.375rem //22px
+	border: none
+	cursor: pointer
 
 .elongated-button,
 .elongated-button:active,
 .elongated-button:focus,
 .elongated-button:hover
-    outline: none
-
-.elongated-button--full-color
-  background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%)
-
-.elongated-button--empty-inside
-  background: #fff
-
-.elongated-button::before
-  position: absolute
-  top: -2px
-  left: -2px
-  z-index: -5
-  content: ''
-  border-radius: 22px
-  width: 99px
-  height: 44px
-  background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%)
-
-.elongated-button:disabled::before
-  opacity: $dark-shade-half
-
-.elongated-button:disabled
-  cursor:  default
-
-.elongated-button__text
-  letter-spacing: -.03em
-  margin-right: 2px
-
-.elongated-button__text--white
-  color: #fff
-
-.elongated-button__text--purple
-  color: $purple
+		outline: none

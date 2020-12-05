@@ -23,4 +23,5 @@ mixin elongated-button(obj)
 		button(class='elongated-button ' + buttonType disabled=obj.disabled) 
 			h3(class='elongated-button__text ' + textColor)= obj.text
 			if addArrow
-				.arrow-forward
+				.elongated-button__arrow-block
+					.div(class='arrow arrow--white')

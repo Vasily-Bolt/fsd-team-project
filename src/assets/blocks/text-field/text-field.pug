@@ -37,4 +37,6 @@ mixin dropdown-field(obj)
 		div(class='field-template field-template--border-not-hovered field-template--size-middle')
 			input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template__input-field')
 			.field-template__icon-field
-				div(class='field-template__gradient-arrow')
+				.field-template__arrow-block(style='width:44px; height: 44px; margin-top: 4px; margin-right:2px')
+					.div(class='arrow arrow--gradient')
+				//- div(class='field-template__gradient-arrow')

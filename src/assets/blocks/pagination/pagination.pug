@@ -1,2 +1,11 @@
 mixin pagination
-  +elongated-button({sizeWidth: '2.75rem', sizeHeight: '2.75rem', buttonType: 'with-arrow'})
+	.pagination-block
+		.pagination-block__pages-list
+			+elongated-button({sizeWidth: '40px', sizeHeight: '40px', text: '1', buttonType: 'filled'})
+			+elongated-button({sizeWidth: '40px', sizeHeight: '40px', text: '2', buttonType: 'no-border'})
+			+elongated-button({sizeWidth: '40px', sizeHeight: '40px', text: '3', buttonType: 'no-border'})
+			+elongated-button({sizeWidth: '40px', sizeHeight: '40px', text: '...', buttonType: 'no-border'})
+			+elongated-button({sizeWidth: '40px', sizeHeight: '40px', text: '15', buttonType: 'no-border'})
+			+elongated-button({sizeWidth: '40px', sizeHeight: '40px', buttonType: 'with-arrow'})
+		.pagination-block__total-pages-list
+			p 1-12 из 100+ вариантов аренды

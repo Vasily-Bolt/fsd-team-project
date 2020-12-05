@@ -1,0 +1,35 @@
+@import ./_white/arrow_white
+@import ./_gradient/arrow_gradient
+	
+//Градиентная стреллка направленная врпаво
+.arrow
+	top: calc(50% - .0625rem)
+	left: calc(50% - 15%)
+	position: relative
+	width: 35%
+	height: .125rem //2px
+	// background-image: linear-gradient(180deg, $purple, #8BA4F9)
+
+.arrow:before
+	position: absolute
+	// right: .03125rem //.5px
+	right: 0
+	transform: rotate(45deg)
+	transform-origin: right
+	content: ''
+	display: block
+	width: 70%
+	height: .125rem //2px
+	// background-image: linear-gradient(180deg, $purple, #8BA4F9)
+
+.arrow:after
+	position: absolute
+	// right: .03125rem //.5px
+	right: 0
+	transform-origin: right
+	transform: rotate(315deg)
+	content: ''
+	display: block
+	width: 70%
+	height: .125rem //2px
+	// background-image: linear-gradient(180deg, $purple, #8BA4F9)

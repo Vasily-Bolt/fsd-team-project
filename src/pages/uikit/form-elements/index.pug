@@ -95,11 +95,7 @@ div(class='wrapper wrapper__elements')
 					.div(class='button-container button-container--inline-paddings')
 						+rating-area({name: 'two', rating: 5})
 			.form-small-elements__column
-				.text-field-cont
-					h3.text-field-cont__title range slider
-					h3.text-field-cont__status default
-					.text-field-cont__visualisation
-						+range-slider
+				+range-slider
 				+range-slider
 				.div(style='margin-bottom:10px')
 					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled'})

@@ -95,24 +95,29 @@ div(class='wrapper wrapper__elements')
 					.div(class='button-container button-container--inline-paddings')
 						+rating-area({name: 'two', rating: 5})
 			.form-small-elements__column
-					+range-slider
-					.div(style='margin-bottom:10px')
-						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled'})
-					.div(style='margin-bottom:10px')
-						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled', 
-							disabled: true})
-					.div(style='margin-bottom:10px')
-						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'empty'})
-					.div(style='margin-bottom:10px')
-						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'empty', 
-							disabled: true})
-					.div(style='margin-bottom:10px')
-						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border'})
-					.div(style='margin-bottom:10px')
-						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border', 
-							disabled: true})
-					.div(style='margin-bottom:10px')
-						+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате',
-							buttonType: 'with-arrow'})
-					.div(style='margin-bottom:10px; width:240px')
-						+pagination
+				.text-field-cont
+					h3.text-field-cont__title range slider
+					h3.text-field-cont__status default
+					.text-field-cont__visualisation
+						+range-slider
+				+range-slider
+				.div(style='margin-bottom:10px')
+					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled'})
+				.div(style='margin-bottom:10px')
+					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled', 
+						disabled: true})
+				.div(style='margin-bottom:10px')
+					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'empty'})
+				.div(style='margin-bottom:10px')
+					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'empty', 
+						disabled: true})
+				.div(style='margin-bottom:10px')
+					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border'})
+				.div(style='margin-bottom:10px')
+					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border', 
+						disabled: true})
+				.div(style='margin-bottom:10px')
+					+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате',
+						buttonType: 'with-arrow'})
+				.div(style='margin-bottom:10px; width:245px')
+					+pagination

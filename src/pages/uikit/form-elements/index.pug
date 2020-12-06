@@ -28,15 +28,15 @@ div(class='wrapper wrapper__elements')
 				.div(style='height: 35px')
 				.form-small-elements__date-subscr-forms
 					//- .small-date-container
-					.div(style='display:flex; justify-content: space-between')
-						.div(style='width:46.875%')
+					.double-form
+						.double-form__container
 							+text-field-with-info({tfType: 'dropdown-field', dropdown_hidden: 'true', tfValue: 'ДД.ММ.ГГГГ', title: 'date dropdown'})
-						.div(style='width:46.875%;')
+						.double-form__container
 							+text-field-with-info({tfType: 'dropdown-field', dropdown_hidden: 'true', tfValue: '19.08.2019', title: 'date dropdown'})
-					//- Поле с выпадающей датой среднего размера
-					.div(style='width: 16.625rem;')
+					//- Блок для поля с выпадающей датой среднего размера
+					.middle-field
 						+text-field-with-info({tfType: 'dropdown-field', dropdown_hidden: 'true', tfValue: '19 авг - 23 авг', title: 'filter date dropdown'})
-					.div(style='width: 16.625rem;')
+					.middle-field
 						+text-field-with-info({tfType: 'subscribe-field', tfValue: 'Email', title: 'subscription text field'})
 
 
@@ -78,6 +78,8 @@ div(class='wrapper wrapper__elements')
 						+rating-area({name: 'one', rating: 4})
 					.div(class='button-container button-container--inline-paddings')
 						+rating-area({name: 'two', rating: 5})
+
+
 			.form-small-elements__column
 				.div(style='margin-bottom:10px; width:266px')
 					+range-slider

@@ -3,40 +3,38 @@
 	value - передается в поле placeholder
 	pattern - при наличии создает masked text field
 mixin text-field(obj)
-	if obj.pattern
-		div(class='field-template field-template--border-not-hovered')
-			input(type='text' id=obj.name name=obj.name placeholder=obj.value pattern=obj.pattern class='field-template__input-field')
-	else
-		div(class='field-template field-template--border-not-hovered')
-			input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template__input-field')
-	label(for=name)
+	- var field_class = 'field-template field-template--border-not-hovered border-corners--all'
+	if obj.field_type == 'text-field'
+		if obj.pattern
+			div(class= field_class)
+				input(type='text' id=obj.name name=obj.name placeholder=obj.value pattern=obj.pattern class='field-template__input-field')
+		else
+			div(class= field_class)
+				input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template__input-field')
+		label(for=name)
 
-//-Миксин для отображения начального Dropdown. Получает объект
-	value - строка с текстом 
-	dropdown_hidden - true - маркер для закрытого dropdown, false - маркер для открытого dropdown
-	size - small, medium, full - размер поля
-	value - значение placeholder
-mixin dropdown-field(obj)
-	- var text_field_class = 'field-template field-template--letter-spacing-zero field-template--border-not-hovered '
-	if obj.size == 'small'
-		- text_field_class += ' field-template--size-small'
-	if obj.size == 'medium'
-		- text_field_class += ' field-template--size-middle'
-
-	div(class= text_field_class)
-			span= obj.value
-				.field-template__icon-field
-					if obj.dropdown_hidden
-						div(class='field-template__arrow-css field-template__arrow-css--to-bottom')
-					else
-						div(class='field-template__arrow-css field-template__arrow-css--to-top')
-
-
+	//-Миксин для отображения начального Dropdown. Получает объект
+		value - строка с текстом 
+		dropdown_hidden - true - маркер для закрытого dropdown, false - маркер для открытого dropdown
+		size - small, medium, full - размер поля
+		value - значение placeholder
+	if obj.field_type == 'dropdown-field'
+		- field_class += ' field-template--letter-spacing-zero'
+		if obj.size == 'small'
+			- field_class += ' field-template--size-small'
+		if obj.size == 'medium'
+			- field_class += ' field-template--size-middle'
+		div(class= field_class)
+				span= obj.value
+					.field-template__icon-field
+						if obj.dropdown_hidden
+							div(class='field-template__arrow-css field-template__arrow-css--to-bottom')
+						else
+							div(class='field-template__arrow-css field-template__arrow-css--to-top')
 	//-Миксин для отображения поля подписки с градиентной стрелкой вправо
-	mixin subscription-field(obj)
-		div(class='field-template field-template--border-not-hovered field-template--size-middle')
+	if obj.field_type == 'subscribe-field'
+		div(class= field_class)
 			input(type='text' id=obj.name name=obj.name placeholder=obj.value class='field-template__input-field')
 			.field-template__icon-field
 				.field-template__arrow-block(style='width:44px; height: 44px; margin-top: 4px; margin-right:2px')
 					.div(class='arrow arrow--gradient')
-				//- div(class='field-template__gradient-arrow')

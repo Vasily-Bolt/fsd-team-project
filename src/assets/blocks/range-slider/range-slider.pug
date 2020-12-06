@@ -1,4 +1,8 @@
 mixin range-slider
-	div(class = 'slider-range ui-slider--my-slider' id='slider-range')
-	input(type='text' id='amount' readonly)
-	label(for='amount')
+	.additional-info-block
+		h3.additional-info-block__title range slider
+		.additional-info-block__status
+			input(type='text' id='amount' class='additional-info-block__status-text header3' readonly)
+			label(for='amount')
+		.additional-info-block__visualisation
+			div(class = 'slider-range ui-slider--my-slider' id='slider-range')

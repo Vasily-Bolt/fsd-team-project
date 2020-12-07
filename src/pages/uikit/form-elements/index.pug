@@ -10,10 +10,10 @@ include ../../../assets/blocks/pagination/pagination.pug
 div(class='wrapper wrapper__elements')
 	.gull-emblem-container
 		.gull-emblem
-	.form-elements
-		.form-small-elements
-			.form-small-elements__column
-				.form-small-elements__simple-forms
+	.form-elements-wrapper
+		.form-elements
+			.form-elements__column
+				.form-elements__simple-forms
 					+text-field-with-info({tfType: 'text-field', tfName: 'tf1', tfValue: 'Email', title: 'text field', aditional: 'default', titleClass: 'padding-top'})
 					.additional-info-block
 						h3(class='additional-info-block__title additional-info-block__title--padding-top') text field
@@ -26,7 +26,7 @@ div(class='wrapper wrapper__elements')
 					+text-field-with-info({tfType: 'text-field', tfName: 'tf2', tfValue: 'ДД.ММ.ГГГГ', tfPattern: '[1-3][0-9].[0-1][0-9].[1-2][0,9][0-9][0-9]', 
 						title: 'masked text field'})
 				.div(style='height: 35px')
-				.form-small-elements__date-subscr-forms
+				.form-elements__date-subscr-forms
 					//- .small-date-container
 					.double-form
 						.double-form__container
@@ -40,69 +40,72 @@ div(class='wrapper wrapper__elements')
 						+text-field-with-info({tfType: 'subscribe-field', tfValue: 'Email', title: 'subscription text field'})
 
 
-			.form-small-elements__column
+			.form-elements__column
 				//- Чекбоксы
-				.form-small-elements__buttons-block
+				.form-elements__buttons-block
 					h3.title-not-for-fields checkbox buttons
 					.button-container
 						+checkbox-radio({type:'checkbox', id:'smoke', text:'Можно курить'})
 					.button-container
 						+checkbox-radio({type:'checkbox', id:'animals', text:'Можно с питомцами', checked:true})
-					div(class='button-container button-container--small button-container--last')
+					div(class='button-container button-container- button-container--last')
 						+checkbox-radio({type:'checkbox', id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:true})
 				//- Радио кнопки
-				.form-small-elements__buttons-block
+				.form-elements__buttons-block
 					h3.title-not-for-fields radio buttons
 					div(class='button-container')
 						+checkbox-radio({type:'radio', id:'male', name:'gender', text:'Мужчина', checked:true})
 					div(class='button-container button-container--last button-container--inline-paddings')
 						+checkbox-radio({type:'radio', id:'female', name:'gender', text:'Женщина'})
 				//- Чекбоксы в виде овала с круглым идентификатором
-				.form-small-elements__buttons-block
+				.form-elements__buttons-block
 					h3.title-not-for-fields toggle
 					.button-container
 						+checkbox-radio({type:'toggle-switch', id:'spec1', name:'special-offer', text:'Получать спецпредложения', checked:true})
 					div(class='button-container button-container--last-plus button-container--toggle-switch-paddings')
 						+checkbox-radio({type:'toggle-switch', id:'spec2', name:'special-offer', text:'Получать спецпредложения'})
 				//- Кнопки 'нравится'
-				.form-small-elements__buttons-block
+				.form-elements__buttons-block
 					h3.title-not-for-fields like button
 					div(class='button-container button-container--last-minus')
 						+like-button({id:'likes', number_of_likes:'2'})
 					div(class='button-container button-container--likes-paddings button-container--last-minus')
 						+like-button({id:'likesnot', number_of_likes:'12', checked: true})
 				//- Рейтинг
-				.form-small-elements__buttons-block
+				.form-elements__buttons-block
 					h3.title-not-for-fields rate button
 					.button-container
 						+rating-area({name: 'one', rating: 4})
 					.div(class='button-container button-container--inline-paddings')
 						+rating-area({name: 'two', rating: 5})
 
-
-			.form-small-elements__column
-				.div(style='margin-bottom:10px; width:266px')
+			.form-elements__column
+				.middle-field
 					+range-slider
-				+range-slider
-				.div(style='margin-bottom:10px')
-					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled'})
-				.div(style='margin-bottom:10px')
-					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled', 
-						disabled: true})
-				.div(style='margin-bottom:10px')
-					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'empty'})
-				.div(style='margin-bottom:10px')
-					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'empty', 
-						disabled: true})
-				.div(style='margin-bottom:10px')
-					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border'})
-				.div(style='margin-bottom:10px')
-					+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border', 
-						disabled: true})
-				.div(style='margin-bottom:10px')
-					+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате',
-						buttonType: 'with-arrow'})
-				.div(style='margin-bottom:10px; width:245px')
-					+pagination
-				
-				
+				.div(style='height:45px')
+				h3 buttons
+				.div(style='width:217px')
+					.div(class='double-form double-form--margin-top-bottom')
+						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled'})
+						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled', disabled: true})
+					.div(class='double-form double-form--margin-top-bottom')
+						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'empty'})
+						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'empty', disabled: true})
+					.div(class='double-form double-form--margin-top-bottom no-border-button-margins' style='')
+						+elongated-button({sizeWidth: '4rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border'})
+						+elongated-button({sizeWidth: '4rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border', disabled: true})
+	
+				.div(style='height:9px')
+
+				+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате',
+					buttonType: 'with-arrow'})
+				.div(style='height:38px;')
+				.additional-info-block
+					h3(class='additional-info-block__title additional-info-block__title--padding-top') pagination
+					.text-field-cont__visualisation
+						.div(style='width: 15rem; margin-top: 12px; margin-left: 2px')
+							+pagination
+		.form-elements
+			.form-elements__column
+			.form-elements__column
+			.form-elements__column

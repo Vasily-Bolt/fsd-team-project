@@ -3,7 +3,15 @@
 	value - передается в поле placeholder
 	pattern - при наличии создает masked text field
 mixin text-field(obj)
-	- var field_class = 'field-template field-template--border-not-hovered border-corners--all'
+	- var field_class = 'field-template field-template--border-not-hovered'
+	if obj.corners == 'top'
+		- field_class += ' border-corners--top'
+	else 
+		if obj.corners == 'bottom'
+			- field_class += ' border-corners--bottom'
+		else
+			- field_class += ' border-corners--all'
+
 	if obj.field_type == 'text-field'
 		if obj.pattern
 			div(class= field_class)

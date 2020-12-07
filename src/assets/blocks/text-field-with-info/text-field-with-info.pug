@@ -5,4 +5,4 @@ mixin text-field-with-info(obj)
 		h3(class='additional-info-block__title ' + titleClass)= obj.title
 		h3(class='additional-info-block__status additional-info-block__status-text')= obj.aditional
 		.text-field-cont__visualisation
-			+text-field({field_type: obj.tfType, dropdown_hidden: obj.dropdown_hidden, name: obj.tfName, value: obj.tfValue, pattern: obj.tfPattern})
+			+text-field({field_type: obj.tfType, dropdown_hidden: obj.dropdown_hidden, name: obj.tfName, value: obj.tfValue, pattern: obj.tfPattern, corners: obj.tfCorners})

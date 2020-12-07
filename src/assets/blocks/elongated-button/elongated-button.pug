@@ -19,9 +19,9 @@ mixin elongated-button(obj)
 				break;
 			default : break;
 		}
-	.div(style='height: ' + obj.sizeHeight + '; width: ' + obj.sizeWidth)
+	div(style='height: ' + obj.sizeHeight + '; width: ' + obj.sizeWidth)
 		button(class='elongated-button ' + buttonType disabled=obj.disabled) 
 			h3(class='elongated-button__text ' + textColor)= obj.text
 			if addArrow
 				.elongated-button__arrow-block
-					.div(class='arrow arrow--white')
+					div(class='arrow arrow--white')

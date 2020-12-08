@@ -95,7 +95,7 @@ div(class='wrapper wrapper__elements')
 						+elongated-button({sizeWidth: '4rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border'})
 						+elongated-button({sizeWidth: '4rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border', disabled: true})
 	
-				.div(style='height:9px')
+				.div(style='height:7px')
 
 				+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате',
 					buttonType: 'with-arrow'})
@@ -107,5 +107,7 @@ div(class='wrapper wrapper__elements')
 							+pagination
 		.form-elements
 			.form-elements__column
+				.middle-field
+					+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', dropdown_hidden: 'true', tfValue: 'Сколько гостей', title: 'dropdown', aditional: 'default'})
 			.form-elements__column
 			.form-elements__column

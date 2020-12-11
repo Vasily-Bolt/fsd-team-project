@@ -6,6 +6,7 @@ include ../../../assets/blocks/rating-area/rating-area.pug
 include ../../../assets/blocks/range-slider/range-slider.pug
 include ../../../assets/blocks/elongated-button/elongated-button.pug
 include ../../../assets/blocks/pagination/pagination.pug
+include ../../../assets/blocks/dropdown/dropdown.pug
 
 div(class='wrapper wrapper__elements')
 	.gull-emblem-container
@@ -80,9 +81,10 @@ div(class='wrapper wrapper__elements')
 						+rating-area({name: 'two', rating: 5})
 
 			.form-elements__column
+				.div(style='height:2px')
 				.middle-field
 					+range-slider
-				.div(style='height:45px')
+				.div(style='height:43px')
 				h3 buttons
 				.div(style='width:217px')
 					.div(class='double-form double-form--margin-top-bottom')
@@ -95,7 +97,7 @@ div(class='wrapper wrapper__elements')
 						+elongated-button({sizeWidth: '4rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border'})
 						+elongated-button({sizeWidth: '4rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border', disabled: true})
 	
-				.div(style='height:7px')
+				.div(style='height:8px')
 
 				+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате',
 					buttonType: 'with-arrow'})
@@ -106,8 +108,18 @@ div(class='wrapper wrapper__elements')
 						.div(style='width: 15rem; margin-top: 12px; margin-left: 2px')
 							+pagination
 		.form-elements
-			.form-elements__column
+			.form-elements__row
+				.div(style='display: flex; flex-direction: column;')
+					.middle-field
+						+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', dropdown_hidden: 'true', 
+							tfValue: '2 спальни, 2 кровати', title: 'dropdown', aditional: 'default'})
+							
+					.middle-field
+						+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', dropdown_hidden: 'false', 
+							tfValue: '2 спальни, 2 кровати', title: 'dropdown', aditional: 'expanded'})
+		.form-elements
+			.form-elements__row
 				.middle-field
-					+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', dropdown_hidden: 'true', tfValue: 'Сколько гостей', title: 'dropdown', aditional: 'default'})
-			.form-elements__column
-			.form-elements__column
+					+dropdown()
+
+			.form-elements__row

@@ -1,3 +1,11 @@
 mixin dropdown(obj)
-	+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', dropdown_hidden: 'true', 
-		tfValue: '2 спальни, 2 кровати', title: 'dropdown', aditional: 'default'})
+	- var tfPlaceholder = ''
+	+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', dropdown_hidden: 'true', tfPlaceholder: '2 спальни, 2 кровати...', title: 'dropdown', 
+		aditional: 'default'})
+	.div(style='height: 21px')
+
+	+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', tfName: obj.dropdownName, dropdown_hidden: 'true', 
+		title: 'dropdown', aditional: 'expanded', tfHovered: true})
+	div(class='field-template--border-hovered bropdown__expanded border-corners--bottom')
+		each object in obj.items
+			+incdecField(object, obj.dropdownName)

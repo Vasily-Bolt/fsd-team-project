@@ -2,9 +2,13 @@
 import '@/jquery-ui/jquery-ui.js'
 import '@/jquery-ui/jquery-ui.css'
 import '@/assets/blocks/range-slider/range-slider.js'
+import '@/assets/blocks/incdec-field/incdec-field.js'
+import '@/assets/blocks/dropdown/dropdown.js'
 
 import '@/pages/uikit/styles.sass'
 
+
+
 // $(()=> {
-//   $('#slider-range').text('ЖОПА')
+//   $('#amount').css('color','red');
 // });

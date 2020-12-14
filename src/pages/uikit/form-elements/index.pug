@@ -6,6 +6,7 @@ include ../../../assets/blocks/rating-area/rating-area.pug
 include ../../../assets/blocks/range-slider/range-slider.pug
 include ../../../assets/blocks/elongated-button/elongated-button.pug
 include ../../../assets/blocks/pagination/pagination.pug
+include ../../../assets/blocks/incdec-field/incdec-field.pug
 include ../../../assets/blocks/dropdown/dropdown.pug
 
 div(class='wrapper wrapper__elements')
@@ -15,30 +16,32 @@ div(class='wrapper wrapper__elements')
 		.form-elements
 			.form-elements__column
 				.form-elements__simple-forms
-					+text-field-with-info({tfType: 'text-field', tfName: 'tf1', tfValue: 'Email', title: 'text field', aditional: 'default', titleClass: 'padding-top'})
-					.additional-info-block
-						h3(class='additional-info-block__title additional-info-block__title--padding-top') text field
-						h3(class='additional-info-block__status additional-info-block__status-text .additional-info-block__status-text--compact') hover / focus
-						.text-field-cont__visualisation
-							.div(class='field-template field-template--border-hovered border-corners--all')
-								input(type='text' placeholder='This is pretty awesome' class='field-template__input-field')
+					+text-field-with-info({tfType: 'text-field', tfName: 'tf1', tfPlaceholder: 'Email', title: 'text field', aditional: 'default', titleClass: 'padding-top'})
+					+text-field-with-info({tfType: 'text-field', tfName: 'tf1.1', title: 'text field', tfPlaceholder: 'This is pretty awesome',
+						aditional: 'hover / focus', tfValue: 'This is pretty awesome', tfHovered: true})
+					//- .text-field-with-info
+					//- 	h3(class='text-field-with-info__title text-field-with-info__title--padding-top') text field
+					//- 	h3(class='text-field-with-info__status text-field-with-info__status-text .text-field-with-info__status-text--compact') hover / focus
+					//- 	.text-field-with-info__visualisation
+					//- 		.div(class='field-template field-template--border-hovered border-corners--all')
+					//- 			input(type='text' placeholder='This is pretty awesome' class='field-template__input-field')
 
-					+text-field-with-info({tfType: 'dropdown-field', dropdown_hidden: 'true', tfValue: 'Сколько гостей', title: 'dropdown'})
-					+text-field-with-info({tfType: 'text-field', tfName: 'tf2', tfValue: 'ДД.ММ.ГГГГ', tfPattern: '[1-3][0-9].[0-1][0-9].[1-2][0,9][0-9][0-9]', 
+					+text-field-with-info({tfType: 'dropdown-field', dropdown_hidden: true, tfPlaceholder: 'Сколько гостей', title: 'dropdown'})
+					+text-field-with-info({tfType: 'text-field', tfName: 'tf2', tfPlaceholder: 'ДД.ММ.ГГГГ', tfPattern: '[1-3][0-9].[0-1][0-9].[1-2][0,9][0-9][0-9]', 
 						title: 'masked text field'})
-				.div(style='height: 35px')
+				.div(style='height: 41px')
 				.form-elements__date-subscr-forms
 					//- .small-date-container
 					.double-form
 						.double-form__container
-							+text-field-with-info({tfType: 'dropdown-field', dropdown_hidden: 'true', tfValue: 'ДД.ММ.ГГГГ', title: 'date dropdown'})
+							+text-field-with-info({tfType: 'dropdown-field', dropdown_hidden: true, tfPlaceholder: 'ДД.ММ.ГГГГ', title: 'date dropdown'})
 						.double-form__container
-							+text-field-with-info({tfType: 'dropdown-field', dropdown_hidden: 'true', tfValue: '19.08.2019', title: 'date dropdown'})
+							+text-field-with-info({tfType: 'dropdown-field', dropdown_hidden: true, tfPlaceholder: '19.08.2019', title: 'date dropdown'})
 					//- Блок для поля с выпадающей датой среднего размера
 					.middle-field
-						+text-field-with-info({tfType: 'dropdown-field', dropdown_hidden: 'true', tfValue: '19 авг - 23 авг', title: 'filter date dropdown'})
+						+text-field-with-info({tfType: 'dropdown-field', dropdown_hidden: true, tfPlaceholder: '19 авг - 23 авг', title: 'filter date dropdown'})
 					.middle-field
-						+text-field-with-info({tfType: 'subscribe-field', tfValue: 'Email', title: 'subscription text field'})
+						+text-field-with-info({tfType: 'subscribe-field', tfPlaceholder: 'Email', title: 'subscription text field'})
 
 
 			.form-elements__column
@@ -81,10 +84,9 @@ div(class='wrapper wrapper__elements')
 						+rating-area({name: 'two', rating: 5})
 
 			.form-elements__column
-				.div(style='height:2px')
 				.middle-field
 					+range-slider
-				.div(style='height:43px')
+				.div(style='height:45px')
 				h3 buttons
 				.div(style='width:217px')
 					.div(class='double-form double-form--margin-top-bottom')
@@ -97,29 +99,34 @@ div(class='wrapper wrapper__elements')
 						+elongated-button({sizeWidth: '4rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border'})
 						+elongated-button({sizeWidth: '4rem', sizeHeight: '1.75rem', text: 'click me', buttonType: 'no-border', disabled: true})
 	
-				.div(style='height:8px')
+				.div(style='height:7px')
 
 				+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате',
 					buttonType: 'with-arrow'})
 				.div(style='height:38px;')
-				.additional-info-block
-					h3(class='additional-info-block__title additional-info-block__title--padding-top') pagination
+				.text-field-with-info
+					h3(class='text-field-with-info__title text-field-with-info__title--padding-top') pagination
 					.text-field-cont__visualisation
 						.div(style='width: 15rem; margin-top: 12px; margin-left: 2px')
 							+pagination
 		.form-elements
-			.form-elements__row
-				.div(style='display: flex; flex-direction: column;')
-					.middle-field
-						+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', dropdown_hidden: 'true', 
-							tfValue: '2 спальни, 2 кровати', title: 'dropdown', aditional: 'default'})
-							
-					.middle-field
-						+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', dropdown_hidden: 'false', 
-							tfValue: '2 спальни, 2 кровати', title: 'dropdown', aditional: 'expanded'})
-		.form-elements
-			.form-elements__row
+			.form-elements__column
 				.middle-field
-					+dropdown()
-
-			.form-elements__row
+					+dropdown({
+						items: [
+							{idName: 'bedrooms', text: 'спальни', value: '2', valueDependendText: ['спален', 'спальня', 'спальни'] },
+							{idName: 'beds', text: 'кровати', value: '2', valueDependendText: ['кроватей', 'кровать', 'кровати'] },
+							{idName: 'bathrooms', text: 'ванные комнаты', value: '0', valueDependendText: ['ванных комнат', 'ванная комната', 'ванные комнаты'] }
+						],
+						dropdownName : 'facilities'
+					})
+					+dropdown({
+						items: [
+							{idName: 'livingrooms', text: 'гостиные', value: '1', valueDependendText: ['гостинных', 'гостинная', 'гостинные'] },
+							{idName: 'livings', text: 'гости', value: '5', valueDependendText: ['гостей', 'гость', 'гостя'] },
+							{idName: 'toilets', text: 'туалеты', value: '4', valueDependendText: ['', '', ''] }
+						],
+						dropdownName : 'popa'
+					})
+			.form-elements__column
+			.form-elements__column

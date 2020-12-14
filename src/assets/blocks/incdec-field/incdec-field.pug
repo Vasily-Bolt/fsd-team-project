@@ -1,0 +1,15 @@
+//Text - слово, valueDependendText - слово, в зависимости от цифры
+
+mixin incdecField(obj, connectionName)
+	- var ButtonStatus = 'incdecField__input-button--is-available'
+	.incdecField
+		label(for=obj.idName class='header3 incdecField__text')= obj.text
+		.incdecField__settings
+			- if ( obj.value == 0 ) ButtonStatus = 'incdecField__input-button--not-available'
+			input(type='button' id=obj.idName+'BtnMns' value='-' class='btnMns incdecField__input-button '+ButtonStatus)
+			input(id=obj.idName+' '+connectionName name=obj.idName+'Value' class='myInput header3' type='text' value=obj.value disabled
+				data-zero-others=obj.valueDependendText[0] data-one=obj.valueDependendText[1] data-two-three-four=obj.valueDependendText[2] )
+			- 
+				ButtonStatus = 'incdecField__input-button--is-available'
+				if ( obj.value == 5 ) ButtonStatus = 'incdecField__input-button--not-available'
+			input(type='button' id=obj.idName+'BtnPls' value='+' class='btnPls incdecField__input-button '+ButtonStatus)

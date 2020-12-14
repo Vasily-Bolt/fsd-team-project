@@ -1,8 +1,10 @@
 mixin text-field-with-info(obj)
-	.additional-info-block
+	.text-field-with-info
+		- var titleClass = 'text-field-with-info__title'
 		if obj.titleClass
-			- var titleClass = 'additional-info-block__title--' + obj.titleClass
-		h3(class='additional-info-block__title ' + titleClass)= obj.title
-		h3(class='additional-info-block__status additional-info-block__status-text')= obj.aditional
-		.text-field-cont__visualisation
-			+text-field({field_type: obj.tfType, dropdown_hidden: obj.dropdown_hidden, name: obj.tfName, value: obj.tfValue, pattern: obj.tfPattern, corners: obj.tfCorners})
+			- titleClass += ' text-field-with-info__title--'+obj.titleClass
+		h3(class=titleClass)= obj.title
+		h3(class='text-field-with-info__status text-field-with-info__status-text')= obj.aditional
+		.text-field-with-info__visualisation
+			+text-field({field_type: obj.tfType, dropdown_hidden: obj.dropdown_hidden, name: obj.tfName, placeholder: obj.tfPlaceholder, pattern: obj.tfPattern,
+				corners: obj.tfCorners, value: obj.tfValue, hovered: obj.tfHovered})

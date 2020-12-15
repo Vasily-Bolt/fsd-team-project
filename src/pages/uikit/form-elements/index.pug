@@ -118,15 +118,33 @@ div(class='wrapper wrapper__elements')
 							{idName: 'beds', text: 'кровати', value: '2', valueDependendText: ['кроватей', 'кровать', 'кровати'] },
 							{idName: 'bathrooms', text: 'ванные комнаты', value: '0', valueDependendText: ['ванных комнат', 'ванная комната', 'ванные комнаты'] }
 						],
-						dropdownName : 'facilities'
+						dropdownName: 'facilitiesaqsd',
+						tfTitle: 'dropdown',
+						tfAdditional: '-',
+						expanded: false
 					})
+					+dropdown({
+						items: [
+							{idName: 'bedrooms', text: 'спальни', value: '2', valueDependendText: ['спален', 'спальня', 'спальни'] },
+							{idName: 'beds', text: 'кровати', value: '2', valueDependendText: ['кроватей', 'кровать', 'кровати'] },
+							{idName: 'bathrooms', text: 'ванные комнаты', value: '0', valueDependendText: ['ванных комнат', 'ванная комната', 'ванные комнаты'] }
+						],
+						dropdownName: 'facilities',
+						tfTitle: 'dropdown',
+						tfAdditional: 'expanded',
+						expanded: true
+					})
+					div(style='height: 121px')
 					+dropdown({
 						items: [
 							{idName: 'livingrooms', text: 'гостиные', value: '1', valueDependendText: ['гостинных', 'гостинная', 'гостинные'] },
 							{idName: 'livings', text: 'гости', value: '5', valueDependendText: ['гостей', 'гость', 'гостя'] },
 							{idName: 'toilets', text: 'туалеты', value: '4', valueDependendText: ['', '', ''] }
 						],
-						dropdownName : 'popa'
+						dropdownName : 'popa',
+						tfTitle: 'dropdown',
+						tfAdditional: 'expanded',
+						expanded: true
 					})
 			.form-elements__column
 			.form-elements__column

@@ -1,4 +1,9 @@
-//Text - слово, valueDependendText - слово, в зависимости от цифры
+//- Text - слово, 
+//- 	valueDependendText - массив слов, в зависимости от цифры:
+//- 	элемент 0 - для кол-ва 0, 5 больше 
+//- 	элемент 1 - для кол-ва 1
+//- 	элемент 2 - для кол-ва от 2 до 4
+//- 	connetctionName - уникальный идентификатор родительского объекта (для связи с его главным полем) 
 
 mixin incdecField(obj, connectionName)
 	- var ButtonStatus = 'incdecField__input-button--is-available'
@@ -7,7 +12,7 @@ mixin incdecField(obj, connectionName)
 		.incdecField__settings
 			- if ( obj.value == 0 ) ButtonStatus = 'incdecField__input-button--not-available'
 			input(type='button' id=obj.idName+'BtnMns' value='-' class='btnMns incdecField__input-button '+ButtonStatus)
-			input(id=obj.idName+' '+connectionName name=obj.idName+'Value' class='incdecField__myInput header3' 
+			input(id=obj.idName+' '+connectionName name=obj.idName+'Value' class='incdecField__my-input header3' 
 				type='text' value=obj.value disabled data-zero-others=obj.valueDependendText[0] 
 				data-one=obj.valueDependendText[1] data-two-three-four=obj.valueDependendText[2] )
 			- 

@@ -1,9 +1,12 @@
+let minimalValue = 0;
+let maximalValue = 5;
+let stepValue = 1;
 // Функция изменения значений счетчиков и проверки состояния кнопок !!!разбить на две функции
 function change(objName, min, max, step) {
-	let counterValue = $(objName).siblings('.incdecField__myInput').val();
+	let counterValue = $(objName).siblings('.incdecField__my-input').val();
 	let tmp = +counterValue + step;
-	let reverseButtonType = '';
 // Создаем переменную с id кнопки противоположного значения
+	let reverseButtonType = '';
 	if ( objName.indexOf('Pls') == -1 ) 
 		reverseButtonType = 'Pls';
 	else 
@@ -12,8 +15,10 @@ function change(objName, min, max, step) {
 	let reverseButton = objName.slice(0, objName.length-3) + reverseButtonType;
   if (tmp < min) tmp = min;
 	if (tmp > max) tmp = max;
+	
+	$(objName).siblings('.incdecField__my-input').val(tmp);
 
-// Проверка: если максимальное или минимальное значение, то соответствующая кнопка "потухает"
+	// Проверка: если максимальное или минимальное значение, то соответствующая кнопка "потухает"
 	if (tmp == min) $(objName).removeClass('incdecField__input-button--is-available').addClass('incdecField__input-button--not-available');
 	if (tmp == max) $(objName).removeClass('incdecField__input-button--is-available').addClass('incdecField__input-button--not-available');
 
@@ -21,19 +26,17 @@ function change(objName, min, max, step) {
 	if ( (tmp != min && tmp != max) || ( $(reverseButton).hasClass('incdecField__input-button--not-available') ) ) {
 		$(reverseButton).removeClass('incdecField__input-button--not-available').addClass('incdecField__input-button--is-available');
 	};
-	
-	$(objName).siblings('.incdecField__myInput').val(tmp);
 };
 
 $(()=> {
 	//Если кнопку нажали, делаем пересчет и меняем цифру
 	$('.btnMns').click(function(){
 			let myId = '#'+$(this).attr('id');
-			change(myId, 0, 5, -1);
+			change(myId, minimalValue, maximalValue, -stepValue);
 		});
 
 		$('.btnPls').click(function(){
 			let myId = '#'+$(this).attr('id');
-			change(myId, 0, 5, 1);
+			change(myId, minimalValue, maximalValue, stepValue);
 		});
 } );

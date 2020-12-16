@@ -1,9 +1,14 @@
 mixin dropdown(obj)
+	- var dropdownClass = 'field-template--border-hovered dropdown__expanded border-corners--bottom'
 	div(id=obj.dropdownName class='dropdown')
 		+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', dropdown_hidden: 'true', 
 			title: obj.tfTitle, aditional: obj.tfAdditional, tfHovered: true})
-		if obj.expanded
-			div(class='field-template--border-hovered bropdown__expanded border-corners--bottom')
-				each object in obj.items
-					+incdecField(object, obj.dropdownName)
+		if !obj.expanded
+			- dropdownClass += ' dropdown__expanded--false'
+			//- div(class='field-template--border-hovered dropdown__expanded border-corners--bottom')
+		//- else
+			div(class='field-template--border-hovered dropdown__expanded dropdown__expanded--false border-corners--bottom')
+		div(class=dropdownClass)
+			each object in obj.items
+				+incdecField(object, obj.dropdownName)
 	

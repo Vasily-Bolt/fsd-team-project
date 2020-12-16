@@ -1,11 +1,12 @@
 let minimalValue = 0;
 let maximalValue = 5;
 let stepValue = 1;
+
 // Функция изменения значений счетчиков и проверки состояния кнопок !!!разбить на две функции
 function change(objName, min, max, step) {
 	let counterValue = $(objName).siblings('.incdecField__my-input').val();
 	let tmp = +counterValue + step;
-// Создаем переменную с id кнопки противоположного значения
+	// Создаем переменную с id кнопки противоположного значения
 	let reverseButtonType = '';
 	if ( objName.indexOf('Pls') == -1 ) 
 		reverseButtonType = 'Pls';

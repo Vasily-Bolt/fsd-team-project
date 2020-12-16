@@ -33,7 +33,6 @@ function dropdownHeaderTextCheck(dropdownHeaderId){
 		}
 	});
 	$( '#' + dropdownHeaderId ).find('span').html( titleDropdownHeader );
-	console.log( 'Changes!' );
 };
 
 $(()=> {
@@ -47,7 +46,25 @@ $(()=> {
 		dropdownHeaderTextCheck( idToSearch );
 	});
 
-	$( '.dropdown' ).children( '.text-field-with-info' ).children( '.text-field-with-info__visualisation' ).click( function() {
-		$(this).parent().siblings( '.dropdown__expanded' ).toggleClass( 'dropdown__expanded--false' );
+	
+	$( '.dropdown' ).children( '.text-field-with-info' ).children( '.text-field-with-info__visualisation' ).
+	click( function() {
+		let blockWeWorkWith = $(this).parent().siblings( '.dropdown__expanded' );
+		// Получаем z-index текущего блока
+		let blockZIndex = blockWeWorkWith.css('z-index');
+		// Меняем класс (сворачиваем развернутый, разворачиваем свернутый)
+		blockWeWorkWith.toggleClass( 'dropdown__expanded--false' );
+		// Если сворачиваем, то возвращаем z-index к стоку (9 + 1 потом)
+		if ( blockWeWorkWith.hasClass( 'dropdown__expanded--false' ) ) 
+			blockZIndex = 9;
+		else {
+			// Проверяем все Dropdownы и находим с самым большим z-index
+			$( '.dropdown__expanded' ).each( function (){
+				if ( blockZIndex < $(this).css('z-index') ) blockZIndex = $(this).css('z-index')
+			});
+		}
+		// Устанавливаем z-index
+		blockWeWorkWith.css('z-index',+blockZIndex+1);
+		console.log( blockWeWorkWith.css('z-index') );
 	});
 } );

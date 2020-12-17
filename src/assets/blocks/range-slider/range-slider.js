@@ -4,7 +4,7 @@ $(()=> {
 	$( ".slider-range" ).slider({
 		range: true,
 		min: 0000,
-		max: 15850,
+		max: 16000,
 		step: 50,
 		values: [ 5000, 10000 ],
 		slide: function( event, ui ) {

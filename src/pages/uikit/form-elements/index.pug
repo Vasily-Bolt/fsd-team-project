@@ -46,7 +46,7 @@ div(class='wrapper wrapper__elements')
 
 			.form-elements__column
 				//- Чекбоксы
-				.form-elements__buttons-block
+				.form-elements__buttons-block(style='width: 230px;')
 					h3.title-not-for-fields checkbox buttons
 					.button-container
 						+checkbox-radio({type:'checkbox', id:'smoke', text:'Можно курить'})
@@ -134,17 +134,6 @@ div(class='wrapper wrapper__elements')
 						tfAdditional: 'expanded',
 						expanded: true
 					})
-					//- div(style='height: 121px')
-					+dropdown({
-						items: [
-							{idName: 'livingrooms', text: 'гостиные', value: '1', valueDependendText: ['гостинных', 'гостинная', 'гостинные'] },
-							{idName: 'livings', text: 'гости', value: '5', valueDependendText: ['гостей', 'гость', 'гостя'] },
-							{idName: 'toilets', text: 'туалеты', value: '4', valueDependendText: ['', '', ''] }
-						],
-						dropdownName : 'popa',
-						tfTitle: 'dropdown',
-						tfAdditional: 'expanded',
-						expanded: true
-					})
+
 			.form-elements__column
 			.form-elements__column

@@ -51,8 +51,13 @@ $(()=> {
 		let blockWeWorkWith = $(this).parent().siblings( '.dropdown__expanded' );
 		// Получаем z-index текущего блока
 		let blockZIndex = blockWeWorkWith.css('z-index');
+		let titleField = $(this).children( '.field-template' );
 		// Меняем класс (сворачиваем развернутый, разворачиваем свернутый)
 		blockWeWorkWith.toggleClass( 'dropdown__expanded--false' );
+
+		titleField.toggleClass( 'field-template--border-hovered' );
+		titleField.toggleClass( 'field-template--border-not-hovered' );
+
 		// Если сворачиваем, то возвращаем z-index к стоку (9 + 1 потом)
 		if ( blockWeWorkWith.hasClass( 'dropdown__expanded--false' ) ) 
 			blockZIndex = 9;
@@ -64,6 +69,5 @@ $(()=> {
 		}
 		// Устанавливаем z-index
 		blockWeWorkWith.css('z-index',+blockZIndex+1);
-		console.log( blockWeWorkWith.css('z-index') );
 	});
 } );

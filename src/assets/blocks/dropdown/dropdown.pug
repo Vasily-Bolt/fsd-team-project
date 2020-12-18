@@ -1,9 +1,11 @@
 mixin dropdown(obj)
-	- var dropdownClass = 'field-template--border-hovered dropdown__expanded border-corners--bottom'
+	- 
+		var dropdownClass = 'field-template--border-hovered dropdown__expanded border-corners--bottom'
+		var isExpanded = obj.expanded
 	div(id=obj.dropdownName class='dropdown')
 		+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', dropdown_hidden: 'true', 
-			title: obj.tfTitle, aditional: obj.tfAdditional, tfHovered: true})
-		if !obj.expanded
+			title: obj.tfTitle, aditional: obj.tfAdditional, tfHovered: isExpanded, tfPlaceholder: obj.tfEmptyTitle})
+		if !isExpanded
 			- dropdownClass += ' dropdown__expanded--false'
 			//- div(class='field-template--border-hovered dropdown__expanded border-corners--bottom')
 		//- else

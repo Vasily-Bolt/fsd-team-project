@@ -29,6 +29,7 @@ function change(objName, min, max, step) {
 	};
 };
 
+
 $(()=> {
 	//Если кнопку нажали, делаем пересчет и меняем цифру
 	$('.btnMns').click(function(){

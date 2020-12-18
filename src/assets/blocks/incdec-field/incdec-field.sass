@@ -1,26 +1,8 @@
-.incdecField__text
-  height: inherit
-  line-height: 1.75rem //28px
+@import ./__text/incdecField__text
+@import ./__settings/incdecField__settings
+@import ./__input-button/incdecField__input-button
+@import ./__my-input/incdecField__my-input
 
-.incdecField__settings
-  display: flex
-  justify-content: space-between
-  width: 5.75rem //92px
-
-.incdecField__input-button
-  width: 1.875rem //30px
-  height: 1.875rem //30px
-  background: none
-  border: .0625rem  solid #000
-  border-radius: 50%
-  font-size: 1.125rem //18px
-  cursor: pointer
-
-.incdecField__input-button--is-available
-  opacity: $dark-shade-half
-
-.incdecField__input-button--not-available
-  opacity: $dark-shade-quater
 
 .incdecField
   display: flex
@@ -30,10 +12,3 @@
   padding-left: .8125rem //13px
   padding-right: .4375rem //7px
   padding-bottom: .4375rem //7px
-
-.incdecField__myInput,
-.incdecField__my-input
-  width: 1.25rem //20px
-  text-align: center
-  border: none
-  background: none

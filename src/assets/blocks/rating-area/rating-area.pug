@@ -1,7 +1,7 @@
 mixin rating-area(obj)
 	- var iteration_count = 5;
 	- var checked = '';
-	div.rating-area
+	.rating-area
 		while iteration_count > 0
 			- if(iteration_count == obj.rating)
 				input(type='radio' id='star-'+iteration_count+'-'+obj.name name='rating-'+obj.name value=iteration_count

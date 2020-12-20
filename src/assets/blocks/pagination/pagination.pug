@@ -12,29 +12,29 @@ mixin pagination( object )
 	.pagination-block
 		.pagination-block__pages-list
 			if ( +object.beginFromPage != 1)
-				+elongated-button({sizeWidth: buttonWidth, sizeHeight: '40px', buttonType: 'with-arrow-left', referenceText: '#'})
+				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, buttonType: 'with-arrow-left', referenceText: '#'})
 				if ( +object.beginFromPage > 3)
-					+elongated-button({sizeWidth: buttonWidth, sizeHeight: '40px', text: 1, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
+					+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: 1, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
 				if ( +object.beginFromPage > 4)
-					+elongated-button({sizeWidth: buttonWidth, sizeHeight: '40px', text: '...', buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
+					+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: '...', buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
 				if ( +object.beginFromPage > 2)
-					+elongated-button({sizeWidth: buttonWidth, sizeHeight: '40px', text: +object.beginFromPage-2, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
-				+elongated-button({sizeWidth: buttonWidth, sizeHeight: '40px', text: +object.beginFromPage-1, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
+					+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: +object.beginFromPage-2, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
+				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: +object.beginFromPage-1, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
 				
-			+elongated-button({sizeWidth: buttonWidth, sizeHeight: '40px', text: +object.beginFromPage, buttonType: 'filled', referenceText: '#'})
+			+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: +object.beginFromPage, buttonType: 'filled', referenceText: '#'})
 
 			if ( +object.beginFromPage+1 < maximalPage ) 
-				+elongated-button({sizeWidth: buttonWidth, sizeHeight: '40px', text: +object.beginFromPage+1, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
+				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: +object.beginFromPage+1, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
 			
 			if ( +object.beginFromPage+2 < maximalPage ) 
-				+elongated-button({sizeWidth: buttonWidth, sizeHeight: '40px', text: +object.beginFromPage+2, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
+				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: +object.beginFromPage+2, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
 
 			if ( +object.beginFromPage+4 < maximalPage ) 
-				+elongated-button({sizeWidth: buttonWidth, sizeHeight: '40px', text: '...', buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
+				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: '...', buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
 			
 			if ( +object.beginFromPage != maximalPage ) 
-				+elongated-button({sizeWidth: buttonWidth, sizeHeight: '40px', text: maximalPage, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
-				+elongated-button({sizeWidth: buttonWidth, sizeHeight: '40px', buttonType: 'with-arrow-right', referenceText: '#'})
+				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: maximalPage, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
+				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, buttonType: 'with-arrow-right', referenceText: '#'})
 
 		.pagination-block__total-pages-list
 			p #{((object.beginFromPage-1)*object.itemsPerPage)+1} &ndash; #{object.beginFromPage*object.itemsPerPage} из #{totalPagesInBase} вариантов аренды

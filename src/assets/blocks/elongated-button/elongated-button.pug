@@ -1,27 +1,40 @@
 mixin elongated-button(obj)
 	-
 		let buttonType = '';
-		let textColor = '';
+		let textType = '';
 		let addArrow = false;
+
+		switch (obj.textType) {
+			case 'white' : textType = 'elongated-button__text--white'; break;
+			case 'purple' : textType = 'elongated-button__text--purple'; break;
+			case 'halfdark' : textType = 'elongated-button__text--half-dark'; break;
+			case 'green' : textType = 'elongated-button__text--green'; break;
+		}
+
 		switch (obj.buttonType) {
-			case 'with-arrow' : addArrow = true;
+			case 'with-arrow-right' : addArrow = obj.buttonType;
+			case 'with-arrow-left' : addArrow = obj.buttonType;
 			case 'filled' : 
+				
 				buttonType = 'elongated-button--full-color';
-				textColor = 'elongated-button__text--white';
+				if ( textType == '') textType = 'elongated-button__text--white';
 				break;
 			case 'empty' :
 				buttonType = 'elongated-button--empty-inside';
-				textColor = 'elongated-button__text--purple';
+				if ( textType == '') textType = 'elongated-button__text--purple';
 				break;
 			case 'no-border' :
 				buttonType = 'elongated-button--no-border';
-				if (!obj.disabled) textColor = 'elongated-button__text--purple';
+				if ( !obj.disabled && textType == '' ) textType = 'elongated-button__text--purple';
 				break;
 			default : break;
 		}
 	div(style='height: ' + obj.sizeHeight + '; width: ' + obj.sizeWidth)
 		button(class='elongated-button ' + buttonType disabled=obj.disabled) 
-			h3(class='elongated-button__text ' + textColor)= obj.text
+			div(class='header3 elongated-button__text ' + textType)= obj.text
 			if addArrow
 				.elongated-button__arrow-block
-					div(class='arrow arrow--white')
+					if addArrow=='with-arrow-right'
+						div(class='arrow arrow--to-right arrow--white')
+					if addArrow=='with-arrow-left'
+						div(class='arrow arrow--to-left arrow--white')

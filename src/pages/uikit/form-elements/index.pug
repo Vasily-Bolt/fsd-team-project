@@ -68,7 +68,7 @@ div(class='wrapper wrapper__elements')
 					div(class='button-container button-container--last-minus')
 						+like-button({id:'likes', number_of_likes: 2})
 					div(class='button-container button-container--likes-paddings button-container--last-minus')
-						+like-button({id:'likesnot', number_of_likes: 0, checked: true})
+						+like-button({id:'likesnot', number_of_likes: 12, checked: true})
 				//- Рейтинг
 				.form-elements__buttons-block
 					h3.title-not-for-fields rate button
@@ -101,8 +101,8 @@ div(class='wrapper wrapper__elements')
 				.text-field-with-info
 					h3(class='text-field-with-info__title text-field-with-info__title--padding-top') pagination
 					.text-field-cont__visualisation
-						.div(style='width: 15rem; margin-top: 12px; margin-left: 2px')
-							+pagination
+						div(style='margin-top: 12px; margin-left: 2px') 
+							+pagination({ beginFromPage: 1, itemsPerPage: 12, totalItems: 170 })
 		.form-elements
 			.form-elements__column
 				.middle-field

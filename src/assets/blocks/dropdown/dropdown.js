@@ -1,46 +1,5 @@
 // Функция ищет обертку дропдоуна по идентификатору.
 // Необходимо найти все значения всех полей внутри обертки с 
-function dropdownHeaderTextCheck( dropdownHeaderId ){
-	let titleDropdownHeader = '';
-	let myInputCounterName = '';
-	let activeFieldWeWorkWith = '';
-	// Если длина заглавного текста больше 0 и меньше 15 (выбранное мной максимальное значение), то надо поставить
-	// запятую между значениями, (чтобы в начале и после последнего ее не было)
-	// Если длина заглавного текста меньше выбранного мной максимального значения, 
-	// то добавляем значение строки и цифру
-	// Если длина заглавного текста больше выбранного мной макс. значения, то ставим троеточие.
-	// Однако сначала проверяем, не стоят ли они уже 
-	$( '#' + dropdownHeaderId ).find('.incdecField__my-input').each( function () {
-		activeFieldWeWorkWith = $(this);
-		// Определение строки в зависимости от цифры. Данные берем из data поля с классом myInput и текущим id, 
-		// туда данные зашиваются из valueDependendText, объекта переданного в миксин dropdown counter
-		switch ( +activeFieldWeWorkWith.val() ) {
-			case 1	: myInputCounterName = activeFieldWeWorkWith.attr('data-one'); break;
-			case 2	:  
-			case 3	:  
-			case 4	: myInputCounterName = activeFieldWeWorkWith.attr('data-two-three-four'); break;
-			case 0	: return; break; 
-			default	: myInputCounterName = activeFieldWeWorkWith.attr('data-zero-others'); break;
-		};
-		
-		// Если общая длина заголовка превысила 15 символов, то не записываем новые данные
-		if ( titleDropdownHeader.length < 15 ) {
-			if ( titleDropdownHeader.length > 0 )
-				titleDropdownHeader += ', ';
-			titleDropdownHeader += activeFieldWeWorkWith.val() + ' ' + myInputCounterName;
-		}
-
-	});
-	// Если длина заголовка превышает 15 символов, ставим ...
-	if ( titleDropdownHeader.length > 15 ) titleDropdownHeader += '...';
-
-	if ( titleDropdownHeader != '' ) 
-		$( '#' + dropdownHeaderId ).find('span').html( titleDropdownHeader );
-	else 
-		$( '#' + dropdownHeaderId ).find('span').html( 
-			$( '#' + dropdownHeaderId ).find('.field-template').attr('data-value') );
-};
-
 
 
 function dropdownHeaderTextCheckV2( dropdownHeaderId ){
@@ -52,11 +11,11 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 		};
 	}
 	let titleDropdownHeaderArray = [];
-	let DropdownHeaderFinite = '';
+	let dropdownHeaderFinite = '';
 	let myInputCounterName = '';
 	let activeFieldWeWorkWith = '';
 	let newValueOfDropdownHeader = 0;
-	let index = 0;
+	let indexOfDropdownHeaderArray = 0;
 	console.clear();
 	// Если длина заглавного текста больше 0 и меньше 15 (выбранное мной максимальное значение), то надо поставить
 	// запятую между значениями, (чтобы в начале и после последнего ее не было)
@@ -66,15 +25,19 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 	// Однако сначала проверяем, не стоят ли они уже 
 	$( '#' + dropdownHeaderId ).find('.incdecField__my-input').each( function () {
 		activeFieldWeWorkWith = $(this);
-
+		
+		console.log( 'Array length - ' + titleDropdownHeaderArray.length );
 		// Присвоение переменной значение поля Myinput
 		newValueOfDropdownHeader = +activeFieldWeWorkWith.val();
 
 		// Далее перебираем весь массив объектов и сравниваем поле id с текущим. Если есть совпадение - 
 		// суммируем значения и уменьшаем счетчик массива
-		titleDropdownHeaderArray.forEach(element => {
+		console.log(activeFieldWeWorkWith.attr('data-zero-others'));
+		titleDropdownHeaderArray.forEach( ( element, index ) => {
+			console.log(indexOfDropdownHeaderArray + '  ' + index);
+			console.log(element);
 			if ( activeFieldWeWorkWith.attr('data-zero-others') == element.id ) {
-				index--;
+				indexOfDropdownHeaderArray = index;
 				console.log('Found');
 				newValueOfDropdownHeader = +activeFieldWeWorkWith.val() + +element.counterValue;
 				return;
@@ -88,40 +51,35 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 			case 2	:  
 			case 3	:  
 			case 4	: myInputCounterName = activeFieldWeWorkWith.attr('data-two-three-four'); break;
-			case 0	: return; break; 
+			case 0	: break; 
 			default	: myInputCounterName = activeFieldWeWorkWith.attr('data-zero-others'); break;
 		};
 
 		// Заносим в массив новый обект
-		titleDropdownHeaderArray[index] = writeCounterProperties( activeFieldWeWorkWith.attr('data-zero-others'), 
+		titleDropdownHeaderArray[indexOfDropdownHeaderArray] = writeCounterProperties( activeFieldWeWorkWith.attr('data-zero-others'), 
 			myInputCounterName, newValueOfDropdownHeader );
-		index++;
+		indexOfDropdownHeaderArray = titleDropdownHeaderArray.length;
 
 		
 	});
 
-	titleDropdownHeaderArray.forEach( (element, index) => {
+	titleDropdownHeaderArray.forEach( ( element ) => {
 		console.log(element);
 
 		// Если общая длина заголовка превысила 15 символов, то не записываем новые данные
-		if ( DropdownHeaderFinite.length < 15 ) {
-			if ( DropdownHeaderFinite.length > 0 )
-				DropdownHeaderFinite += ', ';
-			DropdownHeaderFinite += element.counterValue + ' ' + element.counterNameString;
+		if ( dropdownHeaderFinite.length < 15 && element.counterValue != 0 ) {
+			if ( dropdownHeaderFinite.length > 0 )
+				dropdownHeaderFinite += ', ';
+			dropdownHeaderFinite += element.counterValue + ' ' + element.counterNameString;
 		};
 
-		// Если длина заголовка превышает 15 символов, ставим ...
-		if ( DropdownHeaderFinite.length > 15 ) DropdownHeaderFinite += '...';
-
 	});
-
-	console.log ( DropdownHeaderFinite );
+	// Проверка длинны массива. Если больше двух значений и есть данные для отображения, то ставит троеточие
+	if ( titleDropdownHeaderArray.length > 2 && dropdownHeaderFinite != '' ) dropdownHeaderFinite += '...';
+	console.log ( dropdownHeaderFinite );
 	
-
-	
-
-	if ( DropdownHeaderFinite != '' ) 
-		$( '#' + dropdownHeaderId ).find('span').html( DropdownHeaderFinite );
+	if ( dropdownHeaderFinite != '' ) 
+		$( '#' + dropdownHeaderId ).find('span').html( dropdownHeaderFinite );
 	else 
 		$( '#' + dropdownHeaderId ).find('span').html( 
 			$( '#' + dropdownHeaderId ).find('.field-template').attr('data-value') );
@@ -132,7 +90,7 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 
 $(()=> {
 	$( '.dropdown' ).each( function () {
-		dropdownHeaderTextCheck( $(this).attr('id') );
+		dropdownHeaderTextCheckV2( $(this).attr('id') );
 	});
 
 	// При нажатии на плюс/минус полей ищем ID (зашито последним словом в ID поля my-input)

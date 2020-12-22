@@ -7,9 +7,6 @@ mixin dropdown(obj)
 			title: obj.tfTitle, aditional: obj.tfAdditional, tfHovered: isExpanded, tfPlaceholder: obj.tfEmptyTitle})
 		if !isExpanded
 			- dropdownClass += ' dropdown__expanded--false'
-			//- div(class='field-template--border-hovered dropdown__expanded border-corners--bottom')
-		//- else
-			div(class='field-template--border-hovered dropdown__expanded dropdown__expanded--false border-corners--bottom')
 		div(class=dropdownClass)
 			each object in obj.items
 				+incdecField(object, obj.dropdownName)

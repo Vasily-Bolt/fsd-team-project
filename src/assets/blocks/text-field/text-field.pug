@@ -33,7 +33,7 @@ mixin text-field(obj)
 	if obj.field_type == 'dropdown-field'
 		- field_class += ' field-template--letter-spacing-zero'
 
-		div(id=obj.name class=field_class)
+		div(id=obj.name class=field_class data-value=obj.placeholder )
 			span= obj.placeholder
 			.field-template__icon-field
 				if obj.dropdown_hidden

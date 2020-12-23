@@ -2,12 +2,15 @@ mixin dropdown(obj)
 	- 
 		var dropdownClass = 'field-template--border-hovered dropdown__expanded border-corners--bottom'
 		var isExpanded = obj.expanded
-	div(id=obj.dropdownName class='dropdown')
+	form(id=obj.dropdownName class='dropdown')
 		+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', tfDropdownHidden: 'true', 
 			title: obj.tfTitle, aditional: obj.tfAdditional, tfHovered: isExpanded, tfPlaceholder: obj.tfEmptyTitle})
 		if !isExpanded
 			- dropdownClass += ' dropdown__expanded--false'
-		div(class=dropdownClass)
+		fieldset(class=dropdownClass)
 			each object in obj.items
 				+incdecField(object, obj.dropdownName)
-	
+			.dropdown__clear-submit
+				input(type='reset' class='elongated-button elongated-button--no-border header3 elongated-button__text elongated-button__text--purple' value='очистить')
+				input(type='submit' class='elongated-button elongated-button--no-border header3 elongated-button__text elongated-button__text--purple' value='применить')
+			

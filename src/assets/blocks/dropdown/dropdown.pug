@@ -11,6 +11,8 @@ mixin dropdown(obj)
 			each object in obj.items
 				+incdecField(object, obj.dropdownName)
 			.dropdown__clear-submit
-				input(type='reset' class='elongated-button elongated-button--no-border header3 elongated-button__text elongated-button__text--purple' value='очистить')
-				input(type='submit' class='elongated-button elongated-button--no-border header3 elongated-button__text elongated-button__text--purple' value='применить')
+				input(type='reset' class='elongated-button elongated-button--no-border header3 elongated-button__text elongated-button__text--purple' 
+					value='очистить')
+				input(type='submit' class='elongated-button elongated-button--no-border header3 elongated-button__text elongated-button__text--purple' 
+					value='применить')
 			

@@ -16,7 +16,6 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 	let activeFieldWeWorkWith = '';
 	let newValueOfDropdownHeader = 0;
 	let indexOfDropdownHeaderArray = 0;
-	console.clear();
 	// Если длина заглавного текста больше 0 и меньше 15 (выбранное мной максимальное значение), то надо поставить
 	// запятую между значениями, (чтобы в начале и после последнего ее не было)
 	// Если длина заглавного текста меньше выбранного мной максимального значения, 
@@ -26,19 +25,14 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 	$( '#' + dropdownHeaderId ).find('.incdecField__my-input').each( function () {
 		activeFieldWeWorkWith = $(this);
 		
-		console.log( 'Array length - ' + titleDropdownHeaderArray.length );
 		// Присвоение переменной значение поля Myinput
 		newValueOfDropdownHeader = +activeFieldWeWorkWith.val();
 
 		// Далее перебираем весь массив объектов и сравниваем поле id с текущим. Если есть совпадение - 
 		// суммируем значения и уменьшаем счетчик массива
-		console.log(activeFieldWeWorkWith.attr('data-zero-others'));
 		titleDropdownHeaderArray.forEach( ( element, index ) => {
-			console.log(indexOfDropdownHeaderArray + '  ' + index);
-			console.log(element);
 			if ( activeFieldWeWorkWith.attr('data-zero-others') == element.id ) {
 				indexOfDropdownHeaderArray = index;
-				console.log('Found');
 				newValueOfDropdownHeader = +activeFieldWeWorkWith.val() + +element.counterValue;
 				return;
 			}
@@ -64,7 +58,6 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 	});
 
 	titleDropdownHeaderArray.forEach( ( element ) => {
-		console.log(element);
 
 		// Если общая длина заголовка превысила 15 символов, то не записываем новые данные
 		if ( dropdownHeaderFinite.length < 15 && element.counterValue != 0 ) {
@@ -76,7 +69,6 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 	});
 	// Проверка длинны массива. Если больше двух значений и есть данные для отображения, то ставит троеточие
 	if ( titleDropdownHeaderArray.length > 2 && dropdownHeaderFinite != '' ) dropdownHeaderFinite += '...';
-	console.log ( dropdownHeaderFinite );
 	
 	if ( dropdownHeaderFinite != '' ) 
 		$( '#' + dropdownHeaderId ).find('span').html( dropdownHeaderFinite );
@@ -85,7 +77,6 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 			$( '#' + dropdownHeaderId ).find('.field-template').attr('data-value') );
 
 };
-
 
 
 $(()=> {
@@ -99,6 +90,12 @@ $(()=> {
 		let stringToSearchForId = $(this).siblings('.incdecField__my-input').attr('id');
 		let idToSearch = stringToSearchForId.slice( stringToSearchForId.lastIndexOf(' ')+1 );
 		dropdownHeaderTextCheckV2( idToSearch );
+	});
+
+	$('input:reset').click( function(){
+		setTimeout(() => {
+			dropdownHeaderTextCheckV2( $(this).closest('form').attr('id') );
+		}, 1);
 	});
 
 	// Изменение состояния дропдаун - открытие/закрытие	

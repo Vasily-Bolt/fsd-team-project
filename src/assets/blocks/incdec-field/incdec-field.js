@@ -2,11 +2,18 @@ let minimalValue = 0;
 let maximalValue = 5;
 let stepValue = 1;
 
-// Функция изменения значений счетчиков и проверки состояния кнопок !!!разбить на две функции
-function change(objName, min, max, step) {
-	let counterValue = $(objName).siblings('.incdecField__my-input').val();
-	let tmp = +counterValue + step;
-	// Создаем переменную с id кнопки противоположного значения
+// Функция затемнения кнопок
+function fadeButton(objName){
+	$(objName).removeClass('incdecField__input-button--is-available').addClass('incdecField__input-button--not-available');
+};
+
+// Функция подсветки (активации) кнопок
+function unFadeButton(objName){
+	$(objName).removeClass('incdecField__input-button--not-available').addClass('incdecField__input-button--is-available');
+};
+
+// Функция проверки актальности подсветки кнопок
+function checkButtonStatus(objName,newCounterValue){
 	let reverseButtonType = '';
 	if ( objName.indexOf('Pls') == -1 ) 
 		reverseButtonType = 'Pls';
@@ -14,31 +21,69 @@ function change(objName, min, max, step) {
 		reverseButtonType = 'Mns';
 
 	let reverseButton = objName.slice(0, objName.length-3) + reverseButtonType;
-  if (tmp < min) tmp = min;
-	if (tmp > max) tmp = max;
-	
-	$(objName).siblings('.incdecField__my-input').val(tmp);
-
+  
 	// Проверка: если максимальное или минимальное значение, то соответствующая кнопка "потухает"
-	if (tmp == min) $(objName).removeClass('incdecField__input-button--is-available').addClass('incdecField__input-button--not-available');
-	if (tmp == max) $(objName).removeClass('incdecField__input-button--is-available').addClass('incdecField__input-button--not-available');
+	if (newCounterValue == minimalValue || newCounterValue == maximalValue) fadeButton(objName);
+	// if (tmp == maximalValue) fadeButton(objName);
 
 // Проверка: если после изменения значения, оно перестает быть максимальным или минимальным, то возвращаем у "потухшей" кнопки видимость
-	if ( (tmp != min && tmp != max) || ( $(reverseButton).hasClass('incdecField__input-button--not-available') ) ) {
-		$(reverseButton).removeClass('incdecField__input-button--not-available').addClass('incdecField__input-button--is-available');
+	if ( (newCounterValue != minimalValue && newCounterValue != maximalValue) || ( $(reverseButton).hasClass('incdecField__input-button--not-available') ) ) {
+		unFadeButton(reverseButton);
 	};
+};
+
+// Возвращает текущее значение поля my-input, соседствующее с кнопкой
+function getCounterValue (objName){
+	let counterSelector = $(objName).siblings('.incdecField__my-input');
+	return counterSelector.val();
+};
+
+// Обновляет текущее значение поля my-input, соседствующее с кнопкой
+function setCounterValue (objName, valueToSet){
+	let counterSelector = $(objName).siblings('.incdecField__my-input');
+	counterSelector.val(valueToSet);
+};
+
+// Функция изменения значений счетчиков и проверки состояния кнопок !!!разбить на две функции
+function change(objName, step) {
+
+	let counterValue = getCounterValue( objName );
+	let tmp = +counterValue + step;
+
+	if (tmp < minimalValue) tmp = minimalValue;
+	if (tmp > maximalValue) tmp = maximalValue;
+
+	setCounterValue( objName, tmp );
+
+	checkButtonStatus( objName, tmp );
+
 };
 
 
 $(()=> {
+	let myId = '';
 	//Если кнопку нажали, делаем пересчет и меняем цифру
 	$('.btnMns').click(function(){
-			let myId = '#'+$(this).attr('id');
-			change(myId, minimalValue, maximalValue, -stepValue);
-		});
+			myId = '#'+$(this).attr('id');
+			change(myId, -stepValue);
+	});
 
-		$('.btnPls').click(function(){
-			let myId = '#'+$(this).attr('id');
-			change(myId, minimalValue, maximalValue, stepValue);
-		});
-} );
+	$('.btnPls').click(function(){
+		myId = '#'+$(this).attr('id');
+		change(myId, stepValue);
+	});
+
+	$('form.dropdown input:reset').click( function() {
+		event.preventDefault();
+		$(this).parents('fieldset').children('.incdecField').each( function() {
+			myId = '#'+$(this).find('.btnMns').attr('id');
+			setCounterValue ( myId, 0 );
+			checkButtonStatus( myId, 0 );
+		});	
+		
+	});
+
+	$('form.dropdown').submit( function() {
+		event.preventDefault();
+	});
+});

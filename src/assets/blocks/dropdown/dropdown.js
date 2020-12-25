@@ -57,6 +57,7 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 		
 	});
 
+	// Обработка получившегося массива и создание строки для заголовка дропдаун
 	titleDropdownHeaderArray.forEach( ( element ) => {
 
 		// Если общая длина заголовка превысила 15 символов, то не записываем новые данные
@@ -90,12 +91,6 @@ $(()=> {
 		let stringToSearchForId = $(this).siblings('.incdecField__my-input').attr('id');
 		let idToSearch = stringToSearchForId.slice( stringToSearchForId.lastIndexOf(' ')+1 );
 		dropdownHeaderTextCheckV2( idToSearch );
-	});
-
-	$('input:reset').click( function(){
-		setTimeout(() => {
-			dropdownHeaderTextCheckV2( $(this).closest('form').attr('id') );
-		}, 1);
 	});
 
 	// Изменение состояния дропдаун - открытие/закрытие	

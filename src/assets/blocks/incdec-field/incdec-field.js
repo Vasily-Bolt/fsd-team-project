@@ -4,12 +4,14 @@ let stepValue = 1;
 
 // Функция затемнения кнопок
 function fadeButton(objName){
-	$(objName).removeClass('incdecField__input-button--is-available').addClass('incdecField__input-button--not-available');
+	$(objName).removeClass('incdecField__input-button--is-available').addClass('incdecField__input-button--not-available')
+		.attr('disabled',true);
 };
 
 // Функция подсветки (активации) кнопок
 function unFadeButton(objName){
-	$(objName).removeClass('incdecField__input-button--not-available').addClass('incdecField__input-button--is-available');
+	$(objName).removeClass('incdecField__input-button--not-available').addClass('incdecField__input-button--is-available')
+		.attr('disabled',false);;
 };
 
 // Функция проверки актальности подсветки кнопок
@@ -56,7 +58,7 @@ function change(objName, step) {
 	setCounterValue( objName, tmp );
 
 	checkButtonStatus( objName, tmp );
-
+	console.log('event');
 };
 
 

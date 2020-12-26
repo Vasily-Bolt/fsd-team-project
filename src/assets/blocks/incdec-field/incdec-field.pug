@@ -8,18 +8,19 @@
 
 mixin incdecField(obj, connectionName)
 	-
-		var ButtonStatus = 'incdecField__input-button--is-available'
+		var buttonDisabled = false
 		var ButtonIdFirstPartName = obj.idName+connectionName
 
 	.incdecField
 		label(for=obj.idName class='header3 incdecField__text')= obj.text
 		.incdecField__settings
-			- if ( obj.value == 0 ) ButtonStatus = 'incdecField__input-button--not-available'
-			input(type='button' id=ButtonIdFirstPartName+'BtnMns' value='-' class='btnMns incdecField__input-button '+ButtonStatus)
+			- if ( obj.value == 0 ) buttonDisabled = true
+			input(type='button' id=ButtonIdFirstPartName+'BtnMns' value='-' class='btnMns incdecField__input-button ' disabled=buttonDisabled)
 			input(id=obj.idName+' '+connectionName name=obj.idName+'Value' class='incdecField__my-input header3' 
 				type='text' value=obj.value disabled data-zero-others=obj.valueDependendText[0] 
 				data-one=obj.valueDependendText[1] data-two-three-four=obj.valueDependendText[2] )
 			- 
-				ButtonStatus = 'incdecField__input-button--is-available'
-				if ( obj.value == 5 ) ButtonStatus = 'incdecField__input-button--not-available'
-			input(type='button' id=ButtonIdFirstPartName+'BtnPls' value='+' class='btnPls incdecField__input-button '+ButtonStatus)
+				buttonDisabled = false
+				if ( obj.value == 5 )
+					buttonDisabled = true
+			input(type='button' id=ButtonIdFirstPartName+'BtnPls' value='+' class='btnPls incdecField__input-button ' disabled=buttonDisabled)

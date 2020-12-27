@@ -140,7 +140,8 @@ div(class='wrapper wrapper__elements')
 						dropdownName: 'guests-one',
 						tfEmptyTitle: 'Сколько гостей',
 						tfTitle: 'dropdown',
-						expanded: true
+						expanded: true,
+						hasButtonsBelow: true
 					})
 			.form-elements__column
 				+dropdown({
@@ -152,7 +153,20 @@ div(class='wrapper wrapper__elements')
 						dropdownName: 'guests-two',
 						tfEmptyTitle: 'Сколько гостей',
 						tfTitle: 'dropdown',
-						expanded: true
+						expanded: true,
+						hasButtonsBelow: true
 					})
 		.form-elements
+			.form-elements__column
+				.middle-field
+					+text-field({ 
+						field_type: 'dropdown-field',
+						placeholder: 'expandable checkbox list',
+						dropdown_hidden: true
+					})
+					+text-field({ 
+						field_type: 'dropdown-field',
+						placeholder: 'expandable checkbox list',
+						dropdown_hidden: false
+					})
 		.form-elements

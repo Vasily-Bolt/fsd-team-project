@@ -31,7 +31,7 @@ mixin text-field(obj)
 		placeholder - строка с текстом 
 		dropdown_hidden - true - маркер для закрытого dropdown, false - маркер для открытого dropdown
 	if obj.field_type == 'dropdown-field'
-		- field_class += ' field-template--letter-spacing-zero'
+		- field_class += ' field-template--letter-spacing-zero field-template--no-select'
 
 		div(id=obj.name class=field_class data-value=obj.placeholder )
 			span= obj.placeholder
@@ -47,4 +47,4 @@ mixin text-field(obj)
 			input(type='text' name=obj.name placeholder=obj.placeholder class='field-template__input-field')
 			.field-template__icon-field
 				.field-template__arrow-block(style='width:44px; height: 44px; margin-top: 4px; margin-right:2px')
-					.div(class='arrow arrow--gradient')
+					.div(class='arrow arrow--gradient arrow--to-right')

@@ -58,7 +58,6 @@ function change(objName, step) {
 	setCounterValue( objName, tmp );
 
 	checkButtonStatus( objName, tmp );
-	console.log('event');
 };
 
 
@@ -75,9 +74,9 @@ $(()=> {
 		change(myId, stepValue);
 	});
 
-	$('form.dropdown input:reset').click( function() {
+	$('form.dropdown').on('click', 'input:reset', function(event) {
 		event.preventDefault();
-		$(this).parents('fieldset').children('.incdecField').each( function() {
+		$(event.delegateTarget).find('.incdecField').each( function() {
 			myId = '#'+$(this).find('.btnMns').attr('id');
 			setCounterValue ( myId, 0 );
 			checkButtonStatus( myId, 0 );

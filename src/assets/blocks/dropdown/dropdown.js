@@ -1,8 +1,8 @@
 // Функция ищет обертку дропдоуна по идентификатору.
 // Необходимо найти все значения всех полей внутри обертки с 
 
-
 function dropdownHeaderTextCheckV2( dropdownHeaderId ){
+	// Функция создания объекта с информацией о будующем тексте заголовка 
 	function writeCounterProperties (id, counterNameString, counterValue){
 		return {
 			id: id,
@@ -16,12 +16,7 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 	let activeFieldWeWorkWith = '';
 	let newValueOfDropdownHeader = 0;
 	let indexOfDropdownHeaderArray = 0;
-	// Если длина заглавного текста больше 0 и меньше 15 (выбранное мной максимальное значение), то надо поставить
-	// запятую между значениями, (чтобы в начале и после последнего ее не было)
-	// Если длина заглавного текста меньше выбранного мной максимального значения, 
-	// то добавляем значение строки и цифру
-	// Если длина заглавного текста больше выбранного мной макс. значения, то ставим троеточие.
-	// Однако сначала проверяем, не стоят ли они уже 
+
 	$( '#' + dropdownHeaderId ).find('.incdecField__my-input').each( function () {
 		activeFieldWeWorkWith = $(this);
 		
@@ -70,17 +65,42 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 	});
 	// Проверка длинны массива. Если больше двух значений и есть данные для отображения, то ставит троеточие
 	if ( titleDropdownHeaderArray.length > 2 && dropdownHeaderFinite != '' ) dropdownHeaderFinite += '...';
-	
-	if ( dropdownHeaderFinite != '' ) 
+	// Если длина окончательной строки для заголовка пустая, то устанавливаем значение по умолячанию и прячем кнопку ОЧИСТИТЬ
+	if ( dropdownHeaderFinite != '' ) {
 		$( '#' + dropdownHeaderId ).find('span').html( dropdownHeaderFinite );
-	else 
+	} else {
 		$( '#' + dropdownHeaderId ).find('span').html( 
 			$( '#' + dropdownHeaderId ).find('.field-template').attr('data-value') );
+			$( '#' + dropdownHeaderId ).find('input:reset').toggle();
+	}
 
 };
 
+function changeDropdownexpansion(dropdownHeaderId) {
+	// Получаем z-index текущего блока
+	let blockZIndex = dropdownHeaderId.css('z-index');
+	let titleField = $(dropdownHeaderId).parent().find( '.field-template' );
+	// Меняем класс (сворачиваем развернутый, разворачиваем свернутый)
+	dropdownHeaderId.toggleClass( 'dropdown__expanded--false' );
+	// Меняем класс главного поля для изменения яркости границ
+	titleField.toggleClass( 'field-template--border-hovered' );
+	titleField.toggleClass( 'field-template--border-not-hovered' );
+
+	// Если сворачиваем, то возвращаем z-index к стоку (9 + 1 потом)
+	if ( dropdownHeaderId.hasClass( 'dropdown__expanded--false' ) ) 
+		blockZIndex = 9;
+	else {
+		// Проверяем все Dropdownы и находим с самым большим z-index
+		$( '.dropdown__expanded' ).each( function (){
+			if ( blockZIndex < $(this).css('z-index') ) blockZIndex = $(this).css('z-index')
+		});
+	}
+	// Устанавливаем z-index
+	dropdownHeaderId.css('z-index',+blockZIndex+1);
+};
 
 $(()=> {
+	
 	$( '.dropdown' ).each( function () {
 		dropdownHeaderTextCheckV2( $(this).attr('id') );
 	});
@@ -97,25 +117,18 @@ $(()=> {
 	$( '.dropdown' ).children( '.text-field-with-info' ).children( '.text-field-with-info__visualisation' ).
 	click( function() {
 		let blockWeWorkWith = $(this).parent().siblings( '.dropdown__expanded' );
-		// Получаем z-index текущего блока
-		let blockZIndex = blockWeWorkWith.css('z-index');
-		let titleField = $(this).children( '.field-template' );
-		// Меняем класс (сворачиваем развернутый, разворачиваем свернутый)
-		blockWeWorkWith.toggleClass( 'dropdown__expanded--false' );
-	// Меняем класс главного поля для изменения яркости границ
-		titleField.toggleClass( 'field-template--border-hovered' );
-		titleField.toggleClass( 'field-template--border-not-hovered' );
-
-		// Если сворачиваем, то возвращаем z-index к стоку (9 + 1 потом)
-		if ( blockWeWorkWith.hasClass( 'dropdown__expanded--false' ) ) 
-			blockZIndex = 9;
-		else {
-			// Проверяем все Dropdownы и находим с самым большим z-index
-			$( '.dropdown__expanded' ).each( function (){
-				if ( blockZIndex < $(this).css('z-index') ) blockZIndex = $(this).css('z-index')
-			});
-		}
-		// Устанавливаем z-index
-		blockWeWorkWith.css('z-index',+blockZIndex+1);
+		changeDropdownexpansion( blockWeWorkWith );
 	});
+
+	$('form.dropdown').on('click', 'input:reset', function(event) {
+		let idToSearch = $(event.delegateTarget).attr('id');
+		event.preventDefault();
+		dropdownHeaderTextCheckV2( idToSearch );
+	});
+
+	$('form.dropdown').on('click', 'input:submit', function(event) {
+		let idToSearch = $(event.delegateTarget).find('fieldset');
+		changeDropdownexpansion( idToSearch );
+	});
+
 } );

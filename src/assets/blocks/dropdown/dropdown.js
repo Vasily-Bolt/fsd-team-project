@@ -68,6 +68,7 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 	// Если длина окончательной строки для заголовка пустая, то устанавливаем значение по умолячанию и прячем кнопку ОЧИСТИТЬ
 	if ( dropdownHeaderFinite != '' ) {
 		$( '#' + dropdownHeaderId ).find('span').html( dropdownHeaderFinite );
+		if ( $( '#' + dropdownHeaderId ).find('input:reset').css('display') == 'none' ) $( '#' + dropdownHeaderId ).find('input:reset').toggle();
 	} else {
 		$( '#' + dropdownHeaderId ).find('span').html( 
 			$( '#' + dropdownHeaderId ).find('.field-template').attr('data-value') );

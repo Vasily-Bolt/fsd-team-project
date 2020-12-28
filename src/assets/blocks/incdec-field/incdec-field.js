@@ -74,7 +74,7 @@ $(()=> {
 		change(myId, stepValue);
 	});
 
-	$('form.dropdown').on('click', 'input:reset', function(event) {
+	$('.dropdown').on('click', 'input:reset', function(event) {
 		event.preventDefault();
 		$(event.delegateTarget).find('.incdecField').each( function() {
 			myId = '#'+$(this).find('.btnMns').attr('id');
@@ -84,7 +84,7 @@ $(()=> {
 		
 	});
 
-	$('form.dropdown').submit( function() {
+	$('.dropdown').submit( function() {
 		event.preventDefault();
 	});
 });

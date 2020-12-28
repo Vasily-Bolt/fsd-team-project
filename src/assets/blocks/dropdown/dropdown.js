@@ -77,6 +77,8 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 
 };
 
+
+// Функция сворачивания и разворачивания поля Dropdown. Принимает блок, потомками которого являются поля incdec
 function changeDropdownexpansion(dropdownHeaderId) {
 	// Получаем z-index текущего блока
 	let blockZIndex = dropdownHeaderId.css('z-index');
@@ -121,13 +123,13 @@ $(()=> {
 		changeDropdownexpansion( blockWeWorkWith );
 	});
 
-	$('form.dropdown').on('click', 'input:reset', function(event) {
+	$('.dropdown').on('click', 'input:reset', function(event) {
 		let idToSearch = $(event.delegateTarget).attr('id');
 		event.preventDefault();
 		dropdownHeaderTextCheckV2( idToSearch );
 	});
 
-	$('form.dropdown').on('click', 'input:submit', function(event) {
+	$('.dropdown').on('click', 'input:submit', function(event) {
 		let idToSearch = $(event.delegateTarget).find('fieldset');
 		changeDropdownexpansion( idToSearch );
 	});

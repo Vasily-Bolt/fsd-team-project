@@ -5,10 +5,16 @@
 mixin text-field(obj)
 	- var field_class = 'field-template'
 	
-	if obj.hovered
-		- field_class += ' field-template--border-hovered'
+	if textBrightness == 1
+		- field_class += ' field-template--full-color'
 	else
-		- field_class += ' field-template--border-not-hovered'
+		- field_class += ' field-template--quater-color'
+
+	if !obj.noBorder
+		if obj.hovered
+			- field_class += ' field-template--border-hovered'
+		else
+			- field_class += ' field-template--border-not-hovered'
 
 	if obj.corners == 'top'
 		- field_class += ' border-corners--top'

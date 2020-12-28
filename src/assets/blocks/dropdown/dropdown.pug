@@ -2,7 +2,7 @@ mixin dropdown(obj)
 	- 
 		var dropdownClass = 'field-template--border-hovered dropdown__expanded border-corners--bottom'
 		var isExpanded = obj.expanded
-	form(id=obj.dropdownName class='dropdown')
+	div(id=obj.dropdownName class='dropdown')
 		+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', tfDropdownHidden: 'true', 
 			title: obj.tfTitle, aditional: obj.tfAdditional, tfHovered: isExpanded, tfPlaceholder: obj.tfEmptyTitle})
 		if !isExpanded

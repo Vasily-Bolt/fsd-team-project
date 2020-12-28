@@ -4,8 +4,7 @@
 	pattern - при наличии создает masked text field
 mixin text-field(obj)
 	- var field_class = 'field-template'
-	
-	if textBrightness == 1
+	if obj.textBrightness == 1
 		- field_class += ' field-template--full-color'
 	else
 		- field_class += ' field-template--quater-color'

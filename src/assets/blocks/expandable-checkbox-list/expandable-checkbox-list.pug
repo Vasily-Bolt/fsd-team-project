@@ -1,13 +1,18 @@
 mixin expandable-checkbox-list(obj)
+	- var fieldsetContainerClass = 'expandable-checkbox-list__fieldset'
+	if obj.hidden
+		-	fieldsetContainerClass += ' expandable-checkbox-list__fieldset--hidden'
 	.expandable-checkbox-list
 		.expandable-checkbox-list__title.header3
 			+text-field({ 
 				field_type: 'dropdown-field',
 				placeholder: obj.tfEmptyTitle,
 				dropdown_hidden: obj.hidden,
-				noBorder: true
+				noBorder: true,
+				textBrightness: 1
 				})
-		fieldset
+		fieldset(class=fieldsetContainerClass)
 			each object in obj.items
-				+checkbox-radio({ type:'checkbox', id: object.id, text: object.text, textBrightness: 1})
-				br
+				.expandable-checkbox-list__checkbox-container
+					+checkbox-radio({ type:'checkbox', id: object.id, text: object.text, checked: object.checked})
+				

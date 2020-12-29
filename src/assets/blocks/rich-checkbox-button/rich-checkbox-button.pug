@@ -1,0 +1,4 @@
+mixin rich-checkbox-button(obj)
+  .rich-checkbox-button
+    +checkbox-radio({type:'checkbox', id:obj.id, text:obj.title })
+    p.rich-checkbox-button__content!= obj.content

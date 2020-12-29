@@ -9,6 +9,8 @@ include ../../../assets/blocks/pagination/pagination.pug
 include ../../../assets/blocks/incdec-field/incdec-field.pug
 include ../../../assets/blocks/dropdown/dropdown.pug
 include ../../../assets/blocks/expandable-checkbox-list/expandable-checkbox-list.pug
+include ../../../assets/blocks/rich-checkbox-button/rich-checkbox-button.pug
+include ../../../assets/blocks/bullet-list/bullet-list.pug
 
 div(class='wrapper wrapper__elements')
 	.gull-emblem-container
@@ -184,4 +186,20 @@ div(class='wrapper wrapper__elements')
 						tfEmptyTitle: 'expandable checkbox list',
 						hidden: false,
 					})
+			.form-elements__column
+				.middle-field
+					+rich-checkbox-button({
+						title: 'Широкий коридор',
+						content: 'Ширина коридоров в номере<br>не менее 91 см.',
+						id: 'wide-coridor'})
+					+rich-checkbox-button({
+						title: 'Помощник для инвалидов',
+						content: 'На 1 этаже вас встретит специалист<br>и проводит до номера.',
+						id: 'invalid-helper' })
+			.form-elements__column
+				+bullet-list([
+					'Нельзя с питомцами',
+					'Без вечеринок и мероприятий',
+					'Время прибытия - после 13:00, а выезд до 12:00'
+				])
 		.form-elements

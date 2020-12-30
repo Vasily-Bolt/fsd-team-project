@@ -1,18 +1,20 @@
-
-.bullet-list
-	color: rgba($all-document-text-color, .75)
-	list-style-type: none
-
 .bullet-list__item
 	position: relative
+	padding-left: 1.3125rem //-21px
 	margin-bottom: 10px
 
 .bullet-list__item:before
 	position: absolute
 	top: .5rem
-	left: -1.3125rem //-21px
+	left: 0 //-1.3125rem //-21px
 	content: ''
 	width: .651875rem //10.43px
 	height: .625rem //10px
 	border-radius: 50%
 	background-color: rgba($all-document-text-color, .25)
+
+.bullet-list
+	padding: 0
+	margin: 0
+	color: rgba($all-document-text-color, .75)
+	list-style-type: none

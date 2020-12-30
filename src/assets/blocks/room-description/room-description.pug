@@ -1,5 +1,11 @@
 mixin room-description(array)
-  img(src=array[0].image)
-  p= array[0].title
-  img(src=array[1].image)
-  p= array[1].title
+	each index in array
+		.room-description
+			img(src=index.image).room-description__image
+			.room-description__text
+				p.room-description__text--title= index.title
+				p= index.content
+		if index.bottomLine == 'true'
+			.room-description__bottom-line
+		else
+			.room-description__no-line

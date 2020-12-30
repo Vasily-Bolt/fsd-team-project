@@ -108,8 +108,8 @@ div(class='wrapper wrapper__elements')
 					.text-field-cont__visualisation
 						div(style='margin-top: .75rem; margin-left: .125rem') 
 							+pagination({ beginFromPage: 1, itemsPerPage: 12, totalItems: 170 })
-		.div(style='height:102px')
-		.form-elements(style='height:266px')
+		.div(style='height:6.375rem')
+		.form-elements(style='height:16.625rem')
 			.form-elements__column
 				.middle-field
 					+dropdown({
@@ -124,7 +124,7 @@ div(class='wrapper wrapper__elements')
 						tfAdditional: 'default',
 						expanded: false
 					})
-					.div(style='height:21px')
+					.div(style='height:1.3125rem')
 					+dropdown({
 						items: [
 							{idName: 'bedrooms', text: 'спальни', value: '2', valueDependendText: ['спален', 'спальня', 'спальни'] },
@@ -163,8 +163,8 @@ div(class='wrapper wrapper__elements')
 						expanded: true,
 						hasButtonsBelow: true
 					})
-		.div(style='height:40px')
-		.form-elements(style='height:296px')
+		.div(style='height:2.5rem')
+		.form-elements(style='height:18.5rem')
 			.form-elements__column
 				.middle-field
 					+expandable-checkbox-list({
@@ -179,7 +179,7 @@ div(class='wrapper wrapper__elements')
 						tfEmptyTitle: 'expandable checkbox list',
 						hidden: true,
 					})
-					.div(style='margin-top:1.0625rem')
+					.div(style='margin-top:1.125rem')
 					+expandable-checkbox-list({
 						items: [
 							{id: 'onebreakfast', text: 'завтрак', checked: false},
@@ -218,12 +218,14 @@ div(class='wrapper wrapper__elements')
 					{
 						image: './src/assets/img/smily-face.svg',
 						title: 'Комфорт',
-						content: 'Шумопоглощающие стены'
+						content: 'Шумопоглощающие стены',
+						bottomLine: 'true'
 					},
 					{
 						image: './src/assets/img/city-house.svg',
 						title: 'Удобство',
-						content: 'Окно в каждой из спален'
+						content: 'Окно в каждой из спален',
+						bottomLine: 'true'
 					}
 				])
 			.form-elements__column

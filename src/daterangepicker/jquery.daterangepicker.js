@@ -944,7 +944,6 @@
   };
 
   $.fn.dateRangePicker = function(opt) {
-      console.log('321');
       if (!opt) opt = {};
       opt = $.extend(true, {
           autoClose: false,

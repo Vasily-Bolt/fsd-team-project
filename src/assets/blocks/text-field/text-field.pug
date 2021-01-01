@@ -33,13 +33,16 @@ mixin text-field(obj)
 		label(for=name)
 
 	//-Миксин для отображения начального Dropdown. Получает объект
-		placeholder - строка с текстом 
+		plaeholder - строка с текстом 
 		dropdown_hidden - true - маркер для закрытого dropdown, false - маркер для открытого dropdown
 	if obj.field_type == 'dropdown-field'
 		- field_class += ' field-template--letter-spacing-zero field-template--no-select'
-
+	
 		div(id=obj.name class=field_class data-value=obj.placeholder )
-			span= obj.placeholder
+			//- span= obj.placeholder
+			if obj.name !== undefined
+				- var inputId = obj.name + 'InputField'
+			input(type='text' id=inputId readonly value=obj.placeholder class='field-template__input-field')
 			.field-template__icon-field
 				if obj.dropdown_hidden
 					div(class='field-template__arrow-css field-template__arrow-css--to-bottom')
@@ -52,4 +55,4 @@ mixin text-field(obj)
 			input(type='text' name=obj.name placeholder=obj.placeholder class='field-template__input-field')
 			.field-template__icon-field
 				.field-template__arrow-block(style='width:44px; height: 44px; margin-top: 4px; margin-right:2px')
-					.div(class='arrow arrow--gradient arrow--to-right')
+					div(class='arrow arrow--gradient arrow--to-right')

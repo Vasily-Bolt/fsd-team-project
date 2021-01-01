@@ -21,7 +21,7 @@ Block guide:
 	title							-	текст сверху слева
 	aditional					-	текст сверху справа
 	tfType						-	field-type миксина text-field
-	tfName						-	name миксина text-field
+	tfName						-	name миксина text-field и id для полей dropdown
 	tfPlaceholder			-	placeholder миксина text-field
 	tfValue						-	value миксина text-field
 	tfDropdownHidden	-	значение dropdown_hidden миксина text-field

@@ -9,7 +9,8 @@ mixin expandable-checkbox-list(obj)
 				placeholder: obj.tfEmptyTitle,
 				dropdown_hidden: obj.hidden,
 				noBorder: true,
-				textBrightness: 1
+				textBrightness: 1,
+				name: obj.tfName
 				})
 		fieldset(class=fieldsetContainerClass)
 			each object in obj.items

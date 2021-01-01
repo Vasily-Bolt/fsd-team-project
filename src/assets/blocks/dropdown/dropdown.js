@@ -67,10 +67,11 @@ function dropdownHeaderTextCheckV2( dropdownHeaderId ){
 	if ( titleDropdownHeaderArray.length > 2 && dropdownHeaderFinite != '' ) dropdownHeaderFinite += '...';
 	// Если длина окончательной строки для заголовка пустая, то устанавливаем значение по умолячанию и прячем кнопку ОЧИСТИТЬ
 	if ( dropdownHeaderFinite != '' ) {
-		$( '#' + dropdownHeaderId ).find('span').html( dropdownHeaderFinite );
+		$('#' + dropdownHeaderId + 'TextInputField').val( dropdownHeaderFinite );
+		// $( '#' + dropdownHeaderId ).find('input.field-template__input-field').val( dropdownHeaderFinite );
 		if ( $( '#' + dropdownHeaderId ).find('input:reset').css('display') == 'none' ) $( '#' + dropdownHeaderId ).find('input:reset').toggle();
 	} else {
-		$( '#' + dropdownHeaderId ).find('span').html( 
+		$('#' + dropdownHeaderId + 'TextInputField').val( 
 			$( '#' + dropdownHeaderId ).find('.field-template').attr('data-value') );
 			$( '#' + dropdownHeaderId ).find('input:reset').toggle();
 	}

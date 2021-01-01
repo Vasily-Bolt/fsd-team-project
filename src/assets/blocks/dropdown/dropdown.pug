@@ -4,7 +4,7 @@ mixin dropdown(obj)
 		var isExpanded = obj.expanded
 	div(id=obj.dropdownName class='dropdown')
 		+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', tfDropdownHidden: 'true', 
-			title: obj.tfTitle, aditional: obj.tfAdditional, tfHovered: isExpanded, tfPlaceholder: obj.tfEmptyTitle})
+			title: obj.tfTitle, aditional: obj.tfAdditional, tfHovered: isExpanded, tfPlaceholder: obj.tfEmptyTitle, tfName: obj.dropdownName+'Text'})
 		if !isExpanded
 			- dropdownClass += ' dropdown__expanded--false'
 		fieldset(class=dropdownClass)

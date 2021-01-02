@@ -1,15 +1,18 @@
 $(()=> {
 
 	let trigger = 'open';
+
+
+
+
 	$( 'div[id^="datepicker"]' ).each( function() {
 		$(this).find('input[id$="InputField"]').dateRangePicker(
 			{
-				format: 'DD.MMM',
-				singleMonth: true,
+				format: 'DD MMM',
 				language: 'ru',
-				singleDate : false,
+				singleMonth: true,
+				separator: ' - ',
 				showShortcuts: false,
-				showTopbar: true,
 				autoClose: false,
 			});
 	});
@@ -27,3 +30,7 @@ $(()=> {
 		}
 	});
 });
+
+// moment.updateLocale('ru', {
+// 	monthsShort : String['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек']
+// });

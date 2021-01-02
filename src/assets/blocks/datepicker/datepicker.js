@@ -2,9 +2,6 @@ $(()=> {
 
 	let trigger = 'open';
 
-
-
-
 	$( 'div[id^="datepicker"]' ).each( function() {
 		$(this).find('input[id$="InputField"]').dateRangePicker(
 			{
@@ -14,6 +11,12 @@ $(()=> {
 				separator: ' - ',
 				showShortcuts: false,
 				autoClose: false,
+			})
+			.bind('datepicker-closed', function(){
+				trigger = 'open';
+			})
+			.bind('datepicker-opened', function(){
+				trigger = 'close';
 			});
 	});
 
@@ -22,13 +25,12 @@ $(()=> {
 	$( 'div[id^="datepicker"]' ).click( function(event) {
 		event.stopPropagation();
 		if (trigger == 'open') {
-			trigger = 'close';
 			$(this).find('input[id$="InputField"]').data('dateRangePicker').open();
 		} else {
-			trigger = 'open';
 			$(this).find('input[id$="InputField"]').data('dateRangePicker').close();
 		}
 	});
+
 });
 
 // moment.updateLocale('ru', {

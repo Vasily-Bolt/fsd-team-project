@@ -30,16 +30,17 @@ div(class='wrapper wrapper__elements')
 						title: 'masked text field'})
 				.div(style='height: 2.5625rem')
 				.form-elements__date-subscr-forms
-					//- .small-date-container
-					.double-form
+					.double-form(id='datepickertwo-multiple')
 						.double-form__container
-							+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: 'ДД.ММ.ГГГГ', title: 'date dropdown'})
+							+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: 'ДД.ММ.ГГГГ', title: 'date dropdown'
+								,tfName: 'datepickertwo-multiple-first'})
 						.double-form__container
-							+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: '19.08.2019', title: 'date dropdown'})
+							+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: '19.08.2019', title: 'date dropdown'
+								,tfName: 'datepickertwo-multiple-second'})
 					//- Блок для поля с выпадающей датой среднего размера
 					.middle-field
-						+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: '19 авг - 23 авг', 
-							tfName: 'datepicker1', title: 'filter date dropdown'})
+						+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: '19 авг - 23 авг'
+							,tfName: 'datepickerone-single', title: 'filter date dropdown'})
 					.middle-field
 						+text-field-with-info({tfType: 'subscribe-field', tfPlaceholder: 'Email', title: 'subscription text field'})
 

@@ -3,7 +3,7 @@ mixin expandable-checkbox-list(obj)
 	if obj.hidden
 		-	fieldsetContainerClass += ' expandable-checkbox-list__fieldset--hidden'
 	.expandable-checkbox-list
-		.expandable-checkbox-list__title.header3
+		.expandable-checkbox-list__title
 			+text-field({ 
 				field_type: 'dropdown-field',
 				placeholder: obj.tfEmptyTitle,

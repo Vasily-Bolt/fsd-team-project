@@ -1,5 +1,12 @@
 mixin singleDatepicker(object)
-  p
+	+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: object.dateSet
+		,tfName: object.id, title: object.title})
 
 mixin multiDatepicker(object)
-  
+	.datepicker(id=object.id)
+		.datepicker__field
+			+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: object.setDateStart
+				,title: object.titleStart, tfName: object.id+'-first'})
+		.datepicker__field
+			+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: object.setDateEnd
+				,title: object.titleEnd, tfName: object.id+'-second'})

@@ -1,5 +1,6 @@
 include ../../../assets/blocks/text-field/text-field.pug
 include ../../../assets/blocks/text-field-with-info/text-field-with-info.pug
+include ../../../assets/blocks/datepicker/datepicker.pug
 include ../../../assets/blocks/checkbox-radio/checkbox-radio.pug
 include ../../../assets/blocks/like-button/like-button.pug
 include ../../../assets/blocks/rating-area/rating-area.pug
@@ -28,19 +29,13 @@ div(class='wrapper wrapper__elements')
 					+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: 'Сколько гостей', title: 'dropdown'})
 					+text-field-with-info({tfType: 'text-field', tfName: 'tf2', tfPlaceholder: 'ДД.ММ.ГГГГ', tfPattern: '[1-3][0-9].[0-1][0-9].[1-2][0,9][0-9][0-9]', 
 						title: 'masked text field'})
-				.div(style='height: 2.5625rem')
+				div(style='height:40px;')
 				.form-elements__date-subscr-forms
-					.double-form(id='datepickertwo-multiple')
-						.double-form__container
-							+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: 'ДД.ММ.ГГГГ', title: 'date dropdown'
-								,tfName: 'datepickertwo-multiple-first'})
-						.double-form__container
-							+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: '19.08.2019', title: 'date dropdown'
-								,tfName: 'datepickertwo-multiple-second'})
+					+multiDatepicker({id: 'datepicker-two-multiple', titleStart: 'date dropdown', titleEnd: 'date dropdown',
+						setDateStart: 'ДД.ММ.ГГГГ', setDateEnd: '19.08.2019' })
 					//- Блок для поля с выпадающей датой среднего размера
 					.middle-field
-						+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: '19 авг - 23 авг'
-							,tfName: 'datepickerone-single', title: 'filter date dropdown'})
+						+singleDatepicker({id: 'datepickerone-single', title: 'filter date dropdown', dateSet: '19 авг - 23 авг' })
 					.middle-field
 						+text-field-with-info({tfType: 'subscribe-field', tfPlaceholder: 'Email', title: 'subscription text field'})
 
@@ -182,7 +177,7 @@ div(class='wrapper wrapper__elements')
 						hidden: true,
 						tfName: 'expandableTestOne'
 					})
-					.div(style='margin-top:1.125rem')
+					.div(style='margin-top:14px')
 					+expandable-checkbox-list({
 						items: [
 							{id: 'onebreakfast', text: 'завтрак', checked: false},

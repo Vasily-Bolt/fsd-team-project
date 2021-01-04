@@ -1,0 +1,7 @@
+mixin feedback(object)
+  feedback
+    feedback__icon
+      img(src='./img/userpics/murad-sarafanov.jpg')
+    feedback__name-when
+    +like-button({id:'likes-', number_of_likes: object.likesQuantity, checked: object.ThisUserAlreadyVoted})
+    feedback__content

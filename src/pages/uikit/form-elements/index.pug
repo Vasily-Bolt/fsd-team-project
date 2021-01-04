@@ -13,6 +13,7 @@ include ../../../assets/blocks/expandable-checkbox-list/expandable-checkbox-list
 include ../../../assets/blocks/rich-checkbox-button/rich-checkbox-button.pug
 include ../../../assets/blocks/bullet-list/bullet-list.pug
 include ../../../assets/blocks/room-description/room-description.pug
+include ../../../assets/blocks/feedback/feedback.pug
 
 
 div(class='wrapper wrapper__elements')
@@ -210,7 +211,7 @@ div(class='wrapper wrapper__elements')
 					'Без вечеринок и мероприятий',
 					'Время прибытия &mdash; после 13:00,<br>а выезд до 12:00'
 				])
-		.form-elements
+		.form-elements(style='margin-top:5.375rem;')
 			.form-elements__column
 				+room-description([
 					{
@@ -227,4 +228,7 @@ div(class='wrapper wrapper__elements')
 					}
 				])
 			.form-elements__column
-				input#datepicker2
+				+feedback({
+					likesQuantity: 12,
+					ThisUserAlreadyVoted: true,
+				})

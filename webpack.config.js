@@ -7,6 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
@@ -86,6 +87,9 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery'
     }),
+    new MomentLocalesPlugin({
+      localesToKeep: ['ru'],
+    }),
     // new HTMLWebpackPlugin( {
     //   template: './pages/uikit/form-elements/index.pug',
     //   filename: 'index.html',
@@ -96,13 +100,17 @@ module.exports = {
     //   }
     // }),
     // new CleanWebpackPlugin(),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: path.resolve(__dirname, 'src/favicon.ico'),
-    //       to: path.resolve(__dirname, 'dist')
-    //     },
-    // ]}),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/favicon.ico'),
+          to: path.resolve(__dirname, 'dist')
+        },
+        {
+          from: path.resolve(__dirname, 'src/assets/img/userpics/'),
+          to: path.resolve(__dirname, 'dist/img/userpics/')
+        },
+    ]}),
     new MiniCssExtractPlugin({
       filename: filename('css')
     })

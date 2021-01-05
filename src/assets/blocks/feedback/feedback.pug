@@ -1,7 +1,21 @@
 mixin feedback(object)
-  feedback
-    feedback__icon
-      img(src='./img/userpics/murad-sarafanov.jpg')
-    feedback__name-when
-    +like-button({id:'likes-', number_of_likes: object.likesQuantity, checked: object.ThisUserAlreadyVoted})
-    feedback__content
+	.feedback
+		.feedback__icon
+			img(src='./img/userpics/murad-sarafanov.jpg')
+		.feedback__name-when
+			p.feedback__name-when--name= object.userName
+			case object.daysAgoAdded
+				when 0
+					p сегодня
+				when 1
+					p= object.daysAgoAdded + ' день назад'
+				when 2
+				when 3
+				when 4
+					p= object.daysAgoAdded + ' дня назад'
+				default
+					p= object.daysAgoAdded + ' дней назад'
+		.feedback__like
+			+like-button({id:'likes-', number_of_likes: object.likesQuantity, checked: object.thisUserAlreadyVoted})
+		.feedback__content
+			p!= object.userComment

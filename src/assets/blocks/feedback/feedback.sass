@@ -1,14 +1,18 @@
+.feedback__icon
+	position: relative
+
+.feedback__icon img
+	position: absolute
+	top: -2px
+	left: -2px
+	object-fit: cover
+	border-radius: 50%
+	border: 2px solid #fff
+
 .feedback__name-when--name
 	font-weight: 700
 
-.feedback
-	width: 712px
-	display: grid
-	grid-template: 49px auto / 48px auto
-	gap: 10px
-
 .feedback__name-when
-	// margin-top: 1px
 	align-self: center
 
 .feedback__name-when, .feedback__content
@@ -16,4 +20,10 @@
 
 .feedback__like
 	justify-self: center
-	margin-top: 2px
+	margin-top: .125rem //2px
+
+.feedback
+	width: 44.5rem //712px
+	display: grid
+	grid-template: 3.0625rem auto / 3rem auto
+	gap: .625rem //10px

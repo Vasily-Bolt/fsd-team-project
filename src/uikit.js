@@ -15,7 +15,3 @@ import '@/assets/blocks/datepicker/datepicker.js'
 import '@/pages/uikit/styles.sass'
 
 
-
-// $(()=> {
-//   $('#amount').css('color','red');
-// });

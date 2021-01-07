@@ -86,9 +86,12 @@ function changeDropdownexpansion(dropdownHeaderId) {
 	let titleField = $(dropdownHeaderId).parent().find( '.field-template' );
 	// Меняем класс (сворачиваем развернутый, разворачиваем свернутый)
 	dropdownHeaderId.toggleClass( 'dropdown__expanded--false' );
+
 	// Меняем класс главного поля для изменения яркости границ
 	titleField.toggleClass( 'field-template--border-hovered' );
 	titleField.toggleClass( 'field-template--border-not-hovered' );
+
+	titleField.toggleClass( 'border-corners--bottom' );
 
 	// Если сворачиваем, то возвращаем z-index к стоку (9 + 1 потом)
 	if ( dropdownHeaderId.hasClass( 'dropdown__expanded--false' ) ) 
@@ -113,7 +116,7 @@ $(()=> {
 	// Далее запускаем функцию изменения заголовка
 	$( '.incdecField__input-button' ).click( function() {
 		let stringToSearchForId = $(this).siblings('.incdecField__my-input').attr('id');
-		let idToSearch = stringToSearchForId.slice( stringToSearchForId.lastIndexOf(' ')+1 );
+		let idToSearch = stringToSearchForId.slice( stringToSearchForId.indexOf('-')+1 );
 		dropdownHeaderTextCheckV2( idToSearch );
 	});
 

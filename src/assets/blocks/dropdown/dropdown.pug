@@ -2,8 +2,16 @@ mixin dropdown(obj)
 	- 
 		var dropdownClass = 'field-template--border-hovered dropdown__expanded border-corners--bottom'
 		var isExpanded = obj.expanded
+
+		if ( isExpanded )
+			var corners = 'top'
+
+		//- Если передаем check, то это для шаблона - как будто открытый дропдаун, но он закрыт :))
+		if ( isExpanded == 'check' )
+			isExpanded = false
+
 	div(id=obj.dropdownName class='dropdown')
-		+text-field-with-info({tfCorners: 'top', tfType: 'dropdown-field', tfDropdownHidden: 'true', 
+		+text-field-with-info({tfCorners: corners, tfType: 'dropdown-field', tfDropdownHidden: 'true', 
 			title: obj.tfTitle, aditional: obj.tfAdditional, tfHovered: isExpanded, tfPlaceholder: obj.tfEmptyTitle, tfName: obj.dropdownName+'Text'})
 		if !isExpanded
 			- dropdownClass += ' dropdown__expanded--false'

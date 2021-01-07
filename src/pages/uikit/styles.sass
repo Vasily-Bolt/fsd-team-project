@@ -1,15 +1,20 @@
-@import '@/styles/styles.sass'
-@import '@/assets/blocks/gull-emblem/gull.sass'
+@import @/styles/styles.sass
+@import @/assets/blocks/gull-emblem/gull.sass
 
 .wrapper
 	width: 99vw
 	height: 1vh//900px
+	width: 1440px
 	margin: 0 auto
 	display: grid
 	grid-template-columns: 9rem 1fr 9rem 
 	grid-template-rows: 9rem 1fr 9rem 
 	color: $all-document-text-color
 	
+.wrapper__elements
+	grid-template-columns: 8.8125rem 1fr 8.8125rem //141px	141px
+	grid-template-rows: 8.75rem 1fr 8.1875rem //140px	131px
+
 .gull-emblem-container
 	grid-column: 1/3
 	grid-row: 1/3
@@ -18,6 +23,6 @@
 	margin-top: 30px
 	margin-left: 30px
 
-@import '@/pages/uikit/color-block/styles.sass'
-@import '@/pages/uikit/form-elements/styles.sass'
-
+@import @/pages/uikit/color-block/styles.sass
+@import @/pages/uikit/form-elements/styles.sass
+@import @/pages/uikit/cards/styles.sass

@@ -9,14 +9,14 @@
 mixin incdecField(obj, connectionName)
 	-
 		var buttonDisabled = false
-		var ButtonIdFirstPartName = obj.idName+connectionName
+		var ButtonIdFirstPartName = obj.idName + '-' + connectionName
 
 	.incdecField
 		label(for=obj.idName class='header3 incdecField__text')= obj.text
 		.incdecField__settings
 			- if ( obj.value == 0 ) buttonDisabled = true
 			input(type='button' id=ButtonIdFirstPartName+'BtnMns' value='-' class='btnMns incdecField__input-button ' disabled=buttonDisabled)
-			input(id=obj.idName+' '+connectionName name=obj.idName+'Value' class='incdecField__my-input header3' 
+			input(id=obj.idName+'-'+connectionName name=obj.idName+'Value' class='incdecField__my-input header3' 
 				type='text' value=obj.value disabled data-zero-others=obj.valueDependendText[0] 
 				data-one=obj.valueDependendText[1] data-two-three-four=obj.valueDependendText[2] )
 			- 

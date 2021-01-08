@@ -1,4 +1,5 @@
 include ../../../assets/blocks/room-search/room-search.pug
+include ../../../assets/blocks/user-register/user-register.pug
 
 .wrapper.wrapper__cards
 	.gull-emblem-container
@@ -6,5 +7,11 @@ include ../../../assets/blocks/room-search/room-search.pug
 	.uikit-cards
 		+room-search({
 			id: 'uikit-room-search',
-			title: 'Найдём номера под ваши пожелания',
 		})
+
+		+user-register ({
+
+		})
+
+		.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings
+		

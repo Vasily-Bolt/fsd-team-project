@@ -1,0 +1,15 @@
+mixin user-register(object)
+	form(id = object.id class='user-register cards-styles--flex cards-styles-box-shadow cards-styles-size-and-paddings')
+		.header1 Регистрация аккаунта
+		+text-field({
+			field_type: 'text-field', 
+			name: 'userName', 
+			placeholder: 'Имя',
+		})
+		+text-field({
+      field_type: 'text-field', 
+      name: 'surname', 
+      placeholder: 'Фамилия',
+    })
+		+gender-select-radio
+		+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'подобрать номер', buttonType: 'with-arrow-right', formToSubmit: object.id})

@@ -29,7 +29,8 @@ mixin elongated-button(obj)
 			default : break;
 		}
 	div(style='height: ' + obj.sizeHeight + '; width: ' + obj.sizeWidth)
-		button(class='elongated-button ' + buttonType disabled=obj.disabled type=obj.formToSubmit ? 'submit' : '' form=obj.formToSubmit)
+		button(class='elongated-button ' + buttonType disabled=obj.disabled type=obj.formToSubmit ? 'submit' : ''
+			form=obj.formToSubmit value=obj.referenceText)
 			span(class='header3 elongated-button__text ' + textType)= obj.text
 			if addArrow
 				span.elongated-button__arrow-block

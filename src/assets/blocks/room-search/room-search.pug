@@ -1,6 +1,6 @@
 mixin room-search(object)
-  .room-search.cards-styles-box-shadow.cards-styles-size-and-paddings
-    .room-search__title-container.header1= object.title
+  form(id = object.id class='room-search cards-styles-box-shadow cards-styles-size-and-paddings')
+    .header1= object.title
     .room-search__dates-container
       +multi-datepicker({id: 'datepicker-' + object.id + '-multiple', titleStart: 'прибытие', titleEnd: 'выезд', setDateStart: 'ДД.ММ.ГГГГ', setDateEnd: 'ДД.ММ.ГГГГ' })
     .room-search__guests-container
@@ -17,4 +17,4 @@ mixin room-search(object)
 						hasButtonsBelow: true
 					})
     .room-search__submit-container
-      +elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'подобрать номер', buttonType: 'with-arrow-right'})
+      +elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'подобрать номер', buttonType: 'with-arrow-right', formToSubmit: object.id})

@@ -29,11 +29,11 @@ mixin elongated-button(obj)
 			default : break;
 		}
 	div(style='height: ' + obj.sizeHeight + '; width: ' + obj.sizeWidth)
-		button(class='elongated-button ' + buttonType disabled=obj.disabled) 
-			a(class='header3 elongated-button__text ' + textType)= obj.text
+		button(class='elongated-button ' + buttonType disabled=obj.disabled type=obj.formToSubmit ? 'submit' : '' form=obj.formToSubmit)
+			span(class='header3 elongated-button__text ' + textType)= obj.text
 			if addArrow
-				.elongated-button__arrow-block
+				span.elongated-button__arrow-block
 					if addArrow=='with-arrow-right'
-						div(class='arrow arrow--to-right arrow--white')
+						span(class='arrow arrow--to-right arrow--white')
 					if addArrow=='with-arrow-left'
-						div(class='arrow arrow--to-left arrow--white')
+						span(class='arrow arrow--to-left arrow--white')

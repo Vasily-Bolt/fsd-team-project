@@ -23,16 +23,16 @@ mixin pagination( object )
 				
 			+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: +object.beginFromPage, buttonType: 'filled', referenceText: '#'})
 
-			if ( +object.beginFromPage+1 < maximalPage ) 
+			if ( +object.beginFromPage+1 < maximalPage )
 				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: +object.beginFromPage+1, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
 			
-			if ( +object.beginFromPage+2 < maximalPage ) 
+			if ( +object.beginFromPage+2 < maximalPage )
 				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: +object.beginFromPage+2, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
 
-			if ( +object.beginFromPage+4 < maximalPage ) 
+			if ( +object.beginFromPage+4 < maximalPage )
 				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: '...', buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
 			
-			if ( +object.beginFromPage != maximalPage ) 
+			if ( +object.beginFromPage != maximalPage )
 				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, text: maximalPage, buttonType: 'no-border', textType: 'halfdark', referenceText: '#'})
 				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, buttonType: 'with-arrow-right', referenceText: '#'})
 

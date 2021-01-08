@@ -91,7 +91,8 @@ function changeDropdownexpansion(dropdownHeaderId) {
 	titleField.toggleClass( 'field-template--border-hovered' );
 	titleField.toggleClass( 'field-template--border-not-hovered' );
 
-	titleField.toggleClass( 'border-corners--bottom' );
+	titleField.toggleClass( 'border-corners--all' );
+	titleField.toggleClass( 'border-corners--top' );
 
 	// Если сворачиваем, то возвращаем z-index к стоку (9 + 1 потом)
 	if ( dropdownHeaderId.hasClass( 'dropdown__expanded--false' ) ) 

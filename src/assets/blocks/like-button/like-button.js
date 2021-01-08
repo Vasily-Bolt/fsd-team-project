@@ -5,7 +5,7 @@ $(()=> {
   // не будет -1
   $('.like-button').click( function() {
     var currentLikeValue = $(this).children('.like-button__content').html();
-    if ( +$(this).siblings('.like-button-input').prop('checked') ) {
+    if ( +$(this).siblings('.like-button__input').prop('checked') ) {
       if ( currentLikeValue > 0) $(this).children('.like-button__content').html(+currentLikeValue-1);
     }
     else {

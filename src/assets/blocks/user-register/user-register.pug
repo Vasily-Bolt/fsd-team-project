@@ -1,6 +1,6 @@
 mixin user-register(object)
 	.user-register.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings
-		form(id = object.id class = 'user-register__create-account-form cards-styles--flex' )
+		form(id = object.id class = 'user-register__create-account-form' )
 			.header1 Регистрация аккаунта
 			fieldset(class='user-register__userDataFieldset cards-styles--flex')
 				+text-field({
@@ -8,7 +8,6 @@ mixin user-register(object)
 					name: 'userName', 
 					placeholder: 'Имя',
 				})
-				//- .cards-styles--text-field-padding
 				+text-field({
 					field_type: 'text-field', 
 					name: 'surname', 
@@ -16,6 +15,7 @@ mixin user-register(object)
 				})
 				+gender-select-radio
 			+text-field-with-info({tfType: 'text-field', tfName: 'dateOfBirth', tfPlaceholder: 'ДД.ММ.ГГГГ', tfPattern: '[1-3][0-9].[0-1][0-9].[1-2][0,9][0-9][0-9]', title: 'дата рождения'})
+			
 			fieldset(class='user-register__userEnterDataFieldset cards-styles--flex')
 				+text-field-with-info({tfType: 'text-field', tfName: 'userEmail', tfPlaceholder: 'Email', title: 'данные для входа в сервис', titleClass: 'padding-top'})
 				.cards-styles--text-field-padding
@@ -29,3 +29,37 @@ mixin user-register(object)
 		form(id = 'signInForm' class = 'user-register__has-account-form')
 			span Уже есть аккаунт на Toxin
 			+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'Войти', buttonType: 'empty'})
+
+
+//- Вариант на флексах. Мне нравится, но не соответствует макету в некоторых местах. Если разрешат - сделаю основным
+//- mixin user-register(object)
+//- 	.user-register.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings
+//- 		form(id = object.id class = 'user-register__create-account-form cards-styles--flex' )
+//- 			.header1 Регистрация аккаунта
+//- 			fieldset(class='user-register__userDataFieldset cards-styles--flex')
+//- 				+text-field({
+//- 					field_type: 'text-field', 
+//- 					name: 'userName', 
+//- 					placeholder: 'Имя',
+//- 				})
+//- 				//- .cards-styles--text-field-padding
+//- 				+text-field({
+//- 					field_type: 'text-field', 
+//- 					name: 'surname', 
+//- 					placeholder: 'Фамилия',
+//- 				})
+//- 				+gender-select-radio
+//- 			+text-field-with-info({tfType: 'text-field', tfName: 'dateOfBirth', tfPlaceholder: 'ДД.ММ.ГГГГ', tfPattern: '[1-3][0-9].[0-1][0-9].[1-2][0,9][0-9][0-9]', title: 'дата рождения'})
+//- 			fieldset(class='user-register__userEnterDataFieldset cards-styles--flex')
+//- 				+text-field-with-info({tfType: 'text-field', tfName: 'userEmail', tfPlaceholder: 'Email', title: 'данные для входа в сервис', titleClass: 'padding-top'})
+//- 				.cards-styles--text-field-padding
+//- 				+text-field({
+//- 					field_type: 'text-field', 
+//- 					name: 'password', 
+//- 					placeholder: 'Пароль',
+//- 				})
+//- 				+checkbox-radio({type:'toggle-switch', id:'sendSpecialOffer', name:'sendSpecialOffer', text:'Получать спецпредложения', checked: false})
+//- 			+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате', buttonType: 'with-arrow-right', formToSubmit: object.id})
+//- 		form(id = 'signInForm' class = 'user-register__has-account-form')
+//- 			span Уже есть аккаунт на Toxin
+//- 			+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'Войти', buttonType: 'empty'})

@@ -3,10 +3,10 @@ mixin single-datepicker(object)
 		,tfName: object.id, title: object.title})
 
 mixin multi-datepicker(object)
-	.datepicker(id=object.id)
+	.datepicker(id=object.id+'-multiple')
 		.datepicker__field
 			+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: object.setDateStart
-				,title: object.titleStart, tfName: object.id+'-first'})
+				,title: object.titleStart, tfName: object.id+'-multiple-first'})
 		.datepicker__field
 			+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: object.setDateEnd
-				,title: object.titleEnd, tfName: object.id+'-second'})
+				,title: object.titleEnd, tfName: object.id+'-multiple-second'})

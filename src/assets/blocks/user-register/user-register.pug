@@ -28,7 +28,7 @@ mixin user-register(object)
 			+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате', buttonType: 'with-arrow-right', formToSubmit: object.id})
 		form(id = 'signInForm' class = 'user-register__has-account-form')
 			span Уже есть аккаунт на Toxin
-			+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'Войти', buttonType: 'empty'})
+			+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'Войти', buttonType: 'empty', formToSubmit: 'signInForm'})
 
 
 //- Вариант на флексах. Мне нравится, но не соответствует макету в некоторых местах. Если разрешат - сделаю основным

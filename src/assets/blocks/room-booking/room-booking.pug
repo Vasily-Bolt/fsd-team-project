@@ -1,0 +1,9 @@
+mixin room-booking(object)
+	//- FLEX!!!
+	form(id = object.id class='room-booking cards-styles--flex cards-styles-box-shadow cards-styles-size-and-paddings')
+		.room-booking__title
+			span №
+			span.header1 888
+			span люкс
+			span 9 990₽ в сутки
+		+multi-datepicker({id: 'datepicker-' + object.id, titleStart: 'прибытие', titleEnd: 'выезд', setDateStart: 'ДД.ММ.ГГГГ', setDateEnd: 'ДД.ММ.ГГГГ' })

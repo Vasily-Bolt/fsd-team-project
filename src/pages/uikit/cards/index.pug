@@ -1,5 +1,6 @@
 include ../../../assets/blocks/room-search/room-search.pug
 include ../../../assets/blocks/user-register/user-register.pug
+include ../../../assets/blocks/room-booking/room-booking.pug
 
 .wrapper.wrapper__cards
 	.gull-emblem-container
@@ -9,9 +10,10 @@ include ../../../assets/blocks/user-register/user-register.pug
 			id: 'uikit-room-search',
 		})
 		.uikit-cards__flex-gap
-		+user-register ({
-
-		})
-
-		.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings
-		
+		+user-register({id: 'uikit-user-register'})
+		+room-booking({})
+		.uikit-cards__flex-gap
+		.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings(style='height:358px')
+		.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings(style='height:369px;width:320px;')
+		.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings(style='height:257px;width:320px;')
+		.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings(style='height:257px;width:320px;')

@@ -1,10 +1,10 @@
-
 .room-booking__table
-	white-space: nowrap
 	border-spacing: 0
 
+.room-booking__table td:first-child
+	width: 220px
+
 .room-booking__table td:last-child
-	width: 10%
 	text-align: right
 
 .room-booking__title
@@ -20,6 +20,7 @@
 .room-booking__title--right
 	align-self: flex-end
 	text-align: right
+	margin-bottom: -.125rem //-2px
 	color: rgba($all-document-text-color, .5)
 
 .room-booking__title--right span:first-child
@@ -29,13 +30,16 @@
 	font-size: .75rem
 
 
-.room-booking__title--price
+.room-booking__summary
+	display: flex
+	justify-content: space-between
+	width: 100%
 	
-	
-	
-	
-	
-	
+.room-booking__summary-dots
+	flex: 1 1 auto
+	// margin-bottom: 10px
+	border-bottom: 1px dotted #000
+	opacity: .25
 	
 .room-booking
 	height: 32rem //512px по шаблону 511

@@ -24,20 +24,24 @@ mixin room-booking(object)
 						hasButtonsBelow: true
 					})
 
-		table(cols=2 class='room-booking__table body-text')
+		table(cols=3 class='room-booking__table text-dark-shade-almost-total')
 			tbody
 				tr
 					td 9 990Р х 4 суток
+					td
 					td 39 960₽
 				tr
 					td Сбор за услуги: скидка 2 179₽
+					td
 					td 0₽
 				tr
 					td Сбор за дополнительные услуги
+					td
 					td 300₽
 
-		.header2
+		.room-booking__summary.header2
 			span Итого
+			.room-booking__summary-dots
 			span 38 081₽
 
 		+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'забронировать', buttonType: 'with-arrow-right', formToSubmit: object.id})

@@ -2,8 +2,43 @@ mixin room-booking(object)
 	//- FLEX!!!
 	form(id = object.id class='room-booking cards-styles--flex cards-styles-box-shadow cards-styles-size-and-paddings')
 		.room-booking__title
-			span №
-			span.header1 888
-			span люкс
-			span 9 990₽ в сутки
-		+multi-datepicker({id: 'datepicker-' + object.id, titleStart: 'прибытие', titleEnd: 'выезд', setDateStart: 'ДД.ММ.ГГГГ', setDateEnd: 'ДД.ММ.ГГГГ' })
+			.left
+				span №
+				span.header1 888
+				span люкс
+			.right
+				span 9 990₽
+				span  в сутки
+		//- в id передается тот же object.id, но в миксине он дополняется, потому остается уникальным!
+		+multi-datepicker({id: object.id, titleStart: 'прибытие', titleEnd: 'выезд', setDateStart: 'ДД.ММ.ГГГГ', setDateEnd: 'ДД.ММ.ГГГГ' })
+		+dropdown({
+						items: [
+							{idName: 'grownup', text: 'взрослые', value: '0', valueDependendText: ['гостей', 'гость', 'гостя'] },
+							{idName: 'kids', text: 'дети', value: '0', valueDependendText: ['гостей', 'гость', 'гостя'] },
+							{idName: 'infants', text: 'младенцы', value: '0', valueDependendText: ['младенцев', 'младенец', 'младенца'] }
+						],
+						dropdownName: 'guests-' + object.id,
+						tfEmptyTitle: 'Сколько гостей',
+						tfTitle: 'гости',
+						expanded: false,
+						hasButtonsBelow: true
+					})
+
+		table(cols=3 class='room-booking__table')
+			tfoot
+				tr
+					td Итого
+					td.room-booking__cell-with-dots
+						.room-booking__div-for-cell-with-dots
+					td 38 081₽
+			tbody
+				tr
+					td(colspan='2') 9 990Р х 4 суток
+					td 39 960₽
+				tr
+					td(colspan='2') Сбор за услуги: скидка 2 179₽
+					td 0₽
+				tr
+					td(colspan='2') Сбор за дополнительные услуги
+					td 300₽
+		+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'забронировать', buttonType: 'with-arrow-right', formToSubmit: object.id})

@@ -33,11 +33,11 @@ div(class='wrapper wrapper__elements')
 						title: 'masked text field'})
 				div(style='height:40px;')
 				.form-elements__date-subscr-forms
-					+multi-datepicker({id: 'datepicker-two', titleStart: 'date dropdown', titleEnd: 'date dropdown',
+					+multi-datepicker({id: 'two', titleStart: 'date dropdown', titleEnd: 'date dropdown',
 						setDateStart: 'ДД.ММ.ГГГГ', setDateEnd: '19.08.2019' })
 					//- Блок для поля с выпадающей датой среднего размера
 					.middle-field
-						+single-datepicker({id: 'datepickerone-single', title: 'filter date dropdown', dateSet: '19 авг - 23 авг' })
+						+single-datepicker({id: 'single', title: 'filter date dropdown', dateSet: '19 авг - 23 авг' })
 					.middle-field
 						+text-field-with-info({tfType: 'subscribe-field', tfPlaceholder: 'Email', title: 'subscription text field'})
 

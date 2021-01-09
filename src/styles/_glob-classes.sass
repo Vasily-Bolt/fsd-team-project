@@ -3,7 +3,7 @@
 	font-size: 1.5rem //24px
 	font-weight: 700
 	line-height: 1.875rem //30px
-	letter-spacing: -.5px
+	// letter-spacing: -.5px //Was in old version
 
 @mixin header-two
 	font-family: Montserrat
@@ -23,6 +23,7 @@
 	font-family: Montserrat
 	font-size: 0.875rem //14px
 	line-height: 1.5rem //24px
+	color: rgba($all-document-text-color, .75)
 
 *, *:before, *:after 
 	-webkit-box-sizing: border-box
@@ -32,7 +33,7 @@
 html
 	font-size: 16px
 
-body
+body, .body-text
 	@include body-text
 
 body, fieldset
@@ -42,6 +43,7 @@ body, fieldset
 input, fieldset
 	@include body-text
 	border: none
+	color: inherit
 	
 input:hover, input:focus
 	outline: 0
@@ -54,8 +56,9 @@ h1, h2, h3, p
 h1, .header1
 	@include header-one
 	
-h2
+h2, .header2
 	@include header-two
 
 h3, .header3
 	@include header-three  
+	

@@ -1,27 +1,33 @@
 
 .room-booking__table
 	white-space: nowrap
-	width: 100%
-
-.room-booking__table tfoot td:first-child
-	width: 10%
+	border-spacing: 0
 
 .room-booking__table td:last-child
-	width: 5%
+	width: 10%
 	text-align: right
-
-.room-booking__cell-with-dots
-	width: 85%
-
-.room-booking__div-for-cell-with-dots
-	margin-bottom: 5px
-	border-bottom: .0625rem dotted rgba($all-document-text-color, .25) //dashed
-
-
 
 .room-booking__title
 	display: flex
 	justify-content: space-between
+
+.room-booking__title--left span:first-child
+	font-weight: 700
+
+.room-booking__title--left span:last-child
+	color: $purple	
+	
+.room-booking__title--right
+	align-self: flex-end
+	text-align: right
+	color: rgba($all-document-text-color, .5)
+
+.room-booking__title--right span:first-child
+	font-weight: bold
+
+.room-booking__title--right span:last-child
+	font-size: .75rem
+
 
 .room-booking__title--price
 	

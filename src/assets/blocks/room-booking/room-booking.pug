@@ -10,11 +10,11 @@ mixin room-booking(object)
 				span 9 990₽
 				span  в сутки
 		//- в id передается тот же object.id, но в миксине он дополняется, потому остается уникальным!
-		+multi-datepicker({id: object.id, titleStart: 'прибытие', titleEnd: 'выезд', setDateStart: 'ДД.ММ.ГГГГ', setDateEnd: 'ДД.ММ.ГГГГ' })
+		+multi-datepicker({id: object.id, titleStart: 'прибытие', titleEnd: 'выезд', setDateStart: '19.05.2019', setDateEnd: '23.08.2019' })
 		+dropdown({
 						items: [
-							{idName: 'grownup', text: 'взрослые', value: '0', valueDependendText: ['гостей', 'гость', 'гостя'] },
-							{idName: 'kids', text: 'дети', value: '0', valueDependendText: ['гостей', 'гость', 'гостя'] },
+							{idName: 'grownup', text: 'взрослые', value: '2', valueDependendText: ['гостей', 'гость', 'гостя'] },
+							{idName: 'kids', text: 'дети', value: '1', valueDependendText: ['гостей', 'гость', 'гостя'] },
 							{idName: 'infants', text: 'младенцы', value: '0', valueDependendText: ['младенцев', 'младенец', 'младенца'] }
 						],
 						dropdownName: 'guests-' + object.id,
@@ -23,25 +23,27 @@ mixin room-booking(object)
 						expanded: false,
 						hasButtonsBelow: true
 					})
+		div
+			table(cols=3 class='room-booking__table text-dark-shade-almost-total')
+				tbody
+					tr
+						td 9 990Р х 4 суток
+						td
+						td 39 960₽
+					tr
+						td Сбор за услуги: скидка 2 179₽
+						td
+							.info-marker
+						td 0₽
+					tr
+						td Сбор за дополнительные услуги
+						td
+							.info-marker
+						td 300₽
 
-		table(cols=3 class='room-booking__table text-dark-shade-almost-total')
-			tbody
-				tr
-					td 9 990Р х 4 суток
-					td
-					td 39 960₽
-				tr
-					td Сбор за услуги: скидка 2 179₽
-					td
-					td 0₽
-				tr
-					td Сбор за дополнительные услуги
-					td
-					td 300₽
-
-		.room-booking__summary.header2
-			span Итого
-			.room-booking__summary-dots
-			span 38 081₽
+			.room-booking__summary.header2
+				span Итого
+				.room-booking__summary-dots
+				span 38 081₽
 
 		+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'забронировать', buttonType: 'with-arrow-right', formToSubmit: object.id})

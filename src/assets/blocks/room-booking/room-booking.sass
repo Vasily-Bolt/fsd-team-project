@@ -1,74 +1,8 @@
-.info-marker
-	width: 1.1875rem //19px //1.25rem //20px
-	height: 1.1875rem //19px //1.25rem //20px
-	position: relative
-	opacity: .25
-
-.info-marker::before
-	width: 100%
-	height: 100%
-	position: absolute
-	top: 0
-	left: 0
-	border: 1px solid $all-document-text-color
-	border-radius: 50%
-	padding-left: 35%
-	font-size: 12px
-	font-weight: 700
-	content: 'i'
-
-.room-booking__table
-	$border-spacing-div-margin: 14px //.84375rem //13.5px //.875rem //14px //One variable to rule the world!
-	width: calc(100% + .0625rem) //to fit the template
-	border-spacing: 0 $border-spacing-div-margin
-	line-height: normal
-	margin: -$border-spacing-div-margin 0 $border-spacing-div-margin 0
-.room-booking__table td
-	vertical-align: top
-
-.room-booking__table td:first-child
-	width: 68.8%
-	// width: 220px
-
-.room-booking__table td:last-child
-	text-align: right
-	vertical-align: top
-
-.room-booking__title
-	display: flex
-	justify-content: space-between
-
-.room-booking__title--left span:first-child
-	font-weight: 700
-
-.room-booking__title--left span:last-child
-	color: $purple	
-	
-.room-booking__title--right
-	align-self: flex-end
-	text-align: right
-	margin-bottom: -.125rem //-2px
-	color: rgba($all-document-text-color, .5)
-
-.room-booking__title--right span:first-child
-	font-weight: bold
-
-.room-booking__title--right span:last-child
-	font-size: .75rem
-
-
-.room-booking__summary
-	display: flex
-	justify-content: space-between
-	width: calc(100% + .625rem) //to fit the template
-	letter-spacing: .00625rem //.1px
-	// width: 100%
-	
-.room-booking__summary-dots
-	flex: 1 1 auto
-	margin: 0 .3125rem .25rem .25rem
-	border-bottom: .0625rem dotted #000
-	opacity: .25
+@import ./__table/room-booking__table
+@import ./__title/room-booking__title
+@import ./__summary/room-booking__summary
+@import ./__summary-dots/room-booking__summary-dots
 	
 .room-booking
 	height: 32rem //512px по шаблону 511
+	

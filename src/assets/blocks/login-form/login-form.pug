@@ -1,0 +1,20 @@
+mixin login-form(object)
+	.login-form.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings
+		.header1 Войти
+		form(id = object.id class='' method='get' action='')
+			fieldset(class='login-form__user-data-fieldset cards-styles--flex')
+					+text-field({
+						field_type: 'text-field', 
+						name: 'userName', 
+						placeholder: 'Email',
+					})
+					+text-field({
+						field_type: 'text-field', 
+						name: 'surname', 
+						placeholder: 'Пароль',
+					})
+		+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'войти', buttonType: 'with-arrow-right', formToSubmit: object.id})
+			//- ?Может заменить на <a>?
+		form(id = 'createAccauntForm' class = 'counter-account-block' method='get' action='')
+			span Нет аккаунта на Toxin?
+			+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'создать', buttonType: 'empty', formToSubmit: 'createAccauntForm'})

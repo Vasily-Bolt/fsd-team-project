@@ -4,9 +4,10 @@ $(()=> {
 	
 	let commonDateRangePickerFieldSetup = {
 		language: 'ru',
+		showTopbar: false,
 		singleMonth: true,
 		showShortcuts: false,
-		autoClose: false,
+		hoveringTooltip: false,
 	};
 
 	let singleFieldDateRangePickerSetup = Object.assign({}, commonDateRangePickerFieldSetup, {
@@ -20,7 +21,6 @@ $(()=> {
 		getValue: function()
 			{
 				let datepickerIdWeWorkWith = this.id.slice( 0, this.id.indexOf('multiple') + 9 );
-				// console.log(datepickerIdWeWorkWith);
 
 				let firstInputValue = $('#' + datepickerIdWeWorkWith + 'firstInputField').val();
 				let secondInputValue = $('#' + datepickerIdWeWorkWith + 'secondInputField').val()
@@ -45,7 +45,6 @@ $(()=> {
 		if ( datepickerIdString.endsWith('multiple') ) DateRangePickerSetup = multipleFieldDateRangePickerSetup;
 		if ( datepickerIdString.indexOf('single')  != -1 ) DateRangePickerSetup = singleFieldDateRangePickerSetup;
 		if ( DateRangePickerSetup != '' ) {
-			// console.log('made -  ' + datepickerIdString);
 			$(this).find('input[id$="InputField"]')
 				.dateRangePicker( DateRangePickerSetup )
 				.bind('datepicker-closed', function(){
@@ -53,9 +52,15 @@ $(()=> {
 				})
 				.bind('datepicker-opened', function(){
 					trigger = 'close';
-				});
+				})
 		}
 	});
+
+	// .bind('datepicker-apply',function(event,obj)
+	// {
+	// 	/* This event will be triggered when user clicks on the apply button */
+	// 	console.log(obj);
+	// })
 
 //Сделай если закрывается кнопкой (из самого пикера), то надо менять триггер! В плагине есть такая функция
 

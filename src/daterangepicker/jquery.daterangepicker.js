@@ -1103,6 +1103,10 @@
 
         // expose some api
         $(this).data('dateRangePicker', {
+            getDaysPicked: function () {
+                // console.log(opt.end + '   ' + opt.start)
+                return countDays(opt.end, opt.start); // !! БОЛТУНОВ !!!
+            },
             setStart: function(d1) {
                 if (typeof d1 == 'string') {
                     d1 = moment(d1, opt.format).toDate();
@@ -1938,6 +1942,7 @@
                 opt.setValue.call(selfDom, dateRange, getDateString(new Date(opt.start)), getDateString(new Date(opt.end)));
                 if (initiated && !silent) {
                     $(self).trigger('datepicker-change', {
+                        'daysPicked': countDays(opt.end, opt.start),
                         'value': dateRange,
                         'date1': new Date(opt.start),
                         'date2': new Date(opt.end)

@@ -136,6 +136,7 @@ $(()=> {
 
 	$('.dropdown').on('click', 'input:submit', function(event) {
 		let idToSearch = $(event.delegateTarget).find('fieldset');
+		event.preventDefault();
 		changeDropdownexpansion( idToSearch );
 	});
 

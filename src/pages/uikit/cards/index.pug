@@ -8,11 +8,21 @@ include ../../../assets/blocks/login-form/login-form.pug
 		.gull-emblem
 	.uikit-cards
 		+room-search({
-			id: 'uikit-room-search',
+			id: 'uikitRoomSearch',
 		})
 		.uikit-cards__flex-gap
-		+user-register({id: 'uikit-user-register'})
-		+room-booking({id:'uikit-room-booking'})
+		+user-register({id: 'uikitUserRegister'})
+		+room-booking({
+			id:'uikitRoomBooking',
+			roomNumber: '888',
+			roomExtra: 'люкс',
+			dateIn: '19.05.2019',
+			dateOut: '23.08.2019',
+			guests: ['2','1','0'],
+			pricePerDay: 9990,
+			discount: 2179,
+			extraServicesPrice: 300,
+			})
 		.uikit-cards__flex-gap(style='height:38px')
 		+login-form({id: 'uikit-user-login'})
 		.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings(style='height:369px;width:320px;')

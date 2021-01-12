@@ -1,3 +1,5 @@
+const { event } = require("jquery");
+
 $(()=> {
   $('.room-booking').each( function() {
     let blockWithNumberOfDays = $(this).find('span[id$="daysOfResidence"]');
@@ -11,19 +13,17 @@ $(()=> {
       $(this).find('input[id$="multiple-firstInputField"]').val(),
       $(this).find('input[id$="multiple-secondInputField"]').val()
     ];
-    let daysOfResidence = 4;
+    datePickerDataSelector.setDateRange ( ResidenceDaysRange[0], ResidenceDaysRange[1], false );
 
+    //Теперь через метод getDaysPicked получаем количество дней пребывания и сохраняем в переменную
+    let daysOfResidence = datePickerDataSelector.getDaysPicked()-1;
     blockWithNumberOfDays.html( daysOfResidence );
-    
-    datePickerDataSelector.setDateRange ( ResidenceDaysRange[0], ResidenceDaysRange[1] );
-    
-    daysOfResidence = datePickerDataSelector.getDaysPicked();
-    console.log( daysOfResidence-1 );
-    // setTimeout(() => {
-    //   $(this).find('input[id$="InputField"]').data('dateRangePicker').getDaysPicked();
-    // }, 5000);
-    // setTimeout(() => {
-    //   $(this).find('input[id$="InputField"]').data('dateRangePicker').getDaysPicked();
-    // }, 10000);
+    console.log( daysOfResidence );
+
+    $(this).find('div[id^="datepicker"').on('datepicker-date-changed', function(){
+      console.log('321');
+      // console.log(event.data.ooop);
+    }); 
+
   });
 });

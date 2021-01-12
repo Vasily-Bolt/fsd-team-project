@@ -40,6 +40,7 @@ $(()=> {
 	});
 
 	$( 'div[id^="datepicker"]' ).each( function() {
+		$(this).attr('data-days','')
 		let DateRangePickerSetup = '';	
 		let datepickerIdString = $(this).attr('id');
 		if ( datepickerIdString.endsWith('multiple') ) DateRangePickerSetup = multipleFieldDateRangePickerSetup;
@@ -53,6 +54,12 @@ $(()=> {
 				.bind('datepicker-opened', function(){
 					trigger = 'close';
 				})
+				.bind('datepicker-change',function(event,obj){
+					//Можно сделать этот слушатель только по условию (это съэкономит ресурсы... или нет) и триггер за которым будет следить
+					//обработчик событий в нужном родительском блоке
+					$(this).parents('div[id^="datepicker"]').attr('data-days', $(this).data('dateRangePicker').getDaysPicked()-1);
+					$(this).parents('div[id^="datepicker"]').trigger('datepicker-date-changed');
+				});
 		}
 	});
 

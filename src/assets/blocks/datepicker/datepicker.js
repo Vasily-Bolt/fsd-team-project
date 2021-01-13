@@ -38,9 +38,9 @@ $(()=> {
 				$('#' + datepickerIdWeWorkWith + 'secondInputField').val(s2);
 			}
 	});
-
-	$( 'div[id^="datepicker"]' ).each( function() {
-		$(this).attr('data-days','')
+	
+	$( 'div[id^="datepickerHead"]' ).each( function() {
+		// $(this).attr('data-days','')
 		let DateRangePickerSetup = '';	
 		let datepickerIdString = $(this).attr('id');
 		if ( datepickerIdString.endsWith('multiple') ) DateRangePickerSetup = multipleFieldDateRangePickerSetup;
@@ -57,21 +57,19 @@ $(()=> {
 				.bind('datepicker-change',function(event,obj){
 					//Можно сделать этот слушатель только по условию (это съэкономит ресурсы... или нет) и триггер за которым будет следить
 					//обработчик событий в нужном родительском блоке
-					$(this).parents('div[id^="datepicker"]').attr('data-days', $(this).data('dateRangePicker').getDaysPicked()-1);
-					$(this).parents('div[id^="datepicker"]').trigger('datepicker-date-changed');
+					let divToChangeValue = $(this).parents('div[id^="datepickerHead"]');
+					let daysPicked = $(this).data('dateRangePicker').getDaysPicked()-1;
+					if ( divToChangeValue.attr('data-days') != daysPicked ) {
+						divToChangeValue.attr('data-days', daysPicked );
+						divToChangeValue.trigger('datepicker-date-changed');
+					}
 				});
 		}
 	});
 
-	// .bind('datepicker-apply',function(event,obj)
-	// {
-	// 	/* This event will be triggered when user clicks on the apply button */
-	// 	console.log(obj);
-	// })
-
 //Сделай если закрывается кнопкой (из самого пикера), то надо менять триггер! В плагине есть такая функция
 
-	$( 'div[id^="datepicker"]' ).on('click', function(event) {
+	$( 'div[id^="datepickerHead"]' ).on('click', function(event) {
 		// Тут глюк - при клике на поле инпут два раза вызываются функции get.. setValue (штатная и моя настройка)
 		event.stopPropagation();
 		if (trigger == 'open') {

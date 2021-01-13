@@ -29,7 +29,7 @@ mixin room-booking(object)
 				span= pricePerDay
 				span  в сутки
 		//- в id передается тот же object.id, но в миксине он дополняется, потому остается уникальным!
-		+multi-datepicker({id: object.id, titleStart: 'прибытие', titleEnd: 'выезд', setDateStart: '19.08.2019', setDateEnd: '23.08.2019' })
+		+multi-datepicker({id: object.id, titleStart: 'прибытие', titleEnd: 'выезд', setDateStart: '19.08.2019', setDateEnd: '23.08.2019'})
 		+dropdown({
 						items: [
 							{idName: 'grownup', text: 'взрослые', value: object.guests[0], valueDependendText: ['гостей', 'гость', 'гостя'] },

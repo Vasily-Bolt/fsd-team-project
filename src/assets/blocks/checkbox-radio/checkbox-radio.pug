@@ -6,11 +6,12 @@
 mixin checkbox-radio(obj)
 	- if (obj.name === undefined) obj.name = obj.id
 	- if (obj.checked) var option = 'checked'
-	case obj.type
-		when 'checkbox'
-			input(type='checkbox', name=obj.name, id=obj.id value=obj.value class='checkbox-radio checkbox-radio--quadratic-with-tick' checked=option)
-		when 'radio'
-			input(type='radio', name=obj.name, id=obj.id value=obj.value class='checkbox-radio checkbox-radio--round-with-circle' checked=option)
-		when 'toggle-switch'
-			input(type='checkbox', name=obj.name, id=obj.id value=obj.value class='checkbox-radio checkbox-radio--elongated-with-circle' checked=option)
-	label(for=obj.id)= obj.text
+	div
+		case obj.type
+			when 'checkbox'
+				input(type='checkbox', name=obj.name, id=obj.id value=obj.value class='checkbox-radio checkbox-radio--quadratic-with-tick' checked=option)
+			when 'radio'
+				input(type='radio', name=obj.name, id=obj.id value=obj.value class='checkbox-radio checkbox-radio--round-with-circle' checked=option)
+			when 'toggle-switch'
+				input(type='checkbox', name=obj.name, id=obj.id value=obj.value class='checkbox-radio checkbox-radio--elongated-with-circle' checked=option)
+		label(for=obj.id)= obj.text

@@ -14,8 +14,8 @@ mixin room-booking(object)
 		else var extraServicesPrice = '0'
 		extraServicesPrice += currency
 
-		var totalPrice = '38 081' + currency
-		var pricePerPeriod = '39 960' + currency
+		//- var totalPrice = '38 081' + currency
+		//- var pricePerPeriod = '39 960' + currency
 		//- var daysOfResidence = '4'
 	//- FLEX!!!
 	form(id = object.id class='room-booking cards-styles--flex cards-styles-box-shadow cards-styles-size-and-paddings')
@@ -29,7 +29,7 @@ mixin room-booking(object)
 				span= pricePerDay
 				span  в сутки
 		//- в id передается тот же object.id, но в миксине он дополняется, потому остается уникальным!
-		+multi-datepicker({id: object.id, titleStart: 'прибытие', titleEnd: 'выезд', setDateStart: '19.08.2019', setDateEnd: '23.08.2019'})
+		+multi-datepicker({id: object.id, titleStart: 'прибытие', titleEnd: 'выезд', setDateStart: object.dateIn, setDateEnd: object.dateOut})
 		+dropdown({
 						items: [
 							{idName: 'grownup', text: 'взрослые', value: object.guests[0], valueDependendText: ['гостей', 'гость', 'гостя'] },
@@ -47,29 +47,32 @@ mixin room-booking(object)
 				tbody
 					tr
 						td
-							span= pricePerDay + ' х '
+							span(id=object.id+'-pricePerDay' data-value=object.pricePerDay )= pricePerDay + ' х '
 							span(id=object.id+'-daysOfResidence')
 							span  суток
 						td
 						td 
-							span(id=object.id+'-pricePerPeriod')= pricePerPeriod
+							span(id=object.id+'-pricePerPeriod')
 					tr
-						if object.discount > 0
-							td= 'Сбор за услуги' + discount
-						else
-							td Сбор за услуги
+						td 
+							span Сбор за услуги
+							if object.discount > 0
+								span( id=object.id+'-discount' data-value=object.discount )= discount
+
 						td
 							.info-marker
-						td= servicesPrice
+						td
+							span( id=object.id+'-servicesPrice' data-value=object.servicesPrice )= servicesPrice
 					tr
 						td Сбор за дополнительные услуги
 						td
 							.info-marker
-						td= extraServicesPrice
+						td
+							span( id=object.id+'-extraServices' data-value=object.extraServicesPrice )= extraServicesPrice
 
 			.room-booking__summary.header2
 				span Итого
 				.room-booking__summary-dots
-				span(id=object.id+'-totalPrice')= totalPrice
+				span(id=object.id+'-totalPrice')
 
 		+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'забронировать', buttonType: 'with-arrow-right', formToSubmit: object.id})

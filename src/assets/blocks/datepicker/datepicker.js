@@ -8,6 +8,8 @@ $(()=> {
 		singleMonth: true,
 		showShortcuts: false,
 		hoveringTooltip: false,
+		startOfWeek: 'monday',
+		
 	};
 
 	let singleFieldDateRangePickerSetup = Object.assign({}, commonDateRangePickerFieldSetup, {
@@ -38,13 +40,13 @@ $(()=> {
 				$('#' + datepickerIdWeWorkWith + 'secondInputField').val(s2);
 			}
 	});
-	
+
+
 	$( 'div[id^="datepickerHead"]' ).each( function() {
-		// $(this).attr('data-days','')
 		let DateRangePickerSetup = '';	
 		let datepickerIdString = $(this).attr('id');
 		if ( datepickerIdString.endsWith('multiple') ) DateRangePickerSetup = multipleFieldDateRangePickerSetup;
-		if ( datepickerIdString.indexOf('single')  != -1 ) DateRangePickerSetup = singleFieldDateRangePickerSetup;
+		if ( datepickerIdString.endsWith('single') ) DateRangePickerSetup = singleFieldDateRangePickerSetup;
 		if ( DateRangePickerSetup != '' ) {
 			$(this).find('input[id$="InputField"]')
 				.dateRangePicker( DateRangePickerSetup )
@@ -53,6 +55,14 @@ $(()=> {
 				})
 				.bind('datepicker-opened', function(){
 					trigger = 'close';
+				})
+				.bind('datepicker-open', function() {
+					$(this).parent().removeClass('border-corners--all');
+					$(this).parent().addClass('border-corners--top');
+				})
+				.bind('datepicker-close', function() {
+					$(this).parent().removeClass('border-corners--top');
+					$(this).parent().addClass('border-corners--all');
 				})
 				.bind('datepicker-change',function(event,obj){
 					//Можно сделать этот слушатель только по условию (это съэкономит ресурсы... или нет) и триггер за которым будет следить
@@ -67,15 +77,16 @@ $(()=> {
 		}
 	});
 
-//Сделай если закрывается кнопкой (из самого пикера), то надо менять триггер! В плагине есть такая функция
-
+	//Сделай если закрывается кнопкой (из самого пикера), то надо менять триггер! В плагине есть такая функция
 	$( 'div[id^="datepickerHead"]' ).on('click', function(event) {
 		// Тут глюк - при клике на поле инпут два раза вызываются функции get.. setValue (штатная и моя настройка)
 		event.stopPropagation();
 		if (trigger == 'open') {
 			$(this).find('input[id$="InputField"]').data('dateRangePicker').open();
+			// trigger = 'close';
 		} else {
 			$(this).find('input[id$="InputField"]').data('dateRangePicker').close();
+			// trigger = 'open';
 		}
 	});
 

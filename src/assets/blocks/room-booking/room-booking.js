@@ -23,7 +23,7 @@ $(()=> {
 				if ( howMuchDays == 1) return howMuchDays;
 				else return howMuchDays - 1;
 			},
-			recalculateValues:							function () {
+			recalculateValues:			function () {
 				howMuchDays = this.daysOfResidence();
 				this.blockWithNumberOfDays.html( howMuchDays );
 				let total = howMuchDays*this.pricePerDay

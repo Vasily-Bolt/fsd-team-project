@@ -28,7 +28,8 @@ $(()=> {
 	const clearBlockHTML = `<div style="height: 1.75rem "><button class="elongated-button elongated-button--no-border" type=""><span class="header3 elongated-button__text elongated-button__text--purple">${clearSign}</span></button></div>`;
 	const appendBlockHTML = `<div style="height: 1.75rem"><button class="elongated-button elongated-button--no-border" type=""><span class="header3 elongated-button__text elongated-button__text--purple">${appendSign}</span></button></div>`;
 	const buttonBlockHTML = `${clearBlockHTML} ${appendBlockHTML}`;
-	$( '#inline-datepickerForTemplate' ).find('input[id$="InputField"]').dateRangePicker( inlineDateRangePickerSetup );
-	// $( '#inline-datepickerForTemplate' ).find('table.month1').find('div:contains("8")').first().addClass('real-today')
 	$( 'div[id$="datepicker-container"]' ).find('.footer' ).append(buttonBlockHTML);
+	
+	$( '#inline-datepickerForTemplate' ).find('input[id$="InputField"]').dateRangePicker( inlineDateRangePickerSetup );
+	
 })

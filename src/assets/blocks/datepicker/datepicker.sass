@@ -1,5 +1,22 @@
 @import ./__field/datepicker__field
 
+.datepicker__arrow-container--left
+	left: 13px
+	// margin-left: -7px
+
+.datepicker__arrow-container--right
+	right: 11px
+	// margin-left: 7px
+
+.datepicker__arrow-container
+	position: absolute
+	top: 11px
+	height: 2.5rem
+	width: 2.5rem
+
+.drp_top-bar
+	display: none
+
 .datepicker
 	display: flex
 	justify-content: space-between
@@ -10,6 +27,12 @@
 	background-color: #fff
 	font-family: Montserrat
 	padding: 0
+
+.date-picker-wrapper .footer
+	width: 100%
+	display: flex
+	justify-content: space-between
+	padding: 12px 17px 0 19px 
 
 .date-picker-wrapper.inline-wrapper
 	box-shadow: 0px 10px 20px rgba($all-document-text-color, .05)
@@ -26,7 +49,7 @@
 
 .date-picker-wrapper .month-wrapper
 	border: none
-	padding: 11px 20px 0 20px
+	padding: 11px 19px 0 21px
 
 .date-picker-wrapper table .caption .next, .date-picker-wrapper table .caption .prev
 	padding: 0
@@ -40,10 +63,11 @@
 	
 .date-picker-wrapper .month-wrapper table .week-name th
 	padding-top: 35px //need 35
-	padding-bottom: 21px
+	padding-bottom: 14px
 
 .date-picker-wrapper .month-wrapper table th, .date-picker-wrapper .month-wrapper table td
 	width: 40px
+	height: 40px
 
 .date-picker-wrapper.no-topbar
 	padding: 0
@@ -52,7 +76,46 @@
 	font-size: 19px
 	color: $all-document-text-color
 
-
-
 .date-picker-wrapper .month-wrapper table .day.nextMonth, .date-picker-wrapper .month-wrapper table .day.lastMonth
 	display: block
+
+.date-picker-wrapper .month-wrapper table .day
+	width: 100%
+	height: 100%
+	padding: 0
+	padding-top: calc(50% - .45rem)
+
+.date-picker-wrapper .month-wrapper table div.day.lastMonth, .date-picker-wrapper .month-wrapper table div.day.nextMonth
+	color: rgba($all-document-text-color, .25)
+
+.date-picker-wrapper .month-wrapper table .day.toMonth.valid
+	color: rgba($all-document-text-color, .5)
+
+.date-picker-wrapper .month-wrapper table .day.checked,
+.date-picker-wrapper .month-wrapper table .day.toMonth.hovering
+	background: linear-gradient(180deg, rgba($purple, .25) 0%, rgba(#8BA4F9, .25) 100%)
+	border-radius: 0
+
+.date-picker-wrapper .first-date-selected, .date-picker-wrapper .last-date-selected
+	position: relative
+	border: none
+	border-radius: 1.375rem
+	background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) !important
+	color: white !important
+	font-weight: 700
+
+.date-picker-wrapper .first-date-selected:before,
+.date-picker-wrapper .last-date-selected:before
+	position: absolute
+	width: 100%
+	height: 100%
+	content: ''
+	top: 0
+	left: 0
+	background: linear-gradient(180deg, rgba($purple, .25) 0%, rgba(#8BA4F9, .25) 100%)
+
+.date-picker-wrapper .first-date-selected:before
+	border-radius: 1.375rem 0 0 1.375rem //22px
+
+.date-picker-wrapper .last-date-selected:before
+	border-radius: 0 1.375rem 1.375rem 0

@@ -4,7 +4,8 @@ $(()=> {
 	
 	let commonDateRangePickerFieldSetup = {
 		language: 'ru',
-		showTopbar: false,
+		showTopbar: true,
+		autoclose: false,
 		singleMonth: true,
 		showShortcuts: false,
 		hoveringTooltip: false,

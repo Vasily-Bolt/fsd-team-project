@@ -86,17 +86,12 @@ $(()=> {
 
 	const clearSign = 'очистить';
 	const appendSign = 'применить';
-	const clearBlockHTML = `<div style="height: 1.75rem "><button class="elongated-button elongated-button--no-border" type=""><span class="header3 elongated-button__text elongated-button__text--purple">${clearSign}</span></button></div>`;
-	const appendBlockHTML = `<div style="height: 1.75rem"><button class="elongated-button elongated-button--no-border" type=""><span class="header3 elongated-button__text elongated-button__text--purple">${appendSign}</span></button></div>`;
+	// html кнопок "очистить" и "применить". onclick="return false" отменяет submit формы, в которой эти кнопки валяются
+	const clearBlockHTML = `<div style="height: 1.75rem "><button type="button" class="elongated-button elongated-button--no-border" onclick="return false"><span class="header3 elongated-button__text elongated-button__text--purple">${clearSign}</span></button></div>`;
+	const appendBlockHTML = `<div style="height: 1.75rem"><button class="elongated-button elongated-button--no-border" onclick="return false"><span class="header3 elongated-button__text elongated-button__text--purple" >${appendSign}</span></button></div>`;
 	const buttonBlockHTML = `${clearBlockHTML} ${appendBlockHTML}`;
-	$('.date-picker-wrapper').find('.footer' ).append(buttonBlockHTML);	
-
-	$('.day').hover(function() {
-		if ( !$(this).hasClass('checked') && !$(this).hasClass('hovering') )
-			$(this).addClass('elongated-button');
-	}, function() {
-		$(this).removeClass('elongated-button');
-	});
+	const datepickerCalendarFooter = $('.date-picker-wrapper').find('.footer' );
+	datepickerCalendarFooter.append(buttonBlockHTML);	
 
 	//Сделай если закрывается кнопкой (из самого пикера), то надо менять триггер! В плагине есть такая функция
 	$( 'div[id^="datepickerHead"]' ).on('click', function(event) {
@@ -111,8 +106,20 @@ $(()=> {
 		}
 	});
 	
-});
+	//Обработка событий при нажатии кнопок
+	datepickerCalendarFooter.find('button').on('click', function(event) {
+		event.stopPropagation();
+		const buttonContent= $(this).text();
+		if ( buttonContent == clearSign ) {
+			const fieldsToClear = $(this).closest( 'div[id^="datepickerHead"]' ).find('input[id$="InputField"]');
+			fieldsToClear.data('dateRangePicker').clear();
+			fieldsToClear.data('dateRangePicker').close();
+			fieldsToClear.val('ДД.ММ.ГГГ');
+		}
+		if ( buttonContent == appendSign ) {
+			const fieldsToClear = $(this).closest( 'div[id^="datepickerHead"]' ).find('input[id$="InputField"]');
+			fieldsToClear.data('dateRangePicker').close();
+		}
+	});
 
-// moment.updateLocale('ru', {
-// 	monthsShort : String['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек']
-// });
+});

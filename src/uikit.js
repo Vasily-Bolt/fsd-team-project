@@ -11,8 +11,10 @@ import '@/assets/blocks/incdec-field/incdec-field.js'
 import '@/assets/blocks/dropdown/dropdown.js'
 import '@/assets/blocks/expandable-checkbox-list/expandable-checkbox-list.js'
 import '@/assets/blocks/datepicker/datepicker.js'
-import '@/assets/blocks/room-booking/room-booking.js'
 import '@/pages/uikit/cards/cards.js'
+import '@/assets/blocks/room-booking/room-booking.js'
+import '@/assets/blocks/room-small-info/room-small-info.js'
+
 
 import '@/pages/uikit/styles.sass'
 

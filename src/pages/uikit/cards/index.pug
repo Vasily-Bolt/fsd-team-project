@@ -2,6 +2,8 @@ include ../../../assets/blocks/room-search/room-search.pug
 include ../../../assets/blocks/user-register/user-register.pug
 include ../../../assets/blocks/room-booking/room-booking.pug
 include ../../../assets/blocks/login-form/login-form.pug
+include ../../../assets/blocks/room-small-info/room-small-info.pug
+
 
 .wrapper.wrapper__cards
 	.gull-emblem-container
@@ -28,6 +30,10 @@ include ../../../assets/blocks/login-form/login-form.pug
 		div(style='height:369px;width:320px;')
 			+inline
 		.uikit-cards__flex-gap
-		.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings(style='height:257px;width:320px;')
+		+room-small-info({
+			image: './src/assets/img/roomspics/888.jpg',
+		})
 		.uikit-cards__flex-gap
-		.cards-styles--flex.cards-styles-box-shadow.cards-styles-size-and-paddings(style='height:257px;width:320px;')
+		+room-small-info({
+			
+		})

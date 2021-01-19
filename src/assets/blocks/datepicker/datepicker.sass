@@ -15,19 +15,26 @@
 	width: 2.5rem
 
 .drp_top-bar
-	display: none
+	display: none	
 
-
-.datepicker__container
+.datepicker__calendar-wrapper
 	position: absolute
-	top: 100%
+	top: calc( 100% + 5px )
 	height: 369px
-	width: 320px	
+	width: 100%//320px
+
+.datepicker__calendar-conatiner
+	position: relative
+	width: 100%
+	height: 100%
 	
 .datepicker
 	display: flex
 	justify-content: space-between
 	position: relative
+
+.datepicker__calendar-conatiner .date-picker-wrapper
+	margin-left: -13px
 
 .date-picker-wrapper
 	border: 1px solid rgba($all-document-text-color, .25)
@@ -35,6 +42,10 @@
 	background-color: #fff
 	font-family: Montserrat
 	padding: 0
+	// width: 320px
+	// margin-left: -13px
+	// margin-top: 5px
+	box-shadow: 0px 10px 20px rgba($all-document-text-color, .05)
 
 .date-picker-wrapper .footer
 	width: 100%
@@ -42,8 +53,8 @@
 	justify-content: space-between
 	padding: 12px 17px 0 19px 
 
-.date-picker-wrapper.inline-wrapper
-	box-shadow: 0px 10px 20px rgba($all-document-text-color, .05)
+// .date-picker-wrapper.inline-wrapper
+// 	box-shadow: 0px 10px 20px rgba($all-document-text-color, .05)
 
 .date-picker-wrapper .month-name
 	text-transform: none	
@@ -99,8 +110,20 @@
 .date-picker-wrapper .month-wrapper table .day.toMonth.valid
 	color: rgba($all-document-text-color, .5)
 
+.date-picker-wrapper .month-wrapper table .day.toMonth.valid.elongated-button__text--white,
+.date-picker-wrapper .month-wrapper table .day.toMonth.valid:hover
+	background: $elongated-button-background-gradient
+	color: white
+	
+.date-picker-wrapper .month-wrapper table .day.toMonth.valid:not(.checked):hover
+	border-radius: $elongated-button-border-radius
+	
+
 .date-picker-wrapper .month-wrapper table .day.checked,
 .date-picker-wrapper .month-wrapper table .day.toMonth.hovering
+	background: linear-gradient(180deg, rgba($purple, .25) 0%, rgba(#8BA4F9, .25) 100%)
+
+.date-picker-wrapper .month-wrapper table .day.real-today.checked, .date-picker-wrapper .month-wrapper table .day.real-today.hovering
 	background: linear-gradient(180deg, rgba($purple, .25) 0%, rgba(#8BA4F9, .25) 100%)
 
 .date-picker-wrapper .first-date-selected, .date-picker-wrapper .last-date-selected
@@ -126,3 +149,6 @@
 
 .date-picker-wrapper .last-date-selected:before
 	border-radius: 0 1.375rem 1.375rem 0
+
+.date-picker-wrapper .month-wrapper table .day.real-today
+	background-color: #fff	

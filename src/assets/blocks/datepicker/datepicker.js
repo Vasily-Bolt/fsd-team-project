@@ -1,4 +1,3 @@
-$(()=> {
 
 	let trigger = 'open';
 	
@@ -44,6 +43,7 @@ $(()=> {
 			}
 	});
 
+$(()=> {
 
 	$( 'div[id^="datepickerHead"]' ).each( function() {
 		let DateRangePickerSetup = '';	
@@ -51,7 +51,10 @@ $(()=> {
 		if ( datepickerIdString.endsWith('multiple') ) DateRangePickerSetup = multipleFieldDateRangePickerSetup;
 		if ( datepickerIdString.endsWith('single') ) DateRangePickerSetup = singleFieldDateRangePickerSetup;
 		if ( DateRangePickerSetup != '' ) {
-						
+
+			const calendarContainer = $(this).find('div[id$="-container"]').attr('id');
+			Object.assign( DateRangePickerSetup, { container: `#${calendarContainer}` } );
+
 			$(this).find('input[id$="InputField"]')
 				.dateRangePicker( DateRangePickerSetup )
 				.bind('datepicker-closed', function(){
@@ -88,6 +91,13 @@ $(()=> {
 	const buttonBlockHTML = `${clearBlockHTML} ${appendBlockHTML}`;
 	$('.date-picker-wrapper').find('.footer' ).append(buttonBlockHTML);	
 
+	$('.day').hover(function() {
+		if ( !$(this).hasClass('checked') && !$(this).hasClass('hovering') )
+			$(this).addClass('elongated-button');
+	}, function() {
+		$(this).removeClass('elongated-button');
+	});
+
 	//Сделай если закрывается кнопкой (из самого пикера), то надо менять триггер! В плагине есть такая функция
 	$( 'div[id^="datepickerHead"]' ).on('click', function(event) {
 		// Тут глюк - при клике на поле инпут два раза вызываются функции get.. setValue (штатная и моя настройка)
@@ -100,7 +110,7 @@ $(()=> {
 			// trigger = 'open';
 		}
 	});
-
+	
 });
 
 // moment.updateLocale('ru', {

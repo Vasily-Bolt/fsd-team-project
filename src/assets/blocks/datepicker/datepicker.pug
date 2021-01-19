@@ -10,7 +10,8 @@ mixin multi-datepicker(object)
 		.datepicker__field
 			+text-field-with-info({tfType: 'dropdown-field', tfDropdownHidden: true, tfPlaceholder: object.setDateEnd
 				,title: object.titleEnd, tfName: 'datepicker-' + object.id+'-multiple-second'})
-		//- div(id=`datepicker-${object.id}-container` class='datepicker__container')
+		.datepicker__calendar-wrapper
+			div(id=`datepicker-${object.id}-container` class='datepicker__calendar-conatiner')
 
 
 //- Этот миксин только для демонстрации. Нужен для uikit

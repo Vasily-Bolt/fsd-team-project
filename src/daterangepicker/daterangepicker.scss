@@ -162,7 +162,7 @@
         cursor: pointer;
       }
       &.hovering {
-        background-color: #cdecfa;
+        // background-color: #cdecfa;
       }
     }
     &.nextMonth, &.lastMonth {
@@ -366,12 +366,12 @@
   .hide {
     display: none;
   }
-  .first-date-selected, .last-date-selected {
+  // .first-date-selected, .last-date-selected {
     // БОЛТУНОВ 
     // background-color: #49e !important;
     // color: white !important;    
     
-  }
+  // }
   .date-range-length-tip {
     position: absolute;
     margin-top: -4px;

@@ -1,9 +1,9 @@
 mixin room-small-info(object)
-	.room-small-info
+	.room-small-info.border-corners--all
 		.room-small-info__gallery
-			img(src=object.image)
-			.room-small-info__arrow-prev-wrapper
+			img(src=object.image).border-corners--top
+			.room-small-info__arrow-prev-wrapper.border-corners--top-left
 				.arrow-triangle.arrow-triangle--to-left
-			.room-small-info__arrow-next-wrapper
+			.room-small-info__arrow-next-wrapper.border-corners--top-right
 				.arrow-triangle.arrow-triangle--to-right
 		.room-small-info__info

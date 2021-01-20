@@ -1,59 +1,38 @@
 @import ./__field/datepicker__field
+@import ./__arrow-container/__arrow-container
+@import ./__calendar-wrapper/datepicker__calendar-wrapper
+@import ./__calendar-conatiner/datepicker__calendar-conatiner
 
-.datepicker__arrow-container--left
-	left: .8125rem //13px
+$boxShadowDatepicker : 0px 10px 20px rgba($all-document-text-color, .05)
 
-.datepicker__arrow-container--right
-	right: .6875rem //11px
-	// margin-left: 7px
-
-.datepicker__arrow-container
-	position: absolute
-	top: .6875rem //11px
-	height: 2.5rem
-	width: 2.5rem
 
 .drp_top-bar
 	display: none	
-
-.datepicker__calendar-wrapper
-	position: absolute
-	top: calc( 100% + 5px )
-	// height: 369px //Do I need it???
-	width: 100% //320px
-
-.datepicker__calendar-conatiner
-	position: relative
-	width: 100%
-	height: 100%
 	
 .datepicker
 	display: flex
 	justify-content: space-between
 	position: relative
 
-.datepicker__calendar-conatiner .date-picker-wrapper
-	margin-left: -.8125rem //-13px
-
 .date-picker-wrapper
 	border: .0625rem solid rgba($all-document-text-color, .25)
-	border-radius: 4px
+	border-radius: $borderRadius //4px
 	background-color: #fff
 	font-family: Montserrat
 	padding: 0
 	// width: 320px
 	// margin-left: -13px
 	// margin-top: 5px
-	// box-shadow: 0px 10px 20px rgba($all-document-text-color, .05)
+
+.date-picker-wrapper,
+.date-picker-wrapper.inline-wrapper
+	box-shadow: $boxShadowDatepicker
 
 .date-picker-wrapper .footer
 	width: 100%
 	display: flex
 	justify-content: space-between
-	padding: 12px 17px 0 19px 
-
-.date-picker-wrapper.inline-wrapper
-	box-shadow: 0px 10px 20px rgba($all-document-text-color, .05)
+	padding: .75rem 1.0625rem 0 1.1875rem //12 17 0 19
 
 .date-picker-wrapper .month-name
 	text-transform: none	
@@ -67,7 +46,7 @@
 
 .date-picker-wrapper .month-wrapper
 	border: none
-	padding: 11px 19px 0 21px
+	padding: .6875rem 1.1875rem 0 1.3125rem //11 19 0 21
 
 .date-picker-wrapper table .caption .next, .date-picker-wrapper table .caption .prev
 	padding: 0
@@ -80,18 +59,18 @@
 	text-transform: uppercase
 	
 .date-picker-wrapper .month-wrapper table .week-name th
-	padding-top: 35px //need 35
-	padding-bottom: 14px
+	padding-top: 2.1875rem //35px
+	padding-bottom: .875rem //14px
 
 .date-picker-wrapper .month-wrapper table th, .date-picker-wrapper .month-wrapper table td
-	width: 40px
-	height: 40px
+	width: 2.5rem //40px
+	height: 2.5rem //40px
 
 .date-picker-wrapper.no-topbar
 	padding: 0
 
 .month-name
-	font-size: 19px
+	font-size: 1.1875rem //19px
 	color: $all-document-text-color
 
 .date-picker-wrapper .month-wrapper table .day.nextMonth, .date-picker-wrapper .month-wrapper table .day.lastMonth

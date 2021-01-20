@@ -6,6 +6,6 @@ mixin room-description(array)
 				p.room-description__text--title= index.title
 				p= index.content
 		if index.bottomLine == 'true'
-			.room-description__bottom-line
+			.room-description__margin-between.horizontal-line
 		else
-			.room-description__no-line
+			.room-description__margin-between

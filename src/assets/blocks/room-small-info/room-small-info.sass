@@ -6,23 +6,32 @@
 	width: 100%
 	object-fit: cover
 
-.room-small-info__arrow-prev,
-.room-small-info__arrow-next
+.room-small-info__arrow-prev-wrapper,
+.room-small-info__arrow-next-wrapper
 	content: ''
 	position: absolute
 	top: 0
 	width: 42px
 	height: 100%
 	background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%)
+	display: flex
+	justify-content: center
+	align-items: center
+	cursor: pointer
+	color: white
 
-.room-small-info__arrow-prev
+.room-small-info__arrow-prev-wrapper
 	left: 0
+	padding-left: 6px
 	
 
-.room-small-info__arrow-next
+.room-small-info__arrow-next-wrapper
 	right: 0
 	background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%)
-	// transform: rotate(180deg)
+	padding-right: 5px
+
+.room-small-info__arrow-container
+	width: 100%
 
 .room-small-info__info
 	display: flex

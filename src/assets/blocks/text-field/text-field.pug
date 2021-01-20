@@ -45,9 +45,9 @@ mixin text-field(obj)
 			input(type='text' id=inputId readonly value=obj.placeholder class='field-template__input-field')
 			.field-template__icon-field
 				if obj.dropdown_hidden
-					div(class='field-template__arrow-css field-template__arrow-css--to-bottom')
+					div(class='arrow-triangle arrow-triangle--to-bottom')
 				else
-					div(class='field-template__arrow-css field-template__arrow-css--to-top')
+					div(class='arrow-triangle arrow-triangle--to-top')
 					
 	//-Миксин для отображения поля подписки с градиентной стрелкой вправо
 	if obj.field_type == 'subscribe-field'

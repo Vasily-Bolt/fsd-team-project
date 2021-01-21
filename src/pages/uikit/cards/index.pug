@@ -2,10 +2,11 @@ include ../../../assets/blocks/room-search/room-search.pug
 include ../../../assets/blocks/user-register/user-register.pug
 include ../../../assets/blocks/room-booking/room-booking.pug
 include ../../../assets/blocks/login-form/login-form.pug
+include ../../../assets/blocks/gallery-room-small/gallery-room-small.pug
 include ../../../assets/blocks/room-small-info/room-small-info.pug
 
 
-.wrapper.wrapper__cards
+.wrapper.wrapper__cards.wrapper--dark-background
 	.gull-emblem-container
 		.gull-emblem
 	.uikit-cards
@@ -31,9 +32,18 @@ include ../../../assets/blocks/room-small-info/room-small-info.pug
 			+inline
 		.uikit-cards__flex-gap
 		+room-small-info({
-			image: './src/assets/img/roomspics/888.jpg',
+			hasArrows: true,
+			roomNumber: '888',
+			roomExtra: 'люкс',
+			pricePerDay: 9990,
+			rating: 5,
+			feedbackCount: 145,
 		})
 		.uikit-cards__flex-gap
 		+room-small-info({
-			
+			hasArrows: false,
+			roomNumber: '840',
+			pricePerDay: 9900,
+			rating: 4,
+			feedbackCount: 65,
 		})

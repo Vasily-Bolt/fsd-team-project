@@ -18,16 +18,16 @@ mixin room-booking(object)
 		//- var pricePerPeriod = '39 960' + currency
 		//- var daysOfResidence = '4'
 	//- FLEX!!!
-	form(id = object.id class='room-booking cards-styles--flex cards-styles-box-shadow cards-styles-size-and-paddings')
+	form(id = object.id class='room-booking card-styles--white-background cards-styles--flex cards-styles-box-shadow cards-styles-size-and-paddings')
 		.room-number-and-price
 			.room-number-and-price__left
 				span № 
 				span.header1= object.roomNumber
 				span.header3= object.roomExtra
-			.room-number-and-price__right
+			.room-number-and-price__right.room-number-and-price__right--margin-bottom
 				//- span 9 990₽
 				span= pricePerDay
-				span  в сутки
+				span.room-number-and-price__per-day  в сутки
 		//- в id передается тот же object.id, но в миксине он дополняется, потому остается уникальным!
 		+multi-datepicker({id: object.id, titleStart: 'прибытие', titleEnd: 'выезд', setDateStart: object.dateIn, setDateEnd: object.dateOut})
 		+dropdown({

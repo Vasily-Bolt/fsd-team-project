@@ -1,44 +1,7 @@
-
-
-.room-small-info__gallery
-	position: relative
-	height: 59% //58.9%
-	border-radius: inherit
-
-.room-small-info__gallery img
-	width: 100%
-	object-fit: cover
-
-.room-small-info__arrow-prev-wrapper,
-.room-small-info__arrow-next-wrapper
-	content: ''
-	position: absolute
-	top: 0
-	width: 2.625rem //42px
-	height: 100%
-	background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%)
-	display: flex
-	justify-content: center
-	align-items: center
-	cursor: pointer
-	color: white
-
-.room-small-info__arrow-prev-wrapper
-	left: 0
-	padding-left: .375rem //6px
+@import ./__gallery/room-small-info__gallery
+@import ./__info/room-small-info__info 
+@import ./__line/room-small-info__line
 	
-
-.room-small-info__arrow-next-wrapper
-	right: 0
-	background: linear-gradient(270deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%)
-	padding-right: .3125rem //5px
-
-.room-small-info__arrow-container
-	width: 100%
-
-.room-small-info__info
-	margin: 19px 17px 19px 20px
-
 .room-small-info
 	height: 16.09375rem //257.5px
 	width: 16.875rem //270px

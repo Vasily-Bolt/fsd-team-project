@@ -1,0 +1,19 @@
+mixin gallery-room-small( object )
+	- var iteration_count = 4;
+
+	.gallery-small
+		img(src= `${object.picturesFolder}0.jpg` )
+		if object.hasArrows
+			.gallery-small__arrow-wrapper.gallery-small__arrow-wrapper--prev
+				.arrow-triangle.arrow-triangle--to-left
+			.gallery-small__arrow-wrapper.gallery-small__arrow-wrapper--next
+				.arrow-triangle.arrow-triangle--to-right
+		//- .gallery-small__picker-item
+
+		.gallery-small__picker
+			while iteration_count > 0
+				- if(iteration_count == 4)
+					.gallery-small__picker-item.gallery-small__picker-item--filled
+				- else
+					.gallery-small__picker-item
+				- iteration_count--

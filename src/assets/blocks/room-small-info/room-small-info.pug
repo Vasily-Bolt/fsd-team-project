@@ -1,17 +1,35 @@
 mixin room-small-info(object)
-	.room-small-info.border-corners--all
+	-
+		var currency = '₽'
+		
+		var pricePerDay = object.pricePerDay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + currency
+		var roomExtra = ''
+		if ( object.roomExtra ) roomExtra = object.roomExtra
+
+	.room-small-info.card-styles--white-background.border-corners--all
 		.room-small-info__gallery
-			img(src=object.image).border-corners--top
-			.room-small-info__arrow-prev-wrapper.border-corners--top-left
-				.arrow-triangle.arrow-triangle--to-left
-			.room-small-info__arrow-next-wrapper.border-corners--top-right
-				.arrow-triangle.arrow-triangle--to-right
-		.room-number-and-price.room-small-info__info
-			.room-number-and-price__left
-				span № 
-				span.header2 888
-				span.header3  люкс
-			.room-number-and-price__right
-				//- span 9 990₽
-				span 9 990₽
-				span  в сутки
+			+gallery-room-small({
+				picturesFolder: `./src/assets/img/roomspics/${object.roomNumber}/`,
+				hasArrows: object.hasArrows
+				})
+						
+		.room-small-info__info
+			.room-number-and-price
+				.room-number-and-price__left
+					span № 
+					span.header2= object.roomNumber
+					span.header3= ` ${roomExtra}`
+				.room-number-and-price__right.room-number-and-price__right--margin-bottom
+					//- span 9 990₽
+					span= pricePerDay
+					span.room-number-and-price__per-day  в сутки
+			.horizontal-line.room-small-info__line
+			.room-number-and-price
+				+rating-area({
+					name: `room${object.roomNumber}`,
+					rating: object.rating,
+					isChangable: false,
+					})
+				.room-number-and-price__right.room-number-and-price__right--margin-right
+					span= object.feedbackCount
+					span  Отзывов

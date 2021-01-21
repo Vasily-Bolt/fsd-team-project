@@ -1,11 +1,13 @@
-const { event } = require("jquery");
-const currency = '₽';
+// const { event } = require("jquery");
+
 
 function integerToStringMyFormat ( valueToConvert ) {
 	return valueToConvert.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 };
 
 $(()=> {
+	const currency = '₽';
+	
 	$('.room-booking').each( function() {
 		//Объект всех переменных нужных для подсчета. Содержит метод для расчета
 		let roomBookingObject = {

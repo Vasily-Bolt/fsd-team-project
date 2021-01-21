@@ -1,4 +1,5 @@
 // import * as $ from 'jquery'
+
 import '@/jquery-ui/jquery-ui.js'
 import '@/jquery-ui/jquery-ui.css'
 
@@ -13,7 +14,6 @@ import '@/assets/blocks/expandable-checkbox-list/expandable-checkbox-list.js'
 import '@/assets/blocks/datepicker/datepicker.js'
 import '@/pages/uikit/cards/cards.js'
 import '@/assets/blocks/room-booking/room-booking.js'
-import '@/assets/blocks/room-small-info/room-small-info.js'
 
 
 import '@/pages/uikit/styles.sass'

@@ -19,12 +19,12 @@ mixin room-booking(object)
 		//- var daysOfResidence = '4'
 	//- FLEX!!!
 	form(id = object.id class='room-booking cards-styles--flex cards-styles-box-shadow cards-styles-size-and-paddings')
-		.room-booking__title
-			.room-booking__title--left
+		.room-number-and-price
+			.room-number-and-price__left
 				span № 
 				span.header1= object.roomNumber
 				span.header3= object.roomExtra
-			.room-booking__title--right
+			.room-number-and-price__right
 				//- span 9 990₽
 				span= pricePerDay
 				span  в сутки

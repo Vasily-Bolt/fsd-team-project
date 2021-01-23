@@ -1,24 +1,38 @@
-$shadow: .5px
-	
-.nav-menu__item:hover,.nav-menu__item--hovered
-	color: rgba($all-document-text-color, $dark-shade-almost-total)
-	cursor: pointer
-	font-weight: 700
-	// text-shadow: .5px 0 $shadow rgba($all-document-text-color, $dark-shade-almost-total), 0 -.5px $shadow rgba($all-document-text-color, $dark-shade-almost-total)
-	// text-shadow: 0 .5px $shadow rgba($all-document-text-color, $dark-shade-almost-total), -.5px 0 $shadow rgba($all-document-text-color, $dark-shade-almost-total)	
+$shadow: rgba($all-document-text-color, $dark-shade-almost-total)
 
+.nav-menu__submenu
+	position: absolute
+	padding: 5px
+	margin-left: -5px
+	list-style-type: none
+	display: flex
+	flex-direction: column
+	background: white
+	visibility: hidden
+
+.nav-menu__item:hover,.nav-menu__item--hovered
+	color: $shadow
+	cursor: pointer
+	text-shadow: 1px 0 0 $shadow, -1px 0 0 $shadow, 0 1px 0 $shadow, 1px 1px 0 $shadow, -1px 1px 0 $shadow
+	// text-shadow: 1px 0 0 rgba($all-document-text-color, $dark-shade-almost-total)
 
 .nav-menu__item--not-hovered
 	color: rgba($all-document-text-color, $dark-shade-half)
 
 .nav-menu__item
-	// color: rgba($all-document-text-color, $dark-shade-half)
+	text-shadow: none
 	display: inline-block
-	padding-right: 21px
+	margin-right: 1.29375rem //20.7px
 	
+.nav-menu__arrow-container
+	display: inline-block
+	width: .9375rem //15px
+	margin-bottom: .125rem //2px
+	margin-left: .5625rem //9px
 
 .nav-menu
 	// display: flex
 	// justify-content: space-between
+	position: relative
 	list-style-type: none
 	padding: 0

@@ -1,4 +1,4 @@
-mixin navigation-bar()
+mixin navigation-bar( loggedIn )
   .card-styles--white-background.navigation-bar
     //- +toxin-logo
     +nav-menu([{
@@ -8,6 +8,7 @@ mixin navigation-bar()
     },{
       title: 'Услуги',
       isDropdown: true,
+      subTitles: ['Услуга раз', 'Услуга два', 'Услуга три', 'Услуга жопу подотри'],
     },{
       title: 'Вакансии',
       isDropdown: false,
@@ -17,4 +18,5 @@ mixin navigation-bar()
     },{
       title: 'Соглашения',
       isDropdown: true,
+      subTitles: ['Соглашения раз', 'Соглашения два', 'Соглашения три', 'Соглашения жопу подотри'],
     }])

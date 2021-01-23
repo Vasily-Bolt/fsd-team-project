@@ -1,8 +1,25 @@
+- var menuItemClass = ''
+
 mixin nav-menu(array)
-  ul.nav-menu
-    each index in array
-      if index.hovered
-        li.nav-menu__item.nav-menu__item--hovered= index.title
-      else
-        li.nav-menu__item.nav-menu__item--not-hovered= index.title
-  +elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'войти', buttonType: 'empty'})
+	ul.nav-menu
+		each index in array
+			- 
+				menuItemClass = 'nav-menu__item'
+				if ( index.hovered )
+					menuItemClass += ' nav-menu__item--hovered'
+				else 
+					menuItemClass += ' nav-menu__item--not-hovered'
+			
+			li(class=menuItemClass)= index.title
+				- if ( index.subTitles )
+					.nav-menu__arrow-container
+						.arrow-triangle.arrow-triangle--to-bottom
+					ul.nav-menu__submenu
+						each subIndex in index.subTitles
+							li.nav-menu__item.nav-menu__item--not-hovered= subIndex
+
+
+		li.nav-menu__item.nav-menu__item--not-hovered
+			+elongated-button({sizeWidth: '5.4375rem', sizeHeight: '2.125rem', text: 'войти', buttonType: 'empty'})
+		li.nav-menu__item.nav-menu__item--not-hovered
+			+elongated-button({sizeWidth: '12.25rem', sizeHeight: '2.125rem', text: 'зарегистрироваться', buttonType: 'filled'})

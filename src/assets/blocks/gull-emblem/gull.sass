@@ -1,7 +1,14 @@
-.gull-emblem //Gull emblem BLOCK
+.gull-emblem--gradient
+	background: url(@/assets/blocks/gull-emblem/gradient-gull.svg)
+	background-size: contain
+
+.gull-emblem--grey	
+	border: 3px solid rgba($all-document-text-color, $dark-shade-quater)
+	border-radius: 50%
+	background: url(@/assets/blocks/gull-emblem/gull1.svg) 22px 15px no-repeat, url(@/assets/blocks/gull-emblem/gull2.svg) 8px 15px no-repeat
+	
+.gull-emblem 
 		box-sizing: border-box
 		width: 100%//48px
 		height: 100%//48px
-		border: 3px solid rgba($all-document-text-color, $dark-shade-quater)
-		border-radius: 50%
-		background: url(@/assets/blocks/gull-emblem/gull1.svg) 22px 15px no-repeat, url(@/assets/blocks/gull-emblem/gull2.svg) 8px 15px no-repeat
+		

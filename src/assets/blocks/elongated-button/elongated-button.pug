@@ -3,6 +3,7 @@ mixin elongated-button(obj)
 		let buttonType = '';
 		let textType = '';
 		let addArrow = false;
+		let wrapperOfButton = '';
 
 		switch (obj.textType) {
 			case 'white' : textType = 'elongated-button__text--white'; break;
@@ -21,6 +22,7 @@ mixin elongated-button(obj)
 			case 'empty' :
 				buttonType = 'elongated-button--empty-inside';
 				if ( textType == '') textType = 'elongated-button__text--purple';
+				wrapperOfButton = 'popo'
 				break;
 			case 'no-border' :
 				buttonType = 'elongated-button--no-border';
@@ -28,7 +30,7 @@ mixin elongated-button(obj)
 				break;
 			default : break;
 		}
-	div(style='height: ' + obj.sizeHeight + '; width: ' + obj.sizeWidth)
+	div(style='height: ' + obj.sizeHeight + '; width: ' + obj.sizeWidth class=wrapperOfButton)
 		button(class='elongated-button ' + buttonType disabled=obj.disabled type=obj.formToSubmit ? 'submit' : ''
 			form=obj.formToSubmit value=obj.referenceText)
 			span(class='header3 elongated-button__text ' + textType)= obj.text

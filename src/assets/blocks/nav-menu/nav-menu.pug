@@ -1,0 +1,8 @@
+mixin nav-menu(array)
+  ul.nav-menu
+    each index in array
+      if index.hovered
+        li.nav-menu__item.nav-menu__item--hovered= index.title
+      else
+        li.nav-menu__item.nav-menu__item--not-hovered= index.title
+  +elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'войти', buttonType: 'empty'})

@@ -2,8 +2,9 @@ $shadow: rgba($all-document-text-color, $dark-shade-almost-total)
 
 .nav-menu__submenu
 	position: absolute
-	padding: 5px
-	margin-left: -5px
+	padding: .3125rem //5px
+	margin-left: -.3125rem //-5px
+	width: fit-content
 	list-style-type: none
 	display: flex
 	flex-direction: column
@@ -18,9 +19,9 @@ $shadow: rgba($all-document-text-color, $dark-shade-almost-total)
 
 .nav-menu__item--not-hovered
 	color: rgba($all-document-text-color, $dark-shade-half)
+	text-shadow: none
 
 .nav-menu__item
-	text-shadow: none
 	display: inline-block
 	margin-right: 1.29375rem //20.7px
 	
@@ -36,3 +37,5 @@ $shadow: rgba($all-document-text-color, $dark-shade-almost-total)
 	position: relative
 	list-style-type: none
 	padding: 0
+	margin: 0
+	// display: inline-block

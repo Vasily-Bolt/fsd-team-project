@@ -17,9 +17,3 @@ mixin nav-menu(array)
 					ul.nav-menu__submenu
 						each subIndex in index.subTitles
 							li.nav-menu__item.nav-menu__item--not-hovered= subIndex
-
-
-		li.nav-menu__item.nav-menu__item--not-hovered
-			+elongated-button({sizeWidth: '5.4375rem', sizeHeight: '2.125rem', text: 'войти', buttonType: 'empty'})
-		li.nav-menu__item.nav-menu__item--not-hovered
-			+elongated-button({sizeWidth: '12.25rem', sizeHeight: '2.125rem', text: 'зарегистрироваться', buttonType: 'filled'})

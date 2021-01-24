@@ -14,6 +14,7 @@ import '@/assets/blocks/expandable-checkbox-list/expandable-checkbox-list.js'
 import '@/assets/blocks/datepicker/datepicker.js'
 import '@/pages/uikit/cards/cards.js'
 import '@/assets/blocks/room-booking/room-booking.js'
+import '@/assets/blocks/nav-menu/nav-menu.js'
 
 
 import '@/pages/uikit/styles.sass'

@@ -1,5 +1,13 @@
 $shadow: rgba($all-document-text-color, $dark-shade-almost-total)
 
+.nav-menu__submenu--visible	
+	z-index: 5
+	visibility: visible
+
+.nav-menu__submenu--hidden
+	z-index: 0
+	visibility: hidden
+	
 .nav-menu__submenu
 	position: absolute
 	padding: .3125rem //5px
@@ -9,7 +17,6 @@ $shadow: rgba($all-document-text-color, $dark-shade-almost-total)
 	display: flex
 	flex-direction: column
 	background: white
-	visibility: hidden
 
 .nav-menu__item:hover,.nav-menu__item--hovered
 	color: $shadow
@@ -18,7 +25,7 @@ $shadow: rgba($all-document-text-color, $dark-shade-almost-total)
 	// text-shadow: 1px 0 0 rgba($all-document-text-color, $dark-shade-almost-total)
 
 .nav-menu__item--not-hovered
-	color: rgba($all-document-text-color, $dark-shade-half)
+	// color: rgba($all-document-text-color, $dark-shade-half)
 	text-shadow: none
 
 .nav-menu__item

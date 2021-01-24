@@ -14,6 +14,6 @@ mixin nav-menu(array)
 				- if ( index.subTitles )
 					.nav-menu__arrow-container
 						.arrow-triangle.arrow-triangle--to-bottom
-					ul.nav-menu__submenu
+					ul.nav-menu__submenu.nav-menu__submenu--hidden
 						each subIndex in index.subTitles
 							li.nav-menu__item.nav-menu__item--not-hovered= subIndex

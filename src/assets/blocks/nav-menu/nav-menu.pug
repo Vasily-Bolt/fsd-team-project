@@ -1,6 +1,6 @@
 - var menuItemClass = ''
 
-mixin nav-menu(array)
+mixin nav-menu-top(array)
 	ul.nav-menu
 		each index in array
 			- 
@@ -21,3 +21,6 @@ mixin nav-menu(array)
 			else
 				li(class=menuItemClass)
 					a(href='#')= index.title
+
+mixin nav-menu-footer(array)
+	ul.nav-menu

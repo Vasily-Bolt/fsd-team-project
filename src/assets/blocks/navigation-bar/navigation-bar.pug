@@ -3,7 +3,7 @@ mixin navigation-bar-thin( object )
 			.navigation-bar__entire-block
 				+toxin-logo
 			.navigation-bar__menu-block
-				+nav-menu([{
+				+nav-menu-top([{
 					title: 'О нас',
 					hovered: true,
 				},{
@@ -31,6 +31,15 @@ mixin navigation-bar-wide( object )
 		.navigation-bar__bottom-block.navigation-bar__bottom-block--wide-block
 			+toxin-logo
 			p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+
+		.navigation-bar__bottom-block
+			+nav-menu-footer([
+				{
+					title: 'навигация',
+					items: ['О нас','Новости','Служба поддержки','Услуги']
+				},
+			])
+
 		.navigation-bar__bottom-block.navigation-bar__bottom-block--wide-block
 			p.header3 Подписка
 			p Получайте специальные предложения и новости сервиса

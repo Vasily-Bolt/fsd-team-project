@@ -1,48 +1,13 @@
-$shadow: rgba($all-document-text-color, $dark-shade-almost-total)
-
-.nav-menu__submenu--visible	
-	z-index: 5
-	visibility: visible
-
-.nav-menu__submenu--hidden
-	z-index: 0
-	visibility: hidden
+@import ./__arrow-container/nav-menu__arrow-container
+@import ./__item/nav-menu__item
+@import ./__submenu/nav-menu__submenu
 	
-.nav-menu__submenu
-	position: absolute
-	padding: .3125rem //5px
-	margin-left: -.3125rem //-5px
-	width: fit-content
-	list-style-type: none
-	display: flex
-	flex-direction: column
-	background: white
-
-.nav-menu__item:hover,.nav-menu__item--hovered
-	color: $shadow
-	cursor: pointer
-	text-shadow: 1px 0 0 $shadow, -1px 0 0 $shadow, 0 1px 0 $shadow, 1px 1px 0 $shadow, -1px 1px 0 $shadow
-	// text-shadow: 1px 0 0 rgba($all-document-text-color, $dark-shade-almost-total)
-
-.nav-menu__item--not-hovered
-	// color: rgba($all-document-text-color, $dark-shade-half)
-	text-shadow: none
-
-.nav-menu__item
-	display: inline-block
-	margin-right: 1.29375rem //20.7px
-	
-.nav-menu__arrow-container
-	display: inline-block
-	width: .9375rem //15px
-	margin-bottom: .125rem //2px
-	margin-left: .5625rem //9px
-
 .nav-menu
-	// display: flex
-	// justify-content: space-between
 	position: relative
 	list-style-type: none
 	padding: 0
 	margin: 0
-	// display: inline-block
+
+.nav-menu *
+	user-select: none
+	

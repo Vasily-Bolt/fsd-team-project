@@ -7,5 +7,11 @@ include ../../../assets/blocks/nav-menu/nav-menu.pug
 	.gull-emblem-container
 		.gull-emblem.gull-emblem--grey
 	.uikit-footers
-		+navigation-bar( false )
-		+navigation-bar( true )
+		+navigation-bar({
+			loggedIn: false,
+			})
+		.uikit-footers__vertical-gap
+		+navigation-bar({
+			loggedIn: true,
+			userName: 'Юлий Цезарь',
+			})

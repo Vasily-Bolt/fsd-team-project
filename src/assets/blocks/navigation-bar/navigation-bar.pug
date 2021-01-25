@@ -1,31 +1,27 @@
-mixin navigation-bar( loggedIn )
+mixin navigation-bar( object )
 	nav.card-styles--white-background.navigation-bar
-		//- +toxin-logo
-		.navigation-bar__menu-block
-			+nav-menu([{
-				title: 'О нас',
-				isDropdown: false,
-				hovered: true,
-			},{
-				title: 'Услуги',
-				isDropdown: true,
-				subTitles: ['Услуга раз', 'Услуга два', 'Услуга три', 'Услуга жопу подотри'],
-			},{
-				title: 'Вакансии',
-				isDropdown: false,
-			},{
-				title: 'Новости',
-				isDropdown: false,
-			},{
-				title: 'Соглашения',
-				isDropdown: true,
-				subTitles: ['Соглашения раз', 'Соглашения два', 'Соглашения три', 'Соглашения жопу подотри'],
-			}])
-			if !loggedIn
-				.navigation-bar__button-block
-					+elongated-button({sizeWidth: '5.4375rem', sizeHeight: '2.125rem', text: 'войти', buttonType: 'empty'})
-				.navigation-bar__button-block
+			.navigation-bar__entire-block
+				+toxin-logo
+			.navigation-bar__menu-block
+				+nav-menu([{
+					title: 'О нас',
+					hovered: true,
+				},{
+					title: 'Услуги',
+					subTitles: ['Услуга раз', 'Услуга два', 'Услуга три', 'Услуга жопу подотри'],
+				},{
+					title: 'Вакансии',
+				},{
+					title: 'Новости',
+				},{
+					title: 'Соглашения',
+					subTitles: ['Соглашения раз', 'Соглашения два', 'Соглашения три', 'Соглашения жопу подотри'],
+				}])
+				if !object.loggedIn
+					.navigation-bar__button-block
+						+elongated-button({sizeWidth: '5.4375rem', sizeHeight: '2.125rem', text: 'войти', buttonType: 'empty'})
+					//- .navigation-bar__button-block
 					+elongated-button({sizeWidth: '12.25rem', sizeHeight: '2.125rem', text: 'зарегистрироваться', buttonType: 'filled'})
-			else
-				.navigation-bar__vertical-line
-				.navigation-bar__user-name Юлий Цезарь
+				else
+					.navigation-bar__vertical-line
+					a.navigation-bar__user-name(href='#')= object.userName

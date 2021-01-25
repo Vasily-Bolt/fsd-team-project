@@ -32,7 +32,7 @@ mixin elongated-button(obj)
 		}
 	div(style='height: ' + obj.sizeHeight + '; width: ' + obj.sizeWidth class=wrapperOfButton)
 		button(class='elongated-button ' + buttonType disabled=obj.disabled type=obj.formToSubmit ? 'submit' : ''
-			form=obj.formToSubmit value=obj.referenceText)
+			form=obj.formToSubmit value=obj.referenceText id= obj.id ? obj.id : '' )
 			span(class='header3 elongated-button__text ' + textType)= obj.text
 			if addArrow
 				span.elongated-button__arrow-block

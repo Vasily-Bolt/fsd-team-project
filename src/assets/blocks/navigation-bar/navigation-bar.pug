@@ -1,5 +1,5 @@
-mixin navigation-bar( object )
-	nav.card-styles--white-background.navigation-bar
+mixin navigation-bar-thin( object )
+	nav.card-styles--white-background.navigation-bar.navigation-bar--thin
 			.navigation-bar__entire-block
 				+toxin-logo
 			.navigation-bar__menu-block
@@ -25,3 +25,19 @@ mixin navigation-bar( object )
 				else
 					.navigation-bar__vertical-line
 					a.navigation-bar__user-name(href='#')= object.userName
+
+mixin navigation-bar-wide( object )
+	nav.card-styles--white-background.navigation-bar.navigation-bar--wide.navigation-bar--padding-top
+		.navigation-bar__bottom-block.navigation-bar__bottom-block--wide-block
+			+toxin-logo
+			p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+		.navigation-bar__bottom-block.navigation-bar__bottom-block--wide-block
+			p.header3 Подписка
+			p Получайте специальные предложения и новости сервиса
+			+text-field({
+				field_type: 'subscribe-field',
+				placeholder: 'Email',
+				})
+	.card-styles--white-background.navigation-bar.navigation-bar--thin
+		.navigation-bar__entire-block
+			+copyrights

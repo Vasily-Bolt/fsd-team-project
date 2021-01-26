@@ -1,1 +1,5 @@
-Add :focus to all custom objects
+Add focus to all custom objects
+
+Make gallery work
+Make subscription field submit a form
+

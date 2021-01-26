@@ -1,7 +1,6 @@
 mixin navigation-bar-thin( object )
-	nav.card-styles--white-background.navigation-bar.navigation-bar--thin
-			.navigation-bar__entire-block
-				+toxin-logo
+	nav.card-styles--white-background.navigation-bar.navigation-bar--thin.navigation-bar--vertical-center
+			+toxin-logo
 			.navigation-bar__menu-block
 				+nav-menu-top([{
 					title: 'О нас',
@@ -28,25 +27,31 @@ mixin navigation-bar-thin( object )
 
 mixin navigation-bar-wide( object )
 	nav.card-styles--white-background.navigation-bar.navigation-bar--wide.navigation-bar--padding-top
-		.navigation-bar__bottom-block.navigation-bar__bottom-block--wide-block
+		.navigation-bar__bottom-block.navigation-bar__bottom-block--side-block
 			+toxin-logo
-			p Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+			p.navigation-bar__paragraph Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 
-		.navigation-bar__bottom-block
+		.navigation-bar__bottom-block.navigation-bar__bottom-block--margin-top
 			+nav-menu-footer([
 				{
 					title: 'навигация',
 					items: ['О нас','Новости','Служба поддержки','Услуги']
+				},{
+					title: 'О нас',
+					items: ['О сервисе','Наша команда','Вакансии','Инвесторы']
+				},{
+					title: 'Служба поддержки',
+					items: ['Соглашения','Сообщества','Связь с нами']
 				},
 			])
 
-		.navigation-bar__bottom-block.navigation-bar__bottom-block--wide-block
+		form.navigation-bar__bottom-block.navigation-bar__bottom-block--side-block.navigation-bar__bottom-block--margin-top
 			p.header3 Подписка
-			p Получайте специальные предложения и новости сервиса
+			p.navigation-bar__paragraph Получайте специальные предложения и новости сервиса
 			+text-field({
 				field_type: 'subscribe-field',
 				placeholder: 'Email',
 				})
-	.card-styles--white-background.navigation-bar.navigation-bar--thin
-		.navigation-bar__entire-block
-			+copyrights
+	.card-styles--white-background.navigation-bar.navigation-bar--thin.navigation-bar--vertical-center.navigation-bar--top-border
+		+copyrights
+		+social-web-block

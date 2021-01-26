@@ -1,5 +1,5 @@
 function hideAllSubMenus(){
-	$('.nav-menu__submenu').removeClass('nav-menu__submenu--visible').addClass('nav-menu__submenu--hidden')
+	$('.nav-menu__submenu--popup').removeClass('nav-menu__submenu--visible').addClass('nav-menu__submenu--hidden')
 };
 
 function showSelectedMenu( selector ){
@@ -9,7 +9,7 @@ function showSelectedMenu( selector ){
 $(()=> {
 
 	$( '.nav-menu__arrow-container' ).parent().on( 'click', function( event ){
-		const mySelector = $(this).children('.nav-menu__submenu');
+		const mySelector = $(this).children('.nav-menu__submenu--popup');
 		if ( mySelector.hasClass('nav-menu__submenu--hidden') ){
 			event.stopPropagation();
 			hideAllSubMenus();
@@ -18,7 +18,7 @@ $(()=> {
 	});
 
 	$(document).on('click', function(event) {
-		if ( !$(event.target).parents().hasClass( 'nav-menu__submenu' ) && (!$(event.target).hasClass( 'nav-menu__submenu' )) ) {
+		if ( !$(event.target).parents().hasClass( 'nav-menu__submenu--popup' ) && (!$(event.target).hasClass( 'nav-menu__submenu--popup' )) ) {
 			hideAllSubMenus();
 		}		
 	});			

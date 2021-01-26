@@ -1,26 +1,27 @@
 - var menuItemClass = ''
 
 mixin nav-menu-top(array)
-	ul.nav-menu
-		each index in array
-			- 
-				menuItemClass = 'nav-menu__item nav-menu__item--right-margin'
-				if ( index.hovered )
-					menuItemClass += ' nav-menu__item--hovered'
-				else 
-					menuItemClass += ' nav-menu__item--not-hovered'
-			if index.subTitles
-				li(class=menuItemClass)= index.title
-					- if ( index.subTitles )
-						.nav-menu__arrow-container
-							.arrow-triangle.arrow-triangle--to-bottom
-						ul.nav-menu__submenu.nav-menu__submenu--popup.nav-menu__submenu--hidden
-							each subIndex in index.subTitles
-								li.nav-menu__item.nav-menu__item--not-hovered.nav-menu__item--top-margin
-									a.nav-menu__item(href='#')= subIndex
-			else
-				li(class=menuItemClass)
-					a(href='#')= index.title
+	.nav-menu
+		ul
+			each index in array
+				- 
+					menuItemClass = 'nav-menu__item nav-menu__item--right-margin'
+					if ( index.hovered )
+						menuItemClass += ' nav-menu__item--hovered'
+					else 
+						menuItemClass += ' nav-menu__item--not-hovered'
+				if index.subTitles
+					li(class=menuItemClass)= index.title
+						- if ( index.subTitles )
+							.nav-menu__arrow-container
+								.arrow-triangle.arrow-triangle--to-bottom
+							ul.nav-menu__submenu.nav-menu__submenu--popup.nav-menu__submenu--hidden
+								each subIndex in index.subTitles
+									li.nav-menu__item.nav-menu__item--not-hovered.nav-menu__item--top-margin
+										a.nav-menu__item(href='#')= subIndex
+				else
+					li(class=menuItemClass)
+						a(href='#')= index.title
 
 mixin nav-menu-footer(array)
 	ul.nav-menu.nav-menu--flexible

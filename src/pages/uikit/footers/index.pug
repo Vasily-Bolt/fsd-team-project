@@ -1,23 +1,23 @@
-include ../../../assets/blocks/navigation-bar/navigation-bar.pug
+include ../../../assets/blocks/header-footer-bar/header-footer-bar.pug
 include ../../../assets/blocks/toxin-logo/toxin-logo.pug
 include ../../../assets/blocks/copyrights/copyrights.pug
 include ../../../assets/blocks/social-web-block/social-web-block.pug
 include ../../../assets/blocks/nav-menu/nav-menu.pug
+include ../../../assets/blocks/business-card/business-card.pug
 
 .wrapper.wrapper--dark-background
 	.gull-emblem-container
 		.gull-emblem.gull-emblem--grey
 	.uikit-footers
-		+navigation-bar-thin({
+		+header-footer-bar-thin({
 			loggedIn: false,
 			})
 		.uikit-footers__vertical-gap
-		+navigation-bar-thin({
+		+header-footer-bar-thin({
 			loggedIn: true,
 			userName: 'Юлий Цезарь',
 			})
 		.uikit-footers__vertical-gap
-		+navigation-bar-wide({
-			
-		})
-		//- +copyrights
+		+header-footer-bar-wide
+		.uikit-footers__vertical-gap
+		+business-card

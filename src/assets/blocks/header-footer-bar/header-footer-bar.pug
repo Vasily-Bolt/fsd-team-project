@@ -1,0 +1,59 @@
+mixin header-footer-bar-thin( object )
+	nav.card-styles--white-background.header-footer-bar.header-footer-bar--thin.header-footer-bar--vertical-center.card--styles--shadow-footer-header
+			+toxin-logo
+			.header-footer-bar__menu-block
+				+nav-menu-top([{
+					title: 'О нас',
+					hovered: true,
+				},{
+					title: 'Услуги',
+					subTitles: ['Услуга раз', 'Услуга два', 'Услуга три', 'Услуга жопу подотри'],
+				},{
+					title: 'Вакансии',
+				},{
+					title: 'Новости',
+				},{
+					title: 'Соглашения',
+					subTitles: ['Соглашения раз', 'Соглашения два', 'Соглашения три', 'Соглашения жопу подотри'],
+				}])
+				if !object.loggedIn
+					.header-footer-bar__button-block
+						+elongated-button({sizeWidth: '5.4375rem', sizeHeight: '2.125rem', text: 'войти', buttonType: 'empty'})
+					//- .header-footer-bar__button-block
+					+elongated-button({sizeWidth: '12.25rem', sizeHeight: '2.125rem', text: 'зарегистрироваться', buttonType: 'filled'})
+				else
+					.header-footer-bar__vertical-line
+					a.header-footer-bar__user-name(href='#')= object.userName
+
+
+//При необходимости можно перенести объект с пунктами меню Выше
+mixin header-footer-bar-wide( object )
+	nav.card-styles--white-background.header-footer-bar.header-footer-bar--wide.header-footer-bar--padding-top.card--styles--shadow-footer-header
+		.header-footer-bar__bottom-block.header-footer-bar__bottom-block--side-block
+			+toxin-logo
+			p.header-footer-bar__paragraph Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+		
+		.header-footer-bar__bottom-block.header-footer-bar__bottom-block--margin-top
+			+nav-menu-footer([
+				{
+					title: 'навигация',
+					items: ['О нас','Новости','Служба поддержки','Услуги']
+				},{
+					title: 'О нас',
+					items: ['О сервисе','Наша команда','Вакансии','Инвесторы']
+				},{
+					title: 'Служба поддержки',
+					items: ['Соглашения','Сообщества','Связь с нами']
+				},
+			])
+
+		form.header-footer-bar__bottom-block.header-footer-bar__bottom-block--side-block.header-footer-bar__bottom-block--margin-top
+			p.header3 Подписка
+			p.header-footer-bar__paragraph Получайте специальные предложения и новости сервиса
+			+text-field({
+				field_type: 'subscribe-field',
+				placeholder: 'Email',
+				})
+	.card-styles--white-background.header-footer-bar.header-footer-bar--thin.header-footer-bar--vertical-center.header-footer-bar--top-border.card--styles--shadow-footer-header
+		+copyrights
+		+social-web-block

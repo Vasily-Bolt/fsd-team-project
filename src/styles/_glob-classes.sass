@@ -63,8 +63,8 @@
 	box-sizing: border-box
 
 html
-	font-size: 16px
-	// @include fluidFontSize(32px, 16px, 320px, 1320px)
+	// font-size: 16px
+	@include fluidFontSize(32px, 16px, 320px, 1320px)
 
 body, .body-text
 	@include body-text
@@ -99,7 +99,10 @@ h2, .header2
 
 h3, .header3
 	@include header-three
-	color: rgba($all-document-text-color, $dark-shade-total)
+	
 	
 .text-dark-shade-almost-total
-	color: rgba($all-document-text-color, .75)
+	color: rgba($all-document-text-color, $dark-shade-almost-total)
+
+.text-dark-shade-total
+	color: rgba($all-document-text-color, $dark-shade-total)

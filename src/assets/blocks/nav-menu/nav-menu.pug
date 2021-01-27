@@ -26,7 +26,8 @@ mixin nav-menu-top(array)
 mixin nav-menu-footer(array)
 	ul.nav-menu.nav-menu--flexible
 		each index in array
-			li.header3.nav-menu__header-li= index.title
+			li.header3.nav-menu__header-li
+				span.text-dark-shade-total= index.title
 				ul.nav-menu__submenu.nav-menu__submenu--always-vsible
 					each subindex in index.items
 						li.nav-menu__item.nav-menu__item--not-hovered.nav-menu__item--top-margin

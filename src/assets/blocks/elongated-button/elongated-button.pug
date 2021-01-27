@@ -1,4 +1,16 @@
+
 mixin elongated-button(obj)
+	mixin button
+		button(class='elongated-button ' + buttonType disabled=obj.disabled type=obj.formToSubmit ? 'submit' : ''
+			form=obj.formToSubmit id= obj.id ? obj.id : '' )
+			span(class='header3 elongated-button__text ' + textType)= obj.text
+			if addArrow
+				span.elongated-button__arrow-block
+					if addArrow=='with-arrow-right'
+						span(class='arrow arrow--to-right arrow--white')
+					if addArrow=='with-arrow-left'
+						span(class='arrow arrow--to-left arrow--white')
+
 	-
 		let buttonType = '';
 		let textType = '';
@@ -22,7 +34,7 @@ mixin elongated-button(obj)
 			case 'empty' :
 				buttonType = 'elongated-button--empty-inside';
 				if ( textType == '') textType = 'elongated-button__text--purple';
-				wrapperOfButton = 'popo'
+				wrapperOfButton = 'elongated-button__wrapper--purple-gradient'
 				break;
 			case 'no-border' :
 				buttonType = 'elongated-button--no-border';
@@ -31,12 +43,17 @@ mixin elongated-button(obj)
 			default : break;
 		}
 	div(style='height: ' + obj.sizeHeight + '; width: ' + obj.sizeWidth class=wrapperOfButton)
-		button(class='elongated-button ' + buttonType disabled=obj.disabled type=obj.formToSubmit ? 'submit' : ''
-			form=obj.formToSubmit value=obj.referenceText id= obj.id ? obj.id : '' )
-			span(class='header3 elongated-button__text ' + textType)= obj.text
-			if addArrow
-				span.elongated-button__arrow-block
-					if addArrow=='with-arrow-right'
-						span(class='arrow arrow--to-right arrow--white')
-					if addArrow=='with-arrow-left'
-						span(class='arrow arrow--to-left arrow--white')
+		if obj.referenceText
+			a(href=obj.referenceText)
+				+button
+		else
+			+button
+		//- button(class='elongated-button ' + buttonType disabled=obj.disabled type=obj.formToSubmit ? 'submit' : ''
+		//- 	form=obj.formToSubmit value=obj.referenceText id= obj.id ? obj.id : '' )
+		//- 	span(class='header3 elongated-button__text ' + textType)= obj.text
+		//- 	if addArrow
+		//- 		span.elongated-button__arrow-block
+		//- 			if addArrow=='with-arrow-right'
+		//- 				span(class='arrow arrow--to-right arrow--white')
+		//- 			if addArrow=='with-arrow-left'
+		//- 				span(class='arrow arrow--to-left arrow--white')

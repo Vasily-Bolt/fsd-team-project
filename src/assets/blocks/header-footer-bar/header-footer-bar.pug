@@ -18,7 +18,7 @@ mixin header-footer-bar-thin( object )
 				}])
 				if !object.loggedIn
 					.header-footer-bar__button-block
-						+elongated-button({sizeWidth: '5.4375rem', sizeHeight: '2.125rem', text: 'войти', buttonType: 'empty'})
+						+elongated-button({sizeWidth: '5.4375rem', sizeHeight: '2.125rem', text: 'войти', buttonType: 'empty' })
 					//- .header-footer-bar__button-block
 					+elongated-button({sizeWidth: '12.25rem', sizeHeight: '2.125rem', text: 'зарегистрироваться', buttonType: 'filled'})
 				else
@@ -48,7 +48,7 @@ mixin header-footer-bar-wide( object )
 			])
 
 		form.header-footer-bar__bottom-block.header-footer-bar__bottom-block--side-block.header-footer-bar__bottom-block--margin-top
-			p.header3 Подписка
+			p.header3.text-dark-shade-total Подписка
 			p.header-footer-bar__paragraph Получайте специальные предложения и новости сервиса
 			+text-field({
 				field_type: 'subscribe-field',

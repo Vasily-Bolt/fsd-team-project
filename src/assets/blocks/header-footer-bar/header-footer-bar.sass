@@ -9,14 +9,19 @@
 @import ./_vertical-center/header-footer-bar_vertical-center
 @import ./_top-border/header-footer-bar_top-border
 
+@media screen and (max-width:1200px)
+	.header-footer-bar
+		padding-left: 8vw //10.6vw
+		padding-right: 8vw //10.6vw
+
+@media screen and (min-width:1200px)
+	.header-footer-bar
+		padding-left: 8.75rem //140px
+		padding-right: 8.75rem //140px
+
 .header-footer-bar
 	width: 100%
 	color: rgba($all-document-text-color, $dark-shade-half)
 	// box-shadow: 0 .625rem 1.25rem rgba($all-document-text-color, .05) //0px 10px 20px
-	padding-left: 8.75rem //140px
-	padding-right: 8.75rem //140px
-	// padding-left: 10.6vw
-	// padding-right: 10.6vw
 	display: flex
 	justify-content: space-between
-	

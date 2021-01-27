@@ -15,7 +15,7 @@ mixin login-form(object)
 						placeholder: 'Пароль',
 					})
 		+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'войти', buttonType: 'with-arrow-right', formToSubmit: object.id})
-			//- ?Может заменить на <a>?
-		form(id = 'createAccauntForm' class = 'counter-account-block' method='get' action='')
+			//- ?Может заменить на <a>? или через JS обрабатывать, чтобы страничку не перезагружать
+		form(id = 'createAccauntForm' class = 'counter-account-block' method='get' action='/register.html')
 			span Нет аккаунта на Toxin?
 			+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'создать', buttonType: 'empty', formToSubmit: 'createAccauntForm'})

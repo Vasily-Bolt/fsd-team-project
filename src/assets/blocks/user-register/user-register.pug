@@ -27,7 +27,7 @@ mixin user-register(object)
 				+checkbox-radio({type:'toggle-switch', id:'sendSpecialOffer', name:'sendSpecialOffer', text:'Получать спецпредложения', checked: false})
 			+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате', buttonType: 'with-arrow-right', formToSubmit: object.id})
 		//- ?Может заменить на <a>?
-		form(id = 'signInForm' class = 'counter-account-block' method='get')
+		form(id = 'signInForm' class = 'counter-account-block' method='get' action='/login.html')
 			span Уже есть аккаунт на Toxin
 			+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'Войти', buttonType: 'empty', formToSubmit: 'signInForm'})
 

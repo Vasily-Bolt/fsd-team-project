@@ -22,5 +22,7 @@ $(()=> {
 			hideAllSubMenus();
 		}		
 	});			
+
+	if ( $( window ).width() <= '768' ) console.log($( window ).width());
 	
 });

@@ -4,4 +4,6 @@
 1025px — 1200px: Desktops, large screens.
 1201px and more — Extra large screens, TV.
 
+IphoneX - 375px!
+
 @media screen and (max-width:600px) - less then

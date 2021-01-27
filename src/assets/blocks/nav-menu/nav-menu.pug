@@ -1,8 +1,8 @@
 - var menuItemClass = ''
 
 mixin nav-menu-top(array)
-	.nav-menu
-		ul
+	.nav-menu.nav-menu--inline-burger
+		ul.card-styles--white-background
 			each index in array
 				- 
 					menuItemClass = 'nav-menu__item nav-menu__item--right-margin'

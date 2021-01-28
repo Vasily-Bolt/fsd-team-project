@@ -8,6 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
+const sassLoader = require('sass-loader');
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev

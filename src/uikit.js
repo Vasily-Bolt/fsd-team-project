@@ -1,4 +1,12 @@
-// import * as $ from 'jquery'
+// const mobileMin = '320px';
+// const mobileMax ='480px';
+// const tabletMin ='481px';
+// const tabletMax ='768px';
+// const laptopMin ='769px';
+// const laptopMax ='1024px';
+// const desktopMin = '1025px';
+// const desktopMax = '1200px';
+// const television = '1201px';
 
 import '@/jquery-ui/jquery-ui.js'
 import '@/jquery-ui/jquery-ui.css'

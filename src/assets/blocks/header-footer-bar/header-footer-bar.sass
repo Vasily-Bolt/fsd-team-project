@@ -16,12 +16,21 @@
 	display: flex
 	justify-content: space-between
 
+@media screen and (max-width:$laptop-max)
+	.header-footer-bar
+		justify-content: center
+
 @media screen and (max-width:$desktop-max)
 	.header-footer-bar
-		padding-left: 6vw //10.6vw
-		padding-right: 6vw //10.6vw
+		padding-left: 1vw //10.6vw
+		padding-right: 1vw //10.6vw
 
 @media screen and (min-width:$television)
+	.header-footer-bar
+		padding-left: 4vw //10.6vw
+		padding-right: 4vw //10.6vw
+
+@media screen and (min-width:$one-three-two-zero)
 	.header-footer-bar
 		padding-left: 8.75rem //140px
 		padding-right: 8.75rem //140px

@@ -1,4 +1,4 @@
-const mobileDeviceWidth = 768;
+const mobileDeviceWidth = 1024;
 
 
 function showSelectedMenu( selector ){

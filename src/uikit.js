@@ -26,5 +26,3 @@ import '@/assets/blocks/nav-menu/nav-menu.js'
 
 
 import '@/pages/uikit/styles.sass'
-
-

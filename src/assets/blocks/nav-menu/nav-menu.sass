@@ -1,3 +1,4 @@
+$rollup-menu: $laptop-max
 @import ./__arrow-container/nav-menu__arrow-container
 @import ./__item/nav-menu__item
 @import ./__submenu/nav-menu__submenu
@@ -5,6 +6,8 @@
 @import ./__header-li/nav-menu__header-li
 @import ./_inline-burger/nav-menu_inline-burger
 @import ./__top-menu/nav-menu__top-menu
+
+
 
 .nav-menu
 	position: relative
@@ -15,6 +18,6 @@
 .nav-menu *
 	user-select: none
 
-@media screen and (max-width:$tablet-max)
+@media screen and (max-width:$rollup-menu)
 	.nav-menu
-		font-size: 2rem
+		font-size: 1.1rem

@@ -54,7 +54,9 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   mode: 'development',
   entry: {
-    UIkit: './uikit.js',
+    // StartingPage: '',
+    // UIkit: './uikit.js',
+    WebsiteLanding: './website-landing.js'
   },
   output: {
     filename: filename('js'),
@@ -75,11 +77,32 @@ module.exports = {
     hot: isDev,
   },
   plugins: [
+    // new HTMLWebpackPlugin( {
+    //   title: 'StartingPage',
+    //   template: '',
+    //   filename: 'index.html',
+    //   inject: true,
+    //   chunks: ['StartingPage'],
+    //   minify: {
+    //     collapseWhitespace: isProd 
+    //   }
+    // }),
+    // new HTMLWebpackPlugin( {
+    //   title: 'UIKit',
+    //   template: './pages/uikit/index.pug',
+    //   filename: '/uikit.html',
+    //   inject: true,
+    //   chunks: ['UIkit'],
+    //   minify: {
+    //     collapseWhitespace: isProd 
+    //   }
+    // }),
     new HTMLWebpackPlugin( {
-      template: './pages/uikit/index.pug',
+      title: 'WebsiteLanding',
+      template: './pages/website/landing/index.pug',
       filename: 'index.html',
       inject: true,
-      chunks: ['UIkit'],
+      chunks: ['WebsiteLanding'],
       minify: {
         collapseWhitespace: isProd 
       }

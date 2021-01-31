@@ -9,11 +9,21 @@
 
 .header-footer-bar__button-block
 	
-
-@media screen and (max-width:$laptop-max)
+@media screen and (max-width:$desktop-max)
 	.header-footer-bar__button-block--desktop
 		display: none
 
-	.header-footer-bar__button-block--mobile
+	.header-footer-bar__button-block--laptop, .header-footer-bar__button-block--mobile
 		display: inline-block
-		margin-left: 1em
+		margin-right: .1em
+
+@media screen and (max-width:$laptop-max)
+	.header-footer-bar__button-block--laptop, .header-footer-bar__button-block--mobile
+		margin-left: 15vw
+
+@media screen and (max-width:$tablet-max)
+	.header-footer-bar__button-block--laptop
+		display: none
+
+	.header-footer-bar__button-block--mobile
+		margin-left: 5vw

@@ -28,9 +28,6 @@
 	@media (min-width: $w-max) 
 		font-size: $f-max
 	
-
-
-
 @mixin header-one
 	font-family: Montserrat
 	font-size: 1.5rem //24px
@@ -43,7 +40,6 @@
 	font-size: 1.1875rem //19px
 	font-weight: 700
 	line-height: 1.5rem //24px
-	letter-spacing: -0.4px
 
 @mixin header-three
 	font-family: Montserrat
@@ -64,7 +60,7 @@
 
 html
 	// font-size: 16px
-	@include fluidFontSize(32px, 16px, 320px, 1320px)
+	@include fluidFontSize(42px, 16px, 320px, 1320px)
 
 body, .body-text
 	@include body-text
@@ -99,7 +95,6 @@ h2, .header2
 
 h3, .header3
 	@include header-three
-	
 	
 .text-dark-shade-almost-total
 	color: rgba($all-document-text-color, $dark-shade-almost-total)

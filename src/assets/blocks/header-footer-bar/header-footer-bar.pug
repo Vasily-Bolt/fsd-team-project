@@ -1,6 +1,7 @@
 mixin header-footer-bar-thin( object )
 	nav.card-styles--white-background.header-footer-bar.header-footer-bar--thin.header-footer-bar--vertical-center.card--styles--shadow-footer-header
-			+toxin-logo
+			.header-footer-bar__button-block--desktop
+				+toxin-logo
 			.header-footer-bar__menu-block
 				+nav-menu-top([{
 					title: 'О нас',
@@ -24,6 +25,8 @@ mixin header-footer-bar-thin( object )
 				else
 					.header-footer-bar__vertical-line
 					a.header-footer-bar__user-name(href='#')= object.userName
+			.header-footer-bar__button-block--mobile
+				+toxin-logo
 
 
 //При необходимости можно перенести объект с пунктами меню Выше

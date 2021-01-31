@@ -7,4 +7,4 @@ mixin text-field-with-info(obj)
 		h3(class='text-field-with-info__status text-field-with-info__status-text')= obj.aditional
 		.text-field-with-info__visualisation
 			+text-field({field_type: obj.tfType, dropdown_hidden: obj.tfDropdownHidden, name: obj.tfName, placeholder: obj.tfPlaceholder, pattern: obj.tfPattern,
-				corners: obj.tfCorners, value: obj.tfValue, hovered: obj.tfHovered})
+				corners: obj.tfCorners, value: obj.tfValue, hovered: obj.tfHovered, inputType: obj.tfInputType})

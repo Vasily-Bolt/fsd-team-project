@@ -12,7 +12,7 @@ $(()=> {
 
 	function hideAllSubMenus(){
 		$('.nav-menu__submenu--popup').removeClass('nav-menu__submenu--visible').addClass('nav-menu__submenu--hidden')
-		if ( isMobile ) $('.nav-menu--inline-burger').children('ul').css('visibility','hidden');
+		if ( isMobile ) $('.nav-menu--inline-burger').find('ul').css('visibility','hidden');
 	};
 	
 
@@ -43,9 +43,15 @@ $(()=> {
 			const NearestUlElemnt = $(this).find('ul');
 			// hideAllSubMenus();
 			if ( NearestUlElemnt.css( 'visibility' ) != 'hidden' )
-				NearestUlElemnt.css('visibility','hidden');
+				NearestUlElemnt.css({
+					'visibility': 'hidden',
+					'z-index': '-10'
+				});
 			else
-				NearestUlElemnt.css('visibility','visible');
+				NearestUlElemnt.css({
+					'visibility': 'visible',
+					'z-index': '10'
+				});
 		});
 	}
 	

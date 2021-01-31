@@ -7,12 +7,14 @@ mixin login-form(object)
 						field_type: 'text-field', 
 						name: 'userName', 
 						placeholder: 'Email',
+						InputType: 'email',
 					})
 					.cards-styles--text-field-padding-bottom
 					+text-field({
 						field_type: 'text-field', 
 						name: 'surname', 
 						placeholder: 'Пароль',
+						InputType: 'password',
 					})
 		+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'войти', buttonType: 'with-arrow-right', formToSubmit: object.id})
 			//- ?Может заменить на <a>? или через JS обрабатывать, чтобы страничку не перезагружать

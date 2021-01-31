@@ -42,18 +42,9 @@ mixin elongated-button(obj)
 				break;
 			default : break;
 		}
-	div(style='height: ' + obj.sizeHeight + '; width: ' + obj.sizeWidth class=wrapperOfButton)
+	div(style=`height: ${obj.sizeHeight}; width: ${obj.sizeWidth};` class=wrapperOfButton)
 		if obj.referenceText
 			a(href=obj.referenceText)
 				+button
 		else
 			+button
-		//- button(class='elongated-button ' + buttonType disabled=obj.disabled type=obj.formToSubmit ? 'submit' : ''
-		//- 	form=obj.formToSubmit value=obj.referenceText id= obj.id ? obj.id : '' )
-		//- 	span(class='header3 elongated-button__text ' + textType)= obj.text
-		//- 	if addArrow
-		//- 		span.elongated-button__arrow-block
-		//- 			if addArrow=='with-arrow-right'
-		//- 				span(class='arrow arrow--to-right arrow--white')
-		//- 			if addArrow=='with-arrow-left'
-		//- 				span(class='arrow arrow--to-left arrow--white')

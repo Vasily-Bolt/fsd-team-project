@@ -3,7 +3,11 @@
 	placeholder - передается в поле placeholder
 	pattern - при наличии создает masked text field
 mixin text-field(obj)
-	- var field_class = 'field-template'
+	- 
+		var field_class = 'field-template'
+		var inputType = 'text'
+		if ( obj.inputType ) inputType = obj.inputType
+
 	if obj.textBrightness == 1
 		- field_class += ' field-template--full-color'
 	else
@@ -26,10 +30,10 @@ mixin text-field(obj)
 	if obj.field_type == 'text-field'
 		if obj.pattern
 			div(class= field_class)
-				input(type='text' name=obj.name placeholder=obj.placeholder pattern=obj.pattern class='field-template__input-field' value=obj.value)
+				input(type=inputType name=obj.name placeholder=obj.placeholder pattern=obj.pattern class='field-template__input-field' value=obj.value)
 		else
 			div(class= field_class)
-				input(type='text' name=obj.name placeholder=obj.placeholder class='field-template__input-field' value=obj.value)
+				input(type=inputType name=obj.name placeholder=obj.placeholder class='field-template__input-field' value=obj.value)
 		//- label(for=name)
 
 	//-Миксин для отображения начального Dropdown. Получает объект
@@ -42,7 +46,7 @@ mixin text-field(obj)
 			//- span= obj.placeholder
 			if obj.name !== undefined
 				- var inputId = obj.name + 'InputField'
-			input(type='text' id=inputId readonly value=obj.placeholder class='field-template__input-field')
+			input(type=inputType id=inputId readonly value=obj.placeholder class='field-template__input-field')
 			.field-template__icon-field
 				if obj.dropdown_hidden
 					div(class='arrow-triangle arrow-triangle--to-bottom')
@@ -52,7 +56,7 @@ mixin text-field(obj)
 	//-Миксин для отображения поля подписки с градиентной стрелкой вправо
 	if obj.field_type == 'subscribe-field'
 		div(class= field_class)
-			input(type='text' name=obj.name placeholder=obj.placeholder class='field-template__input-field')
-			.field-template__icon-field
+			input(type='email' name=obj.name placeholder=obj.placeholder class='field-template__input-field')
+			a(href='/subscribe.html').field-template__icon-field
 				.field-template__arrow-block(style='width:44px; height: 44px; margin-top: 4px; margin-right:2px')
-					div(class='arrow arrow--gradient arrow--to-right')
+					.arrow.arrow--gradient.arrow--to-right

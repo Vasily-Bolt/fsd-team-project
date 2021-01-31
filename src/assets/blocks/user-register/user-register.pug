@@ -14,15 +14,17 @@ mixin user-register(object)
 					placeholder: 'Фамилия',
 				})
 				+gender-select-radio
+			//- Нужно было добавить tfInputType:'date', но тогда придется переделывать нативный datepicker
 			+text-field-with-info({tfType: 'text-field', tfName: 'dateOfBirth', tfPlaceholder: 'ДД.ММ.ГГГГ', tfPattern: '[1-3][0-9].[0-1][0-9].[1-2][0,9][0-9][0-9]', title: 'дата рождения'})
 			
 			fieldset(class='user-register__userEnterDataFieldset cards-styles--flex')
-				+text-field-with-info({tfType: 'text-field', tfName: 'userEmail', tfPlaceholder: 'Email', title: 'данные для входа в сервис', titleClass: 'padding-top'})
+				+text-field-with-info({tfType: 'text-field', tfName: 'userEmail', tfPlaceholder: 'Email', tfInputType: 'email', title: 'данные для входа в сервис', titleClass: 'padding-top'})
 				.cards-styles--text-field-padding-bottom
 				+text-field({
-					field_type: 'text-field', 
+					field_type: 'text-field',
 					name: 'password', 
 					placeholder: 'Пароль',
+					InputType: 'password',
 				})
 				+checkbox-radio({type:'toggle-switch', id:'sendSpecialOffer', name:'sendSpecialOffer', text:'Получать спецпредложения', checked: false})
 			+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате', buttonType: 'with-arrow-right', formToSubmit: object.id})

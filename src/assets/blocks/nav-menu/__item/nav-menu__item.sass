@@ -8,9 +8,8 @@ $shadow: rgba($all-document-text-color, $dark-shade-almost-total)
 .nav-menu__item
 	color: rgba($all-document-text-color, 0.5)
 	display: inline-block
-	min-width: 20px
+	min-width: 1.25rem //20px
 
-	
 .nav-menu__item > a
 	display: inline-block
 	width: 100%
@@ -18,3 +17,7 @@ $shadow: rgba($all-document-text-color, $dark-shade-almost-total)
 .nav-menu__item:focus,
 .nav-menu__item > a:focus
 	border: 1px solid #000
+
+@media screen and (max-width:$tablet-max)
+	.nav-menu__item
+		line-height: 2

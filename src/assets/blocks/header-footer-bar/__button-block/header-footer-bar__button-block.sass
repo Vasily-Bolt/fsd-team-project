@@ -1,29 +1,8 @@
-.header-footer-bar__button-block--mobile
-	display: none
-
-.header-footer-bar__button-block--desktop
-	display: inline-block
-
-.header-footer-bar__button-block--margin-right
-	margin-right: 1.25rem //20px
+@import ./_margin-right/header-footer-bar__button-block_margin-right
+@import ./_all-devices/header-footer-bar__button-block_all-devices
+@import ./_desktop/header-footer-bar__button-block_desktop
+@import ./_laptop/header-footer-bar__button-block_laptop
+@import ./_mobile/header-footer-bar__button-block_mobile
 
 .header-footer-bar__button-block
-	
-@media screen and (max-width:$desktop-max)
-	.header-footer-bar__button-block--desktop
-		display: none
-
-	.header-footer-bar__button-block--laptop, .header-footer-bar__button-block--mobile
-		display: inline-block
-		margin-right: .1em
-
-@media screen and (max-width:$laptop-max)
-	.header-footer-bar__button-block--laptop, .header-footer-bar__button-block--mobile
-		margin-left: 15vw
-
-@media screen and (max-width:$tablet-max)
-	.header-footer-bar__button-block--laptop
-		display: none
-
-	.header-footer-bar__button-block--mobile
-		margin-left: 5vw
+  align-self: center

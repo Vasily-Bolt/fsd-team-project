@@ -5,7 +5,7 @@ mixin header-footer-bar-thin( object )
 			.header-footer-bar__menu-block
 				+nav-menu-top([{
 					title: 'О нас',
-					hovered: true,
+					hovered: object.uiKit,
 				},{
 					title: 'Услуги',
 					subTitles: ['Услуга раз', 'Услуга два', 'Услуга три', 'Услуга жопу подотри'],
@@ -18,10 +18,10 @@ mixin header-footer-bar-thin( object )
 					subTitles: ['Соглашения раз', 'Соглашения два', 'Соглашения три', 'Соглашения жопу подотри'],
 				}])
 				if !object.loggedIn
-					.header-footer-bar__button-block.header-footer-bar__button-block--desktop.header-footer-bar__button-block--mobile.header-footer-bar__button-block--margin-right
-						+elongated-button({sizeWidth: '5.4375rem', sizeHeight: '2.125rem', text: 'войти', buttonType: 'empty' })
+					.header-footer-bar__button-block.header-footer-bar__button-block--all-devices.header-footer-bar__button-block--margin-right
+						+elongated-button({sizeWidth: '5.4375rem', sizeHeight: '2.125rem', text: 'войти', buttonType: 'empty', referenceText: '/login.html' })
 					.header-footer-bar__button-block.header-footer-bar__button-block--desktop
-						+elongated-button({sizeWidth: '12.25rem', sizeHeight: '2.125rem', text: 'зарегистрироваться', buttonType: 'filled'})
+						+elongated-button({sizeWidth: '12.25rem', sizeHeight: '2.125rem', text: 'зарегистрироваться', buttonType: 'filled', referenceText: '/register.html'})
 				else
 					.header-footer-bar__vertical-line
 					a.header-footer-bar__user-name(href='#')= object.userName

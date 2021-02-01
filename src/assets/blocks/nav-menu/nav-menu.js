@@ -8,7 +8,6 @@ function showSelectedMenu( selector ){
 $(()=> {
 
 	const isMobile = $( window ).width() <= mobileDeviceWidth;
-	console.log( isMobile );
 
 	function hideAllSubMenus(){
 		$('.nav-menu__submenu--popup').removeClass('nav-menu__submenu--visible').addClass('nav-menu__submenu--hidden')

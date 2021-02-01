@@ -31,12 +31,12 @@ mixin header-footer-bar-thin( object )
 
 //При необходимости можно перенести объект с пунктами меню Выше
 mixin header-footer-bar-wide( object )
-	nav.card-styles--white-background.header-footer-bar.header-footer-bar--wide.header-footer-bar--padding-top.card--styles--shadow-footer-header
+	.card-styles--white-background.header-footer-bar.header-footer-bar--wide.header-footer-bar--padding-top.card--styles--shadow-footer-header
 		.header-footer-bar__bottom-block.header-footer-bar__bottom-block--side-block
 			+toxin-logo
 			p.header-footer-bar__paragraph Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
 		
-		.header-footer-bar__bottom-block.header-footer-bar__bottom-block--margin-top
+		nav.header-footer-bar__bottom-block.header-footer-bar__bottom-block--margin-top
 			+nav-menu-footer([
 				{
 					title: 'навигация',

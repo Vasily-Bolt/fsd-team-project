@@ -1,11 +1,12 @@
-.landing-page__header-container
-	//- img(src='./img/landing1.jpg', alt="Фотография комнаты. Фоновая картинка посадочной страницы").landing-page__image
+header.landing-page__header-container
 	+header-footer-bar-thin({
-				loggedIn: false,
-				})
-.landing-page__footer-container
+			loggedIn: false,
+			})
+	+room-search({
+		id: 'RoomSearch',
+		})
+footer.landing-page__footer-container
 	+header-footer-bar-wide
-	//- +business-card
 //- .landing-page__header-container
 //- 	+header-footer-bar-thin({
 //- 				loggedIn: false,

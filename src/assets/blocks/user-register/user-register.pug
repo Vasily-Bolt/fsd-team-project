@@ -19,7 +19,6 @@ mixin user-register(object)
 			
 			fieldset(class='user-register__userEnterDataFieldset cards-styles--flex')
 				+text-field-with-info({tfType: 'text-field', tfName: 'userEmail', tfPlaceholder: 'Email', tfInputType: 'email', title: 'данные для входа в сервис', titleClass: 'padding-top'})
-				.cards-styles--text-field-padding-bottom
 				+text-field({
 					field_type: 'text-field',
 					name: 'password', 
@@ -27,7 +26,7 @@ mixin user-register(object)
 					InputType: 'password',
 				})
 				+checkbox-radio({type:'toggle-switch', id:'sendSpecialOffer', name:'sendSpecialOffer', text:'Получать спецпредложения', checked: false})
-			+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'перейти к оплате', buttonType: 'with-arrow-right', formToSubmit: object.id})
+			+elongated-button({sizeWidth: '100%', sizeHeight: '2.75rem', text: 'перейти к оплате', buttonType: 'with-arrow-right', formToSubmit: object.id})
 		//- ?Может заменить на <a>?
 		form(id = 'signInForm' class = 'counter-account-block' method='get' action='/login.html')
 			span Уже есть аккаунт на Toxin

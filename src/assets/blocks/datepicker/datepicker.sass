@@ -13,6 +13,11 @@ $boxShadowDatepicker : 0 .625rem 1.25rem rgba($all-document-text-color, .05) //0
 	justify-content: space-between
 	position: relative
 
+@media screen and (max-width:$mobile-max)
+	.datepicker	
+		justify-content: flex-start
+		flex-direction: column
+
 .date-picker-wrapper
 	border: .0625rem solid rgba($all-document-text-color, .25)
 	border-radius: $borderRadius //4px

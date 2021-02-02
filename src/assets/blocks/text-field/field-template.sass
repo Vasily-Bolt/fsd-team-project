@@ -1,4 +1,4 @@
-$txt-field-height: 2.6875rem //43px
+$txt-field-height: 2.875rem // 46px 2.6875rem //43px
 
 //Стоковое состояние блока
 .field-template
@@ -12,11 +12,23 @@ $txt-field-height: 2.6875rem //43px
 	overflow: hidden
 	display: inline-block
 
+@media screen and (max-width:$mobile-max)
+	.field-template
+		display: flex
+		justify-content: space-between
+		height: 1.6rem
+		padding-left: 0
+
 .field-template__input-field
-	width: 85%
+	width: 80%
 	height: 100%
 	margin-left: -2px
 	background: none
+
+@media screen and (max-width:$mobile-max)
+	.field-template__input-field
+		margin-left: 2px
+		text-overflow: ellipsis
 
 .field-template--no-select
 	user-select: none

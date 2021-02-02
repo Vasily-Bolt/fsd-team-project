@@ -16,7 +16,7 @@ mixin login-form(object)
 						placeholder: 'Пароль',
 						InputType: 'password',
 					})
-		+elongated-button({sizeWidth: '20rem', sizeHeight: '2.75rem', text: 'войти', buttonType: 'with-arrow-right', formToSubmit: object.id})
+		+elongated-button({sizeWidth: '100%', sizeHeight: '2.75rem', text: 'войти', buttonType: 'with-arrow-right', formToSubmit: object.id})
 			//- ?Может заменить на <a>? или через JS обрабатывать, чтобы страничку не перезагружать
 		form(id = 'createAccauntForm' class = 'counter-account-block' method='get' action='/register.html')
 			span Нет аккаунта на Toxin?

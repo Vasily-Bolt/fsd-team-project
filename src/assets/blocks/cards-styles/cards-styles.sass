@@ -1,19 +1,34 @@
 .cards-styles-box-shadow
-  border: .0625rem solid rgba(0, 0, 0, .12)
-  box-shadow: 0 0 1.5625rem rgba(0, 0, 0, .2) //25px
+	border: .0625rem solid rgba(0, 0, 0, .12)
+	box-shadow: 0 0 1.5625rem rgba(0, 0, 0, .2) //25px
 
 .cards-styles-size-and-paddings
-  width: 23.75rem //380px
-  padding: 1.875rem //30px
-  padding-top: 2.5rem //40px
+	width: 23.75rem //380px
+	padding: 1.875rem //30px
+	padding-top: 2.5rem //40px
+
+@media screen and (max-width:$tablet-max)
+	.cards-styles-size-and-paddings
+		width: 95vw //320px
+		padding: 1vw
+
+@media screen and (max-width:$mobile-max)
+	.cards-styles-size-and-paddings
+		width: 100%
+		padding: 0
+
 
 .cards-styles--flex
-  display: flex
-  flex-direction: column
-  justify-content: space-between
+	display: flex
+	flex-direction: column
+	justify-content: space-between
 
 .card-styles--white-background
-  background: #FFFFFF
+	background: #FFFFFF
+
+@media screen and (max-width:$laptop-max)
+	.card-styles--white-background
+		background-color: rgba(white, $dark-shade-almost-total)
 
 .card--styles--shadow-footer-header
-  box-shadow: 0 .625rem 1.25rem rgba($all-document-text-color, .05) //0px 10px 20px
+	box-shadow: 0 .625rem 1.25rem rgba($all-document-text-color, .05) //0px 10px 20px

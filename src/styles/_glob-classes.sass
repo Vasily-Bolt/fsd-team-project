@@ -61,7 +61,7 @@
 
 html
 	// font-size: 16px
-	@include fluidFontSize(32px, 16px, 320px, 1320px)
+	@include fluidFontSize(28px, 16px, 320px, 1320px)
 
 body, .body-text
 	@include body-text
@@ -90,12 +90,25 @@ h1, h2, h3, p, ul, li
 
 h1, .header1
 	@include header-one
-	
+
+@media screen and (max-width:$tablet-max)
+	.header1
+		font-size: 1.2rem
+		line-height: 1
+
+@media screen and (max-width:$mobile-max)
+	.header1
+		font-size: 1.05rem
+
 h2, .header2
 	@include header-two
 
 h3, .header3
 	@include header-three
+
+@media screen and (max-width:$mobile-max)
+	.header3
+		font-size: 0.65rem
 	
 .text-dark-shade-almost-total
 	color: rgba($all-document-text-color, $dark-shade-almost-total)

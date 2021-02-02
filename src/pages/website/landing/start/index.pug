@@ -2,9 +2,13 @@ header.landing-page__header-container
 	+header-footer-bar-thin({
 			loggedIn: false,
 			})
-	+room-search({
-		id: 'RoomSearch',
-		})
+	main.landing-page__find-room
+		+room-search({
+			id: 'RoomSearch',
+			})
+	.landing-page__only-text
+		artcile
+			h1.body-text.text-dark-shade-almost-total Лучшие номера для вашей работы, отдыха и просто вдохновения
 footer.landing-page__footer-container
 	+header-footer-bar-wide
 //- .landing-page__header-container

@@ -1,7 +1,7 @@
 // import '@/jquery-ui/jquery-ui.js'
 // import '@/jquery-ui/jquery-ui.css'
 
-// import '@/daterangepicker/daterangepicker.scss' 
+import '@/daterangepicker/daterangepicker.scss' 
 import '@/daterangepicker/jquery.daterangepicker.js' 
 
 // import '@/assets/blocks/like-button/like-button.js'

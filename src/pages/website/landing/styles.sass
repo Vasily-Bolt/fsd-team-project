@@ -17,11 +17,40 @@
 @import @/assets/blocks/datepicker/datepicker
 @import @/assets/blocks/dropdown/dropdown
 
-@import @/assets/blocks/room-search/room-search.sass
+@import @/assets/blocks/room-search/room-search
+
+.landing-page__find-room
+  margin-top: 4.375rem //70px
+  margin-left: 8.75rem //140px
+  
+@media screen and (max-width:$laptop-max)
+  .landing-page__find-room
+    margin: 5vw auto
+
+.landing-page__only-text
+  position: absolute
+  width: 18.125rem //290px
+  bottom: 1.3125rem //21px
+  right: 8.375rem //134px
+  text-align: right
+
+@media screen and (max-width:$laptop-max)
+  .landing-page__only-text
+    right: 0
+    bottom: 0 
+    position: relative
+    text-align: center
+    width: auto
 
 .landing-page__header-container
+  position: relative
   height: 900px
   background: url('@/assets/img/landing1.jpg') no-repeat center
   background-size: cover
+
+@media screen and (max-width:$laptop-max)
+  .landing-page__header-container
+    display: flex
+    flex-direction: column
 
 .landing-page__footer-container

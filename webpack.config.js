@@ -90,7 +90,7 @@ module.exports = {
     // new HTMLWebpackPlugin( {
     //   title: 'UIKit',
     //   template: './pages/uikit/index.pug',
-    //   filename: '/uikit.html',
+    //   filename: 'index.html',
     //   inject: true,
     //   chunks: ['UIkit'],
     //   minify: {

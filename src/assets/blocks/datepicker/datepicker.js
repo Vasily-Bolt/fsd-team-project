@@ -59,17 +59,16 @@ $(()=> {
 				const calendarContainer = $(this).find('div[id$="-container"]').attr('id');
 				
 				Object.assign( DateRangePickerSetup, { container: `#${calendarContainer}` } );
-	
 				$(this).find('input[id$="InputField"]')
 					.dateRangePicker( DateRangePickerSetup )
 					.bind('datepicker-closed', function(){
 						trigger = 'open';
-						
 					})
-					.bind('datepicker-opened', function(){
+					.bind('datepicker-opened', function(event){
 						trigger = 'close';
 					})
 					.bind('datepicker-open', function() {
+						reCalcZindex();
 						// $(this).parent().removeClass('border-corners--all');
 						// $(this).parent().addClass('border-corners--top');
 					})
@@ -105,11 +104,9 @@ $(()=> {
 			event.stopPropagation();
 			if (trigger == 'open') {
 				$(this).find('input[id$="InputField"]').data('dateRangePicker').open();
-				// trigger = 'close';
 			} else {
 				$(this).find('input[id$="InputField"]').data('dateRangePicker').close();
-				// trigger = 'open';
-			}
+			}	
 		});
 		
 		//Обработка событий при нажатии кнопок

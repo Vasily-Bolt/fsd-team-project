@@ -37,7 +37,7 @@ $(()=> {
 	if ( isMobile ) {
 		// $('.nav-menu--inline-burger').find('ul').css('visibility','hidden');
 
-		$('.nav-menu--inline-burger').on('click', function() {
+		$('.nav-menu--inline-burger').on('click', function(event) {
 			event.stopPropagation();
 			const NearestUlElemnt = $(this).find('ul');
 			// hideAllSubMenus();

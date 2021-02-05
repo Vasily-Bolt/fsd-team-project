@@ -145,7 +145,6 @@ $(()=> {
 	// 		$('.dropdown').each( function(){
 	// 			let idToSearch = $(this).find('fieldset');
 	// 			if ( idToSearch.css('z-index') > 10 ) changeDropdownexpansion( idToSearch );
-	// 			console.log( idToSearch );
 	// 		});
 	// 	}
 	// });

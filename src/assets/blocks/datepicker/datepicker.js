@@ -57,6 +57,7 @@ $(()=> {
 			if ( DateRangePickerSetup != '' ) {
 	
 				const calendarContainer = $(this).find('div[id$="-container"]').attr('id');
+				
 				Object.assign( DateRangePickerSetup, { container: `#${calendarContainer}` } );
 	
 				$(this).find('input[id$="InputField"]')

@@ -64,6 +64,7 @@ $(()=> {
 					.dateRangePicker( DateRangePickerSetup )
 					.bind('datepicker-closed', function(){
 						trigger = 'open';
+						
 					})
 					.bind('datepicker-opened', function(){
 						trigger = 'close';

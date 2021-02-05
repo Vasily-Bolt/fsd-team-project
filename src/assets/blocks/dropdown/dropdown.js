@@ -140,4 +140,14 @@ $(()=> {
 		changeDropdownexpansion( idToSearch );
 	});
 
+	// $(document).on('click', function(event) {
+	// 	if ( !$(event.target).parents().hasClass( 'dropdown' ) && (!$(event.target).hasClass( 'dropdown' )) ) {
+	// 		$('.dropdown').each( function(){
+	// 			let idToSearch = $(this).find('fieldset');
+	// 			if ( idToSearch.css('z-index') > 10 ) changeDropdownexpansion( idToSearch );
+	// 			console.log( idToSearch );
+	// 		});
+	// 	}
+	// });
+
 } );

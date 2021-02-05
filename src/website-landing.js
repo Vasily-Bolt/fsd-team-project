@@ -13,5 +13,6 @@ import '@/assets/blocks/datepicker/datepicker.js'
 // import '@/pages/uikit/cards/cards.js'  //Отключил на время работы с headers and footers
 // import '@/assets/blocks/room-booking/room-booking.js'
 import '@/assets/blocks/nav-menu/nav-menu.js'
+import '@/pages/website/landing/dates-dropdown/landing-dates-dropdown.js'
 
 import '@/pages/website/landing/styles.sass'

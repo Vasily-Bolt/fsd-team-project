@@ -13,7 +13,7 @@ const sassLoader = require('sass-loader');
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 console.log ("iS DEV ", isDev)
-const dirToStoreReady = 'dist/landing';
+const dirToStoreReady = 'dist/search-room';
 
 const optimization = () => {
 	const config = {
@@ -55,9 +55,9 @@ module.exports = {
 	context: path.resolve(__dirname, 'src'),
 	mode: 'development',
 	entry: {
-		// StartingPage: '',
 		// UIkit: './uikit.js',
-		WebsiteLanding: './website-landing.js'
+		// WebsiteLanding: './website-landing.js',
+		SearchRoom: './search-room.js',
 	},
 	output: {
 		filename: filename('js'),
@@ -78,16 +78,16 @@ module.exports = {
 		hot: isDev,
 	},
 	plugins: [
-		// new HTMLWebpackPlugin( {
-		//   title: 'StartingPage',
-		//   template: '',
-		//   filename: 'index.html',
-		//   inject: true,
-		//   chunks: ['StartingPage'],
-		//   minify: {
-		//     collapseWhitespace: isProd 
-		//   }
-		// }),
+		new HTMLWebpackPlugin( {
+		  title: 'SearchRoom',
+		  template: './pages/website/search-room/index.pug',
+		  filename: 'index.html',
+		  inject: true,
+		  chunks: ['SearchRoom'],
+		  minify: {
+		    collapseWhitespace: isProd 
+		  }
+		}),
 		// new HTMLWebpackPlugin( {
 		//   title: 'UIKit',
 		//   template: './pages/uikit/index.pug',
@@ -98,46 +98,46 @@ module.exports = {
 		//     collapseWhitespace: isProd 
 		//   }
 		// }),
-		new HTMLWebpackPlugin( {
-			title: 'WebsiteLanding',
-			template: './pages/website/landing/index.pug',
-			filename: 'index.html',
-			inject: true,
-			chunks: ['WebsiteLanding'],
-			minify: {
-				collapseWhitespace: isProd 
-			}
-		}),
-		new HTMLWebpackPlugin( {
-			title: 'WebsiteLandingStart',
-			template: './pages/website/landing/start/index.pug',
-			filename: 'start.html',
-			inject: true,
-			chunks: ['WebsiteLanding'],
-			minify: {
-				collapseWhitespace: isProd 
-			}
-		}),
-		new HTMLWebpackPlugin( {
-			title: 'WebsiteLandingDatepicker',
-			template: './pages/website/landing/dates-dropdown/index.pug',
-			filename: 'dates.html',
-			inject: true,
-			chunks: ['WebsiteLanding'],
-			minify: {
-				collapseWhitespace: isProd 
-			}
-		}),
-		new HTMLWebpackPlugin( {
-			title: 'WebsiteLandingGuests',
-			template: './pages/website/landing/guests-dropdown/index.pug',
-			filename: 'guests.html',
-			inject: true,
-			chunks: ['WebsiteLanding'],
-			minify: {
-				collapseWhitespace: isProd 
-			}
-		}),
+		// new HTMLWebpackPlugin( {
+		// 	title: 'WebsiteLanding',
+		// 	template: './pages/website/landing/index.pug',
+		// 	filename: 'index.html',
+		// 	inject: true,
+		// 	chunks: ['WebsiteLanding'],
+		// 	minify: {
+		// 		collapseWhitespace: isProd 
+		// 	}
+		// }),
+		// new HTMLWebpackPlugin( {
+		// 	title: 'WebsiteLandingStart',
+		// 	template: './pages/website/landing/start/index.pug',
+		// 	filename: 'start.html',
+		// 	inject: true,
+		// 	chunks: ['WebsiteLanding'],
+		// 	minify: {
+		// 		collapseWhitespace: isProd 
+		// 	}
+		// }),
+		// new HTMLWebpackPlugin( {
+		// 	title: 'WebsiteLandingDatepicker',
+		// 	template: './pages/website/landing/dates-dropdown/index.pug',
+		// 	filename: 'dates.html',
+		// 	inject: true,
+		// 	chunks: ['WebsiteLanding'],
+		// 	minify: {
+		// 		collapseWhitespace: isProd 
+		// 	}
+		// }),
+		// new HTMLWebpackPlugin( {
+		// 	title: 'WebsiteLandingGuests',
+		// 	template: './pages/website/landing/guests-dropdown/index.pug',
+		// 	filename: 'guests.html',
+		// 	inject: true,
+		// 	chunks: ['WebsiteLanding'],
+		// 	minify: {
+		// 		collapseWhitespace: isProd 
+		// 	}
+		// }),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'

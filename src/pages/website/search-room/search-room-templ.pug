@@ -18,9 +18,11 @@ html(lang="ru")
 
 		include ../../../assets/blocks/datepicker/datepicker.pug
 		include ../../../assets/blocks/dropdown/dropdown.pug
-
-		include ../../../assets/blocks/room-search/room-search.pug
-		block content
-		//- include ./start/index.pug
-		//- include ./dates-dropdown/index.pug
-		//- include ./guests-dropdown/index.pug
+		
+		header
+			+header-footer-bar-thin({
+					loggedIn: false,
+					})
+			block content
+		footer
+			+header-footer-bar-wide

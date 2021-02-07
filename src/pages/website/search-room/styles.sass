@@ -22,15 +22,21 @@
 @import @/assets/blocks/social-web-block/social-web-block.sass
 @import @/assets/blocks/room-search/room-search
 @import @/assets/blocks/rating-area/rating-area
+@import @/assets/blocks/horizontal-line/horizontal-line
+@import @/assets/blocks/room-number-and-price/room-number-and-price.sass
 @import @/assets/blocks/gallery-room-small/gallery-room-small.sass
-@import '@/assets/blocks/room-number-and-price/room-number-and-price.sass'
 @import @/assets/blocks/room-small-info/room-small-info.sass
 
 .search-room__pagination
   margin: 0 auto
+  padding-right: 11px
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  height: 80px
 
 .search-room__room-list
-  margin-top: 21px
+  // margin-top: 21px
   display: grid
   grid-template-columns: repeat(3, 1fr)
   grid-auto-rows: minmax(270px, auto)
@@ -40,6 +46,8 @@
   flex: 1 1 1298px
   display: flex
   flex-direction: column
+  justify-content: space-between
+  height: 1254px
   
 .search-room__filter-container
   flex: 0 0 266px
@@ -50,8 +58,9 @@
   justify-content: space-between
   
 .search-room
-  height: 1357px
+  height: 1358px
   min-height: 80vh
   display: flex
   justify-content: space-between
   padding-top: 30px
+  border-bottom: 1px solid rgba($all-document-text-color, $dark-shade-quater)

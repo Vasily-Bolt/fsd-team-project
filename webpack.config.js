@@ -55,9 +55,9 @@ module.exports = {
 	context: path.resolve(__dirname, 'src'),
 	mode: 'development',
 	entry: {
-		UIkit: './uikit.js',
+		// UIkit: './uikit.js',
 		// WebsiteLanding: './website-landing.js',
-		// SearchRoom: './search-room.js',
+		SearchRoom: './search-room.js',
 	},
 	output: {
 		filename: filename('js'),
@@ -79,16 +79,16 @@ module.exports = {
 	},
 	plugins: [
 
-		new HTMLWebpackPlugin( {
-		  title: 'UIKit',
-		  template: './pages/uikit/index.pug',
-		  filename: 'index.html',
-		  inject: true,
-		  chunks: ['UIkit'],
-		  minify: {
-		    collapseWhitespace: isProd 
-		  }
-		}),
+		// new HTMLWebpackPlugin( {
+		//   title: 'UIKit',
+		//   template: './pages/uikit/index.pug',
+		//   filename: 'index.html',
+		//   inject: true,
+		//   chunks: ['UIkit'],
+		//   minify: {
+		//     collapseWhitespace: isProd 
+		//   }
+		// }),
 		// new HTMLWebpackPlugin( {
 		// 	title: 'WebsiteLanding',
 		// 	template: './pages/website/landing/index.pug',
@@ -129,16 +129,16 @@ module.exports = {
 		// 		collapseWhitespace: isProd 
 		// 	}
 		// }),
-		// new HTMLWebpackPlugin( {
-		//   title: 'SearchRoom',
-		//   template: './pages/website/search-room/index.pug',
-		//   filename: 'index.html',
-		//   inject: true,
-		//   chunks: ['SearchRoom'],
-		//   minify: {
-		//     collapseWhitespace: isProd 
-		//   }
-		// }),
+		new HTMLWebpackPlugin( {
+		  title: 'SearchRoom',
+		  template: './pages/website/search-room/index.pug',
+		  filename: 'index.html',
+		  inject: true,
+		  chunks: ['SearchRoom'],
+		  minify: {
+		    collapseWhitespace: isProd 
+		  }
+		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'

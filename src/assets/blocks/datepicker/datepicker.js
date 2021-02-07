@@ -85,7 +85,8 @@ $(()=> {
 					.bind('datepicker-change',function(event,obj){
 						//Можно сделать этот слушатель только по условию (это сэкономит ресурсы... или нет) и триггер за которым будет следить
 						//обработчик событий в нужном родительском блоке
-						let divToChangeValue = $(this).parents('div[id^="datepickerHead"]');
+						// let divToChangeValue = $(this).parents('div[id^="datepickerHead"]');
+						let divToChangeValue = $(this);
 						let daysPicked = $(this).data('dateRangePicker').getDaysPicked()-1;
 						if ( divToChangeValue.attr('data-days') != daysPicked ) {
 							divToChangeValue.attr('data-days', daysPicked );

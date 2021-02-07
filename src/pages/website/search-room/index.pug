@@ -1,7 +1,89 @@
 extends ./search-room-templ.pug
+
+
 block content
-	.search-room__main-container.wrapper-paddings
-		.search-room__filter-container
-		
-		.search-room__catalog-container
+	- 
+		var rooms = [
+			{ hasArrows: true , roomNumber: '888', roomExtra: 'люкс', pricePerDay: 9990, rating: 5, feedbackCount: 145 },
+			{ hasArrows: false, roomNumber: '840', roomExtra: ''		, pricePerDay: 9990, rating: 4, feedbackCount: 65  },
+			{ hasArrows: false, roomNumber: '980', roomExtra: 'люкс', pricePerDay: 8500, rating: 3, feedbackCount: 35  },
+			{ hasArrows: false, roomNumber: '856', roomExtra: ''		, pricePerDay: 7300, rating: 5, feedbackCount: 19  },
+			{ hasArrows: false, roomNumber: '740', roomExtra: ''		, pricePerDay: 6000, rating: 4, feedbackCount: 44  },
+			{ hasArrows: false, roomNumber: '982', roomExtra: ''		, pricePerDay: 5800, rating: 3, feedbackCount: 56  },
+			{ hasArrows: false, roomNumber: '678', roomExtra: ''		, pricePerDay: 5500, rating: 5, feedbackCount: 45  },
+			{ hasArrows: false, roomNumber: '450', roomExtra: ''		, pricePerDay: 5300, rating: 4, feedbackCount: 39  },
+			{ hasArrows: false, roomNumber: '350', roomExtra: ''		, pricePerDay: 5000, rating: 3, feedbackCount: 77  },
+			{ hasArrows: false, roomNumber: '666', roomExtra: ''		, pricePerDay: 5000, rating: 5, feedbackCount: 25  },
+			{ hasArrows: false, roomNumber: '444', roomExtra: ''		, pricePerDay: 5000, rating: 3, feedbackCount: 15  },
+			{ hasArrows: false, roomNumber: '352', roomExtra: ''		, pricePerDay: 5000, rating: 3, feedbackCount: 55  },
+		]
+	.search-room.wrapper-paddings
+		aside.search-room__filter-container
+			+single-datepicker({id: 'sngl', title: 'filter date dropdown', dateSet: '19 авг - 23 авг' })
+			+dropdown({
+				items: [
+					{idName: 'grownup', text: 'взрослые', value: '2', valueDependendText: ['гостей', 'гость', 'гостя'] },
+					{idName: 'kids', text: 'дети', value: '1', valueDependendText: ['гостей', 'гость', 'гостя'] },
+					{idName: 'infants', text: 'младенцы', value: '0', valueDependendText: ['младенцев', 'младенец', 'младенца'] }
+				],
+				dropdownName: 'guests-two',
+				tfEmptyTitle: 'Сколько гостей',
+				tfTitle: 'dropdown',
+				expanded: false,
+				hasButtonsBelow: true
+			})
+			+range-slider
+			+checkbox-radio({type:'checkbox', id:'smoke', text:'Можно курить'})
+			+checkbox-radio({type:'checkbox', id:'animals', text:'Можно с питомцами', checked:true})
+			+checkbox-radio({type:'checkbox', id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:true})
+			+rich-checkbox-button({
+						title: 'Широкий коридор',
+						content: 'Ширина коридоров в номере<br>не менее 91 см.',
+						id: 'wide-coridor'})
+			+rich-checkbox-button({
+				title: 'Помощник для инвалидов',
+				content: 'На 1 этаже вас встретит специалист<br>и проводит до номера.',
+				id: 'invalid-helper' })
+			+dropdown({
+				items: [
+					{idName: 'bedrooms', text: 'спальни', value: '2', valueDependendText: ['спален', 'спальня', 'спальни'] },
+					{idName: 'beds', text: 'кровати', value: '2', valueDependendText: ['кроватей', 'кровать', 'кровати'] },
+					{idName: 'bathrooms', text: 'ванные комнаты', value: '0', valueDependendText: ['ванных комнат', 'ванная комната', 'ванные комнаты'] }
+				],
+				dropdownName: 'nghj',
+				tfEmptyTitle: 'Характеристика комнат',
+				tfTitle: 'dropdown',
+				tfAdditional: 'default',
+				expanded: false
+			})
+			+expandable-checkbox-list({
+				items: [
+					{id: 'breakfast', text: 'завтрак', checked: false},
+					{id: 'table', text: 'письменный стол', checked: false},
+					{id: 'child-chair', text: 'стул для кормления', checked: false},
+					{id: 'bed', text: 'кроватка', checked: false},
+					{id: 'tv', text: 'телевизор', checked: false},
+					{id: 'shampoo', text: 'шампунь', checked: false},
+				],
+				tfEmptyTitle: 'expandable checkbox list',
+				hidden: true,
+				tfName: 'expandableTestOne'
+			})
+		main.search-room__catalog-container
 			h1 Номера, которые мы для вас подобрали
+			article.search-room__room-list
+				each roomInfo in rooms
+					+room-small-info({
+						hasArrows: roomInfo.hasArrows,
+						roomNumber: roomInfo.roomNumber,
+						roomExtra: roomInfo.roomExtra,
+						pricePerDay: roomInfo.pricePerDay,
+						rating: roomInfo.rating,
+						feedbackCount: roomInfo.feedbackCount,
+					})
+			nav.search-room__pagination
+				+pagination({
+					beginFromPage: 1,
+					itemsPerPage: 12,
+					totalItems: 170,
+				})

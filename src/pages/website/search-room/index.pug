@@ -19,7 +19,7 @@ block content
 		]
 	.search-room.wrapper-paddings
 		aside.search-room__filter-container
-			+single-datepicker({id: 'dates-of-stay', title: 'filter date dropdown', dateSet: '19 авг - 23 авг' })
+			+single-datepicker({id: 'dates-of-stay', title: 'даты пребывания в отеле', dateSet: '19 авг - 23 авг' })
 			+dropdown({
 				items: [
 					{idName: 'grownup', text: 'взрослые', value: '2', valueDependendText: ['гостей', 'гость', 'гостя'] },
@@ -27,12 +27,12 @@ block content
 					{idName: 'infants', text: 'младенцы', value: '0', valueDependendText: ['младенцев', 'младенец', 'младенца'] }
 				],
 				dropdownName: 'guests',
-				tfEmptyTitle: 'Сколько гостей',
+				tfEmptyTitle: 'гости',
 				tfTitle: 'dropdown',
 				expanded: false,
 				hasButtonsBelow: true
 			})
-			+range-slider
+			+range-slider({title: 'диапазон цены', subText: 'Стоимость за сутки пребывания в номере'})
 			+checkbox-radio({type:'checkbox', id:'smoke', text:'Можно курить'})
 			+checkbox-radio({type:'checkbox', id:'animals', text:'Можно с питомцами', checked:true})
 			+checkbox-radio({type:'checkbox', id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:true})

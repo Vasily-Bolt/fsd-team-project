@@ -1,8 +1,9 @@
-mixin range-slider
+mixin range-slider(object)
 	.text-field-with-info
-		h3(class='text-field-with-info__title text-field-with-info__title--padding-top') range slider
+		h3(class='text-field-with-info__title text-field-with-info__title--padding-top')= object.title
 		.text-field-with-info__status
 			input(type='text' id='mySliderAmount' class='text-field-with-info__status-text header3' readonly)
 			label(for='mySliderAmount')
 		.text-field-with-info__visualisation
 			div(class = 'slider-range ui-slider--my-slider' id='slider-range')
+		span.slider-range__sub-text= object.subText

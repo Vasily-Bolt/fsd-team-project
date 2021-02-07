@@ -13,7 +13,7 @@ mixin room-small-info(object)
 				hasArrows: object.hasArrows
 				})
 						
-		.room-small-info__info
+		a(href=`/room${object.roomNumber}`).room-small-info__info
 			.room-number-and-price
 				.room-number-and-price__left
 					span № 

@@ -17,6 +17,7 @@ mixin checkbox-radio(obj)
 	label(for=obj.id)= obj.text
 
 mixin checkbox-list(object)
-	.header3.checkbox-radio__title= object.title
-	each objects in object.list
-		+checkbox-radio({type:'checkbox', id: objects.id, text: objects.text, checked: objects.checked })
+	.checkbox-list
+		.header3.checkbox-radio__title= object.title
+		each objects in object.list
+			+checkbox-radio({type:'checkbox', id: objects.id, text: objects.text, checked: objects.checked })

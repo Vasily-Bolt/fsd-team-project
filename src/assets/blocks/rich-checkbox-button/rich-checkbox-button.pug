@@ -4,9 +4,10 @@ mixin rich-checkbox-button(obj)
 		p.rich-checkbox-button__content!= obj.content
 
 mixin rich-checkbox-list(object)
-	.header3.rich-checkbox-button__title= object.title
-	each objects in object.list
-		+rich-checkbox-button({
-			title: objects.text,
-			content: objects.content,
-			id: objects.id})
+	.rich-checkbox-list
+		.header3.rich-checkbox-button__title= object.title
+		each objects in object.list
+			+rich-checkbox-button({
+				title: objects.text,
+				content: objects.content,
+				id: objects.id})

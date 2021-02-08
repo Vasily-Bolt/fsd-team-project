@@ -36,14 +36,13 @@ block content
 			+checkbox-radio({type:'checkbox', id:'smoke', text:'Можно курить'})
 			+checkbox-radio({type:'checkbox', id:'animals', text:'Можно с питомцами', checked:true})
 			+checkbox-radio({type:'checkbox', id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:true})
-			+rich-checkbox-button({
-						title: 'Широкий коридор',
-						content: 'Ширина коридоров в номере<br>не менее 91 см.',
-						id: 'wide-coridor'})
-			+rich-checkbox-button({
-				title: 'Помощник для инвалидов',
-				content: 'На 1 этаже вас встретит специалист<br>и проводит до номера.',
-				id: 'invalid-helper' })
+			+rich-checkbox-list({
+				title: 'rich checkbox buttons',
+				list: [
+					{id:'wide-coridor', text:'Широкий коридор', content: 'Ширина коридоров в номере<br>не менее 91 см.'},
+					{id:'invalid-helper', text:'Помощник для инвалидов', content: 'На 1 этаже вас встретит специалист<br>и проводит до номера.'}
+				]
+			})
 			+dropdown({
 				items: [
 					{idName: 'bedrooms', text: 'спальни', value: '2', valueDependendText: ['спален', 'спальня', 'спальни'] },

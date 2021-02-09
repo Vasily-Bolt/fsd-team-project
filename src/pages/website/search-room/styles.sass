@@ -27,40 +27,24 @@
 @import @/assets/blocks/gallery-room-small/gallery-room-small.sass
 @import @/assets/blocks/room-small-info/room-small-info.sass
 
-.search-room__pagination
-  margin: 0 auto
-  padding-right: 11px
-  display: flex
-  flex-direction: column
-  justify-content: flex-end
-  height: 80px
+@import ./__pagination/search-room__pagination
+@import ./__room-list/search-room__room-list
+@import ./__catalog-container/search-room__catalog-container
+@import ./__filter-container/search-room__filter-container
 
-.search-room__room-list
-  // margin-top: 21px
-  display: grid
-  grid-template-columns: repeat(3, 1fr)
-  grid-auto-rows: minmax(270px, auto)
-  gap: 8px 12px
 
-.search-room__catalog-container
-  flex: 1 1 1298px
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  height: 1254px
-  
-.search-room__filter-container
-  flex: 0 0 266px
-  margin-right: 59px
-  height: 746px
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  
 .search-room
-  height: 1358px
-  min-height: 80vh
-  display: flex
-  justify-content: space-between
-  padding-top: 30px
-  border-bottom: 1px solid rgba($all-document-text-color, $dark-shade-quater)
+	height: 87.875rem //1358px
+	min-height: 80vh
+	display: flex
+	justify-content: space-between
+	padding-top: 1.875rem //30px
+	border-bottom: 1px solid rgba($all-document-text-color, $dark-shade-quater)
+
+@media screen and (max-width:$laptop-max)
+	.search-room
+		height: auto
+
+@media screen and (max-width:$mobile-max)
+	.search-room
+		flex-direction: column

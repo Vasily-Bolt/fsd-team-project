@@ -1,0 +1,21 @@
+.search-room__filter-container
+	flex: 0 0 16.625rem //266px
+	margin-right: 3.6875rem //59px
+	height: 46.625rem //746px
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+
+@media screen and (max-width:$laptop-max)
+	.search-room__filter-container
+		margin-right: 5vw
+
+@media screen and (max-width:$mobile-max)
+	.search-room__filter-container
+		flex-direction: row
+		height: auto
+		flex-wrap: wrap
+		justify-content: space-evenly
+
+	.search-room__filter-container > *
+		flex-basis: 45%

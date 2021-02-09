@@ -57,7 +57,8 @@ module.exports = {
 	entry: {
 		// UIkit: './uikit.js',
 		// WebsiteLanding: './website-landing.js',
-		SearchRoom: './search-room.js',
+		// SearchRoom: './search-room.js',
+		RoomDetails: './room-details.js'
 	},
 	output: {
 		filename: filename('js'),
@@ -128,45 +129,55 @@ module.exports = {
 		// 		collapseWhitespace: isProd 
 		// 	}
 		// }),
+		// new HTMLWebpackPlugin( {
+		//   title: 'SearchRoom',
+		//   template: './pages/website/search-room/index.pug',
+		//   filename: 'index.html',
+		//   inject: true,
+		//   chunks: ['SearchRoom'],
+		//   minify: {
+		//     collapseWhitespace: isProd 
+		//   }
+		// }),
+		// new HTMLWebpackPlugin( {
+		//   title: 'SearchRoomStart',
+		//   template: './pages/website/search-room/start/index.pug',
+		//   filename: 'start.html',
+		//   inject: true,
+		//   chunks: ['SearchRoom'],
+		//   minify: {
+		//     collapseWhitespace: isProd 
+		//   }
+		// }),
+		// new HTMLWebpackPlugin( {
+		//   title: 'SearchRoomRooms',
+		//   template: './pages/website/search-room/rooms/index.pug',
+		//   filename: 'rooms.html',
+		//   inject: true,
+		//   chunks: ['SearchRoom'],
+		//   minify: {
+		//     collapseWhitespace: isProd 
+		//   }
+		// }),
+		// new HTMLWebpackPlugin( {
+		//   title: 'SearchRoomExtras',
+		//   template: './pages/website/search-room/extras/index.pug',
+		//   filename: 'extras.html',
+		//   inject: true,
+		//   chunks: ['SearchRoom'],
+		//   minify: {
+		//     collapseWhitespace: isProd 
+		//   }
+		// }),
 		new HTMLWebpackPlugin( {
-		  title: 'SearchRoom',
-		  template: './pages/website/search-room/index.pug',
-		  filename: 'index.html',
-		  inject: true,
-		  chunks: ['SearchRoom'],
-		  minify: {
-		    collapseWhitespace: isProd 
-		  }
-		}),
-		new HTMLWebpackPlugin( {
-		  title: 'SearchRoomStart',
-		  template: './pages/website/search-room/start/index.pug',
-		  filename: 'start.html',
-		  inject: true,
-		  chunks: ['SearchRoom'],
-		  minify: {
-		    collapseWhitespace: isProd 
-		  }
-		}),
-		new HTMLWebpackPlugin( {
-		  title: 'SearchRoomRooms',
-		  template: './pages/website/search-room/rooms/index.pug',
-		  filename: 'rooms.html',
-		  inject: true,
-		  chunks: ['SearchRoom'],
-		  minify: {
-		    collapseWhitespace: isProd 
-		  }
-		}),
-		new HTMLWebpackPlugin( {
-		  title: 'SearchRoomExtras',
-		  template: './pages/website/search-room/extras/index.pug',
-		  filename: 'extras.html',
-		  inject: true,
-		  chunks: ['SearchRoom'],
-		  minify: {
-		    collapseWhitespace: isProd 
-		  }
+			title: 'RoomDetails',
+			template: './pages/website/room-details/index.pug',
+			filename: 'index.html',
+			inject: true,
+			chunks: ['RoomDetails'],
+			minify: {
+				collapseWhitespace: isProd 
+			}
 		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',

@@ -37,4 +37,4 @@ mixin pagination( object )
 				+elongated-button({sizeWidth: buttonWidth, sizeHeight: buttonHeight, buttonType: 'with-arrow-right', referenceText: '#'})
 
 		.pagination-block__total-pages-list
-			p #{((object.beginFromPage-1)*object.itemsPerPage)+1} &ndash; #{object.beginFromPage*object.itemsPerPage} из #{totalPagesInBase} вариантов аренды
+			p.text-dark-shade-almost-total #{((object.beginFromPage-1)*object.itemsPerPage)+1} &ndash; #{object.beginFromPage*object.itemsPerPage} из #{totalPagesInBase} вариантов аренды

@@ -46,13 +46,22 @@ div(class='wrapper wrapper__elements')
 			.form-elements__column
 				//- Чекбоксы
 				.form-elements__buttons-block(style='width: 14.375rem')
-					h3.title-not-for-fields checkbox buttons
-					.button-container
-						+checkbox-radio({type:'checkbox', id:'smoke', text:'Можно курить'})
-					.button-container
-						+checkbox-radio({type:'checkbox', id:'animals', text:'Можно с питомцами', checked:true})
-					div(class='button-container button-container- button-container--last')
-						+checkbox-radio({type:'checkbox', id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:true})
+					+checkbox-list({
+						title: 'checkbox buttons',
+						list: [
+							{id:'smoke', text:'Можно курить'},
+							{id:'animals', text:'Можно с питомцами', checked:true},
+							{id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:true}
+						]
+					})
+					//- h3.title-not-for-fields checkbox buttons
+					//- .button-container
+					//- 	+checkbox-radio({type:'checkbox', id:'smoke', text:'Можно курить'})
+					//- .button-container
+					//- 	+checkbox-radio({type:'checkbox', id:'animals', text:'Можно с питомцами', checked:true})
+					//- div(class='button-container button-container- button-container--last')
+					//- 	+checkbox-radio({type:'checkbox', id:'friends', text:'Можно пригласить гостей (до 10 человек)', checked:true})
+				div(style='height:34px')
 				//- Радио кнопки
 				.form-elements__buttons-block
 					h3.title-not-for-fields radio buttons
@@ -61,22 +70,22 @@ div(class='wrapper wrapper__elements')
 					div(class='button-container button-container--last button-container--inline-paddings')
 						+checkbox-radio({type:'radio', id:'female', name:'gender', text:'Женщина', value: 'female'})
 				//- Чекбоксы в виде овала с круглым идентификатором
-				.form-elements__buttons-block(style='margin-top:0')
+				.form-elements__buttons-block(style='margin-top:5px')
 					h3.title-not-for-fields toggle
 					.button-container
 						+checkbox-radio({type:'toggle-switch', id:'spec1', name:'special-offer', text:'Получать спецпредложения', checked:true})
-					div(class='button-container button-container--last-plus button-container--toggle-switch-paddings')
+					div(class='button-container button-container--last-plus ')
 						+checkbox-radio({type:'toggle-switch', id:'spec2', name:'special-offer', text:'Получать спецпредложения'})
 				//- Кнопки 'нравится'
 				.form-elements__buttons-block
-					h3.title-not-for-fields like button
+					h3(style='margin-bottom:13px').title-not-for-fields like button
 					div(class='button-container button-container--last-minus')
 						+like-button({id:'likes', number_of_likes: 2})
 					div(class='button-container button-container--likes-paddings button-container--last-minus')
 						+like-button({id:'likesnot', number_of_likes: 12, checked: true})
 				//- Рейтинг
 				.form-elements__buttons-block(style='margin-top:0')
-					h3.title-not-for-fields rate button
+					h3(style='margin-bottom:15px').title-not-for-fields rate button
 					.button-container
 						+rating-area({name: 'one', rating: 4})
 					.div(class='button-container button-container--inline-paddings')
@@ -84,9 +93,9 @@ div(class='wrapper wrapper__elements')
 
 			.form-elements__column
 				.middle-field
-					+range-slider
-				.div(style='height:2.8125rem')
-				h3 buttons
+					+range-slider({title: 'range slider'})
+				.div(style='height:2.125rem')
+				h3(style='margin-bottom:2px') buttons
 				div(style='width:13.5625rem')
 					div(class='double-form double-form--margin-top-bottom')
 						+elongated-button({sizeWidth: '6.1875rem', sizeHeight: '2.75rem', text: 'click me', buttonType: 'filled'})
@@ -128,7 +137,7 @@ div(class='wrapper wrapper__elements')
 						tfAdditional: 'default',
 						expanded: 'check'
 					})
-					.div(style='height:1.3125rem')
+					.div(style='height:19px')
 					+dropdown({
 						items: [
 							{idName: 'bedrooms', text: 'спальни', value: '2', valueDependendText: ['спален', 'спальня', 'спальни'] },
@@ -184,7 +193,7 @@ div(class='wrapper wrapper__elements')
 						hidden: true,
 						tfName: 'expandableTestOne'
 					})
-					.div(style='margin-top:14px')
+					.div(style='margin-top:10px')
 					+expandable-checkbox-list({
 						items: [
 							{id: 'onebreakfast', text: 'завтрак', checked: false},
@@ -199,17 +208,24 @@ div(class='wrapper wrapper__elements')
 					})
 			.form-elements__column(style='padding-left:1.6875rem; padding-top: .8125rem')
 				//- .middle-field
-				h3(style='margin-bottom:.3125rem') rich checkbox buttons
-				.div(style='margin-top:.5625rem')
-					+rich-checkbox-button({
-						title: 'Широкий коридор',
-						content: 'Ширина коридоров в номере<br>не менее 91 см.',
-						id: 'wide-coridor'})
-				.div(style='margin-top:.625rem')
-					+rich-checkbox-button({
-						title: 'Помощник для инвалидов',
-						content: 'На 1 этаже вас встретит специалист<br>и проводит до номера.',
-						id: 'invalid-helper' })
+				+rich-checkbox-list({
+						title: 'rich checkbox buttons',
+						list: [
+							{id:'wide-coridor', text:'Широкий коридор', content: 'Ширина коридоров в номере<br>не менее 91 см.'},
+							{id:'invalid-helper', text:'Помощник для инвалидов', content: 'На 1 этаже вас встретит специалист<br>и проводит до номера.'}
+						]
+					})
+				//- h3(style='margin-bottom:.3125rem') rich checkbox buttons
+				//- .div(style='margin-top:.5625rem')
+				//- 	+rich-checkbox-button({
+				//- 		title: 'Широкий коридор',
+				//- 		content: 'Ширина коридоров в номере<br>не менее 91 см.',
+				//- 		id: 'wide-coridor'})
+				//- .div(style='margin-top:.625rem')
+				//- 	+rich-checkbox-button({
+				//- 		title: 'Помощник для инвалидов',
+				//- 		content: 'На 1 этаже вас встретит специалист<br>и проводит до номера.',
+				//- 		id: 'invalid-helper' })
 			.form-elements__column(style='padding-top: .8125rem')
 				h3(style='margin-bottom:.8125rem') bullet list
 				+bullet-list([

@@ -1,0 +1,18 @@
+extends ../landing-templ.pug
+
+block content
+	header.landing-page__header-container
+		+header-footer-bar-thin({
+				loggedIn: false,
+				})
+		main.landing-page__find-room
+			span(id='demoOfDatepicker' class='demo' style='display:none')
+			+room-search({
+				id: 'RoomSearch',
+				isDemo: true,
+				})
+		.landing-page__only-text
+			artcile
+				h1.body-text.text-dark-shade-almost-total Лучшие номера для вашей работы, отдыха и просто вдохновения
+	footer
+		+header-footer-bar-wide

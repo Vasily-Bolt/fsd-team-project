@@ -5,8 +5,8 @@ mixin rating-area(obj)
 		while iteration_count > 0
 			- if(iteration_count == obj.rating)
 				input(type='radio' id='star-'+iteration_count+'-'+obj.name name='rating-'+obj.name value=iteration_count
-					 checked='checked') 
+					 checked='checked' disabled) 
 			- else
-				input(type='radio' id='star-'+iteration_count+'-'+obj.name name='rating-'+obj.name value=iteration_count)
-			label(for='star-'+iteration_count+'-'+obj.name title='Оценка «'+iteration_count+'»')
+				input(type='radio' id='star-'+iteration_count+'-'+obj.name name='rating-'+obj.name value=iteration_count disabled)
+			label(for='star-'+iteration_count+'-'+obj.name title='Оценка «'+iteration_count+'»' )
 			- iteration_count--

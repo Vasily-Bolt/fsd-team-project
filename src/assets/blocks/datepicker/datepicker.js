@@ -24,10 +24,14 @@
 		separator : ' to ',
 		getValue: function()
 			{
-				let datepickerIdWeWorkWith = this.id.slice( 0, this.id.indexOf('multiple') + 9 );
+				// console.log( $(this).find('input[id$="InputField"]').attr('id') );
+				
+				let datepickerIdWeWorkWith = this.id.slice( 15, this.id.indexOf('multiple') + 9 );
 
-				let firstInputValue = $('#' + datepickerIdWeWorkWith + 'firstInputField').val();
-				let secondInputValue = $('#' + datepickerIdWeWorkWith + 'secondInputField').val()
+				let firstInputValue = $(`#datepicker-${datepickerIdWeWorkWith}-firstInputField`).val();
+				let secondInputValue = $(`#datepicker-${datepickerIdWeWorkWith}-secondInputField`).val()
+				// let firstInputValue = $('#datepicker' + datepickerIdWeWorkWith + '-firstInputField').val();
+				// let secondInputValue = $('#datepicker-' + datepickerIdWeWorkWith + '-secondInputField').val()
 
 				if ( firstInputValue && secondInputValue )
 					return firstInputValue + ' to ' + secondInputValue;
@@ -36,10 +40,11 @@
 			},
 		setValue: function(s,s1,s2)
 			{
-				let datepickerIdWeWorkWith = this.id.slice( 0, this.id.indexOf('multiple') + 9 );
-
-				$('#' + datepickerIdWeWorkWith + 'firstInputField').val(s1);
-				$('#' + datepickerIdWeWorkWith + 'secondInputField').val(s2);
+				let datepickerIdWeWorkWith = this.id.slice( 15, this.id.indexOf('multiple') + 9 );
+				$(`#datepicker-${datepickerIdWeWorkWith}-firstInputField`).val(s1);
+				$(`#datepicker-${datepickerIdWeWorkWith}-secondInputField`).val(s2);
+				// $('#datepicker-' + datepickerIdWeWorkWith + '-firstInputField').val(s1);
+				// $('#datepicker-' + datepickerIdWeWorkWith + '-secondInputField').val(s2);
 			}
 	});
 
@@ -59,7 +64,8 @@ $(()=> {
 				const calendarContainer = $(this).find('div[id$="-container"]').attr('id');
 				
 				Object.assign( DateRangePickerSetup, { container: `#${calendarContainer}` } );
-				$(this).find('input[id$="InputField"]')
+				$(this)
+					// .find('input[id$="InputField"]')
 					.dateRangePicker( DateRangePickerSetup )
 					.bind('datepicker-closed', function(){
 						trigger = 'open';
@@ -68,7 +74,7 @@ $(()=> {
 						trigger = 'close';
 					})
 					.bind('datepicker-open', function() {
-						reCalcZindex();
+						// reCalcZindex();
 						// $(this).parent().removeClass('border-corners--all');
 						// $(this).parent().addClass('border-corners--top');
 					})
@@ -79,7 +85,8 @@ $(()=> {
 					.bind('datepicker-change',function(event,obj){
 						//Можно сделать этот слушатель только по условию (это сэкономит ресурсы... или нет) и триггер за которым будет следить
 						//обработчик событий в нужном родительском блоке
-						let divToChangeValue = $(this).parents('div[id^="datepickerHead"]');
+						// let divToChangeValue = $(this).parents('div[id^="datepickerHead"]');
+						let divToChangeValue = $(this);
 						let daysPicked = $(this).data('dateRangePicker').getDaysPicked()-1;
 						if ( divToChangeValue.attr('data-days') != daysPicked ) {
 							divToChangeValue.attr('data-days', daysPicked );
@@ -99,28 +106,28 @@ $(()=> {
 		datepickerCalendarFooter.append(buttonBlockHTML);	
 	
 		//Сделай если закрывается кнопкой (из самого пикера), то надо менять триггер! В плагине есть такая функция
-		$( 'div[id^="datepickerHead"]' ).on('click', function(event) {
-			// Тут глюк - при клике на поле инпут два раза вызываются функции get.. setValue (штатная и моя настройка)
-			event.stopPropagation();
-			if (trigger == 'open') {
-				$(this).find('input[id$="InputField"]').data('dateRangePicker').open();
-			} else {
-				$(this).find('input[id$="InputField"]').data('dateRangePicker').close();
-			}	
-		});
+		// $( 'div[id^="datepickerHead"]' ).on('click', function(event) {
+		// 	// Тут глюк - при клике на поле инпут два раза вызываются функции get.. setValue (штатная и моя настройка)
+		// 	event.stopPropagation();
+		// 	if (trigger == 'open') {
+		// 		$(this).find('input[id$="InputField"]').data('dateRangePicker').open();
+		// 	} else {
+		// 		$(this).find('input[id$="InputField"]').data('dateRangePicker').close();
+		// 	}	
+		// });
 		
 		//Обработка событий при нажатии кнопок
 		datepickerCalendarFooter.find('button').on('click', function(event) {
 			event.stopPropagation();
 			const buttonContent= $(this).text();
+			const fieldsToClear = $(this).closest( 'div[id^="datepickerHead"]' );
+
 			if ( buttonContent == clearSign ) {
-				const fieldsToClear = $(this).closest( 'div[id^="datepickerHead"]' ).find('input[id$="InputField"]');
 				fieldsToClear.data('dateRangePicker').clear();
 				fieldsToClear.data('dateRangePicker').close();
-				fieldsToClear.val('ДД.ММ.ГГГ');
+				fieldsToClear.find('input[id$="InputField"]').val('ДД.ММ.ГГГ');
 			}
 			if ( buttonContent == appendSign ) {
-				const fieldsToClear = $(this).closest( 'div[id^="datepickerHead"]' ).find('input[id$="InputField"]');
 				fieldsToClear.data('dateRangePicker').close();
 			}
 		});

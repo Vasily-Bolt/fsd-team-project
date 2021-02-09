@@ -18,7 +18,8 @@ $(()=> {
 			extraServices: 					$(this).find('span[id$="extraServices"]').attr('data-value'),//Со значением сбора дополнительные за услуги
 			pricePerPeriod: 				$(this).find('span[id$="pricePerPeriod"]'),//Для быстрого доступа к полю с суммой за проживание
 			totalPrice: 						$(this).find('span[id$="totalPrice"]'),//Для быстрого доступа к полю с общей суммой
-			datePickerDataSelector:	$(this).find('input[id$="InputField"]').data('dateRangePicker'),//Для быстрого доступа к Пикеру
+			// datePickerDataSelector:	$(this).find('input[id$="InputField"]').data('dateRangePicker'),//Для быстрого доступа к Пикеру
+			datePickerDataSelector:	$(this).find('div[id^="datepickerHead"]').data('dateRangePicker'),//Для быстрого доступа к Пикеру
 			daysOfResidence:				function() {
 				//через метод getDaysPicked плагина datepickerselector получаем количество дней пребывания и сохраняем в переменную
 				let howMuchDays = this.datePickerDataSelector.getDaysPicked();

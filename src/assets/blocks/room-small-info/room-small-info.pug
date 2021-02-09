@@ -13,12 +13,12 @@ mixin room-small-info(object)
 				hasArrows: object.hasArrows
 				})
 						
-		.room-small-info__info
+		a(href=`/room${object.roomNumber}`).room-small-info__info
 			.room-number-and-price
 				.room-number-and-price__left
 					span № 
 					span.header2= object.roomNumber
-					span.header3= ` ${roomExtra}`
+					span.header3!= `${roomExtra}`
 				.room-number-and-price__right.room-number-and-price__right--margin-bottom
 					//- span 9 990₽
 					span= pricePerDay

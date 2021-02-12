@@ -1,8 +1,11 @@
 mixin diagram(object)
-  div(style="width:120px;height:120px;")
-    .diagram__wrapper
-  p= object.total
-  p= object.great
-  p= object.good
-  p= object.soso
-  p= object.disgusting
+	.donut-chart
+		canvas(id='myChart' width='100%' height='100%')
+	.donut-chart__inner-text
+		span голосов
+	.legend(id='myChart-legend')
+	p= object.total
+	p= object.great
+	p= object.good
+	p= object.soso
+	p= object.disgusting

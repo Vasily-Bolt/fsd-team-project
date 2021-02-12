@@ -24,12 +24,11 @@ include ../../../assets/blocks/room-search/room-search.pug
 include ../../../assets/blocks/diagram/diagram.pug
 
 header
-	+header-footer-bar-thin({
-		loggedIn: false,
-	})
-
-	+diagram({ total: 260, great: 130, good: 65, soso: 65})
-footer
-	+header-footer-bar-wide
+	//- +header-footer-bar-thin({
+	//- 	loggedIn: false,
+	//- })
+	+diagram({ great: 130, good: 65, soso: 65, disgusting: 0})
+//- footer
+//- 	+header-footer-bar-wide
 
 //- Убрать лишние инклюды и импорты

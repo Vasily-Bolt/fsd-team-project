@@ -24,11 +24,15 @@ include ../../../assets/blocks/room-search/room-search.pug
 include ../../../assets/blocks/diagram/diagram.pug
 
 header
-	//- +header-footer-bar-thin({
-	//- 	loggedIn: false,
-	//- })
-	+diagram({ great: 130, good: 65, soso: 65, disgusting: 0})
-//- footer
-//- 	+header-footer-bar-wide
+	+header-footer-bar-thin({
+		loggedIn: false,
+	})
+	.room-detail
+		.room-detail__feedback
+			.room-detail__text.header1 Впечатления от номера
+			.room-detail__diagram
+				+diagram({ great: 130, good: 65, soso: 65, disgusting: 0})
+footer
+	+header-footer-bar-wide
 
 //- Убрать лишние инклюды и импорты

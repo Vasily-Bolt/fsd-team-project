@@ -1,29 +1,12 @@
-.legend__list-item
-  position: relative
-  list-style-type: none
-  margin-left: 20px
-  
-.legend__list-marker
-  position: absolute
-  top: 3.5px
-  left: -20px
-  content: ''
-  width: 10px
-  height: 10px
-  border-radius: 50%
-  
-.legend
-  width: 200px
-  height: 200px
-  margin: 0
-  padding: 0
-  
-.donut-chart
-  position: relative
-  width: 320px
-  height: 320px
-  
-.donut-chart__inner-text
-  position: absolute
-  top: 40%
-  left: 10%
+@import ./__canvas/diagram__canvas
+@import ./__inner-text/diagram__inner-text
+@import ./__legend/diagram__legend
+@import ./__legend-list/diagram__legend-list
+@import ./__legend-list-item/diagram__legend-list-item
+@import ./__legend-list-marker/diagram__legend-list-marker
+
+.diagram
+	display: flex
+	justify-content: space-between
+	width: 100%
+	height: 100%

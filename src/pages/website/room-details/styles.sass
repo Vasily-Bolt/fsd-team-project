@@ -1,6 +1,5 @@
 @import @/styles/styles.sass
 
-@import @/styles/styles.sass
 @import @/assets/blocks/gull-emblem/gull.sass
 @import @/assets/blocks/arrow/arrow
 @import @/assets/blocks/arrow-triangle/arrow-triangle
@@ -31,3 +30,14 @@
 //- Убрать лишние инклюды и импорты
 
 @import @/assets/blocks/diagram/diagram.sass
+
+.room-detail__diagram
+	width: 313px
+	height: 124px
+
+.room-detail
+	width: 100%
+	height: 939px
+	border-bottom: 1px solid rgba($all-document-text-color, $dark-shade-quater)
+	display: grid
+	grid-template-areas: "a b c" "d d c" "e f ."

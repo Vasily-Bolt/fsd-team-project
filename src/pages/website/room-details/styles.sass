@@ -11,13 +11,17 @@
 @import @/assets/blocks/header-footer-bar/header-footer-bar
 @import @/assets/blocks/text-field/text-field
 @import @/assets/blocks/text-field-with-info/text-field-with-info
+@import @/assets/blocks/like-button/like-button
 @import @/assets/blocks/copyrights/copyrights.sass
 @import @/assets/blocks/social-web-block/social-web-block.sass
 @import @/assets/blocks/incdec-field/incdec-field
 @import @/assets/blocks/datepicker/datepicker
 @import @/assets/blocks/dropdown/dropdown
+@import @/assets/blocks/bullet-list/bullet-list
 @import @/assets/blocks/room-search/room-search
 @import @/assets/blocks/uikit-cards/uikit-cards.sass
+@import @/assets/blocks/room-description/room-description
+@import @/assets/blocks/feedback/feedback
 @import @/assets/blocks/room-number-and-price/room-number-and-price.sass
 @import @/assets/blocks/counter-account-block/counter-account-block.sass
 @import @/assets/blocks/user-register/user-register.sass
@@ -31,13 +35,52 @@
 
 @import @/assets/blocks/diagram/diagram.sass
 
+.room-detail__gallery-main-image
+	grid-area: main
+
+.room-detail__gallery-top-image
+	grid-area: secondary
+
+.room-detail__gallery-low-image
+	grid-area: third
+	
+.room-detail__gallery img
+	object-fit: cover
+	height: 100%
+	width: 100%
+	
+.room-detail__gallery
+	width: 100%
+	display: grid
+	// grid-template: 485px / 2fr 1fr
+	grid-template: "main main secondary" 243px "main main third" 243px / 1fr 1fr 1fr
+
+.room-detail__about
+	grid-area: about
+
 .room-detail__diagram
 	width: 313px
 	height: 124px
 
-.room-detail
+.room-detail__diagram-block
+	grid-area: diagram
+
+.room-detail__book
+	grid-area: book
+
+.room-detail__feedback
+	grid-area: feedback
+
+.room-detail__rules
+	grid-area: rules
+	width: 260px
+
+.room-detail__cancel
+	grid-area: cancel
+
+.room-detail__main
 	width: 100%
 	height: 939px
 	border-bottom: 1px solid rgba($all-document-text-color, $dark-shade-quater)
 	display: grid
-	grid-template-areas: "a b c" "d d c" "e f ."
+	grid-template: "about diagram book" "feedback feedback book" "rules cancel empty"

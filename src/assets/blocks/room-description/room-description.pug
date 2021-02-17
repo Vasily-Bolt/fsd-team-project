@@ -9,3 +9,25 @@ mixin room-description(array)
 			.room-description__margin-between.horizontal-line
 		else
 			.room-description__margin-between
+
+mixin room-description-shorthand
+	+room-description([
+					{
+						image: './img/smily-face.svg',
+						title: 'Комфорт',
+						content: 'Шумопоглощающие стены',
+						bottomLine: 'true'
+					},
+					{
+						image: './img/city-house.svg',
+						title: 'Удобство',
+						content: 'Окно в каждой из спален',
+						bottomLine: 'true'
+					},
+					{
+						image: './img/whats-hot.svg',
+						title: 'Уют',
+						content: 'Номер оснащен камином',
+						bottomLine: 'false'
+					},
+				])

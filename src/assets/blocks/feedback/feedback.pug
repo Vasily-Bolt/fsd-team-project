@@ -1,7 +1,7 @@
 mixin feedback(object)
 	.feedback
 		.feedback__icon
-			img(src='./img/userpics/murad-sarafanov.jpg')
+			img(src=`./img/userpics/${object.picName}.jpg`)
 		.feedback__name-when
 			p.feedback__name-when--name= object.userName
 			case object.daysAgoAdded
@@ -13,9 +13,29 @@ mixin feedback(object)
 				when 3
 				when 4
 					p= object.daysAgoAdded + ' дня назад'
+				when 7
+					p= `${object.daysAgoAdded} дня назад`
 				default
 					p= object.daysAgoAdded + ' дней назад'
 		.feedback__like
 			+like-button({id:'likes-', number_of_likes: object.likesQuantity, checked: object.thisUserAlreadyVoted})
 		.feedback__content
 			p!= object.userComment
+
+mixin feedback-shorthand
+	+feedback({
+						likesQuantity: 12,
+						thisUserAlreadyVoted: true,
+						userName: 'Мурад Сарафанов',
+						picName: 'murad-sarafanov',
+						daysAgoAdded: 5,
+						userComment: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.<br>И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+					})
+	+feedback({
+						likesQuantity: 2,
+						thisUserAlreadyVoted: false,
+						userName: 'Патрисия Стёклышкова',
+						picName: 'patrice-steklyshkova',
+						daysAgoAdded: 7,
+						userComment: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+					})

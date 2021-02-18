@@ -68,8 +68,15 @@
 .room-detail__book
 	grid-area: book
 
+.room-detail__subtitle
+	grid-area: subtitle
+	justify-self: end
+	color: rgba($all-document-text-color, $dark-shade-half)
+
 .room-detail__feedback
 	grid-area: feedback
+	display: grid
+	grid-template: "title subtitle" "mainText mainText" / 80% 20%
 
 .room-detail__rules
 	grid-area: rules
@@ -78,9 +85,13 @@
 .room-detail__cancel
 	grid-area: cancel
 
+.room-detail__cancel
+	color: rgba($all-document-text-color, $dark-shade-almost-total)
+
 .room-detail__main
 	width: 100%
 	height: 939px
 	border-bottom: 1px solid rgba($all-document-text-color, $dark-shade-quater)
 	display: grid
 	grid-template: "about diagram book" "feedback feedback book" "rules cancel empty"
+	grid-gap: 70px

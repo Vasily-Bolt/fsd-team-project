@@ -34,28 +34,30 @@ header
 	img.room-detail__gallery-low-image(src=`./img/roomspics/${roomNumber}/bigpics/bottom.jpg`)
 main.room-detail__main.wrapper-paddings
 	.room-detail__about
-		.room-detail__text.header1 Сведения о номере
+		.room-detail__text.header2 Сведения о номере
 		+room-description-shorthand
 	.room-detail__feedback
-		.room-detail__text.header1
-		+feedback-shorthand
+		.room-detail__text.header2 Отзывы посетителей номера
+		.room-detail__subtitle 2 отзыва
+		div
+			+feedback-shorthand
 	.room-detail__rules
-		.room-detail__text.header1 Правила
+		.room-detail__text.header2 Правила
 		+bullet-list([
 						'Нельзя с питомцами',
 						'Без вечеринок и мероприятий',
 						'Время прибытия &mdash; после 13:00, а выезд до 12:00'
 					])
 	.room-detail__cancel
-		.room-detail__text.header1 Отмена
+		.room-detail__text.header2 Отмена
 		p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 	.room-detail__diagram-block
-		.room-detail__text.header1 Впечатления от номера
+		.room-detail__text.header2 Впечатления от номера
 		.room-detail__diagram
 			+diagram({ great: 130, good: 65, soso: 65, disgusting: 0})
 	.room-detail__book
 		+room-booking({
-			id:'uikitRoomBooking',
+			id:'RoomBooking',
 			roomNumber: roomNumber,
 			roomExtra: 'люкс',
 			dateIn: '19.08.2019',

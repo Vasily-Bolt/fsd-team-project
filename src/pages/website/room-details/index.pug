@@ -24,51 +24,67 @@ include ../../../assets/blocks/room-search/room-search.pug
 include ../../../assets/blocks/room-booking/room-booking.pug
 include ../../../assets/blocks/diagram/diagram.pug
 - var roomNumber = 888
-header
-	+header-footer-bar-thin({
-		loggedIn: false,
-	})
-.room-detail__gallery
-	img.room-detail__gallery-main-image(src=`./img/roomspics/${roomNumber}/bigpics/main.jpg`)
-	img.room-detail__gallery-top-image(src=`./img/roomspics/${roomNumber}/bigpics/top.jpg`)
-	img.room-detail__gallery-low-image(src=`./img/roomspics/${roomNumber}/bigpics/bottom.jpg`)
-main.room-detail__main.wrapper-paddings
-	.room-detail__about
-		.room-detail__text.header2 Сведения о номере
-		+room-description-shorthand
-	.room-detail__feedback
-		.room-detail__text.header2 Отзывы посетителей номера
-		.room-detail__subtitle 2 отзыва
-		div
-			+feedback-shorthand
-	.room-detail__rules
-		.room-detail__text.header2 Правила
-		+bullet-list([
-						'Нельзя с питомцами',
-						'Без вечеринок и мероприятий',
-						'Время прибытия &mdash; после 13:00, а выезд до 12:00'
-					])
-	.room-detail__cancel
-		.room-detail__text.header2 Отмена
-		p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-	.room-detail__diagram-block
-		.room-detail__text.header2 Впечатления от номера
-		.room-detail__diagram
-			+diagram({ great: 130, good: 65, soso: 65, disgusting: 0})
-	.room-detail__book
-		+room-booking({
-			id:'RoomBooking',
-			roomNumber: roomNumber,
-			roomExtra: 'люкс',
-			dateIn: '19.08.2019',
-			dateOut: '23.08.2019',
-			guests: ['2','1','0'],
-			pricePerDay: 9990,
-			discount: 2179,
-			extraServicesPrice: 300,
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		link(rel="apple-touch-icon" sizes="180x180" href="src/assets/favicons/apple-touch-icon.png")
+		link(rel="icon" type="image/png" sizes="32x32" href="src/assets/favicons/favicon-32x32.png")
+		link(rel="icon" type="image/png" sizes="16x16" href="src/assets/favicons/favicon-16x16.png")
+		link(rel="manifest" href="src/assets/favicons/site.webmanifest")
+		link(rel="mask-icon" href="src/assets/favicons/safari-pinned-tab.svg" color="#5bbad5")
+		link(rel="shortcut icon" href="src/assets/favicons/favicon.ico")
+		meta(name="msapplication-TileColor" content="#da532c")
+		meta(name="msapplication-config" content="src/assets/favicons/browserconfig.xml")
+		meta(name="theme-color" content="#ffffff")
+		title Room Details Page
+	body
+		header
+			+header-footer-bar-thin({
+				loggedIn: false,
 			})
+		.room-detail-gallery
+			img.room-detail-gallery--image-fit.room-detail-gallery__main-image(src=`./img/roomspics/${roomNumber}/bigpics/main.jpg`)
+			img.room-detail-gallery--image-fit.room-detail-gallery__top-image(src=`./img/roomspics/${roomNumber}/bigpics/top.jpg`)
+			img.room-detail-gallery--image-fit.room-detail-gallery__low-image(src=`./img/roomspics/${roomNumber}/bigpics/bottom.jpg`)
+		main.room-detail__main.wrapper-paddings
+			.room-detail__about
+				.room-detail__text.header2 Сведения о номере
+				+room-description-shorthand
+			.room-detail__feedback
+				.room-detail__text.header2 Отзывы посетителей номера
+				.room-detail__subtitle 2 отзыва
+				div
+					+feedback-shorthand
+			.room-detail__rules
+				.room-detail__text.header2 Правила
+				+bullet-list([
+								'Нельзя с питомцами',
+								'Без вечеринок и мероприятий',
+								'Время прибытия &mdash; после 13:00, а выезд до 12:00'
+							])
+			.room-detail__cancel
+				.room-detail__text.header2 Отмена
+				p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+			.room-detail__diagram-block
+				.room-detail__text.header2 Впечатления от номера
+				.room-detail__diagram
+					+diagram({ great: 130, good: 65, soso: 65, disgusting: 0})
+			.room-detail__book
+				+room-booking({
+					id:'RoomBooking',
+					roomNumber: roomNumber,
+					roomExtra: 'люкс',
+					dateIn: '19.08.2019',
+					dateOut: '23.08.2019',
+					guests: ['2','1','0'],
+					pricePerDay: 9990,
+					discount: 2179,
+					nameExtraService: 'Сбор за доп. услуги',
+					extraServicesPrice: 300,
+					})
 
-footer
-	+header-footer-bar-wide
+		footer
+			+header-footer-bar-wide
 
-//- Убрать лишние инклюды и импорты
+		//- Убрать лишние инклюды и импорты

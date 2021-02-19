@@ -18,7 +18,7 @@ mixin room-booking(object)
 		//- var pricePerPeriod = '39 960' + currency
 		//- var daysOfResidence = '4'
 	//- FLEX!!!
-	form(id = object.id class='room-booking card-styles--white-background cards-styles--flex cards-styles-box-shadow cards-styles-size-and-paddings')
+	form(id = object.id class='room-booking card-styles--white-background cards-styles--flex cards-styles--space-between cards-styles-box-shadow cards-styles-size-and-paddings')
 		.room-number-and-price
 			.room-number-and-price__left
 				span № 
@@ -42,30 +42,28 @@ mixin room-booking(object)
 						expanded: false,
 						hasButtonsBelow: true
 					})
-		div
-			table(cols=3 class='room-booking__table text-dark-shade-almost-total')
+		.room-booking__counting-block
+			table(cols=2 class='room-booking__table body-text text-dark-shade-almost-total')
 				tbody
 					tr
 						td
 							span(id=object.id+'-pricePerDay' data-value=object.pricePerDay )= pricePerDay + ' х '
 							span(id=object.id+'-daysOfResidence')
 							span  суток
-						td
 						td 
 							span(id=object.id+'-pricePerPeriod')
 					tr
-						td 
-							span Сбор за услуги
-							if object.discount > 0
-								span( id=object.id+'-discount' data-value=object.discount )= discount
-
-						td
+						td.room-booking__table-item--flex
+							span
+								span Сбор за услуги
+								if object.discount > 0
+									span( id=object.id+'-discount' data-value=object.discount )= discount
 							.info-marker
 						td
 							span( id=object.id+'-servicesPrice' data-value=object.servicesPrice )= servicesPrice
 					tr
-						td Сбор за дополнительные услуги
-						td
+						td.room-booking__table-item--flex
+							span= object.nameExtraService
 							.info-marker
 						td
 							span( id=object.id+'-extraServices' data-value=object.extraServicesPrice )= extraServicesPrice
@@ -76,3 +74,35 @@ mixin room-booking(object)
 				span(id=object.id+'-totalPrice')
 
 		+elongated-button({sizeWidth: '100%', sizeHeight: '2.75rem', text: 'забронировать', buttonType: 'with-arrow-right', formToSubmit: object.id})
+
+
+			//- table(cols=3 class='room-booking__table body-text text-dark-shade-almost-total')
+			//- 	tbody
+			//- 		tr
+			//- 			td
+			//- 				span(id=object.id+'-pricePerDay' data-value=object.pricePerDay )= pricePerDay + ' х '
+			//- 				span(id=object.id+'-daysOfResidence')
+			//- 				span  суток
+			//- 			td
+			//- 			td 
+			//- 				span(id=object.id+'-pricePerPeriod')
+			//- 		tr
+			//- 			td 
+			//- 				span Сбор за услуги
+			//- 				if object.discount > 0
+			//- 					span( id=object.id+'-discount' data-value=object.discount )= discount
+
+			//- 			td
+			//- 				.info-marker
+			//- 			td
+			//- 				span( id=object.id+'-servicesPrice' data-value=object.servicesPrice )= servicesPrice
+			//- 		tr
+			//- 			td= object.nameExtraService
+			//- 			td
+			//- 				.info-marker
+			//- 			td
+			//- 				span( id=object.id+'-extraServices' data-value=object.extraServicesPrice )= extraServicesPrice
+			//- .room-booking__summary.header2
+			//- span Итого
+			//- .room-booking__summary-dots
+			//- span(id=object.id+'-totalPrice')

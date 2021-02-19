@@ -21,6 +21,7 @@
 @import @/assets/blocks/room-search/room-search
 @import @/assets/blocks/uikit-cards/uikit-cards.sass
 @import @/assets/blocks/room-description/room-description
+@import @/assets/blocks/horizontal-line/horizontal-line
 @import @/assets/blocks/feedback/feedback
 @import @/assets/blocks/room-number-and-price/room-number-and-price.sass
 @import @/assets/blocks/counter-account-block/counter-account-block.sass
@@ -35,35 +36,36 @@
 
 @import @/assets/blocks/diagram/diagram.sass
 
-.room-detail__gallery-main-image
+.room-detail-gallery__main-image
 	grid-area: main
 
-.room-detail__gallery-top-image
+.room-detail-gallery__top-image
 	grid-area: secondary
 
-.room-detail__gallery-low-image
+.room-detail-gallery__low-image
 	grid-area: third
 	
-.room-detail__gallery img
+.room-detail-gallery--image-fit
 	object-fit: cover
 	height: 100%
 	width: 100%
 	
-.room-detail__gallery
+.room-detail-gallery
 	width: 100%
 	display: grid
-	// grid-template: 485px / 2fr 1fr
-	grid-template: "main main secondary" 243px "main main third" 243px / 1fr 1fr 1fr
+	grid-template: "main secondary" 243px "main third" 243px / 980px 460px //мне кажется, что лучше сделать 2fr 1fr
 
 .room-detail__about
 	grid-area: about
 
 .room-detail__diagram
-	width: 313px
-	height: 124px
+	width: 19.5rem //312px
+	height: 7.75rem //124px
 
 .room-detail__diagram-block
 	grid-area: diagram
+	padding-right: .5rem //8px
+	justify-self: center
 
 .room-detail__book
 	grid-area: book
@@ -74,9 +76,10 @@
 	color: rgba($all-document-text-color, $dark-shade-half)
 
 .room-detail__feedback
+	margin-top: 0.5px
 	grid-area: feedback
 	display: grid
-	grid-template: "title subtitle" "mainText mainText" / 80% 20%
+	grid-template: "title subtitle" "mainText mainText" / 83% 17%
 
 .room-detail__rules
 	grid-area: rules
@@ -84,14 +87,20 @@
 
 .room-detail__cancel
 	grid-area: cancel
-
-.room-detail__cancel
 	color: rgba($all-document-text-color, $dark-shade-almost-total)
+
+.room-detail__subtitle
+	padding-top: 2px
+	justify-self: start
+	
+.room-detail__text
+	margin-bottom: 20px
 
 .room-detail__main
 	width: 100%
-	height: 939px
+	// height: 939px
 	border-bottom: 1px solid rgba($all-document-text-color, $dark-shade-quater)
 	display: grid
 	grid-template: "about diagram book" "feedback feedback book" "rules cancel empty"
-	grid-gap: 70px
+	grid-row-gap: 12px
+	margin-top: 69px

@@ -1,7 +1,0 @@
-Add focus to all custom objects
-
-Make gallery work
-Make subscription field submit a form
-
-Responsive!
-Wrapper = all width for pages (not UIKit!)

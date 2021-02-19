@@ -2,7 +2,7 @@ mixin user-register(object)
 	.user-register.card-styles--white-background.cards-styles--flex.cards-styles--space-between.cards-styles-box-shadow.cards-styles-size-and-paddings
 		form(id = object.id class = 'user-register__create-account-form' method='get')
 			.header1 Регистрация аккаунта
-			fieldset(class='user-register__user-data-fieldset cards-styles--flex')
+			fieldset(class='user-register__user-data-fieldset cards-styles--flex cards-styles--space-between')
 				+text-field({
 					field_type: 'text-field', 
 					name: 'userName', 
@@ -17,7 +17,7 @@ mixin user-register(object)
 			//- Нужно было добавить tfInputType:'date', но тогда придется переделывать нативный datepicker
 			+text-field-with-info({tfType: 'text-field', tfName: 'dateOfBirth', tfPlaceholder: 'ДД.ММ.ГГГГ', tfPattern: '[1-3][0-9].[0-1][0-9].[1-2][0,9][0-9][0-9]', title: 'дата рождения'})
 			
-			fieldset(class='user-register__userEnterDataFieldset cards-styles--flex')
+			fieldset(class='user-register__userEnterDataFieldset cards-styles--flex cards-styles--space-between')
 				+text-field-with-info({tfType: 'text-field', tfName: 'userEmail', tfPlaceholder: 'Email', tfInputType: 'email', title: 'данные для входа в сервис', titleClass: 'padding-top'})
 				+text-field({
 					field_type: 'text-field',

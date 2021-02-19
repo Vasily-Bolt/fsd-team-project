@@ -2,7 +2,7 @@ mixin login-form(object)
 	.login-form.card-styles--white-background.cards-styles--flex.cards-styles--space-between.cards-styles-box-shadow.cards-styles-size-and-paddings
 		.header1 Войти
 		form(id = object.id class='' method='get' action='')
-			fieldset(class='login-form__user-data-fieldset cards-styles--flex')
+			fieldset(class='login-form__user-data-fieldset cards-styles--flex cards-styles--space-between')
 					+text-field({
 						field_type: 'text-field', 
 						name: 'userName', 

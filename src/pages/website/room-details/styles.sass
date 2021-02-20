@@ -18,22 +18,19 @@
 @import @/assets/blocks/datepicker/datepicker
 @import @/assets/blocks/dropdown/dropdown
 @import @/assets/blocks/bullet-list/bullet-list
-@import @/assets/blocks/room-search/room-search
+// @import @/assets/blocks/room-search/room-search
 @import @/assets/blocks/uikit-cards/uikit-cards.sass
 @import @/assets/blocks/room-description/room-description
 @import @/assets/blocks/horizontal-line/horizontal-line
 @import @/assets/blocks/feedback/feedback
 @import @/assets/blocks/room-number-and-price/room-number-and-price.sass
-@import @/assets/blocks/counter-account-block/counter-account-block.sass
-@import @/assets/blocks/user-register/user-register.sass
+// @import @/assets/blocks/counter-account-block/counter-account-block.sass
+// @import @/assets/blocks/user-register/user-register.sass
 @import @/assets/blocks/info-marker/info-marker.sass
 @import @/assets/blocks/room-booking/room-booking.sass
-@import @/assets/blocks/login-form/login-form.sass
-@import @/assets/blocks/gallery-room-small/gallery-room-small.sass
-@import @/assets/blocks/room-small-info/room-small-info.sass
-
-//- Убрать лишние инклюды и импорты
-
+// @import @/assets/blocks/login-form/login-form.sass
+// @import @/assets/blocks/gallery-room-small/gallery-room-small.sass
+// @import @/assets/blocks/room-small-info/room-small-info.sass
 @import @/assets/blocks/diagram/diagram.sass
 
 .room-detail-gallery__main-image
@@ -53,7 +50,7 @@
 .room-detail-gallery
 	width: 100%
 	display: grid
-	grid-template: "main secondary" 243px "main third" 243px / 980px 460px //мне кажется, что лучше сделать 2fr 1fr
+	grid-template: "main secondary" 15.125rem "main third" 15.125rem / 68% 32% // 980px 460px //мне кажется, что лучше сделать 2fr 1fr
 
 .room-detail__about
 	grid-area: about
@@ -64,8 +61,8 @@
 
 .room-detail__diagram-block
 	grid-area: diagram
-	padding-right: .5rem //8px
-	justify-self: center
+	// padding-right: .5rem //8px
+	// justify-self: center
 
 .room-detail__book
 	grid-area: book
@@ -75,32 +72,54 @@
 	justify-self: end
 	color: rgba($all-document-text-color, $dark-shade-half)
 
+.feedback-shorthand__wrapper
+	margin-bottom: 1.375rem //22px
+	margin-left: -.0625rem //-1px
+	
+.room-detail__feedback-wrapper
+	grid-area: mainText
+	
 .room-detail__feedback
-	margin-top: 0.5px
 	grid-area: feedback
 	display: grid
 	grid-template: "title subtitle" "mainText mainText" / 83% 17%
-
+	
+.room-detail__rules-list
+	margin-left: -.0625rem //-1px
+	
 .room-detail__rules
 	grid-area: rules
-	width: 260px
+	width: 16.25rem //260px
+
+.room-detail__cancel-and-rules-content-margin-top
+	margin-top: -.3125rem //-5px
+	
+.room-detail__cancel-content
+	width: 80%
 
 .room-detail__cancel
 	grid-area: cancel
-	color: rgba($all-document-text-color, $dark-shade-almost-total)
 
 .room-detail__subtitle
-	padding-top: 2px
+	grid-area: subtitle
+	padding-top: .125rem //2px
 	justify-self: start
 	
+.room-detail__text--left-padding
+	padding-left: 1.1875rem //19px
+
 .room-detail__text
-	margin-bottom: 20px
+	grid-area: title
+	margin-bottom: 1.25rem //20px
+
+.room-detail__free-space
+	grid-area: freeSpace
+	height: 3.0625rem //49px
 
 .room-detail__main
 	width: 100%
-	// height: 939px
 	border-bottom: 1px solid rgba($all-document-text-color, $dark-shade-quater)
 	display: grid
-	grid-template: "about diagram book" "feedback feedback book" "rules cancel empty"
-	grid-row-gap: 12px
-	margin-top: 69px
+	grid-template: "about diagram book" "feedback feedback book" "rules cancel empty" "freeSpace freeSpace freeSpace" / 31.034% 36.206% auto//360px 420px auto
+	grid-row-gap: .8125rem //13px
+	margin-top: 4.375rem //70px

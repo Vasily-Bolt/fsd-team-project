@@ -52,6 +52,10 @@
 	display: grid
 	grid-template: "main secondary" 15.125rem "main third" 15.125rem / 68% 32% // 980px 460px //мне кажется, что лучше сделать 2fr 1fr
 
+@media screen and (max-width:$laptop-max)
+	.room-detail-gallery
+		grid-template: "main main" 15rem "secondary third" 10rem / 1fr 1fr
+
 .room-detail__about
 	grid-area: about
 
@@ -59,18 +63,30 @@
 	width: 19.5rem //312px
 	height: 7.75rem //124px
 
+@media screen and (max-width:$tablet-max)
+	.room-detail__diagram
+		width: 99%
+		height: 20vw
+
 .room-detail__diagram-block
 	grid-area: diagram
+
+@media screen and (max-width:$laptop-max)
+	.room-detail__diagram-block
+		margin: 0 auto
 	// padding-right: .5rem //8px
 	// justify-self: center
+
+@media screen and (max-width:$tablet-max)
+	.room-detail__diagram-block
+		margin: 0
 
 .room-detail__book
 	grid-area: book
 
-.room-detail__subtitle
-	grid-area: subtitle
-	justify-self: end
-	color: rgba($all-document-text-color, $dark-shade-half)
+@media screen and (max-width:$laptop-max)
+	.room-detail__book
+		margin: 0 auto
 
 .feedback-shorthand__wrapper
 	margin-bottom: 1.375rem //22px
@@ -83,6 +99,11 @@
 	grid-area: feedback
 	display: grid
 	grid-template: "title subtitle" "mainText mainText" / 83% 17%
+
+@media screen and (max-width:$tablet-max)
+	.room-detail__feedback
+		display: flex
+		flex-direction: column
 	
 .room-detail__rules-list
 	margin-left: -.0625rem //-1px
@@ -91,17 +112,30 @@
 	grid-area: rules
 	width: 16.25rem //260px
 
+@media screen and (max-width:$laptop-max)
+	.room-detail__rules
+		justify-self: center
+		
+@media screen and (max-width:$desktop-max)
+	.room-detail__rules
+		width: 90%
+
 .room-detail__cancel-and-rules-content-margin-top
 	margin-top: -.3125rem //-5px
 	
 .room-detail__cancel-content
 	width: 80%
 
+@media screen and (max-width:$laptop-max)
+	.room-detail__cancel-content
+		width: 100%
+
 .room-detail__cancel
 	grid-area: cancel
 
 .room-detail__subtitle
 	grid-area: subtitle
+	color: rgba($all-document-text-color, $dark-shade-half)
 	padding-top: .125rem //2px
 	justify-self: start
 	
@@ -116,6 +150,10 @@
 	grid-area: freeSpace
 	height: 3.0625rem //49px
 
+@media screen and (max-width:$laptop-max)
+	.room-detail__free-space
+		height: 1rem
+
 .room-detail__main
 	width: 100%
 	border-bottom: 1px solid rgba($all-document-text-color, $dark-shade-quater)
@@ -123,3 +161,21 @@
 	grid-template: "about diagram book" "feedback feedback book" "rules cancel empty" "freeSpace freeSpace freeSpace" / 31.034% 36.206% auto//360px 420px auto
 	grid-row-gap: .8125rem //13px
 	margin-top: 4.375rem //70px
+
+@media screen and (max-width:$desktop-max)
+	.room-detail__main
+		grid-template: "about diagram" "book feedback" "rules cancel" / 1fr 1fr
+		justify-content: center
+		// grid-template: "about diagram book" "feedback feedback book" "rules cancel empty" "freeSpace freeSpace freeSpace" / 31.034% 36.206% auto//360px 420px auto
+		gap: .5rem
+		margin-top: 1rem
+
+@media screen and (max-width:$laptop-max)
+	.room-detail__main
+		grid-template: "about about" "diagram diagram" "book book" "feedback feedback" "rules cancel" / 1fr 1fr
+		gap: 1rem 0
+
+@media screen and (max-width:$tablet-max)
+	.room-detail__main
+		display: flex
+		flex-direction: column

@@ -1,4 +1,5 @@
 @import ./__canvas/diagram__canvas
+@import ./__inner-text-block/diagram__inner-text-block
 @import ./__inner-text/diagram__inner-text
 @import ./__legend/diagram__legend
 @import ./__legend-list/diagram__legend-list
@@ -10,3 +11,7 @@
 	justify-content: space-between
 	width: 100%
 	height: 100%
+
+@media screen and (max-width:$tablet-max)
+	.diagram
+		justify-content: space-around

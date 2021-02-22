@@ -76,7 +76,7 @@ $(()=> {
 		}
 	});
 
-	$('.diagram__inner-text').prepend(`<span class='header1'>${voicesCount}</span> `);
+	$('.diagram__inner-text-block').prepend(`<span class='diagram__inner-text diagram__inner-text--number'>${voicesCount}</span> `);
 	$('#room-impression-chart-legend').html(myChart.generateLegend());
 
 });

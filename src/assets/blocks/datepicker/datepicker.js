@@ -51,9 +51,10 @@
 $(()=> {
 
 	const isMobile = $( window ).width() <= mobileDeviceWidth;
-
-	if ( !isMobile ) {
-
+	if (isMobile) { 
+		singleFieldDateRangePickerSetup.format = 'YYYY-MM-DD';
+		multipleFieldDateRangePickerSetup.format = 'YYYY-MM-DD'
+	}
 		$( 'div[id^="datepickerHead"]' ).each( function() {
 			let DateRangePickerSetup = '';	
 			let datepickerIdString = $(this).attr('id');
@@ -94,8 +95,38 @@ $(()=> {
 						}
 					});
 			}
+			if ( isMobile ) {
+				$(`#${datepickerIdString}`).find( '.datepicker__calendar-wrapper' ).css('display','none');
+				$('input[id*="datepicker"]' ).each(function(){
+					inputFieldValue = $(this).attr('value');
+					
+					if ( datepickerIdString.endsWith('multiple') ) 
+						nemInputValue = `${inputFieldValue.substr(6,4)}-${inputFieldValue.substr(3,2)}-${inputFieldValue.substr(0,2)}`;
+					// if ( datepickerIdString.endsWith('single') )
+					// 	nemInputValue = `2021-05-${inputFieldValue.substr(0,2)}`; //have to setup this
+					
+					$(this)
+					.attr({
+						type: 'date',
+						value: nemInputValue,
+					})
+					.css('width','100%')
+					.removeAttr('readonly')
+					.siblings('div[class*="icon"]').css('display','none');
+				});
+				
+			}
 		});
-	
+		// if ( isMobile ) {
+		// 	inputFieldValue = $('input[id*="datepicker"]' ).attr('value');
+		// 	$( 'input[id*="datepicker"]' ).attr({
+		// 		type: 'date',
+		// 		value: '',
+		// 	})
+		// 	.css('width','100%')
+		// 	.removeAttr('readonly')
+		// 	.siblings('div[class*="icon"]').css('display','none');
+		// }
 		const clearSign = 'очистить';
 		const appendSign = 'применить';
 		// html кнопок "очистить" и "применить". onclick="return false" отменяет submit формы, в которой эти кнопки валяются
@@ -105,17 +136,6 @@ $(()=> {
 		const datepickerCalendarFooter = $('.date-picker-wrapper').find('.footer' );
 		datepickerCalendarFooter.append(buttonBlockHTML);	
 	
-		//Сделай если закрывается кнопкой (из самого пикера), то надо менять триггер! В плагине есть такая функция
-		// $( 'div[id^="datepickerHead"]' ).on('click', function(event) {
-		// 	// Тут глюк - при клике на поле инпут два раза вызываются функции get.. setValue (штатная и моя настройка)
-		// 	event.stopPropagation();
-		// 	if (trigger == 'open') {
-		// 		$(this).find('input[id$="InputField"]').data('dateRangePicker').open();
-		// 	} else {
-		// 		$(this).find('input[id$="InputField"]').data('dateRangePicker').close();
-		// 	}	
-		// });
-		
 		//Обработка событий при нажатии кнопок
 		datepickerCalendarFooter.find('button').on('click', function(event) {
 			event.stopPropagation();
@@ -130,18 +150,6 @@ $(()=> {
 			if ( buttonContent == appendSign ) {
 				fieldsToClear.data('dateRangePicker').close();
 			}
-		});
-	
-	} else {
-		$( 'input[id*="datepicker"]' ).attr({
-			type: 'date',
-			value: '',
-		})
-		.css('width','100%')
-		.removeAttr('readonly')
-		.siblings('div[class*="icon"]').css('display','none');
-			
-	};
-	
+		});	
 	
 });

@@ -1,0 +1,9 @@
+.room-detail-main__feedback
+	grid-area: feedback
+	display: grid
+	grid-template: "title subtitle" "mainText mainText" / 83% 17%
+
+@media screen and (max-width:$tablet-max)
+	.room-detail-main__feedback
+		display: flex
+		flex-direction: column

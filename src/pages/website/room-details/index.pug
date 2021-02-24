@@ -34,8 +34,8 @@ block content
 	- var roomNumber = 888
 
 	mixin feedback-shorthand
-		.room-detail__feedback-wrapper
-			.feedback-shorthand__wrapper
+		.room-detail-main__feedback-wrapper
+			.feedback-shorthand
 				+feedback({
 									likesQuantity: 12,
 									thisUserAlreadyVoted: true,
@@ -44,7 +44,7 @@ block content
 									daysAgoAdded: 5,
 									userComment: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.<br>И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
 								})
-			.feedback-shorthand__wrapper
+			.feedback-shorthand
 				+feedback({
 									likesQuantity: 2,
 									thisUserAlreadyVoted: false,
@@ -58,31 +58,31 @@ block content
 		img.room-detail-gallery--image-fit.room-detail-gallery__main-image(src=`./img/roomspics/${roomNumber}/bigpics/main.jpg`)
 		img.room-detail-gallery--image-fit.room-detail-gallery__top-image(src=`./img/roomspics/${roomNumber}/bigpics/top.jpg`)
 		img.room-detail-gallery--image-fit.room-detail-gallery__low-image(src=`./img/roomspics/${roomNumber}/bigpics/bottom.jpg`)
-	main.room-detail__main.wrapper-paddings
-		.room-detail__about
-			.room-detail__text.header2 Сведения о номере
+	main.room-detail-main.wrapper-paddings
+		.room-detail-main__about
+			.room-detail-main__text.header2 Сведения о номере
 			+room-description-shorthand
-		.room-detail__feedback
-			.room-detail__text.header2 Отзывы посетителей номера
-			.room-detail__subtitle 2 отзыва
+		.room-detail-main__feedback
+			.room-detail-main__text.header2 Отзывы посетителей номера
+			.room-detail-main__subtitle 2 отзыва
 			+feedback-shorthand
 
-		.room-detail__rules
-			.room-detail__text.header2.room-detail__text--left-padding Правила
-			.room-detail__cancel-and-rules-content-margin-top.room-detail__rules-list
+		.room-detail-main__rules
+			.room-detail-main__text.header2.room-detail-main__text--left-padding Правила
+			.room-detail-main__rules-list.room-detail-main__rules-list--margin-top
 				+bullet-list([
 								'Нельзя с питомцами',
 								'Без вечеринок и мероприятий',
 								'Время прибытия &mdash; после 13:00, а выезд до 12:00'
 							])
-		.room-detail__cancel
-			.room-detail__text.header2 Отмена
-			p.room-detail__cancel-and-rules-content-margin-top.room-detail__cancel-content.text-dark-shade-almost-total Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-		.room-detail__diagram-block
-			.room-detail__text.header2 Впечатления от номера
-			.room-detail__diagram
+		.room-detail-main__cancel
+			.room-detail-main__text.header2 Отмена
+			p.room-detail-main__cancel-content.room-detail-main__cancel-content--margin-top.text-dark-shade-almost-total Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+		.room-detail-main__diagram-block
+			.room-detail-main__text.header2 Впечатления от номера
+			.room-detail-main__diagram
 				+diagram({ great: 130, good: 65, soso: 65, disgusting: 0})
-		.room-detail__book
+		.room-detail-main__book
 			+room-booking({
 				id:'RoomBooking',
 				roomNumber: roomNumber,
@@ -94,4 +94,4 @@ block content
 				discount: 2179,
 				extraServicesPrice: 300,
 				})
-		.room-detail__free-space
+		.room-detail-main__free-space

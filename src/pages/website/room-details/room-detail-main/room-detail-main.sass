@@ -1,0 +1,41 @@
+@import ./__about/room-detail-main__about
+@import ./__book/room-detail-main__book
+@import ./__cancel/room-detail-main__cancel
+@import ./__cancel-content/room-detail-main__cancel-content
+@import ./__diagram/room-detail-main__diagram
+@import ./__diagram-block/room-detail-main__diagram-block
+@import ./__feedback/room-detail-main__feedback
+@import ./__feedback-wrapper/room-detail-main__feedback-wrapper
+@import ./__free-space/room-detail-main__free-space
+@import ./__rules/room-detail-main__rules
+@import ./__rules-list/room-detail-main__rules-list
+@import ./__subtitle/room-detail-main__subtitle
+@import ./__text/room-detail-main__text
+	
+
+
+.room-detail-main
+	width: 100%
+	border-bottom: 1px solid rgba($all-document-text-color, $dark-shade-quater)
+	display: grid
+	grid-template: "about diagram book" "feedback feedback book" "rules cancel empty" "freeSpace freeSpace freeSpace" / 31.034% 36.206% auto//360px 420px auto
+	grid-row-gap: .8125rem //13px
+	margin-top: 4.375rem //70px
+
+@media screen and (max-width:$desktop-max)
+	.room-detail-main
+		grid-template: "about diagram" "book feedback" "rules cancel" / 1fr 1fr
+		justify-content: center
+		// grid-template: "about diagram book" "feedback feedback book" "rules cancel empty" "freeSpace freeSpace freeSpace" / 31.034% 36.206% auto//360px 420px auto
+		gap: .5rem
+		margin-top: 1rem
+
+@media screen and (max-width:$laptop-max)
+	.room-detail-main
+		grid-template: "about about" "diagram diagram" "book book" "feedback feedback" "rules cancel" / 1fr 1fr
+		gap: 1rem 0
+
+@media screen and (max-width:$tablet-max)
+	.room-detail-main
+		display: flex
+		flex-direction: column

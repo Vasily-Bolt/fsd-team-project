@@ -1,0 +1,14 @@
+@import ./_image-fit/room-detail-gallery_image-fit
+@import ./__low-image/room-detail-gallery__low-image
+@import ./__main-image/room-detail-gallery__main-image
+@import ./__top-image/room-detail-gallery__top-image
+
+	
+.room-detail-gallery
+	width: 100%
+	display: grid
+	grid-template: "main secondary" 15.125rem "main third" 15.125rem / 68% 32% // 980px 460px //мне кажется, что лучше сделать 2fr 1fr
+
+@media screen and (max-width:$laptop-max)
+	.room-detail-gallery
+		grid-template: "main main" 15rem "secondary third" 10rem / 1fr 1fr

@@ -62,11 +62,11 @@ function change(objName, step) {
 
 
 $(()=> {
+	// const buttonWidth = $('.incdecField__input-button').css('width');
+	// $('.incdecField__input-button').css('height', buttonWidth);
+
 	let myId = '';
 	//Если кнопку нажали, делаем пересчет и меняем цифру
-	const buttonWidth = $('.incdecField__input-button').css('width');
-	$('.incdecField__input-button').css('height', buttonWidth);
-	
 	$('.btnMns').click(function(){
 			myId = '#'+$(this).attr('id');
 			change(myId, -stepValue);

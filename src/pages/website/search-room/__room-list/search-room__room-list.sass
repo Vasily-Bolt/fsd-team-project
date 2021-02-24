@@ -4,8 +4,12 @@
 	grid-auto-rows: minmax(270px, auto)
 	gap: 8px 12px
 
-@media screen and (max-width:$laptop-max)
+@media screen and (max-width:$one-three-two-zero)
 	.search-room__room-list
 		justify-content: space-evenly
-		grid-template-columns: repeat(2, auto)
 		gap: 8vh 0
+		grid-template-columns: repeat(2, auto)
+
+@media screen and (max-width:$desktop-max)
+	.search-room__room-list
+		grid-template-columns: auto

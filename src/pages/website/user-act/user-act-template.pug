@@ -16,10 +16,12 @@ html(lang="ru")
 		block title
 	body
 		block includes
-		header
-			+header-footer-bar-thin({
-				loggedIn: false,
-			})
-		block content
+		.user-act-header-container
+			.user-act-header-container__lower-empty-space
+			header
+				+header-footer-bar-thin({
+					loggedIn: false,
+				})
+			block content
 		footer
 			+header-footer-bar-wide

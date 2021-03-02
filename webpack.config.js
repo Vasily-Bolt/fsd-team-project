@@ -13,7 +13,11 @@ const sassLoader = require('sass-loader');
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 console.log ("iS DEV ", isDev)
-const dirToStoreReady = 'dist/user-act';
+const dirToStoreReady = 'dist/UIkit';
+// const dirToStoreReady = 'dist/landing';
+// const dirToStoreReady = 'dist/search-room';
+// const dirToStoreReady = 'dist/room-details';
+// const dirToStoreReady = 'dist/user-act';
 
 const optimization = () => {
 	const config = {
@@ -55,11 +59,11 @@ module.exports = {
 	context: path.resolve(__dirname, 'src'),
 	mode: 'development',
 	entry: {
-		// UIkit: './uikit.js',
+		UIkit: './uikit.js',
 		// WebsiteLanding: './website-landing.js',
 		// SearchRoom: './search-room.js',
 		// RoomDetails: './room-details.js',
-		userAct: './user-act.js',
+		// userAct: './user-act.js',
 	},
 	output: {
 		filename: filename('js'),
@@ -80,16 +84,16 @@ module.exports = {
 		hot: isDev,
 	},
 	plugins: [
-		// new HTMLWebpackPlugin( {
-		//   title: 'UIKit',
-		//   template: './pages/uikit/index.pug',
-		//   filename: 'index.html',
-		//   inject: true,
-		//   chunks: ['UIkit'],
-		//   minify: {
-		//     collapseWhitespace: isProd 
-		//   }
-		// }),
+		new HTMLWebpackPlugin( {
+		  title: 'UIKit',
+		  template: './pages/uikit/index.pug',
+		  filename: 'index.html',
+		  inject: true,
+		  chunks: ['UIkit'],
+		  minify: {
+		    collapseWhitespace: isProd 
+		  }
+		}),
 		// new HTMLWebpackPlugin( {
 		// 	title: 'WebsiteLanding',
 		// 	template: './pages/website/landing/index.pug',
@@ -180,36 +184,36 @@ module.exports = {
 		// 		collapseWhitespace: isProd 
 		// 	}
 		// }),
-		new HTMLWebpackPlugin( {
-			title: 'userAct',
-			template: './pages/website/user-act/index.pug',
-			filename: 'index.html',
-			inject: true,
-			chunks: ['userAct'],
-			minify: {
-				collapseWhitespace: isProd 
-			}
-		}),
-		new HTMLWebpackPlugin( {
-			title: 'userAct',
-			template: './pages/website/user-act/register/index.pug',
-			filename: 'register.html',
-			inject: true,
-			chunks: ['userAct'],
-			minify: {
-				collapseWhitespace: isProd 
-			}
-		}),
-		new HTMLWebpackPlugin( {
-			title: 'userAct',
-			template: './pages/website/user-act/login/index.pug',
-			filename: 'login.html',
-			inject: true,
-			chunks: ['userAct'],
-			minify: {
-				collapseWhitespace: isProd 
-			}
-		}),
+		// new HTMLWebpackPlugin( {
+		// 	title: 'userAct',
+		// 	template: './pages/website/user-act/index.pug',
+		// 	filename: 'index.html',
+		// 	inject: true,
+		// 	chunks: ['userAct'],
+		// 	minify: {
+		// 		collapseWhitespace: isProd 
+		// 	}
+		// }),
+		// new HTMLWebpackPlugin( {
+		// 	title: 'userAct',
+		// 	template: './pages/website/user-act/register/index.pug',
+		// 	filename: 'register.html',
+		// 	inject: true,
+		// 	chunks: ['userAct'],
+		// 	minify: {
+		// 		collapseWhitespace: isProd 
+		// 	}
+		// }),
+		// new HTMLWebpackPlugin( {
+		// 	title: 'userAct',
+		// 	template: './pages/website/user-act/login/index.pug',
+		// 	filename: 'login.html',
+		// 	inject: true,
+		// 	chunks: ['userAct'],
+		// 	minify: {
+		// 		collapseWhitespace: isProd 
+		// 	}
+		// }),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'

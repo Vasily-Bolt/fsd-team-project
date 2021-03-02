@@ -13,7 +13,7 @@ const sassLoader = require('sass-loader');
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 console.log ("iS DEV ", isDev)
-const dirToStoreReady = 'dist/search-room';
+const dirToStoreReady = 'dist/user-act';
 
 const optimization = () => {
 	const config = {

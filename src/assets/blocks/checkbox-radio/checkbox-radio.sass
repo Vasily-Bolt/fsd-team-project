@@ -38,6 +38,10 @@
 .checkbox-radio:checked+label::after
 	opacity: 100
 
+.checkbox-list
+	@media screen and (max-width:$desktop-max)
+		margin: 1rem 0
+
 @import ./_quadratic-with-tick/checkbox-radio_quadratic-with-tick
 @import ./_round-with-circle/checkbox-radio_round-with-circle
 @import ./_elongated-with-circle/checkbox-radio_elongated-with-circle

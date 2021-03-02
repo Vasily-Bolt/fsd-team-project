@@ -1,0 +1,10 @@
+extends ./user-login-template.pug
+block title
+	title Войти
+
+block includes
+	include ../includes.pug
+
+block content
+	.user-act
+		+login-form({id: 'userLogin'})

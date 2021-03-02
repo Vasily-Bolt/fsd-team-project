@@ -1,14 +1,10 @@
 @import ../counter-account-block/counter-account-block
+@import ./__no-account-form/login-form__no-account-form
+@import ./__user-data-fieldset/login-form__user-data-fieldset
 
-.login-form__no-account-form
-  display: flex
-  justify-content: space-between
-
-
-.login-form__user-data-fieldset
-  height: 6.125rem //98px
-  margin-top: -.6875rem //-11px
-  margin-bottom: -.75rem //-12px
-  
 .login-form
-  height: 22.375rem //358px
+	height: 22.375rem //358px
+
+@media screen and (max-width:$mobile-max)
+	.login-form
+		height: auto

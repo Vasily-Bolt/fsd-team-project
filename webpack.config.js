@@ -190,6 +190,26 @@ module.exports = {
 				collapseWhitespace: isProd 
 			}
 		}),
+		new HTMLWebpackPlugin( {
+			title: 'userAct',
+			template: './pages/website/user-act/register/index.pug',
+			filename: 'register.html',
+			inject: true,
+			chunks: ['userAct'],
+			minify: {
+				collapseWhitespace: isProd 
+			}
+		}),
+		new HTMLWebpackPlugin( {
+			title: 'userAct',
+			template: './pages/website/user-act/login/index.pug',
+			filename: 'login.html',
+			inject: true,
+			chunks: ['userAct'],
+			minify: {
+				collapseWhitespace: isProd 
+			}
+		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'

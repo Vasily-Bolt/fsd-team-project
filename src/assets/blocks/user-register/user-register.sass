@@ -1,39 +1,11 @@
 @import ../counter-account-block/counter-account-block
-
-.user-register__create-account-form
-	height: 31.25rem //550px
-
-.user-register__user-data-fieldset
-	height:	8rem //128px //7.8125rem //125px
-	margin-top: 1.25rem //20px
-	margin-bottom: 1.4375rem //23px //1.625rem //26px
-
-.user-register__userEnterDataFieldset
-	height: 9.375rem //150px
-	margin-top: 1.125rem //18px
-	margin-bottom: 1.5rem //24px
+@import ./__create-account-form/user-register__create-account-form
+@import ./__user-data-fieldset/user-register__user-data-fieldset
+@import ./__user-enter-data-fieldset/user-register__user-enter-data-fieldset
 
 .user-register
 	height: 40.375rem //646px
 
-
-
-// Для флексовой версии
-// .user-register__has-account-form
-// 	display: flex
-// 	justify-content: space-between
-
-// .user-register__has-account-form span
-// 	margin: auto 0
-
-// .user-register__create-account-form
-// 	height: 31.25rem //550px
-
-// .user-register__user-data-fieldset
-// 	height:	8.25rem //132px
-
-// .user-register__userEnterDataFieldset
-// 	height: 9.5rem //152px
-
-// .user-register
-// 	height: 40.375rem //646px
+@media screen and (max-width:$mobile-max)
+	.user-register
+		height: auto

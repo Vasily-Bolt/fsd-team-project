@@ -6,4 +6,4 @@
 <br>
 <a href='./dist/searchroomindex.html'>Search room template</a>
 <br>
-<a href='./dist/useractindex.html'>Search room template</a>
+<a href='./dist/useractindex.html'>User act template</a>

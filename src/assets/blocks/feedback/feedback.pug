@@ -18,6 +18,6 @@ mixin feedback(object)
 				default
 					p= object.daysAgoAdded + ' дней назад'
 		.feedback__like
-			+like-button({id:'likes-', number_of_likes: object.likesQuantity, checked: object.thisUserAlreadyVoted})
+			+like-button({id:`likes-${object.picName}`, number_of_likes: object.likesQuantity, checked: object.thisUserAlreadyVoted})
 		.feedback__content
 			p!= object.userComment

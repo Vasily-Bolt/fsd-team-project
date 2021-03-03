@@ -1,7 +1,9 @@
-<a href='./dist/UIkit/index.html'>UIKit template</a>
+<a href='./dist/uikitindex.html'>UIKit template</a>
 <br>
-<a href='./dist/landing/index.html'>Landing page template</a>
+<a href='./dist/landingindex.html'>Landing page template</a>
 <br>
-<a href='./dist/room-details/index.html'>Room details</a>
+<a href='./dist/roomdetailsindex.html'>Room details</a>
 <br>
-<a href='./dist/search-room/index.html'>Search room template</a>
+<a href='./dist/searchroomindex.html'>Search room template</a>
+<br>
+<a href='./dist/useractindex.html'>Search room template</a>

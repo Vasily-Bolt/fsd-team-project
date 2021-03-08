@@ -1,4 +1,6 @@
 mixin login-form(object)
+	include ../text-field/text-field.pug
+	include ../elongated-button/elongated-button.pug
 	.login-form.card-styles--white-background.cards-styles--flex.cards-styles--space-between.cards-styles-box-shadow.cards-styles-size-and-paddings
 		.header1 Войти
 		form(id = object.id class='' method='get' action='')

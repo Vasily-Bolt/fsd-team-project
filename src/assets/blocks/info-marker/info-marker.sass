@@ -6,8 +6,9 @@
 
 @media screen and (max-width:$tablet-max)
 	.info-marker
-		width: 8vw
-		height: 8vw
+		width: 5vw
+		height: 5vw
+		text-align: center
 
 .info-marker::before
 	width: 100%
@@ -21,3 +22,7 @@
 	font-size: .75rem  //12px
 	font-weight: 700
 	content: 'i'
+
+@media screen and (max-width:$tablet-max)
+	.info-marker::before
+		padding-left: 0

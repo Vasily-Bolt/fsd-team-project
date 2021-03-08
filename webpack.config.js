@@ -13,11 +13,12 @@ const sassLoader = require('sass-loader');
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 console.log ("iS DEV ", isDev)
-const dirToStoreReady = 'dist/UIkit';
+// const dirToStoreReady = 'dist/UIkit';
 // const dirToStoreReady = 'dist/landing';
 // const dirToStoreReady = 'dist/search-room';
 // const dirToStoreReady = 'dist/room-details';
 // const dirToStoreReady = 'dist/user-act';
+const dirToStoreReady = 'dist';
 
 const optimization = () => {
 	const config = {
@@ -60,10 +61,10 @@ module.exports = {
 	mode: 'development',
 	entry: {
 		UIkit: './uikit.js',
-		// WebsiteLanding: './website-landing.js',
-		// SearchRoom: './search-room.js',
-		// RoomDetails: './room-details.js',
-		// userAct: './user-act.js',
+		WebsiteLanding: './website-landing.js',
+		SearchRoom: './search-room.js',
+		RoomDetails: './room-details.js',
+		userAct: './user-act.js',
 	},
 	output: {
 		filename: filename('js'),
@@ -87,133 +88,133 @@ module.exports = {
 		new HTMLWebpackPlugin( {
 		  title: 'UIKit',
 		  template: './pages/uikit/index.pug',
-		  filename: 'index.html',
+		  filename: 'uikitindex.html',
 		  inject: true,
 		  chunks: ['UIkit'],
 		  minify: {
 		    collapseWhitespace: isProd 
 		  }
 		}),
-		// new HTMLWebpackPlugin( {
-		// 	title: 'WebsiteLanding',
-		// 	template: './pages/website/landing/index.pug',
-		// 	filename: 'index.html',
-		// 	inject: true,
-		// 	chunks: ['WebsiteLanding'],
-		// 	minify: {
-		// 		collapseWhitespace: isProd 
-		// 	}
-		// }),
-		// new HTMLWebpackPlugin( {
-		// 	title: 'WebsiteLandingStart',
-		// 	template: './pages/website/landing/start/index.pug',
-		// 	filename: 'start.html',
-		// 	inject: true,
-		// 	chunks: ['WebsiteLanding'],
-		// 	minify: {
-		// 		collapseWhitespace: isProd 
-		// 	}
-		// }),
-		// new HTMLWebpackPlugin( {
-		// 	title: 'WebsiteLandingDatepicker',
-		// 	template: './pages/website/landing/dates-dropdown/index.pug',
-		// 	filename: 'dates.html',
-		// 	inject: true,
-		// 	chunks: ['WebsiteLanding'],
-		// 	minify: {
-		// 		collapseWhitespace: isProd 
-		// 	}
-		// }),
-		// new HTMLWebpackPlugin( {
-		// 	title: 'WebsiteLandingGuests',
-		// 	template: './pages/website/landing/guests-dropdown/index.pug',
-		// 	filename: 'guests.html',
-		// 	inject: true,
-		// 	chunks: ['WebsiteLanding'],
-		// 	minify: {
-		// 		collapseWhitespace: isProd 
-		// 	}
-		// }),
-		// new HTMLWebpackPlugin( {
-		//   title: 'SearchRoom',
-		//   template: './pages/website/search-room/index.pug',
-		//   filename: 'index.html',
-		//   inject: true,
-		//   chunks: ['SearchRoom'],
-		//   minify: {
-		//     collapseWhitespace: isProd 
-		//   }
-		// }),
-		// new HTMLWebpackPlugin( {
-		//   title: 'SearchRoomStart',
-		//   template: './pages/website/search-room/start/index.pug',
-		//   filename: 'start.html',
-		//   inject: true,
-		//   chunks: ['SearchRoom'],
-		//   minify: {
-		//     collapseWhitespace: isProd 
-		//   }
-		// }),
-		// new HTMLWebpackPlugin( {
-		//   title: 'SearchRoomRooms',
-		//   template: './pages/website/search-room/rooms/index.pug',
-		//   filename: 'rooms.html',
-		//   inject: true,
-		//   chunks: ['SearchRoom'],
-		//   minify: {
-		//     collapseWhitespace: isProd 
-		//   }
-		// }),
-		// new HTMLWebpackPlugin( {
-		//   title: 'SearchRoomExtras',
-		//   template: './pages/website/search-room/extras/index.pug',
-		//   filename: 'extras.html',
-		//   inject: true,
-		//   chunks: ['SearchRoom'],
-		//   minify: {
-		//     collapseWhitespace: isProd 
-		//   }
-		// }),
-		// new HTMLWebpackPlugin( {
-		// 	title: 'RoomDetails',
-		// 	template: './pages/website/room-details/index.pug',
-		// 	filename: 'index.html',
-		// 	inject: true,
-		// 	chunks: ['RoomDetails'],
-		// 	minify: {
-		// 		collapseWhitespace: isProd 
-		// 	}
-		// }),
-		// new HTMLWebpackPlugin( {
-		// 	title: 'userAct',
-		// 	template: './pages/website/user-act/index.pug',
-		// 	filename: 'index.html',
-		// 	inject: true,
-		// 	chunks: ['userAct'],
-		// 	minify: {
-		// 		collapseWhitespace: isProd 
-		// 	}
-		// }),
-		// new HTMLWebpackPlugin( {
-		// 	title: 'userAct',
-		// 	template: './pages/website/user-act/register/index.pug',
-		// 	filename: 'register.html',
-		// 	inject: true,
-		// 	chunks: ['userAct'],
-		// 	minify: {
-		// 		collapseWhitespace: isProd 
-		// 	}
-		// }),
-		// new HTMLWebpackPlugin( {
-		// 	title: 'userAct',
-		// 	template: './pages/website/user-act/login/index.pug',
-		// 	filename: 'login.html',
-		// 	inject: true,
-		// 	chunks: ['userAct'],
-		// 	minify: {
-		// 		collapseWhitespace: isProd 
-		// 	}
-		// }),
+		new HTMLWebpackPlugin( {
+			title: 'WebsiteLanding',
+			template: './pages/website/landing/index.pug',
+			filename: 'landingindex.html',
+			inject: true,
+			chunks: ['WebsiteLanding'],
+			minify: {
+				collapseWhitespace: isProd 
+			}
+		}),
+		new HTMLWebpackPlugin( {
+			title: 'WebsiteLandingStart',
+			template: './pages/website/landing/start/index.pug',
+			filename: 'landingstart.html',
+			inject: true,
+			chunks: ['WebsiteLanding'],
+			minify: {
+				collapseWhitespace: isProd 
+			}
+		}),
+		new HTMLWebpackPlugin( {
+			title: 'WebsiteLandingDatepicker',
+			template: './pages/website/landing/dates-dropdown/index.pug',
+			filename: 'landingdates.html',
+			inject: true,
+			chunks: ['WebsiteLanding'],
+			minify: {
+				collapseWhitespace: isProd 
+			}
+		}),
+		new HTMLWebpackPlugin( {
+			title: 'WebsiteLandingGuests',
+			template: './pages/website/landing/guests-dropdown/index.pug',
+			filename: 'landingguests.html',
+			inject: true,
+			chunks: ['WebsiteLanding'],
+			minify: {
+				collapseWhitespace: isProd 
+			}
+		}),
+		new HTMLWebpackPlugin( {
+		  title: 'SearchRoom',
+		  template: './pages/website/search-room/index.pug',
+		  filename: 'searchroomindex.html',
+		  inject: true,
+		  chunks: ['SearchRoom'],
+		  minify: {
+		    collapseWhitespace: isProd 
+		  }
+		}),
+		new HTMLWebpackPlugin( {
+		  title: 'SearchRoomStart',
+		  template: './pages/website/search-room/start/index.pug',
+		  filename: 'searchroomstart.html',
+		  inject: true,
+		  chunks: ['SearchRoom'],
+		  minify: {
+		    collapseWhitespace: isProd 
+		  }
+		}),
+		new HTMLWebpackPlugin( {
+		  title: 'SearchRoomRooms',
+		  template: './pages/website/search-room/rooms/index.pug',
+		  filename: 'searchroomrooms.html',
+		  inject: true,
+		  chunks: ['SearchRoom'],
+		  minify: {
+		    collapseWhitespace: isProd 
+		  }
+		}),
+		new HTMLWebpackPlugin( {
+		  title: 'SearchRoomExtras',
+		  template: './pages/website/search-room/extras/index.pug',
+		  filename: 'searchroomextras.html',
+		  inject: true,
+		  chunks: ['SearchRoom'],
+		  minify: {
+		    collapseWhitespace: isProd 
+		  }
+		}),
+		new HTMLWebpackPlugin( {
+			title: 'RoomDetails',
+			template: './pages/website/room-details/index.pug',
+			filename: 'roomdetailsindex.html',
+			inject: true,
+			chunks: ['RoomDetails'],
+			minify: {
+				collapseWhitespace: isProd 
+			}
+		}),
+		new HTMLWebpackPlugin( {
+			title: 'userAct',
+			template: './pages/website/user-act/index.pug',
+			filename: 'useractindex.html',
+			inject: true,
+			chunks: ['userAct'],
+			minify: {
+				collapseWhitespace: isProd 
+			}
+		}),
+		new HTMLWebpackPlugin( {
+			title: 'userAct',
+			template: './pages/website/user-act/register/index.pug',
+			filename: 'useractregister.html',
+			inject: true,
+			chunks: ['userAct'],
+			minify: {
+				collapseWhitespace: isProd 
+			}
+		}),
+		new HTMLWebpackPlugin( {
+			title: 'userAct',
+			template: './pages/website/user-act/login/index.pug',
+			filename: 'useractlogin.html',
+			inject: true,
+			chunks: ['userAct'],
+			minify: {
+				collapseWhitespace: isProd 
+			}
+		}),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery'

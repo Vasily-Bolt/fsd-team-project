@@ -1,4 +1,5 @@
 mixin user-register(object)
+	include ../gender-select-radio/gender-select-radio.pug
 	.user-register.card-styles--white-background.cards-styles--flex.cards-styles--space-between.cards-styles-box-shadow.cards-styles-size-and-paddings
 		form(id = object.id class = 'user-register__create-account-form' method='get')
 			.header1 Регистрация аккаунта

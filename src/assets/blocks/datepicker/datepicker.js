@@ -59,7 +59,7 @@ $(()=> {
 			let DateRangePickerSetup = '';	
 			let datepickerIdString = $(this).attr('id');
 			if ( datepickerIdString.endsWith('multiple') ) DateRangePickerSetup = multipleFieldDateRangePickerSetup;
-			if ( datepickerIdString.endsWith('single') ) DateRangePickerSetup = singleFieldDateRangePickerSetup;
+			if ( datepickerIdString.endsWith('single')  ) DateRangePickerSetup = singleFieldDateRangePickerSetup;
 			if ( DateRangePickerSetup != '' ) {
 	
 				const calendarContainer = $(this).find('div[id$="-container"]').attr('id');
@@ -95,7 +95,7 @@ $(()=> {
 						}
 					});
 			}
-			if ( isMobile ) {
+			if ( isMobile && (DateRangePickerSetup == multipleFieldDateRangePickerSetup) ) {
 				$(`#${datepickerIdString}`).find( '.datepicker__calendar-wrapper' ).css('display','none');
 				$('input[id*="datepicker"]' ).each(function(){
 					inputFieldValue = $(this).attr('value');
@@ -104,6 +104,8 @@ $(()=> {
 						nemInputValue = `${inputFieldValue.substr(6,4)}-${inputFieldValue.substr(3,2)}-${inputFieldValue.substr(0,2)}`;
 					// if ( datepickerIdString.endsWith('single') )
 					// 	nemInputValue = `2021-05-${inputFieldValue.substr(0,2)}`; //have to setup this
+
+						
 					
 					$(this)
 					.attr({

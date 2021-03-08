@@ -1,0 +1,14 @@
+- Add css autoprefixer (posrCSS?)
+- Check all tabindexes and usability for keyboard
+  - Add focus for custom checkbox
+  - Make menu usability!!!
+  - Change elongated buttons - add link inside (I guess). if use tab now, you need to press tab twice to go throught button (first link, than button - not good)
+- Range-slider for touch screen
+- Add gallery work to gallery-room-small
+- Change elongated buttons to depend on block they are in (not using size in mixin!)
+  - Change pagination after
+  - Change all dependent blocks
+- Change info marker - make it responsive
+
+- No JS
+  - Datepicker: on load multiple fields must have "date", and then chenge it in JS. Singledatepicker on load must be just masket text field
